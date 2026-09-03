@@ -1,0 +1,2 @@
+# Tells GitHub Pages to serve this directory as-is, so the _next/ folder
+# is not stripped by Jekyll.
