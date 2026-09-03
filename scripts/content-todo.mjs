@@ -29,6 +29,11 @@ for await (const file of walk(ROOT)) {
   const hits = [];
 
   lines.forEach((line, i) => {
+    // Skip the two type/helper definitions that describe the TODO mechanism
+    // itself — counting them makes the report cry wolf.
+    if (/^export const TODO = /.test(line) || /\$\{what\}/.test(line)) return;
+    if (/type:\s*"todo";/.test(line)) return;
+
     const placeholder = line.match(/\[TODO:([^\]]*)\]/);
     if (placeholder) {
       hits.push({ line: i + 1, text: placeholder[1].trim(), kind: "placeholder" });

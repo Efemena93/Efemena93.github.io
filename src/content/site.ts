@@ -20,7 +20,7 @@ export const site = {
    * canonical links, the sitemap and social cards are correct wherever the
    * site actually lives. The fallback is the intended production domain.
    */
-  url: process.env.NEXT_PUBLIC_SITE_URL ?? "https://udezimena.work", // TODO: confirm the final domain
+  url: process.env.NEXT_PUBLIC_SITE_URL ?? "https://efemena93.github.io",
   name: "Efemena Udezi",
   shortName: "Efemena Udezi",
   role: "UX / Product / Interaction Designer",
@@ -40,15 +40,15 @@ export const site = {
   themeColor: "#f6f2ea",
 
   contact: {
-    email: TODO("email to publish"),
-    availability: TODO("availability line — e.g. 'Open to 2027 product design roles, UK and remote'"),
-    location: TODO("city, region"),
+    email: "udezimena@gmail.com",
+    availability: "Open to design roles — US, Europe and remote",
+    location: "Denton, Texas",
     responseTime: "I read everything and reply within a few days.",
   },
 
   socials: [
-    { label: "LinkedIn", href: TODO("LinkedIn URL") },
-    { label: "Live portfolio", href: "https://udezimena.work" },
+    { label: "LinkedIn", href: "https://www.linkedin.com/in/efemena-udezi/" },
+    { label: "Previous portfolio", href: "https://udezimena.work" },
   ] as Array<{ label: string; href: string }>,
 
   resumePdf: TODO("résumé PDF — drop the file at /public/efemena-udezi-resume.pdf"),
