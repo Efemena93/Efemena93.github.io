@@ -39,15 +39,13 @@ jobs:
       - name: Work out where this site will live
         id: paths
         run: |
-                    OWNER=$(echo "${{ github.repository_owner }}" | tr '[:upper:]' '[:lower:]')
+          OWNER=$(echo "${{ github.repository_owner }}" | tr '[:upper:]' '[:lower:]')
           REPO="${{ github.event.repository.name }}"
           REPO_LC=$(echo "$REPO" | tr '[:upper:]' '[:lower:]')
           if [ "$REPO_LC" = "$OWNER.github.io" ]; then
-            # A user site is served from the domain root.
             echo "base=" >> "$GITHUB_OUTPUT"
             echo "url=https://$OWNER.github.io" >> "$GITHUB_OUTPUT"
           else
-            # A project site is served from a subdirectory.
             echo "base=/$REPO" >> "$GITHUB_OUTPUT"
             echo "url=https://$OWNER.github.io/$REPO" >> "$GITHUB_OUTPUT"
           fi
