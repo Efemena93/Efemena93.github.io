@@ -1,4 +1,5 @@
 import type { FieldNote } from "../types";
+import { assertContentIntegrity, validateFieldNotes } from "../validate";
 
 /**
  * Field Notes.
@@ -13,6 +14,7 @@ import type { FieldNote } from "../types";
 
 const labelledClaims: FieldNote = {
   slug: "what-a-label-costs",
+  visibility: "published",
   title: "What a label costs",
   standfirst:
     "Marking every claim in a case study by how much weight it can carry makes the writing less confident. That turns out to be the point.",
@@ -56,6 +58,8 @@ const labelledClaims: FieldNote = {
 
 const notAnApp: FieldNote = {
   slug: "the-outcome-does-not-have-to-be-an-app",
+  // Unwritten. Was rendering a public page containing only a "To write" panel.
+  visibility: "draft",
   title: "The outcome does not have to be an app",
   standfirst:
     "A guardrail I set at the start of my capstone, and what it changed about the questions I could ask.",
@@ -72,6 +76,8 @@ const notAnApp: FieldNote = {
 
 const silence: FieldNote = {
   slug: "reading-a-silence",
+  // Unwritten. Was rendering a public page containing only a "To write" panel.
+  visibility: "draft",
   title: "Reading a silence",
   standfirst:
     "Interfaces are careful about what they say. They are careless about what a person concludes when they say nothing.",
@@ -86,10 +92,26 @@ const silence: FieldNote = {
   ],
 };
 
-export const fieldNotes: FieldNote[] = [labelledClaims, notAnApp, silence].sort(
+const allFieldNotes: FieldNote[] = [labelledClaims, notAnApp, silence].sort(
   (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime(),
 );
 
+// Fails the production build if a published story contains a placeholder or a
+// "to write" block. Two of the three below are drafts precisely because of it.
+assertContentIntegrity(validateFieldNotes(allFieldNotes));
+
+/**
+ * Published stories — the Library index, the sitemap, structured data.
+ * Drafts are preserved in this file but never routed or listed.
+ */
+export const fieldNotes = allFieldNotes.filter((n) => n.visibility === "published");
+
+/** Published and archived both get a page; drafts do not. */
+export const routableFieldNotes = allFieldNotes.filter((n) => n.visibility !== "draft");
+
+export const draftFieldNotes = allFieldNotes.filter((n) => n.visibility === "draft");
+
+/** Returns undefined for drafts, so a draft slug cannot render by accident. */
 export function getFieldNote(slug: string): FieldNote | undefined {
-  return fieldNotes.find((note) => note.slug === slug);
+  return routableFieldNotes.find((note) => note.slug === slug);
 }

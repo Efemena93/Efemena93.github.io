@@ -132,7 +132,11 @@ export const profile = {
 export const primaryNav = [
   { label: "Work", href: "/work" },
   { label: "About", href: "/about" },
-  { label: "Field Notes", href: "/field-notes" },
-  { label: "Résumé", href: "/resume" },
+  // Label only. The route stays /field-notes until we have reviewed the
+  // backlink and static-export implications of renaming it.
+  { label: "Library", href: "/field-notes" },
+  // Résumé is out of the production build until verified employment history
+  // exists — see src/app/_not-in-build/README.md. Restore this line when the
+  // route returns.
   { label: "Contact", href: "/contact" },
 ] as const;

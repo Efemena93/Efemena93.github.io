@@ -7,6 +7,9 @@ import type { CaseStudy } from "../types";
 
 export const windchill: CaseStudy = {
   slug: "windchill-engineering-change",
+  // Scaffold. Preserved in the repository, excluded from every public
+  // surface until the case study is actually written.
+  visibility: "draft",
   title: "Windchill Engineering Change",
   premise:
     "A four-page wireframe set for the engineering change workflow in Windchill PSE, designed against an existing enterprise design system.",

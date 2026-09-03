@@ -24,6 +24,23 @@ export const DISCIPLINE_LABEL: Record<Discipline, string> = {
   "service-design": "Service Design",
 };
 
+/**
+ * Publication state — whether a piece of content reaches the public build.
+ *
+ * Deliberately NOT the same field as `ProjectStatus` below. That one says how
+ * far the *work* got; this one says who is allowed to see it. Conflating them
+ * is how an unfinished project ends up published because it was "complete
+ * enough", so they are separate fields with separate names.
+ *
+ *   draft     — never routed, never listed, never in the sitemap. Preserved in
+ *               the repository; invisible to the public build.
+ *   published — routed, listed, indexed, eligible for selected work.
+ *   archived  — routed and reachable by direct link, but not listed and not in
+ *               the sitemap. For work kept for the record, not for display.
+ *               See docs note in `routableCaseStudies()` for the exact rules.
+ */
+export type Visibility = "draft" | "published" | "archived";
+
 export type ProjectStatus = "complete" | "in-progress" | "concept";
 
 export const STATUS_LABEL: Record<ProjectStatus, string> = {
@@ -225,6 +242,8 @@ export interface AtAGlance {
 
 export interface CaseStudy {
   slug: string;
+  /** Publication state. Required — a project cannot be added without deciding. */
+  visibility: Visibility;
   title: string;
   /** One sentence, ≤ 140 characters. */
   premise: string;
@@ -262,6 +281,8 @@ export interface CaseStudy {
 
 export interface FieldNote {
   slug: string;
+  /** Publication state. Required — a note cannot be added without deciding. */
+  visibility: Visibility;
   title: string;
   standfirst: string;
   date: string; // ISO

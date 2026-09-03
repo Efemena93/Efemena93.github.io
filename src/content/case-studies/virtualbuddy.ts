@@ -4,6 +4,9 @@ import type { CaseStudy } from "../types";
 
 export const virtualBuddy: CaseStudy = {
   slug: "virtualbuddy",
+  // Scaffold. Preserved in the repository, excluded from every public
+  // surface until the case study is actually written.
+  visibility: "draft",
   title: "VirtualBuddy",
   premise:
     "A companion app concept aimed at supporting optimistic behaviour and a steadier outlook, without pretending to be a clinical tool.",

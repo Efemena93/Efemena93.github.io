@@ -4,14 +4,16 @@ import type { MetadataRoute } from "next";
  *  written once at build time. */
 export const dynamic = "force-static";
 
-import { caseStudies } from "@/content/case-studies";
+import { publishedCaseStudies } from "@/content/case-studies";
 import { fieldNotes } from "@/content/field-notes";
 import { site } from "@/content/site";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const now = new Date();
 
-  const staticRoutes = ["", "/work", "/about", "/field-notes", "/resume", "/contact"].map(
+  // /resume is deliberately absent: the page is not in the production build
+  // until verified employment history exists.
+  const staticRoutes = ["", "/work", "/about", "/field-notes", "/contact"].map(
     (path) => ({
       url: `${site.url}${path}`,
       lastModified: now,
@@ -20,7 +22,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
     }),
   );
 
-  const work = caseStudies.map((study) => ({
+  // Drafts and archived work are both out: drafts have no page at all,
+  // archived pages exist but are deliberately not advertised.
+  const work = publishedCaseStudies.map((study) => ({
     url: `${site.url}/work/${study.slug}`,
     lastModified: now,
     changeFrequency: "monthly" as const,

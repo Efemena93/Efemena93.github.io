@@ -17,6 +17,7 @@ import type { CaseStudy } from "../types";
 
 export const holdingPattern: CaseStudy = {
   slug: "holding-pattern",
+  visibility: "published",
   title: "Holding Pattern",
   premise:
     "Design research into how military families keep a shared life intact across a deployment — from the side that stays.",
@@ -177,10 +178,6 @@ export const holdingPattern: CaseStudy = {
           ],
         },
         {
-          type: "todo",
-          note: "Replace this block with the real participant figures — number of interviews, recruitment route, separation stages represented, session length — as a statRow, plus each finding as a `claim` at level 'evidence' with a named source. Do not upgrade a hypothesis below into evidence without the data to back it.",
-        },
-        {
           type: "claimGroup",
           title: "What I expect to find, written down in advance so it can be wrong",
           claims: [
@@ -249,10 +246,6 @@ export const holdingPattern: CaseStudy = {
           tone: "caution",
           title: "The proposition I am most suspicious of",
           text: "Making the rhythm of contact visible is one step away from surveillance, and the step is short. If testing shows it produces monitoring behaviour or anxiety rather than reassurance, it should be abandoned rather than softened. I would rather record that here now than defend it later.",
-        },
-        {
-          type: "todo",
-          note: "After concept testing, convert survivors into `interpretation` claims with the evidence that supports them, and delete the rest outright rather than quietly downgrading them.",
         },
       ],
     },

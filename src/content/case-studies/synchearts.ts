@@ -8,6 +8,7 @@ import type { CaseStudy } from "../types";
 
 export const syncHearts: CaseStudy = {
   slug: "synchearts",
+  visibility: "published",
   title: "SyncHearts",
   premise:
     "A communication concept for long-distance couples, built around time zones and thoughtful delay rather than constant availability.",
@@ -222,10 +223,6 @@ export const syncHearts: CaseStudy = {
             caption: "Mid-fidelity screens, Figma.",
           },
           width: "wide",
-        },
-        {
-          type: "todo",
-          note: "Export the SyncHearts wireframes, personas, journey map, affinity board and impact/effort grid as images into /public/work/synchearts/ and swap the figure blocks over to next/image with functional alt text.",
         },
       ],
     },

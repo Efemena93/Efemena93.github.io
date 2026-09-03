@@ -4,6 +4,9 @@ import type { CaseStudy } from "../types";
 
 export const vocHub: CaseStudy = {
   slug: "vochub",
+  // Scaffold. Preserved in the repository, excluded from every public
+  // surface until the case study is actually written.
+  visibility: "draft",
   title: "VocHub",
   premise: "A vocabulary learning application, designed end to end as a study in habit and retention.",
   problemArea: "Language learning · vocabulary retention",

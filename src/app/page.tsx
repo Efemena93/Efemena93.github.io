@@ -10,7 +10,8 @@ import { GuideThread, ScrollQuiet } from "@/components/motion/ScrollScene";
 import { Container, Eyebrow, LinkButton, Section } from "@/components/primitives";
 import { GlowField } from "@/components/signals/GlowField";
 import { SignalConstellation } from "@/components/signals/SignalConstellation";
-import { featuredCaseStudies } from "@/content/case-studies";
+import { selectedWork } from "@/content/case-studies";
+import { signalNodes, signalThreads } from "@/content/signals";
 import { profile, site } from "@/content/site";
 
 export default function HomePage() {
@@ -32,7 +33,7 @@ export default function HomePage() {
             Large screens only — see SignalConstellation for why there is no
             touch equivalent. */}
         <div className="absolute inset-y-0 right-0 z-0 hidden lg:left-[56%] lg:block xl:left-[50%]">
-          <SignalConstellation />
+          <SignalConstellation nodes={signalNodes} threads={signalThreads} />
         </div>
 
         <Container className="relative z-20 pointer-events-none pb-20 pt-16 sm:pb-24 sm:pt-20 lg:pb-32 lg:pt-24">
@@ -62,13 +63,7 @@ export default function HomePage() {
                   <LinkButton href={site.resumePdf} variant="outline" download>
                     Download résumé
                   </LinkButton>
-                ) : (
-                  // Honest until the PDF exists: this reads the résumé rather
-                  // than promising a download that is not there yet.
-                  <LinkButton href="/resume" variant="outline">
-                    Read résumé
-                  </LinkButton>
-                )}
+                ) : null}
               </div>
 
               <p className="mt-10 max-w-[46ch] text-small text-charcoal-muted">
@@ -125,12 +120,12 @@ export default function HomePage() {
               Selected work
             </Eyebrow>
             <Link href="/work" className="link-underline label-type text-charcoal">
-              All six projects →
+              All work →
             </Link>
           </div>
 
           <div className="grid gap-x-8 gap-y-20 lg:grid-cols-12">
-            {featuredCaseStudies.map((study, index) => (
+            {selectedWork.map((study, index) => (
               <div
                 key={study.slug}
                 className={index === 0 ? "lg:col-span-12" : "lg:col-span-6"}

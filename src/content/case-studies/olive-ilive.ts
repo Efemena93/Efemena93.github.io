@@ -9,6 +9,7 @@ import type { CaseStudy } from "../types";
 
 export const oliveIlive: CaseStudy = {
   slug: "olive-ilive",
+  visibility: "published",
   title: "Olive-Ilive",
   premise:
     "A responsive health and wellbeing portal designed for inclusivity, privacy and the questions people are embarrassed to ask.",
@@ -258,10 +259,6 @@ export const oliveIlive: CaseStudy = {
             "Once usability issues were resolved I designed the final screens in Figma, working from Gestalt principles and Material Design guidance, aiming for a clean and minimal surface that helps people reach a goal rather than admire the interface. Colour, iconography and illustration were checked for accessibility as part of the design rather than as a pass at the end.",
             "After several iterations the result was documented as a design language system, so the decisions were reusable rather than re-argued.",
           ],
-        },
-        {
-          type: "todo",
-          note: "Export the Olive-Ilive personas, journey map, dendrogram, wireframe sets, final screens and DLS pages into /public/work/olive-ilive/ and replace the figure blocks.",
         },
       ],
     },
