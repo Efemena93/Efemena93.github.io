@@ -2,7 +2,7 @@ import { chromium } from "playwright";
 import AxeBuilder from "@axe-core/playwright";
 import fs from "node:fs/promises";
 
-const B = "http://localhost:4310";
+const B = "http://localhost:4312";
 const b = await chromium.launch({ executablePath: "/opt/pw-browsers/chromium" });
 await fs.mkdir("audit-out", { recursive: true });
 

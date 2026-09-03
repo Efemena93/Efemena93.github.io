@@ -37,7 +37,7 @@ export const site = {
     "Efemena Udezi is a UX, product and interaction designer working on emotionally intelligent digital experiences — research, storytelling and interaction design for the things people find hard to say.",
 
   locale: "en_GB",
-  themeColor: "#f6f2ea",
+  themeColor: "#0e0f13",
 
   contact: {
     email: "udezimena@gmail.com",
@@ -178,7 +178,7 @@ export const profile = {
 export const primaryNav = [
   { label: "Work", href: "/work" },
   { label: "About", href: "/about" },
-  { label: "Field Notes", href: "/field-notes" },
+  { label: "Library", href: "/field-notes" },
   // Restored 2026-09: the résumé page is now backed by verified employment
   // history transcribed from Efemena's own ATS résumé (src/content/resume.ts).
   // The reason it was parked no longer applies.

@@ -14,53 +14,60 @@
    values move. "ivory / charcoal / sage / blue / clay" are semantic slots, not
    colour descriptions:
 
-     ivory   → page ground        sage  → teal    (#10B981)
-     paper   → raised surface     blue  → violet  (#7C3AED)
-     sunk    → wells and images   clay  → rose    (#F87171)
+     ivory   → studio ground (near-black)
+     paper   → warm graphite surface        sage  → soft sage   — evidence, validation
+     sunk    → recessed surface             blue  → muted indigo — inquiry, reflection
+     raised  → lit surface                  clay  → dusty blue  — interface artifacts
+     parchment → warm cream paper (research notes)
 
-   Dark is now the default and needs no JavaScript — it is the identity of the
-   original page, and the violet→teal gradient only works on near-black. The
-   light palette (also from that page) is kept under [data-theme="light"].
+   Dark is the default and needs no JavaScript. A studio at work is a dim room
+   with light falling on the things being made; the near-black ground is what
+   lets the paper and the screens read as lit. The light palette is kept under
+   [data-theme="light"].
 
    Typography is unchanged: Fraunces, Inter and JetBrains Mono, as built today.
    -------------------------------------------------------------------------- */
 
 @theme {
-  /* Ground */
-  --color-ivory: #08090a;
-  --color-paper: #0d0e12;
-  --color-sunk: #16181f;
-  --color-raised: #111318;
+  /* Ground — near-black through warm graphite */
+  --color-ivory: #0e0f13;
+  --color-paper: #16171c;
+  --color-sunk: #121319;
+  --color-raised: #1e1f26;
+
+  /* Warm cream paper — research notes, pinned material */
+  --color-parchment: #ece4d5;
+  --color-parchment-ink: #2e2a24;
 
   /* Ink */
-  --color-charcoal: #f0eef8;
-  --color-charcoal-soft: #d6d0e0;
-  --color-charcoal-muted: #b8afa4;
+  --color-charcoal: #f2efe9;
+  --color-charcoal-soft: #d3cec4;
+  --color-charcoal-muted: #a49e92;
 
-  /* Accents — markers, surfaces, threads */
-  --color-sage: #10b981;
-  --color-blue: #7c3aed;
-  --color-clay: #f87171;
+  /* Accents — markers and surfaces */
+  --color-sage: #8fb39b;
+  --color-blue: #7c82c4;
+  --color-clay: #7e9ab5;
 
-  /* Accents — deep. On a dark ground "deep" means the text-safe variant,
-     which is the lighter one. All are ≥ 7:1 on #08090A. */
-  --color-sage-deep: #34d399;
-  --color-blue-deep: #a78bfa;
-  --color-clay-deep: #fca5a5;
+  /* Accents — deep. On a dark ground "deep" is the text-safe variant, which
+     is the lighter one. All are ≥ 7:1 on #0E0F13. */
+  --color-sage-deep: #a8c7b2;
+  --color-blue-deep: #a5a9dc;
+  --color-clay-deep: #9fbad2;
 
-  /* Structure — violet-tinted hairlines, as on the original */
-  --color-line: rgba(124, 58, 237, 0.16);
-  --color-line-strong: rgba(124, 58, 237, 0.32);
+  /* Structure — warm hairlines, the fine borders of the studio */
+  --color-line: rgba(242, 239, 233, 0.13);
+  --color-line-strong: rgba(242, 239, 233, 0.26);
 
-  /* The signature gradient. One declaration, used by the wordmark, the
-     section rules, the eyebrow tick and the pill buttons. */
-  --gradient-signal: linear-gradient(135deg, #7c3aed 0%, #10b981 100%);
+  /* The connective gradient: inquiry → evidence. Restrained by design; it is
+     the signal layer, and it must not compete with the artifacts. */
+  --gradient-signal: linear-gradient(135deg, #7c82c4 0%, #8fb39b 100%);
   --gradient-signal-subtle: linear-gradient(
     135deg,
-    rgba(124, 58, 237, 0.18) 0%,
-    rgba(16, 185, 129, 0.12) 100%
+    rgba(124, 130, 196, 0.14) 0%,
+    rgba(143, 179, 155, 0.1) 100%
   );
-  --glow-violet: rgba(124, 58, 237, 0.25);
+  --glow-violet: rgba(124, 130, 196, 0.22);
 
   /* Typography */
   --font-display: var(--font-fraunces), "Iowan Old Style", Georgia, serif;
@@ -107,7 +114,10 @@
 
   /* Depth. On a dark ground a shadow alone is invisible, so the lift is a
      violet bloom rather than a drop shadow. */
-  --shadow-lift: 0 0 0 1px rgba(124, 58, 237, 0.18), 0 18px 48px -24px rgba(124, 58, 237, 0.45);
+  --shadow-lift: 0 0 0 1px rgba(242, 239, 233, 0.1), 0 18px 44px -22px rgba(0, 0, 0, 0.8);
+
+  /* Soft directional light, falling from the upper left across the studio. */
+  --shadow-object: 0 1px 0 rgba(242, 239, 233, 0.06) inset, 0 14px 30px -18px rgba(0, 0, 0, 0.9);
 }
 
 /* --------------------------------------------------------------------------
@@ -118,35 +128,39 @@
 @custom-variant light (&:where([data-theme="light"], [data-theme="light"] *));
 
 :root[data-theme="light"] {
-  --color-ivory: #f7f3ed;
-  --color-paper: #fdfbf7;
-  --color-sunk: #eae4da;
-  --color-raised: #e8e2d8;
+  --color-ivory: #f4efe4;
+  --color-paper: #fbf7ef;
+  --color-sunk: #e8e1d3;
+  --color-raised: #ffffff;
 
-  --color-charcoal: #2a2520;
-  --color-charcoal-soft: #4a4038;
-  --color-charcoal-muted: #6b5f52;
+  --color-parchment: #fbf7ef;
+  --color-parchment-ink: #23242a;
 
-  --color-sage: #01696f;
-  --color-blue: #6d28d9;
-  --color-clay: #b8860b;
+  --color-charcoal: #23242a;
+  --color-charcoal-soft: #43444d;
+  --color-charcoal-muted: #62636d;
 
-  --color-sage-deep: #015a5f;
-  --color-blue-deep: #5b21b6;
-  --color-clay-deep: #8a6408;
+  --color-sage: #46705a;
+  --color-blue: #4a4e8c;
+  --color-clay: #3f6280;
 
-  --color-line: rgba(42, 37, 32, 0.14);
-  --color-line-strong: rgba(42, 37, 32, 0.28);
+  --color-sage-deep: #3a5f4b;
+  --color-blue-deep: #3f4379;
+  --color-clay-deep: #35566f;
 
-  --gradient-signal: linear-gradient(135deg, #6d28d9 0%, #01696f 100%);
+  --color-line: rgba(35, 36, 42, 0.14);
+  --color-line-strong: rgba(35, 36, 42, 0.3);
+
+  --gradient-signal: linear-gradient(135deg, #4a4e8c 0%, #46705a 100%);
   --gradient-signal-subtle: linear-gradient(
     135deg,
-    rgba(109, 40, 217, 0.1) 0%,
-    rgba(1, 105, 111, 0.08) 100%
+    rgba(74, 78, 140, 0.1) 0%,
+    rgba(70, 112, 90, 0.08) 100%
   );
-  --glow-violet: rgba(109, 40, 217, 0.2);
+  --glow-violet: rgba(74, 78, 140, 0.2);
 
-  --shadow-lift: 0 1px 2px rgba(42, 37, 32, 0.05), 0 12px 32px -16px rgba(42, 37, 32, 0.18);
+  --shadow-lift: 0 1px 2px rgba(35, 36, 42, 0.06), 0 12px 32px -16px rgba(35, 36, 42, 0.2);
+  --shadow-object: 0 1px 0 rgba(255, 255, 255, 0.7) inset, 0 12px 26px -16px rgba(35, 36, 42, 0.35);
 }
 
 /* --------------------------------------------------------------------------
@@ -190,14 +204,14 @@
     z-index: -1;
     pointer-events: none;
     background:
-      radial-gradient(ellipse 60% 65% at 70% 30%, rgba(124, 58, 237, 0.1) 0%, transparent 60%),
-      radial-gradient(ellipse 40% 50% at 15% 80%, rgba(16, 185, 129, 0.06) 0%, transparent 55%);
+      radial-gradient(ellipse 70% 55% at 26% 6%, rgba(242, 239, 233, 0.055) 0%, transparent 62%),
+      radial-gradient(ellipse 45% 45% at 82% 74%, rgba(124, 130, 196, 0.05) 0%, transparent 58%);
   }
 
   :root[data-theme="light"] body::before {
     background:
-      radial-gradient(ellipse 60% 65% at 70% 30%, rgba(109, 40, 217, 0.06) 0%, transparent 60%),
-      radial-gradient(ellipse 40% 50% at 15% 80%, rgba(1, 105, 111, 0.05) 0%, transparent 55%);
+      radial-gradient(ellipse 70% 55% at 26% 6%, rgba(255, 255, 255, 0.55) 0%, transparent 62%),
+      radial-gradient(ellipse 45% 45% at 82% 74%, rgba(74, 78, 140, 0.04) 0%, transparent 58%);
   }
 
   @media (prefers-reduced-transparency: reduce), (prefers-contrast: more) {
@@ -373,6 +387,96 @@
   }
 }
 
+/* --------------------------------------------------------------------------
+   Studio
+   -------------------------------------------------------------------------- */
+
+/* Every studio object is drawn in the same 300×182 space and rendered at the
+   same fixed height, anchored to the bottom of its box. That is what puts the
+   board, the phone and the monitor on one desk line across three columns of
+   different widths — without a single absolute position or magic offset. */
+@utility stage-svg {
+  display: block;
+  width: 100%;
+  height: 11.5rem;
+
+  @media (min-width: 640px) {
+    height: 14rem;
+  }
+
+  @media (min-width: 1024px) {
+    height: 17rem;
+  }
+}
+
+/* The lit point that runs a signal thread once, on hover or keyboard focus.
+   `offset-path` is set inline per thread. Parked at the start until asked.
+   Under reduced motion the global kill-switch collapses the duration, which
+   leaves the point at its destination and the thread drawn — a finished
+   picture rather than a missing one. */
+@keyframes signal-travel {
+  from {
+    offset-distance: 0%;
+  }
+  to {
+    offset-distance: 100%;
+  }
+}
+
+.signal-traveller {
+  offset-distance: 0%;
+  animation-name: none;
+  animation-timing-function: var(--ease-in-out-soft);
+  animation-fill-mode: forwards;
+  transition: opacity 300ms var(--ease-out-soft);
+}
+
+.group:hover .signal-traveller,
+.group:focus-within .signal-traveller {
+  animation-name: signal-travel;
+}
+
+/* The two schematic phone states, cross-fading on a slow cycle. The final
+   keyframe of each is deliberately its resting value, so when reduced motion
+   collapses the duration to ~0 the pair settles on state A fully visible and
+   state B hidden — a composed screen, not a blank one. */
+@keyframes screen-a {
+  0%,
+  42% {
+    opacity: 1;
+  }
+  50%,
+  92% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes screen-b {
+  0%,
+  42% {
+    opacity: 0;
+  }
+  50%,
+  92% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+.screen-state-a {
+  animation: screen-a 9s var(--ease-in-out-soft) infinite;
+}
+
+.screen-state-b {
+  opacity: 0;
+  animation: screen-b 9s var(--ease-in-out-soft) infinite;
+}
+
 /* Underline that draws from the left on hover/focus. Colour change is the
    fallback affordance when motion is reduced. */
 @utility link-underline {
@@ -504,10 +608,10 @@ html:not([data-motion="full"]) :focus-visible {
 
 @media (prefers-contrast: more) {
   :root {
-    --color-line: rgba(240, 238, 248, 0.55);
-    --color-line-strong: rgba(240, 238, 248, 0.8);
-    --color-charcoal-muted: #ddd8e6;
-    --color-charcoal-soft: #f0eef8;
+    --color-line: rgba(242, 239, 233, 0.55);
+    --color-line-strong: rgba(242, 239, 233, 0.82);
+    --color-charcoal-muted: #ddd9d1;
+    --color-charcoal-soft: #f2efe9;
   }
 
   :root[data-theme="light"] {

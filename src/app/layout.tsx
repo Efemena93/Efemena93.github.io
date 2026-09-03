@@ -2,7 +2,6 @@ import type { Metadata, Viewport } from "next";
 
 import { RouteAnnouncer } from "@/components/layout/RouteAnnouncer";
 import { SiteFooter } from "@/components/layout/SiteFooter";
-import { Atmosphere } from "@/components/signals/Atmosphere";
 import { SiteHeader } from "@/components/layout/SiteHeader";
 import { SkipLink } from "@/components/layout/SkipLink";
 import { MotionProvider, motionBootScript } from "@/components/motion/MotionProvider";
@@ -55,9 +54,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <script dangerouslySetInnerHTML={{ __html: motionBootScript }} />
       </head>
       <body className="min-h-screen bg-ivory antialiased">
-        {/* Ambient colour field. Rendered once here rather than per page, so
-            it does not restart on navigation. Decorative and opt-out-aware. */}
-        <Atmosphere />
         <MotionProvider>
           <SkipLink />
           <GrainOverlay />

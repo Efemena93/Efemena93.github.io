@@ -63,7 +63,12 @@ export function StoryCard({
 
       <Link
         href={`/field-notes/${note.slug}`}
-        className="mt-5 flex flex-1 flex-col rounded focus-visible:outline-offset-4"
+        className={cx(
+          "mt-5 flex flex-col rounded focus-visible:outline-offset-4",
+          // Only the grid variant stretches to fill its row; the featured
+          // card sits at its natural height, or it opens a 150px hole.
+          !lead && "flex-1",
+        )}
       >
         <p className="flex flex-wrap items-center gap-x-2.5 gap-y-1">
           <time dateTime={note.date} className="label-type text-charcoal-muted">
@@ -97,7 +102,7 @@ export function StoryCard({
 
         {/* Pushed to the bottom so cards in a row align on their last line
             regardless of standfirst length. */}
-        <p className="mt-auto pt-6">
+        <p className={cx("pt-6", lead ? "mt-2" : "mt-auto")}>
           <span className="label-type inline-flex min-h-11 items-center gap-2 text-blue-deep">
             <span className="link-underline">Read the note</span>
             <span
