@@ -98,7 +98,7 @@ export function SiteHeader() {
             it here made the same line appear twice above the fold. */}
         <Link
           href="/"
-          className="link-underline font-display text-[1.125rem] tracking-tight text-charcoal"
+          className="gradient-text font-display text-[1.125rem] tracking-tight"
           aria-label={`${site.name} — home`}
         >
           {site.name}
@@ -111,11 +111,17 @@ export function SiteHeader() {
               const active = isActive(item.href);
               return (
                 <li key={item.href}>
+                  {/* The active indicator is a signal rather than an
+                      underline: a gradient thread that draws left-to-right,
+                      with a lit point travelling at its head. It draws on
+                      hover and focus too, so the affordance and the state
+                      share one vocabulary. `aria-current` is what actually
+                      communicates the state; this is decoration on top. */}
                   <Link
                     href={item.href}
                     aria-current={active ? "page" : undefined}
                     className={cx(
-                      "label-type relative inline-flex min-h-11 items-center transition-colors duration-150",
+                      "group label-type relative inline-flex min-h-11 items-center transition-colors duration-150",
                       active ? "text-charcoal" : "text-charcoal-muted hover:text-charcoal",
                     )}
                   >
@@ -123,11 +129,21 @@ export function SiteHeader() {
                     <span
                       aria-hidden="true"
                       className={cx(
-                        "absolute inset-x-0 bottom-2 h-px origin-left bg-charcoal transition-transform duration-200 ease-[var(--ease-out-soft)]",
+                        "absolute inset-x-0 bottom-2.5 h-px origin-left transition-transform duration-300 ease-[var(--ease-out-soft)]",
                         active ? "scale-x-100" : "scale-x-0",
-                        "group-hover:scale-x-100",
+                        "group-hover:scale-x-100 group-focus-visible:scale-x-100",
                       )}
-                      style={{ transformOrigin: "left" }}
+                      style={{ backgroundImage: "var(--gradient-signal)" }}
+                    />
+                    <span
+                      aria-hidden="true"
+                      className={cx(
+                        "absolute -right-1 bottom-[7px] block h-1.5 w-1.5 rounded-full bg-sage",
+                        "transition-[opacity,transform] duration-300 ease-[var(--ease-out-soft)]",
+                        active
+                          ? "scale-100 opacity-100"
+                          : "scale-0 opacity-0 group-hover:scale-100 group-hover:opacity-100 group-focus-visible:scale-100 group-focus-visible:opacity-100",
+                      )}
                     />
                   </Link>
                 </li>

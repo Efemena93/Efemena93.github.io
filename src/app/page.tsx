@@ -1,168 +1,76 @@
 import Link from "next/link";
 
-import { AmbientStatus } from "@/components/content/AmbientStatus";
-import { CapabilityList } from "@/components/content/CapabilityList";
 import { ContactCTA } from "@/components/content/ContactCTA";
-import { FeaturedProjectCard } from "@/components/content/FeaturedProjectCard";
-import { SignalIndex } from "@/components/content/SignalIndex";
+import { StoryCard } from "@/components/content/StoryCard";
 import { Reveal } from "@/components/motion/Reveal";
-import { GuideThread, ScrollQuiet } from "@/components/motion/ScrollScene";
-import { Container, Eyebrow, LinkButton, Section } from "@/components/primitives";
-import { GlowField } from "@/components/signals/GlowField";
-import { SignalConstellation } from "@/components/signals/SignalConstellation";
-import { featuredCaseStudies } from "@/content/case-studies";
-import { profile, site } from "@/content/site";
+import { Container, Eyebrow, Section } from "@/components/primitives";
+import { StudioHomepage } from "@/components/studio/StudioHomepage";
+import { ProfessionalExperience } from "@/components/studio/ProfessionalExperience";
+import { getCaseStudy } from "@/content/case-studies";
+import { featuredFieldNotes } from "@/content/field-notes";
+import { site } from "@/content/site";
+
+/**
+ * Homepage — per docs/homepage-studio-amendment.md.
+ *
+ * Order, exactly as the amendment sets it:
+ *   1. persistent navigation (in the layout)
+ *   2. professional introduction
+ *   3. the interactive design studio  ← this is the selected-work section
+ *   4. a short explanation of how to explore (inside DesignStudio)
+ *   5. professional experience
+ *   6. practice statement
+ *   7. From the Library
+ *   8. contact CTA
+ *   9. footer (in the layout)
+ *
+ * The three studio projects are deliberately not repeated in a card grid
+ * below. The compact route for anyone who would rather scan a list is the
+ * "View all work" link in the studio header.
+ *
+ * Removed here, per the amendment: the glowing moon, the drifting orbs and
+ * the pointer-tracking constellation.
+ */
+
+const wall = getCaseStudy("holding-pattern");
+const prototype = getCaseStudy("synchearts");
+const dashboard = getCaseStudy("olive-ilive");
+
+const [featuredStory, ...moreStories] = featuredFieldNotes;
 
 export default function HomePage() {
-  const resumeReady = !site.resumePdf.startsWith("[TODO");
-
   return (
     <>
-      {/* ═══ Hero ═══════════════════════════════════════════════════════════
-          Name, discipline and positioning are plain text at first paint, in
-          the left column, with no entrance animation and nothing behind them.
-          The field occupies the right side only, so it can never sit under
-          the words a recruiter came to read.
-          ══════════════════════════════════════════════════════════════════ */}
-      <section className="relative overflow-hidden" aria-labelledby="hero-name">
-        <GlowField />
+      {/* ═══ 2 + 3 + 4. Introduction, studio, and how to explore ═════════ */}
+      {wall && prototype && dashboard ? (
+        <StudioHomepage wall={wall} prototype={prototype} dashboard={dashboard} />
+      ) : null}
 
-        {/* The interactive field, offset to the right of the headline column
-            so no point can ever sit behind text and no label can reach it.
-            Large screens only — see SignalConstellation for why there is no
-            touch equivalent. */}
-        <div className="absolute inset-y-0 right-0 z-0 hidden lg:left-[56%] lg:block xl:left-[50%]">
-          <SignalConstellation />
-        </div>
+      {/* ═══ 5. Professional experience ═════════════════════════════════════ */}
+      <ProfessionalExperience />
 
-        <Container className="relative z-20 pointer-events-none pb-20 pt-16 sm:pb-24 sm:pt-20 lg:pb-32 lg:pt-24">
-          <ScrollQuiet>
-            <div className="pointer-events-auto lg:max-w-[30rem] xl:max-w-[34rem]">
-              <AmbientStatus className="mb-8 h-4" />
-
-              <h1
-                id="hero-name"
-                className="font-display text-display-1 text-charcoal"
-              >
-                {site.name}
-              </h1>
-
-              <p className="label-type mt-5 text-charcoal-muted">{site.role}</p>
-
-              <p className="mt-8 max-w-[26ch] font-display text-h2 leading-snug text-charcoal-soft sm:max-w-[30ch]">
-                &ldquo;{site.positioningFirstPerson}&rdquo;
-              </p>
-
-              <div className="mt-10 flex flex-wrap items-center gap-3">
-                <LinkButton href="/work">View selected work</LinkButton>
-                <LinkButton href="/about" variant="outline">
-                  About me
-                </LinkButton>
-                {resumeReady ? (
-                  <LinkButton href={site.resumePdf} variant="outline" download>
-                    Download résumé
-                  </LinkButton>
-                ) : (
-                  // Honest until the PDF exists: this reads the résumé rather
-                  // than promising a download that is not there yet.
-                  <LinkButton href="/resume" variant="outline">
-                    Read résumé
-                  </LinkButton>
-                )}
-              </div>
-
-              <p className="mt-10 max-w-[46ch] text-small text-charcoal-muted">
-                Three featured case studies below. The points to the right are the same
-                projects, plus the themes and observations they came from —{" "}
-                <Link href="#field-index" className="link-underline text-blue-deep">
-                  or read them all as a list
-                </Link>
-                .
-              </p>
-            </div>
-          </ScrollQuiet>
-        </Container>
-
-      </section>
-
-      {/* The thread that leads the eye out of the hero and into the work.
-          Placed between the sections rather than inside the hero, so it is
-          never clipped by the hero's own overflow. */}
-      <div className="relative hidden lg:block">
-        <GuideThread className="pointer-events-none absolute left-1/2 top-0 h-28 w-32 -translate-x-1/2" />
-      </div>
-
-      {/* ═══ The field, as text ════════════════════════════════════════════
-          Always present, at every breakpoint. The constellation is a second
-          way in, never the only one.
-          ══════════════════════════════════════════════════════════════════ */}
-      <Section
-        id="field-index"
-        spacing="tight"
-        labelledBy="field-index-heading"
-        className="border-t border-line"
-      >
-        <Container>
-          <div className="mb-10 lg:mb-14">
-            <Eyebrow as="h2" id="field-index-heading" className="mb-4">
-              The field, in full
-            </Eyebrow>
-            <p className="measure text-body text-charcoal-soft">
-              Everything in the constellation, written out. Projects link to their case
-              study; themes and observations link to the project they came from, so nothing
-              here is a claim without a source.
-            </p>
-          </div>
-          <SignalIndex />
-        </Container>
-      </Section>
-
-      {/* ═══ Featured work ═════════════════════════════════════════════════ */}
-      <Section labelledBy="featured-heading" className="border-t border-line">
-        <Container>
-          <div className="mb-12 flex flex-wrap items-baseline justify-between gap-4 lg:mb-16">
-            <Eyebrow as="h2" id="featured-heading">
-              Selected work
-            </Eyebrow>
-            <Link href="/work" className="link-underline label-type text-charcoal">
-              All six projects →
-            </Link>
-          </div>
-
-          <div className="grid gap-x-8 gap-y-20 lg:grid-cols-12">
-            {featuredCaseStudies.map((study, index) => (
-              <div
-                key={study.slug}
-                className={index === 0 ? "lg:col-span-12" : "lg:col-span-6"}
-              >
-                <Reveal delay={index === 0 ? 0 : 60}>
-                  <FeaturedProjectCard study={study} index={index} large={index === 0} />
-                </Reveal>
-              </div>
-            ))}
-          </div>
-        </Container>
-      </Section>
-
-      {/* ═══ Introduction ══════════════════════════════════════════════════ */}
-      <Section spacing="tight" labelledBy="intro-heading" className="border-t border-line">
+      {/* ═══ 6. Practice statement ══════════════════════════════════════════ */}
+      <Section labelledBy="practice-heading" className="border-t border-line">
         <Container>
           <div className="lg:grid lg:grid-cols-12 lg:gap-8">
             <div className="lg:col-span-3">
-              <Eyebrow as="h2" id="intro-heading">
-                Introduction
+              <Eyebrow as="h2" id="practice-heading">
+                How I work
               </Eyebrow>
             </div>
-            <div className="mt-6 lg:col-span-8 lg:mt-0">
+            <div className="mt-6 lg:col-span-9 lg:mt-0">
               <Reveal>
-                <div className="measure space-y-5 text-lead text-charcoal-soft">
-                  {profile.intro.map((paragraph, i) => (
+                <p className="measure font-display text-h2 leading-snug text-charcoal">
+                  {site.practice.lead}
+                </p>
+                <div className="mt-8 measure space-y-5 text-body text-charcoal-soft">
+                  {site.practice.body.map((paragraph, i) => (
                     <p key={i}>{paragraph}</p>
                   ))}
                 </div>
                 <p className="mt-8">
-                  <Link href="/about" className="link-underline label-type text-charcoal">
-                    More about how I work →
+                  <Link href="/about" className="link-underline label-type text-charcoal-soft">
+                    More about my practice →
                   </Link>
                 </p>
               </Reveal>
@@ -171,22 +79,64 @@ export default function HomePage() {
         </Container>
       </Section>
 
-      {/* ═══ Capabilities ══════════════════════════════════════════════════ */}
-      <Section labelledBy="capabilities-heading" className="border-t border-line">
-        <Container>
-          <div className="mb-12 lg:mb-16">
-            <Eyebrow as="h2" id="capabilities-heading" className="mb-4">
-              Capabilities
-            </Eyebrow>
-            <p className="measure text-lead text-charcoal-soft">
-              I work across research and interface craft rather than choosing one. The list
-              below is what I have actually done on shipped or completed projects.
-            </p>
-          </div>
-          <CapabilityList />
-        </Container>
-      </Section>
+      {/* ═══ 7. From the Library ════════════════════════════════════════════
+          Quieter than the work above it: one featured story at size, the
+          rest as a short list. */}
+      {featuredStory ? (
+        <Section
+          spacing="tight"
+          labelledBy="library-heading"
+          className="border-t border-line bg-paper"
+        >
+          <Container>
+            <div className="lg:grid lg:grid-cols-12 lg:gap-10">
+              <div className="lg:col-span-4">
+                <Eyebrow as="h2" id="library-heading" className="mb-4">
+                  From the Library
+                </Eyebrow>
+                <p className="measure text-small leading-relaxed text-charcoal-soft">
+                  Outside the case studies, I write short stories about the emotional
+                  details that shape how people connect, remember and change.
+                </p>
+                <p className="mt-6">
+                  <Link
+                    href="/field-notes"
+                    className="link-underline label-type text-charcoal-soft"
+                  >
+                    Visit the Library →
+                  </Link>
+                </p>
+              </div>
 
+              <div className="mt-10 lg:col-span-8 lg:mt-0">
+                <StoryCard note={featuredStory} lead />
+
+                {moreStories.length > 0 ? (
+                  <ul className="mt-10 grid gap-x-8 gap-y-6 sm:grid-cols-2">
+                    {moreStories.slice(0, 2).map((note) => (
+                      <li key={note.slug} className="border-t border-line pt-5">
+                        <Link
+                          href={`/field-notes/${note.slug}`}
+                          className="group block rounded focus-visible:outline-offset-4"
+                        >
+                          <p className="label-type text-charcoal-muted">
+                            {note.tags[0]} · {note.readingMinutes} min read
+                          </p>
+                          <p className="mt-2 font-display text-h3 text-charcoal">
+                            <span className="link-underline">{note.title}</span>
+                          </p>
+                        </Link>
+                      </li>
+                    ))}
+                  </ul>
+                ) : null}
+              </div>
+            </div>
+          </Container>
+        </Section>
+      ) : null}
+
+      {/* ═══ 8. Contact ═════════════════════════════════════════════════════ */}
       <ContactCTA />
     </>
   );

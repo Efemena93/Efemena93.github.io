@@ -17,10 +17,14 @@ import type { CaseStudy } from "../types";
 
 export const holdingPattern: CaseStudy = {
   slug: "holding-pattern",
-  title: "Holding Pattern",
+  visibility: "published",
+  title: "Emotional Continuity During Military Deployment",
   premise:
     "Design research into how military families keep a shared life intact across a deployment — from the side that stays.",
   problemArea: "Military family separation · emotional continuity",
+  humanProblem:
+    "Exploring how the civilian partner at home carries uncertainty, invisible responsibility and emotional distance when everyday communication is constrained.",
+  boundary: "Research-led capstone · Not therapy, monitoring or another messaging channel",
   shortRole: "Sole researcher & designer",
   projectType: "Master's capstone · design research",
   headline: "Fieldwork in progress. The reframe — away from communication volume, toward what is withheld and how silence is read — is the finding so far.",
@@ -28,7 +32,7 @@ export const holdingPattern: CaseStudy = {
     "A Master's capstone on emotional continuity during military separation, centred on the civilian partner holding the home front together. The work reframes the problem away from 'communicate more' and toward what gets shared, what gets withheld, and how silence is read.",
   featured: true,
   order: 1,
-  status: "in-progress",
+  status: "research-in-progress",
   year: "2026",
   timeline: "Ongoing",
   context: "Master's capstone · Interaction Design",
@@ -177,10 +181,6 @@ export const holdingPattern: CaseStudy = {
           ],
         },
         {
-          type: "todo",
-          note: "Replace this block with the real participant figures — number of interviews, recruitment route, separation stages represented, session length — as a statRow, plus each finding as a `claim` at level 'evidence' with a named source. Do not upgrade a hypothesis below into evidence without the data to back it.",
-        },
-        {
           type: "claimGroup",
           title: "What I expect to find, written down in advance so it can be wrong",
           claims: [
@@ -249,10 +249,6 @@ export const holdingPattern: CaseStudy = {
           tone: "caution",
           title: "The proposition I am most suspicious of",
           text: "Making the rhythm of contact visible is one step away from surveillance, and the step is short. If testing shows it produces monitoring behaviour or anxiety rather than reassurance, it should be abandoned rather than softened. I would rather record that here now than defend it later.",
-        },
-        {
-          type: "todo",
-          note: "After concept testing, convert survivors into `interpretation` claims with the evidence that supports them, and delete the rest outright rather than quietly downgrading them.",
         },
       ],
     },

@@ -7,10 +7,15 @@ import type { CaseStudy } from "../types";
 
 export const windchill: CaseStudy = {
   slug: "windchill-engineering-change",
+  // Scaffold. Preserved in the repository, excluded from every public
+  // surface until the case study is actually written.
+  visibility: "draft",
   title: "Windchill Engineering Change",
   premise:
     "A four-page wireframe set for the engineering change workflow in Windchill PSE, designed against an existing enterprise design system.",
   problemArea: "Enterprise PLM · engineering change workflow",
+  humanProblem:
+    "Engineers raising a change in a high-consequence PLM system work inside software that knows the process better than it explains it.",
   shortRole: "UX/UI designer within an existing design system",
   projectType: "Enterprise UI · four-page wireframe set",
   headline: "In progress — four-page set drafted against the existing component library.",
@@ -18,7 +23,7 @@ export const windchill: CaseStudy = {
     "Enterprise PLM work: taking a dense, high-consequence engineering change process and designing an interface that respects both the complexity of the task and the expertise of the people doing it.",
   featured: false,
   order: 4,
-  status: "in-progress",
+  status: "prototype",
   year: "2026",
   timeline: "[TODO: duration]",
   context: "Enterprise UI · PLM",

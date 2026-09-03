@@ -24,7 +24,10 @@ export function MotionToggle() {
       <div
         role="radiogroup"
         aria-labelledby="motion-toggle-label"
-        className="inline-flex rounded border border-line bg-paper p-0.5"
+        // Wraps rather than overflowing. At 1024px this control was 41px
+        // wider than its footer column and put a horizontal scrollbar on
+        // every page on the site.
+        className="flex max-w-full flex-wrap rounded border border-line bg-paper p-0.5"
       >
         {OPTIONS.map((option) => {
           const checked = preference === option.value;
@@ -36,7 +39,7 @@ export function MotionToggle() {
               aria-checked={checked}
               onClick={() => setPreference(option.value)}
               className={[
-                "label-type min-h-11 rounded px-3 py-2 transition-colors duration-150",
+                "label-type min-h-11 shrink rounded px-3 py-2 transition-colors duration-150",
                 checked
                   ? "bg-charcoal text-ivory"
                   : "text-charcoal-muted hover:text-charcoal",

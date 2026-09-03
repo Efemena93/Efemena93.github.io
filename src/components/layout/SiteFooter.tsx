@@ -12,12 +12,26 @@ export function SiteFooter() {
     <footer className="mt-24 border-t border-line bg-paper">
       <Container className="py-16 lg:py-20">
         <div className="grid gap-12 lg:grid-cols-12 lg:gap-8">
-          <div className="lg:col-span-5">
-            <p className="font-display text-h3 text-charcoal">{site.name}</p>
-            <p className="mt-3 measure text-small text-charcoal-muted">{site.positioning}</p>
+          <div className="min-w-0 lg:col-span-4">
+            <p className="font-display text-h3 gradient-text">{site.name}</p>
+            <p className="mt-4 measure text-body text-charcoal-soft">
+              I&rsquo;m open to Product, UX and Interaction Design roles, and glad to
+              talk about work that is still only an idea. {site.contact.availability}.
+            </p>
+            <p className="mt-5 measure text-small text-charcoal-muted">
+              {site.contact.location} · {site.contact.responseTime}
+            </p>
+            <p className="mt-6">
+              <a
+                href={`mailto:${site.contact.email}`}
+                className="link-underline text-body text-blue-deep"
+              >
+                {site.contact.email}
+              </a>
+            </p>
           </div>
 
-          <nav aria-label="Footer" className="lg:col-span-3">
+          <nav aria-label="Footer" className="min-w-0 lg:col-span-3">
             <Eyebrow as="h2" className="mb-4">
               Pages
             </Eyebrow>
@@ -35,7 +49,7 @@ export function SiteFooter() {
             </ul>
           </nav>
 
-          <div className="lg:col-span-2">
+          <div className="min-w-0 lg:col-span-2">
             <Eyebrow as="h2" className="mb-4">
               Elsewhere
             </Eyebrow>
@@ -59,6 +73,14 @@ export function SiteFooter() {
                 </li>
               ))}
               <li>
+                <Link
+                  href="/resume"
+                  className="link-underline inline-flex min-h-11 items-center text-small text-charcoal-soft"
+                >
+                  Résumé
+                </Link>
+              </li>
+              <li>
                 {isPlaceholderEmail ? (
                   <span className="inline-flex min-h-11 items-center text-small text-charcoal-muted">
                     Email <span className="ml-2 text-clay-deep">{site.contact.email}</span>
@@ -75,7 +97,7 @@ export function SiteFooter() {
             </ul>
           </div>
 
-          <div className="lg:col-span-2">
+          <div className="min-w-0 lg:col-span-3">
             <MotionToggle />
           </div>
         </div>

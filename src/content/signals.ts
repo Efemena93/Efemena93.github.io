@@ -1,4 +1,4 @@
-import { caseStudies } from "./case-studies";
+import { routableCaseStudies } from "./case-studies";
 
 /**
  * The signal field.
@@ -15,7 +15,10 @@ import { caseStudies } from "./case-studies";
  * from. Nothing implies live activity, and there are no counters.
  */
 
-export type SignalKind = "project" | "theme" | "observation";
+export type { SignalKind } from "./signal-kinds";
+export { KIND_LABEL } from "./signal-kinds";
+
+import type { SignalKind } from "./signal-kinds";
 
 export interface SignalNode {
   id: string;
@@ -37,12 +40,6 @@ export interface SignalNode {
   /** Where a theme or observation comes from. Keeps them traceable. */
   fromSlug?: string;
 }
-
-export const KIND_LABEL: Record<SignalKind, string> = {
-  project: "Project",
-  theme: "Research theme",
-  observation: "Observation",
-};
 
 /**
  * Positions are composed rather than generated: projects sit on a loose arc,
@@ -232,14 +229,27 @@ const NODES: SignalNode[] = [
   },
 ];
 
-export const signalNodes: SignalNode[] = NODES;
+/**
+ * Only nodes whose destination actually exists in the public build.
+ *
+ * Every node links somewhere — a project node to its case study, a theme or
+ * observation to the project it came from. When a project is a draft, that
+ * destination is not routed, so the node is dropped rather than left pointing
+ * at a 404. This is why the field shrinks when work is unfinished, and why it
+ * grows again on its own when a scaffold is written and published.
+ */
+const routableSlugs = new Set(routableCaseStudies.map((s) => s.slug));
 
-export const projectNodes = NODES.filter((node) => node.kind === "project");
-export const themeNodes = NODES.filter((node) => node.kind === "theme");
-export const observationNodes = NODES.filter((node) => node.kind === "observation");
+const VISIBLE = NODES.filter((node) => routableSlugs.has(node.slug ?? node.fromSlug ?? ""));
+
+export const signalNodes: SignalNode[] = VISIBLE;
+
+export const projectNodes = VISIBLE.filter((node) => node.kind === "project");
+export const themeNodes = VISIBLE.filter((node) => node.kind === "theme");
+export const observationNodes = VISIBLE.filter((node) => node.kind === "observation");
 
 /** Threads are authored, not distance-derived: each one is a real relationship. */
-export const signalThreads: Array<[string, string]> = [
+const ALL_THREADS: Array<[string, string]> = [
   ["p-holding-pattern", "t-unsaid"],
   ["p-holding-pattern", "t-evidence"],
   ["p-holding-pattern", "o-silence"],
@@ -261,9 +271,14 @@ export const signalThreads: Array<[string, string]> = [
   ["p-virtualbuddy", "o-simple"],
 ];
 
+/** A thread survives only if both of its endpoints are still visible. */
+export const signalThreads: Array<[string, string]> = ALL_THREADS.filter(
+  ([a, b]) => VISIBLE.some((n) => n.id === a) && VISIBLE.some((n) => n.id === b),
+);
+
 /** Guards against a node pointing at a project that no longer exists. */
 export function assertSignalIntegrity(): string[] {
-  const slugs = new Set(caseStudies.map((study) => study.slug));
+  const slugs = new Set(routableCaseStudies.map((study) => study.slug));
   const ids = new Set(NODES.map((node) => node.id));
   const problems: string[] = [];
 
@@ -272,7 +287,7 @@ export function assertSignalIntegrity(): string[] {
     if (node.fromSlug && !slugs.has(node.fromSlug))
       problems.push(`Unknown source slug: ${node.fromSlug}`);
   }
-  for (const [a, b] of signalThreads) {
+  for (const [a, b] of ALL_THREADS) {
     if (!ids.has(a)) problems.push(`Thread references unknown node: ${a}`);
     if (!ids.has(b)) problems.push(`Thread references unknown node: ${b}`);
   }

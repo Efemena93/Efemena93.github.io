@@ -5,12 +5,13 @@ import { BlockRenderer } from "@/components/content/BlockRenderer";
 import { ContactCTA } from "@/components/content/ContactCTA";
 import { Reveal } from "@/components/motion/Reveal";
 import { Container, Eyebrow } from "@/components/primitives";
-import { fieldNotes, getFieldNote } from "@/content/field-notes";
+import { getFieldNote, routableFieldNotes } from "@/content/field-notes";
 import { pageMetadata } from "@/lib/seo";
 import { formatDate } from "@/lib/utils";
 
 export function generateStaticParams() {
-  return fieldNotes.map((note) => ({ slug: note.slug }));
+  // Draft stories are absent here, so they generate no page.
+  return routableFieldNotes.map((note) => ({ slug: note.slug }));
 }
 
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }) {
@@ -40,7 +41,7 @@ export default async function FieldNotePage({
         <Container className="border-b border-line py-14 sm:py-20">
           <nav aria-label="Breadcrumb" className="mb-10">
             <Link href="/field-notes" className="link-underline label-type text-charcoal-muted">
-              ← All field notes
+              ← All stories
             </Link>
           </nav>
 

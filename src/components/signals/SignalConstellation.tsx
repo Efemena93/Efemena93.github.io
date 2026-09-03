@@ -5,7 +5,8 @@ import { useRouter } from "next/navigation";
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 
 import { useMotionPreference } from "@/components/motion/MotionProvider";
-import { KIND_LABEL, signalNodes, signalThreads, type SignalNode } from "@/content/signals";
+import { KIND_LABEL } from "@/content/signal-kinds";
+import type { SignalNode } from "@/content/signals";
 import { cx, seededRandom } from "@/lib/utils";
 
 import { setSignalOrigin } from "./signal-origin";
@@ -53,7 +54,16 @@ const KIND_DOT: Record<SignalNode["kind"], string> = {
   observation: "h-1.5 w-1.5",
 };
 
-export function SignalConstellation({ className }: { className?: string }) {
+export function SignalConstellation({
+  nodes: signalNodes,
+  threads: signalThreads,
+  className,
+}: {
+  /** Supplied by the server so draft content never enters the client bundle. */
+  nodes: SignalNode[];
+  threads: Array<[string, string]>;
+  className?: string;
+}) {
   const router = useRouter();
   const { reduced, resolved } = useMotionPreference();
 
@@ -114,7 +124,7 @@ export function SignalConstellation({ className }: { className?: string }) {
       string,
       number
     >;
-  }, []);
+  }, [signalNodes]);
 
   const activeNode = activeId ? signalNodes.find((n) => n.id === activeId) : undefined;
 
@@ -307,7 +317,7 @@ export function SignalConstellation({ className }: { className?: string }) {
       wrap.removeEventListener("pointermove", onPointerMove);
       wrap.removeEventListener("pointerleave", onPointerLeave);
     };
-  }, [reduced, resolved, phases, chooseSide]);
+  }, [reduced, resolved, phases, chooseSide, signalNodes, signalThreads]);
 
   /* --------------------------------------------------------- navigation */
 

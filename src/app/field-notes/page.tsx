@@ -6,7 +6,7 @@ import { fieldNotes } from "@/content/field-notes";
 import { pageMetadata } from "@/lib/seo";
 
 export const metadata = pageMetadata({
-  title: "Field Notes",
+  title: "Library",
   description:
     "Short pieces on research practice, interaction design and the parts of the work that do not fit into a case study.",
   path: "/field-notes",
@@ -18,7 +18,7 @@ export default function FieldNotesPage() {
       <section className="relative overflow-hidden border-b border-line">
         <GlowField />
         <Container className="relative py-16 sm:py-24">
-          <Eyebrow className="mb-6">Field Notes</Eyebrow>
+          <Eyebrow className="mb-6">Library</Eyebrow>
           <h1 className="max-w-[20ch] font-display text-display-2 text-charcoal">
             Things I keep having to work out again
           </h1>

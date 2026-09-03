@@ -3,7 +3,7 @@ import { ContactCTA } from "@/components/content/ContactCTA";
 import { RevealGroup, RevealItem } from "@/components/motion/RevealGroup";
 import { Container, Eyebrow, Section } from "@/components/primitives";
 import { GlowField } from "@/components/signals/GlowField";
-import { caseStudies } from "@/content/case-studies";
+import { publishedCaseStudies } from "@/content/case-studies";
 import { pageMetadata } from "@/lib/seo";
 
 export const metadata = pageMetadata({
@@ -21,12 +21,12 @@ export default function WorkPage() {
         <Container className="relative py-16 sm:py-24">
           <Eyebrow className="mb-6">Work</Eyebrow>
           <h1 className="max-w-[18ch] font-display text-display-2 text-charcoal">
-            Six projects, and what each one is actually evidence of
+            Selected work, and what each project is actually evidence of
           </h1>
           <p className="mt-6 measure text-lead text-charcoal-soft">
             Each case study separates what was observed from what was inferred and what is
-            still only proposed. Two are written in full; the rest are being written as I go
-            back through the material.
+            still only proposed. Work in progress is kept out of this list rather than
+            padded into it.
           </p>
         </Container>
       </section>
@@ -34,7 +34,7 @@ export default function WorkPage() {
       <Section>
         <Container>
           <RevealGroup className="grid gap-x-8 gap-y-16 sm:grid-cols-2 lg:grid-cols-3">
-            {caseStudies.map((study, index) => (
+            {publishedCaseStudies.map((study, index) => (
               <RevealItem key={study.slug} index={index}>
                 <CaseStudyCard study={study} index={index} />
               </RevealItem>

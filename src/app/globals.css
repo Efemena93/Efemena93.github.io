@@ -7,30 +7,67 @@
    Their -deep variants are the only ones permitted as text on ivory.
    ========================================================================== */
 
+/* --------------------------------------------------------------------------
+   PALETTE — ported from the Simplymenah landing page.
+
+   The token *names* are unchanged, so every component keeps working; only the
+   values move. "ivory / charcoal / sage / blue / clay" are semantic slots, not
+   colour descriptions:
+
+     ivory   → studio ground (near-black)
+     paper   → warm graphite surface        sage  → soft sage   — evidence, validation
+     sunk    → recessed surface             blue  → muted indigo — inquiry, reflection
+     raised  → lit surface                  clay  → dusty blue  — interface artifacts
+     parchment → warm cream paper (research notes)
+
+   Dark is the default and needs no JavaScript. A studio at work is a dim room
+   with light falling on the things being made; the near-black ground is what
+   lets the paper and the screens read as lit. The light palette is kept under
+   [data-theme="light"].
+
+   Typography is unchanged: Fraunces, Inter and JetBrains Mono, as built today.
+   -------------------------------------------------------------------------- */
+
 @theme {
-  /* Ground */
-  --color-ivory: #f6f2ea;
-  --color-paper: #fbf8f3;
-  --color-sunk: #ede7dc;
+  /* Ground — near-black through warm graphite */
+  --color-ivory: #0e0f13;
+  --color-paper: #16171c;
+  --color-sunk: #121319;
+  --color-raised: #1e1f26;
+
+  /* Warm cream paper — research notes, pinned material */
+  --color-parchment: #ece4d5;
+  --color-parchment-ink: #2e2a24;
 
   /* Ink */
-  --color-charcoal: #1e2422;
-  --color-charcoal-soft: #3b4441;
-  --color-charcoal-muted: #5a6461;
+  --color-charcoal: #f2efe9;
+  --color-charcoal-soft: #d3cec4;
+  --color-charcoal-muted: #a49e92;
 
-  /* Accents — light (markers, surfaces, threads) */
-  --color-sage: #7e9585;
-  --color-blue: #7b93a8;
-  --color-clay: #c08a6a;
+  /* Accents — markers and surfaces */
+  --color-sage: #8fb39b;
+  --color-blue: #7c82c4;
+  --color-clay: #7e9ab5;
 
-  /* Accents — deep (text-safe on ivory, ≥ 5:1) */
-  --color-sage-deep: #4e6559;
-  --color-blue-deep: #48627a;
-  --color-clay-deep: #8f5a38;
+  /* Accents — deep. On a dark ground "deep" is the text-safe variant, which
+     is the lighter one. All are ≥ 7:1 on #0E0F13. */
+  --color-sage-deep: #a8c7b2;
+  --color-blue-deep: #a5a9dc;
+  --color-clay-deep: #9fbad2;
 
-  /* Structure */
-  --color-line: #d8d0c2;
-  --color-line-strong: #bdb2a0;
+  /* Structure — warm hairlines, the fine borders of the studio */
+  --color-line: rgba(242, 239, 233, 0.13);
+  --color-line-strong: rgba(242, 239, 233, 0.26);
+
+  /* The connective gradient: inquiry → evidence. Restrained by design; it is
+     the signal layer, and it must not compete with the artifacts. */
+  --gradient-signal: linear-gradient(135deg, #7c82c4 0%, #8fb39b 100%);
+  --gradient-signal-subtle: linear-gradient(
+    135deg,
+    rgba(124, 130, 196, 0.14) 0%,
+    rgba(143, 179, 155, 0.1) 100%
+  );
+  --glow-violet: rgba(124, 130, 196, 0.22);
 
   /* Typography */
   --font-display: var(--font-fraunces), "Iowan Old Style", Georgia, serif;
@@ -75,38 +112,55 @@
   --container-page: 77.5rem; /* 1240px */
   --spacing-measure: 68ch;
 
-  /* The single shadow in the system */
-  --shadow-lift: 0 1px 2px rgba(30, 36, 34, 0.04), 0 8px 24px -12px rgba(30, 36, 34, 0.1);
+  /* Depth. On a dark ground a shadow alone is invisible, so the lift is a
+     violet bloom rather than a drop shadow. */
+  --shadow-lift: 0 0 0 1px rgba(242, 239, 233, 0.1), 0 18px 44px -22px rgba(0, 0, 0, 0.8);
+
+  /* Soft directional light, falling from the upper left across the studio. */
+  --shadow-object: 0 1px 0 rgba(242, 239, 233, 0.06) inset, 0 14px 30px -18px rgba(0, 0, 0, 0.9);
 }
 
 /* --------------------------------------------------------------------------
-   Dark mode — a quieter version of the same environment, not an inversion.
-   Applied by [data-theme="dark"] or by OS preference when unset.
+   Light theme — the original page's light-mode palette, applied only when
+   explicitly requested. Same slots, same meanings.
    -------------------------------------------------------------------------- */
 
-@custom-variant dark (&:where([data-theme="dark"], [data-theme="dark"] *));
+@custom-variant light (&:where([data-theme="light"], [data-theme="light"] *));
 
-:root[data-theme="dark"] {
-  --color-ivory: #14100d;
-  --color-paper: #1b1713;
-  --color-sunk: #221d18;
+:root[data-theme="light"] {
+  --color-ivory: #f4efe4;
+  --color-paper: #fbf7ef;
+  --color-sunk: #e8e1d3;
+  --color-raised: #ffffff;
 
-  --color-charcoal: #f2ece2;
-  --color-charcoal-soft: #cfc7ba;
-  --color-charcoal-muted: #a79e91;
+  --color-parchment: #fbf7ef;
+  --color-parchment-ink: #23242a;
 
-  --color-sage: #8fa896;
-  --color-blue: #90a9bf;
-  --color-clay: #d19d7c;
+  --color-charcoal: #23242a;
+  --color-charcoal-soft: #43444d;
+  --color-charcoal-muted: #62636d;
 
-  --color-sage-deep: #a9c0b0;
-  --color-blue-deep: #a4bdd2;
-  --color-clay-deep: #e0ae8c;
+  --color-sage: #46705a;
+  --color-blue: #4a4e8c;
+  --color-clay: #3f6280;
 
-  --color-line: #352e27;
-  --color-line-strong: #4b4239;
+  --color-sage-deep: #3a5f4b;
+  --color-blue-deep: #3f4379;
+  --color-clay-deep: #35566f;
 
-  --shadow-lift: 0 1px 2px rgba(0, 0, 0, 0.3), 0 8px 24px -12px rgba(0, 0, 0, 0.6);
+  --color-line: rgba(35, 36, 42, 0.14);
+  --color-line-strong: rgba(35, 36, 42, 0.3);
+
+  --gradient-signal: linear-gradient(135deg, #4a4e8c 0%, #46705a 100%);
+  --gradient-signal-subtle: linear-gradient(
+    135deg,
+    rgba(74, 78, 140, 0.1) 0%,
+    rgba(70, 112, 90, 0.08) 100%
+  );
+  --glow-violet: rgba(74, 78, 140, 0.2);
+
+  --shadow-lift: 0 1px 2px rgba(35, 36, 42, 0.06), 0 12px 32px -16px rgba(35, 36, 42, 0.2);
+  --shadow-object: 0 1px 0 rgba(255, 255, 255, 0.7) inset, 0 12px 26px -16px rgba(35, 36, 42, 0.35);
 }
 
 /* --------------------------------------------------------------------------
@@ -115,12 +169,12 @@
 
 @layer base {
   :root {
-    color-scheme: light;
+    color-scheme: dark;
     --field-alpha: 1;
   }
 
-  :root[data-theme="dark"] {
-    color-scheme: dark;
+  :root[data-theme="light"] {
+    color-scheme: light;
   }
 
   * {
@@ -130,6 +184,40 @@
   html {
     -webkit-text-size-adjust: 100%;
     scroll-behavior: smooth;
+
+    /* Decorative fields (the orbs, the hero glow) are deliberately offset
+       past the right edge so they bleed rather than sit in a box. At exactly
+       1024px that was adding 41px of horizontal scroll to every page.
+       `clip` rather than `hidden`: hidden would make <html> a scroll
+       container and break the sticky header. */
+    overflow-x: clip;
+  }
+
+  /* Two very wide, very soft washes — violet upper-right, teal lower-left —
+     exactly as on the original page. Fixed, so they do not scroll with the
+     content, and behind everything. Removed under prefers-reduced-transparency
+     and prefers-contrast: more, via the .atmosphere rules further down. */
+  body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+    pointer-events: none;
+    background:
+      radial-gradient(ellipse 70% 55% at 26% 6%, rgba(242, 239, 233, 0.055) 0%, transparent 62%),
+      radial-gradient(ellipse 45% 45% at 82% 74%, rgba(124, 130, 196, 0.05) 0%, transparent 58%);
+  }
+
+  :root[data-theme="light"] body::before {
+    background:
+      radial-gradient(ellipse 70% 55% at 26% 6%, rgba(255, 255, 255, 0.55) 0%, transparent 62%),
+      radial-gradient(ellipse 45% 45% at 82% 74%, rgba(74, 78, 140, 0.04) 0%, transparent 58%);
+  }
+
+  @media (prefers-reduced-transparency: reduce), (prefers-contrast: more) {
+    body::before {
+      display: none;
+    }
   }
 
   body {
@@ -192,6 +280,201 @@
   line-height: var(--text-label--line-height);
   letter-spacing: var(--text-label--letter-spacing);
   text-transform: uppercase;
+}
+
+/* --------------------------------------------------------------------------
+   Ported visual elements
+   -------------------------------------------------------------------------- */
+
+/* Gradient-filled text — the wordmark and the occasional accent word.
+   `background-clip: text` removes the text from the accessibility tree in no
+   browser, but it does defeat forced-colours mode, so the forced-colors block
+   at the bottom restores a solid colour. */
+@utility gradient-text {
+  background-image: var(--gradient-signal);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+}
+
+/* The eyebrow tick: a short gradient rule before a label. Decorative. */
+@utility eyebrow-tick {
+  &::before {
+    content: "";
+    display: inline-block;
+    width: 1.75rem;
+    height: 1px;
+    margin-right: 0.875rem;
+    vertical-align: middle;
+    background-image: var(--gradient-signal);
+  }
+}
+
+/* Section divider — transparent → violet → teal → transparent. */
+@utility signal-rule {
+  height: 1px;
+  border: 0;
+  background-image: linear-gradient(
+    to right,
+    transparent,
+    var(--color-blue),
+    var(--color-sage),
+    transparent
+  );
+  opacity: 0.45;
+}
+
+/* Pill affordance, from the original's story button. */
+@utility pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  border: 1px solid var(--color-line-strong);
+  border-radius: 100px;
+  padding: 0.4rem 1rem;
+  background-image: var(--gradient-signal-subtle);
+  transition:
+    border-color 250ms var(--ease-out-soft),
+    box-shadow 250ms var(--ease-out-soft);
+
+  &:hover,
+  &:focus-visible {
+    border-color: var(--color-blue-deep);
+    box-shadow: 0 0 16px var(--glow-violet);
+  }
+}
+
+/* Ambient floating orbs — large, heavily blurred colour fields. Decorative
+   and always aria-hidden; see the Atmosphere component. */
+@keyframes orb-float {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
+  33% {
+    transform: translate3d(2.5vw, -3vh, 0);
+  }
+  66% {
+    transform: translate3d(-2vw, 2.5vh, 0);
+  }
+}
+
+/* The moon: a lit sphere with a breathing bloom and an expanding ring. */
+@keyframes moon-glow {
+  0%,
+  100% {
+    box-shadow:
+      0 0 50px rgba(124, 58, 237, 0.35),
+      0 0 100px rgba(124, 58, 237, 0.12);
+  }
+  50% {
+    box-shadow:
+      0 0 80px rgba(124, 58, 237, 0.55),
+      0 0 160px rgba(16, 185, 129, 0.1);
+  }
+}
+
+@keyframes moon-ring {
+  0%,
+  100% {
+    transform: scale(1);
+    opacity: 0.75;
+  }
+  50% {
+    transform: scale(1.12);
+    opacity: 0.3;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   Studio
+   -------------------------------------------------------------------------- */
+
+/* Every studio object is drawn in the same 300×182 space and rendered at the
+   same fixed height, anchored to the bottom of its box. That is what puts the
+   board, the phone and the monitor on one desk line across three columns of
+   different widths — without a single absolute position or magic offset. */
+@utility stage-svg {
+  display: block;
+  width: 100%;
+  height: 11.5rem;
+
+  @media (min-width: 640px) {
+    height: 14rem;
+  }
+
+  @media (min-width: 1024px) {
+    height: 17rem;
+  }
+}
+
+/* The lit point that runs a signal thread once, on hover or keyboard focus.
+   `offset-path` is set inline per thread. Parked at the start until asked.
+   Under reduced motion the global kill-switch collapses the duration, which
+   leaves the point at its destination and the thread drawn — a finished
+   picture rather than a missing one. */
+@keyframes signal-travel {
+  from {
+    offset-distance: 0%;
+  }
+  to {
+    offset-distance: 100%;
+  }
+}
+
+.signal-traveller {
+  offset-distance: 0%;
+  animation-name: none;
+  animation-timing-function: var(--ease-in-out-soft);
+  animation-fill-mode: forwards;
+  transition: opacity 300ms var(--ease-out-soft);
+}
+
+.group:hover .signal-traveller,
+.group:focus-within .signal-traveller {
+  animation-name: signal-travel;
+}
+
+/* The two schematic phone states, cross-fading on a slow cycle. The final
+   keyframe of each is deliberately its resting value, so when reduced motion
+   collapses the duration to ~0 the pair settles on state A fully visible and
+   state B hidden — a composed screen, not a blank one. */
+@keyframes screen-a {
+  0%,
+  42% {
+    opacity: 1;
+  }
+  50%,
+  92% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes screen-b {
+  0%,
+  42% {
+    opacity: 0;
+  }
+  50%,
+  92% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+.screen-state-a {
+  animation: screen-a 9s var(--ease-in-out-soft) infinite;
+}
+
+.screen-state-b {
+  opacity: 0;
+  animation: screen-b 9s var(--ease-in-out-soft) infinite;
 }
 
 /* Underline that draws from the left on hover/focus. Colour change is the
@@ -325,8 +608,17 @@ html:not([data-motion="full"]) :focus-visible {
 
 @media (prefers-contrast: more) {
   :root {
+    --color-line: rgba(242, 239, 233, 0.55);
+    --color-line-strong: rgba(242, 239, 233, 0.82);
+    --color-charcoal-muted: #ddd9d1;
+    --color-charcoal-soft: #f2efe9;
+  }
+
+  :root[data-theme="light"] {
     --color-line: #8d8474;
-    --color-charcoal-muted: #3b4441;
+    --color-line-strong: #5c5449;
+    --color-charcoal-muted: #3b3630;
+    --color-charcoal-soft: #2a2520;
   }
 
   .atmosphere {
@@ -337,6 +629,20 @@ html:not([data-motion="full"]) :focus-visible {
 @media (forced-colors: active) {
   .atmosphere {
     display: none !important;
+  }
+
+  /* background-clip: text renders as invisible text in forced colours, so
+     the gradient is dropped and the system text colour takes over. */
+  .gradient-text {
+    background-image: none !important;
+    color: CanvasText !important;
+    -webkit-text-fill-color: CanvasText !important;
+  }
+
+  .signal-rule {
+    background-image: none !important;
+    border-top: 1px solid CanvasText;
+    opacity: 1;
   }
 
   :focus-visible {

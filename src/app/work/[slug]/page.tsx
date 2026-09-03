@@ -17,12 +17,18 @@ import { CreativeWorkJsonLd } from "@/components/seo/JsonLd";
 import { ArrivalBloom } from "@/components/signals/ArrivalBloom";
 import { GlowField } from "@/components/signals/GlowField";
 import { ThreadLine } from "@/components/signals/ThreadLine";
-import { adjacentCaseStudies, caseStudies, getCaseStudy } from "@/content/case-studies";
+import {
+  adjacentCaseStudies,
+  getCaseStudy,
+  routableCaseStudies,
+} from "@/content/case-studies";
 import { DISCIPLINE_LABEL, SECTION_LABEL, STATUS_LABEL } from "@/content/types";
 import { pageMetadata } from "@/lib/seo";
 
 export function generateStaticParams() {
-  return caseStudies.map((study) => ({ slug: study.slug }));
+  // Drafts are absent from routableCaseStudies, so no page is generated for
+  // them and no URL exists to find.
+  return routableCaseStudies.map((study) => ({ slug: study.slug }));
 }
 
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }) {

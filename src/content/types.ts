@@ -24,11 +24,43 @@ export const DISCIPLINE_LABEL: Record<Discipline, string> = {
   "service-design": "Service Design",
 };
 
-export type ProjectStatus = "complete" | "in-progress" | "concept";
+/**
+ * Publication state — whether a piece of content reaches the public build.
+ *
+ * Deliberately NOT the same field as `ProjectStatus` below. That one says how
+ * far the *work* got; this one says who is allowed to see it. Conflating them
+ * is how an unfinished project ends up published because it was "complete
+ * enough", so they are separate fields with separate names.
+ *
+ *   draft     — never routed, never listed, never in the sitemap. Preserved in
+ *               the repository; invisible to the public build.
+ *   published — routed, listed, indexed, eligible for selected work.
+ *   archived  — routed and reachable by direct link, but not listed and not in
+ *               the sitemap. For work kept for the record, not for display.
+ *               See docs note in `routableCaseStudies()` for the exact rules.
+ */
+export type Visibility = "draft" | "published" | "archived";
+
+/**
+ * How far the work actually got.
+ *
+ * These labels are load-bearing: they are what stops an unfinished project
+ * reading as a shipped one. Nothing here implies validation that did not
+ * happen — there is deliberately no "validated" or "launched" value, because
+ * none of this work has been through either.
+ */
+export type ProjectStatus =
+  | "complete"
+  | "research-in-progress"
+  | "next-testing-phase"
+  | "prototype"
+  | "concept";
 
 export const STATUS_LABEL: Record<ProjectStatus, string> = {
   complete: "Complete",
-  "in-progress": "In progress",
+  "research-in-progress": "Research in progress",
+  "next-testing-phase": "Next testing phase",
+  prototype: "Prototype",
   concept: "Concept",
 };
 
@@ -225,6 +257,8 @@ export interface AtAGlance {
 
 export interface CaseStudy {
   slug: string;
+  /** Publication state. Required — a project cannot be added without deciding. */
+  visibility: Visibility;
   title: string;
   /** One sentence, ≤ 140 characters. */
   premise: string;
@@ -234,6 +268,17 @@ export interface CaseStudy {
    * optional — a project without them cannot be added to the site.
    */
   problemArea: string;
+  /**
+   * The human problem, in one sentence — what a person is actually up against,
+   * not the product category. This is the line that carries a card.
+   */
+  humanProblem: string;
+  /**
+   * What the project deliberately is *not*. Present on work where the obvious
+   * misreading would be harmful — the capstone above all, which is research
+   * and must never be mistaken for therapy or monitoring.
+   */
+  boundary?: string;
   shortRole: string;
   projectType: string;
   /** One meaningful outcome, or the honest current status. Never a metric that was not measured. */
@@ -250,7 +295,23 @@ export interface CaseStudy {
   team?: string;
   tools: string[];
   disciplines: Discipline[];
-  cover: { alt: string; accent: "sage" | "blue" | "clay" };
+  cover: {
+    /**
+     * Functional description of what the cover shows. Required whether the
+     * cover is a real image or the generated fallback.
+     */
+    alt: string;
+    accent: "sage" | "blue" | "clay";
+    /**
+     * Real artwork, when it exists. Absent means the generated constellation
+     * is used instead — which is honest: there is no screenshot to show yet.
+     * Dimensions are required alongside src so the box is reserved and the
+     * layout cannot shift.
+     */
+    src?: string;
+    width?: number;
+    height?: number;
+  };
   atAGlance: AtAGlance;
   sections: CaseSection[];
   ethics?: EthicsStatement;
@@ -262,6 +323,8 @@ export interface CaseStudy {
 
 export interface FieldNote {
   slug: string;
+  /** Publication state. Required — a note cannot be added without deciding. */
+  visibility: Visibility;
   title: string;
   standfirst: string;
   date: string; // ISO
@@ -293,6 +356,7 @@ export interface Resume {
   roles: ResumeRole[];
   education: ResumeEducation[];
   skillClusters: Array<{ title: string; items: string[] }>;
+  certifications?: Array<{ title: string; issuer: string; year: string }>;
   recognition?: string[];
   pdfHref?: string;
 }
