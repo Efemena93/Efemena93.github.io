@@ -1,0 +1,78 @@
+# Build the site and publish it to GitHub Pages.
+#
+# Nothing here needs editing. The job works out for itself whether this is a
+# user site (you.github.io) or a project site (you.github.io/repo-name) and
+# sets the base path and canonical URL to match — which is the one thing that
+# silently breaks a statically-exported Next.js site on Pages.
+#
+# One-time setup in the repository:
+#   Settings → Pages → Build and deployment → Source: GitHub Actions
+
+name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# Let a running deploy finish rather than cancelling it mid-publish.
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: Work out where this site will live
+        id: paths
+        run: |
+          OWNER=$(echo "${{ github.repository_owner }}" | tr '[:upper:]' '[:lower:]')
+          REPO="${{ github.event.repository.name }}"
+          if [ "$REPO" = "$OWNER.github.io" ]; then
+            # A user site is served from the domain root.
+            echo "base=" >> "$GITHUB_OUTPUT"
+            echo "url=https://$OWNER.github.io" >> "$GITHUB_OUTPUT"
+          else
+            # A project site is served from a subdirectory.
+            echo "base=/$REPO" >> "$GITHUB_OUTPUT"
+            echo "url=https://$OWNER.github.io/$REPO" >> "$GITHUB_OUTPUT"
+          fi
+
+      - run: npm ci
+
+      - name: Check types and lint
+        run: npm run check
+
+      - name: Build static site
+        env:
+          NEXT_PUBLIC_BASE_PATH: ${{ steps.paths.outputs.base }}
+          NEXT_PUBLIC_SITE_URL: ${{ steps.paths.outputs.url }}
+        run: npm run build
+
+      - uses: actions/configure-pages@v5
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: out
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4
