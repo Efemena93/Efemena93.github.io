@@ -18,10 +18,13 @@ import type { CaseStudy } from "../types";
 export const holdingPattern: CaseStudy = {
   slug: "holding-pattern",
   visibility: "published",
-  title: "Holding Pattern",
+  title: "Emotional Continuity During Military Deployment",
   premise:
     "Design research into how military families keep a shared life intact across a deployment — from the side that stays.",
   problemArea: "Military family separation · emotional continuity",
+  humanProblem:
+    "Exploring how the civilian partner at home carries uncertainty, invisible responsibility and emotional distance when everyday communication is constrained.",
+  boundary: "Research-led capstone · Not therapy, monitoring or another messaging channel",
   shortRole: "Sole researcher & designer",
   projectType: "Master's capstone · design research",
   headline: "Fieldwork in progress. The reframe — away from communication volume, toward what is withheld and how silence is read — is the finding so far.",
@@ -29,7 +32,7 @@ export const holdingPattern: CaseStudy = {
     "A Master's capstone on emotional continuity during military separation, centred on the civilian partner holding the home front together. The work reframes the problem away from 'communicate more' and toward what gets shared, what gets withheld, and how silence is read.",
   featured: true,
   order: 1,
-  status: "in-progress",
+  status: "research-in-progress",
   year: "2026",
   timeline: "Ongoing",
   context: "Master's capstone · Interaction Design",

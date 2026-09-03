@@ -16,7 +16,14 @@ import type { Block, CaseStudy, FieldNote } from "./types";
 /** Strings that must never survive into a published page. */
 const PLACEHOLDER_PATTERNS: Array<{ pattern: RegExp; label: string }> = [
   { pattern: /\[TODO/i, label: "a [TODO placeholder" },
-  { pattern: /\bTo write\b/i, label: 'a "To write" marker' },
+  // Anchored deliberately. An unanchored /to write/i matched the phrase
+  // "pleasant to write a paragraph" inside a finished essay and failed the
+  // build — the check has to catch a placeholder, not a verb. Real
+  // placeholders either open the string or sit inside brackets. The genuine
+  // safety net for unwritten content is the `block.type === "todo"` check
+  // below, which this only supplements.
+  { pattern: /^\s*\[?\s*to write\b/i, label: 'a "To write" marker' },
+  { pattern: /\[\s*to write\b/i, label: 'a "[To write]" placeholder' },
   { pattern: /\bLorem ipsum\b/i, label: "lorem ipsum filler" },
   { pattern: /\bTBD\b/, label: "a TBD marker" },
   { pattern: /^\s*(Untitled|Placeholder|Example|Project name)\s*$/i, label: "a placeholder title" },

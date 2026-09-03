@@ -11,6 +11,8 @@ export const virtualBuddy: CaseStudy = {
   premise:
     "A companion app concept aimed at supporting optimistic behaviour and a steadier outlook, without pretending to be a clinical tool.",
   problemArea: "Everyday encouragement · behaviour without prescription",
+  humanProblem:
+    "Encouragement is easy to design and easy to get wrong — the line between supporting someone and prescribing to them is thin.",
   shortRole: "Sole designer, research through UI",
   projectType: "Self-directed project",
   headline: "Complete. The most interesting decision was what the product must never do.",
@@ -18,7 +20,7 @@ export const virtualBuddy: CaseStudy = {
     "A design project about encouraging positive behaviour, and about the line between supporting someone and prescribing to them.",
   featured: false,
   order: 6,
-  status: "complete",
+  status: "concept",
   year: "2022",
   timeline: "[TODO: duration]",
   context: "Self-directed project",

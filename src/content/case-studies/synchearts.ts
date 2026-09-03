@@ -13,14 +13,17 @@ export const syncHearts: CaseStudy = {
   premise:
     "A communication concept for long-distance couples, built around time zones and thoughtful delay rather than constant availability.",
   problemArea: "Long-distance relationships · time-zone separation",
+  humanProblem:
+    "Couples separated by time zones lose both the frequency and the quality of contact, and emotional connection erodes along with it.",
   shortRole: "Sole designer & researcher",
   projectType: "Self-directed product project · 16 weeks",
-  headline: "Card sorting surfaced three distinct mental models of the same feature set — the argument for cross-referenced navigation rather than one fixed hierarchy.",
+  headline:
+    "Card sorting surfaced three distinct mental models of the same feature set — the argument for cross-referenced navigation rather than one fixed hierarchy. The design itself is untested; usability testing was the declared next step.",
   summary:
     "Sixteen weeks of research and design on how couples stay close across time-zone gaps and clashing schedules. Card sorting surfaced three distinct mental models of the same feature set, which became the argument for flexible rather than fixed navigation.",
   featured: true,
   order: 2,
-  status: "complete",
+  status: "next-testing-phase",
   year: "2024",
   timeline: "16 weeks · Aug – Dec 2024",
   context: "Self-directed product project",

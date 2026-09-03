@@ -146,8 +146,13 @@ export function LinkButton({
   ...rest
 }: LinkButtonProps) {
   const classes = cx(
-    "label-type forced-border inline-flex min-h-11 items-center gap-2 rounded py-3 transition-colors duration-150",
-    variant === "solid" && "bg-charcoal px-5 text-ivory hover:bg-charcoal-soft",
+    "label-type forced-border inline-flex min-h-11 items-center gap-2 rounded-full py-3 transition-colors duration-150",
+    // The primary action carries the signature gradient as a tinted fill with
+    // a violet edge — the original page's pill, at button size. The label
+    // stays a solid, high-contrast colour; the gradient is only ever the
+    // ground, never the text, so contrast is measurable.
+    variant === "solid" &&
+      "pill border-blue px-5 text-charcoal hover:text-charcoal focus-visible:text-charcoal",
     variant === "outline" && "border border-line-strong px-5 text-charcoal hover:bg-sunk",
     // No border, so no horizontal padding — otherwise it reads as indented
     // when sitting beside bordered buttons.

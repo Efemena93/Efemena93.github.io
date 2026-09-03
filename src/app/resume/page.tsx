@@ -29,8 +29,8 @@ export default function ResumePage() {
             {pdfReady ? (
               <LinkButton href={site.resumePdf}>Download PDF</LinkButton>
             ) : (
-              <span className="label-type inline-flex min-h-11 items-center rounded border border-dashed border-clay px-4 text-clay-deep">
-                PDF: {site.resumePdf}
+              <span className="label-type inline-flex min-h-11 items-center rounded-full border border-dashed border-line-strong px-5 text-charcoal-muted">
+                PDF on request
               </span>
             )}
             <LinkButton href="/contact" variant="outline">
@@ -128,6 +128,30 @@ export default function ResumePage() {
                   ))}
                 </ol>
               </section>
+
+              {resume.certifications && resume.certifications.length > 0 ? (
+                <>
+                  <Hairline className="my-16" />
+                  <section aria-labelledby="certifications-heading">
+                    <Eyebrow as="h2" id="certifications-heading" className="mb-8">
+                      Certifications
+                    </Eyebrow>
+                    <ul className="space-y-5">
+                      {resume.certifications.map((cert) => (
+                        <li
+                          key={cert.title}
+                          className="flex flex-wrap items-baseline justify-between gap-x-6 gap-y-1 border-l border-line pl-4"
+                        >
+                          <span className="text-body text-charcoal">{cert.title}</span>
+                          <span className="label-type text-charcoal-muted">
+                            {cert.issuer} · {cert.year}
+                          </span>
+                        </li>
+                      ))}
+                    </ul>
+                  </section>
+                </>
+              ) : null}
 
               <Hairline className="my-16" />
 

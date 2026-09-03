@@ -10,6 +10,8 @@ export const vocHub: CaseStudy = {
   title: "VocHub",
   premise: "A vocabulary learning application, designed end to end as a study in habit and retention.",
   problemArea: "Language learning · vocabulary retention",
+  humanProblem:
+    "People learning vocabulary lose it again, because retention depends on a habit the tools rarely help them keep.",
   shortRole: "Sole designer, research through UI",
   projectType: "Self-directed project",
   headline: "Complete end-to-end study. Case study currently being rewritten.",

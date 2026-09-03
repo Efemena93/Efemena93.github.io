@@ -14,6 +14,8 @@ export const oliveIlive: CaseStudy = {
   premise:
     "A responsive health and wellbeing portal designed for inclusivity, privacy and the questions people are embarrassed to ask.",
   problemArea: "Health & wellbeing · access to reliable information",
+  humanProblem:
+    "People trying to improve their health cannot reach reliable information or the right specialist — and the questions they most need to ask are the ones they would rather not say out loud.",
   shortRole: "Sole designer across research and UI",
   projectType: "End-to-end immersive project",
   headline: "A/B preference test on 17 participants split 12–5 for the simpler splash screen, reported at 95% significance; card sorting sent me back to revise the sitemap.",
