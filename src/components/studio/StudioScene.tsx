@@ -6,29 +6,37 @@ import type { CaseStudy } from "@/content/types";
 import { site } from "@/content/site";
 
 import { HealthDashboardArtifact } from "./HealthDashboardArtifact";
-import { MobilePrototypeArtifact } from "./MobilePrototypeArtifact";
-import { ResearchWallArtifact } from "./ResearchWallArtifact";
+import { IotVentureArtifact } from "./IotVentureArtifact";
+import { MerlinMonitorArtifact } from "./MerlinMonitorArtifact";
+import { VirtualBuddyArtifact } from "./VirtualBuddyArtifact";
+import { VocHubArtifact } from "./VocHubArtifact";
+import { ZalandoBlueprintArtifact } from "./ZalandoBlueprintArtifact";
 
 /**
- * StudioScene — the composed stage: the introduction and the three case-study
- * artifacts sharing one continuous surface.
+ * StudioScene — the composed stage: the introduction, three professional-work
+ * artifacts and three case-study artifacts sharing one continuous surface.
  *
- * Built from the visual reference in docs/references/homepage-studio-concept.png.
- * The reference is inspiration, not an asset: nothing here is a flattened
- * image. Every word is selectable text, every artifact is a semantic link to a
- * real route, and the whole thing is responsive.
+ * Built from the visual reference in docs/references/homepage-studio-concept.png,
+ * per the 2026-09-03 professional-artifacts revision to the amendment. The
+ * reference is inspiration, not an asset: nothing here is a flattened image.
+ * Every word is selectable text, every artifact is a semantic link to a real
+ * route, and the whole thing is responsive.
  *
  * ── The composition ───────────────────────────────────────────────────────
- * At `lg` the introduction occupies the upper-left quarter and the research
- * board sits directly beneath it, with the phone and the monitor to the right
- * on the same desk line. Labels float above their objects. Two fine threads
- * run board → phone → monitor: the Signals-of-Care layer, connecting the
- * three projects rather than decorating them.
+ * Two rows on one desk. The first row is professional work — Zalando's
+ * blueprint on the wall (left), the IoT Venture phone and connected-bike
+ * device on the desk (centre, raised), Merlin Mines' monitor (right) — given
+ * the strongest visual prominence and a lifted, illuminated hover state. The
+ * second row is quieter but not diminished: Olive-Ilive, VocHub and
+ * VirtualBuddy, sitting lower and without the raise, but sharing the same
+ * desk surface, the same object language and their own connecting thread.
  *
- * Below `lg` the scene becomes a vertical shelf. It is not the desktop room
- * shrunk down — the introduction is a normal block of text, and each artifact
- * is a full-width composition at a readable size with its label and CTA
- * always visible.
+ * DOM order in each row is the reading/priority order (also the mobile
+ * order): IoT Venture, Zalando, Merlin Mines, then Olive-Ilive, VocHub,
+ * VirtualBuddy. The professional-work row uses `lg:order-*` to place Zalando
+ * on the left and Merlin Mines on the right at scene widths, matching the
+ * reference composition, without changing the reading order a keyboard or
+ * screen-reader user gets.
  *
  * ── Zero client JavaScript ────────────────────────────────────────────────
  * Server component throughout. Illumination, thread visibility and the 2–4px
@@ -36,8 +44,9 @@ import { ResearchWallArtifact } from "./ResearchWallArtifact";
  * pointer, so keyboard and touch get the identical experience.
  */
 
-/** The connective threads. Decorative — the relationship is stated in text. */
-function CrossThreads() {
+/** The connective threads for the professional-work row. Decorative — the
+ *  relationship is stated in text. */
+function ProfessionalThreads() {
   return (
     <svg
       aria-hidden="true"
@@ -45,7 +54,7 @@ function CrossThreads() {
       preserveAspectRatio="none"
       className="pointer-events-none absolute inset-x-0 bottom-28 hidden h-28 lg:block"
     >
-      {/* board → phone: inquiry (indigo) */}
+      {/* Zalando → IoT Venture: inquiry (indigo) */}
       <path
         d="M336 86 C 396 86, 404 42, 476 44"
         fill="none"
@@ -57,7 +66,7 @@ function CrossThreads() {
       <circle cx="336" cy="86" r="3.5" fill="var(--color-blue)" opacity="0.9" />
       <circle cx="476" cy="44" r="3" fill="var(--color-blue)" opacity="0.7" />
 
-      {/* phone → monitor: evidence (sage) */}
+      {/* IoT Venture → Merlin Mines: evidence (sage) */}
       <path
         d="M602 44 C 664 42, 676 76, 748 74"
         fill="none"
@@ -68,6 +77,32 @@ function CrossThreads() {
       />
       <circle cx="602" cy="44" r="3" fill="var(--color-sage)" opacity="0.7" />
       <circle cx="748" cy="74" r="3.5" fill="var(--color-sage)" opacity="0.9" />
+    </svg>
+  );
+}
+
+/** A single, quieter thread for the case-studies row: Olive-Ilive → VocHub →
+ *  VirtualBuddy, one continuous line rather than two separate ones — this
+ *  row is calmer, not busier. */
+function CaseStudyThread() {
+  return (
+    <svg
+      aria-hidden="true"
+      viewBox="0 0 1000 90"
+      preserveAspectRatio="none"
+      className="pointer-events-none absolute inset-x-0 bottom-16 hidden h-20 lg:block"
+    >
+      <path
+        d="M210 60 C 340 34, 500 78, 620 40 S 780 30, 800 52"
+        fill="none"
+        stroke="var(--color-clay)"
+        strokeWidth="1"
+        strokeDasharray="3 6"
+        opacity="0.38"
+      />
+      <circle cx="210" cy="60" r="3" fill="var(--color-clay)" opacity="0.75" />
+      <circle cx="500" cy="60" r="2.5" fill="var(--color-clay)" opacity="0.5" />
+      <circle cx="800" cy="52" r="3" fill="var(--color-clay)" opacity="0.75" />
     </svg>
   );
 }
@@ -104,18 +139,25 @@ function DeskProps() {
   );
 }
 
+export interface StudioArtifacts {
+  iotVenture: CaseStudy;
+  zalando: CaseStudy;
+  merlinMines: CaseStudy;
+  oliveIlive: CaseStudy;
+  vocHub: CaseStudy;
+  virtualBuddy: CaseStudy;
+}
+
 export function StudioScene({
-  wall,
-  prototype,
-  dashboard,
+  artifacts,
   /** The introduction, rendered into the scene's upper-left quarter. */
   intro,
 }: {
-  wall: CaseStudy;
-  prototype: CaseStudy;
-  dashboard: CaseStudy;
+  artifacts: StudioArtifacts;
   intro: ReactNode;
 }) {
+  const { iotVenture, zalando, merlinMines, oliveIlive, vocHub, virtualBuddy } = artifacts;
+
   return (
     <div className="relative">
       {/* Soft directional light, falling from the upper left across the room.
@@ -139,15 +181,20 @@ export function StudioScene({
           <div className="hidden lg:col-span-7 lg:block" aria-hidden="true" />
         </div>
 
-        {/* ── The desk ─────────────────────────────────────────────────────
-            One row, three objects, bottom-aligned on a shared line. */}
-        <div className="relative mt-14 lg:mt-4">
-          <CrossThreads />
+        {/* ── Professional work ───────────────────────────────────────────
+            Given the strongest visual prominence: raised, illuminated,
+            first in reading order. */}
+        <div className="relative mt-16 lg:mt-6">
+          <h3 id="professional-work-heading" className="label-type mb-8 text-blue-deep lg:mb-6">
+            Professional work
+          </h3>
+
+          <ProfessionalThreads />
 
           <div className="grid gap-y-20 md:grid-cols-2 md:gap-x-8 md:gap-y-16 lg:grid-cols-[1.15fr_0.78fr_1.02fr] lg:gap-x-8 lg:gap-y-0 lg:pb-12">
-            <ResearchWallArtifact study={wall} index={1} />
-            <MobilePrototypeArtifact study={prototype} index={2} raise="md" />
-            <HealthDashboardArtifact study={dashboard} index={3} raise="sm" />
+            <IotVentureArtifact study={iotVenture} index={1} raise="md" className="lg:order-2" />
+            <ZalandoBlueprintArtifact study={zalando} index={2} className="lg:order-1" />
+            <MerlinMonitorArtifact study={merlinMines} index={3} raise="sm" className="lg:order-3" />
           </div>
 
           {/* Desk edge and surface. Sits on the object bases. */}
@@ -161,6 +208,24 @@ export function StudioScene({
             <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-line-strong to-transparent opacity-80" />
           </div>
           <DeskProps />
+        </div>
+
+        {/* ── Selected case studies ────────────────────────────────────────
+            Quieter — no raise, no lift into the label band — but sharing the
+            same desk surface, object language and a connecting thread. Not
+            diminished: same label treatment, same interaction states. */}
+        <div className="relative mt-20 border-t border-line pt-14 lg:mt-16 lg:pt-12">
+          <h3 id="case-studies-heading" className="label-type mb-8 text-blue-deep lg:mb-6">
+            Selected case studies
+          </h3>
+
+          <CaseStudyThread />
+
+          <div className="grid gap-y-16 md:grid-cols-2 md:gap-x-8 md:gap-y-14 lg:grid-cols-3 lg:gap-x-8 lg:pb-4">
+            <HealthDashboardArtifact study={oliveIlive} index={4} />
+            <VocHubArtifact study={vocHub} index={5} />
+            <VirtualBuddyArtifact study={virtualBuddy} index={6} />
+          </div>
         </div>
       </Container>
     </div>

@@ -8,7 +8,11 @@ import type { CaseStudy } from "../types";
 
 export const syncHearts: CaseStudy = {
   slug: "synchearts",
-  visibility: "published",
+  // Archived 2026-09-03: removed from the homepage studio and every public
+  // listing per the professional-artifacts homepage revision. Reachable by
+  // direct link only. Content is untouched and can be restored by flipping
+  // this back to "published".
+  visibility: "archived",
   title: "SyncHearts",
   premise:
     "A communication concept for long-distance couples, built around time zones and thoughtful delay rather than constant availability.",
@@ -21,7 +25,7 @@ export const syncHearts: CaseStudy = {
     "Card sorting surfaced three distinct mental models of the same feature set — the argument for cross-referenced navigation rather than one fixed hierarchy. The design itself is untested; usability testing was the declared next step.",
   summary:
     "Sixteen weeks of research and design on how couples stay close across time-zone gaps and clashing schedules. Card sorting surfaced three distinct mental models of the same feature set, which became the argument for flexible rather than fixed navigation.",
-  featured: true,
+  featured: false,
   order: 2,
   status: "next-testing-phase",
   year: "2024",

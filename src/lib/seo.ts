@@ -7,11 +7,14 @@ export function pageMetadata({
   description,
   path,
   type = "website",
+  noindex = false,
 }: {
   title: string;
   description?: string;
   path: string;
   type?: "website" | "article" | "profile";
+  /** Archived work: reachable by direct link, but never indexed or listed. */
+  noindex?: boolean;
 }): Metadata {
   const url = `${site.url}${path}`;
   const desc = description ?? site.description;
@@ -20,6 +23,7 @@ export function pageMetadata({
     title,
     description: desc,
     alternates: { canonical: url },
+    ...(noindex ? { robots: { index: false, follow: true } } : {}),
     openGraph: {
       title: `${title} · ${site.name}`,
       description: desc,

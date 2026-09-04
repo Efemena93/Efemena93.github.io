@@ -43,7 +43,7 @@ export function HealthDashboardArtifact({
       study={study}
       index={index}
       subtitle="Making fragmented health information easier to access"
-      discipline="Research, responsive UX and interface design"
+      discipline="UX research · Responsive product design · Testing"
       sceneDescription="An illustration of a desktop monitor and a tablet on a desk, showing an abstract responsive layout: a navigation rail, content regions and a reading pane, drawn as plain blocks. This is a labelled placeholder, not the product's real interface."
     >
       <svg

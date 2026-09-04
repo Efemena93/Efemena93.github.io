@@ -2,11 +2,14 @@ import { assertContentIntegrity, validateCaseStudies } from "../validate";
 import type { CaseStudy } from "../types";
 
 import { holdingPattern } from "./holding-pattern";
+import { iotVenture } from "./iot-venture";
+import { merlinMines } from "./merlin-mines";
 import { oliveIlive } from "./olive-ilive";
 import { syncHearts } from "./synchearts";
 import { virtualBuddy } from "./virtualbuddy";
 import { vocHub } from "./vochub";
 import { windchill } from "./windchill";
+import { zalando } from "./zalando";
 
 /**
  * Every case study in the repository, whatever its visibility.
@@ -23,6 +26,9 @@ const allCaseStudies: CaseStudy[] = [
   windchill,
   vocHub,
   virtualBuddy,
+  iotVenture,
+  zalando,
+  merlinMines,
 ].sort((a, b) => a.order - b.order);
 
 // Runs during `next build`. Fails the build if anything published contains a

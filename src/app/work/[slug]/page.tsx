@@ -40,6 +40,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
     description: study.summary,
     path: `/work/${study.slug}`,
     type: "article",
+    noindex: study.visibility === "archived",
   });
 }
 

@@ -5,36 +5,50 @@ import { StoryCard } from "@/components/content/StoryCard";
 import { Reveal } from "@/components/motion/Reveal";
 import { Container, Eyebrow, Section } from "@/components/primitives";
 import { StudioHomepage } from "@/components/studio/StudioHomepage";
-import { ProfessionalExperience } from "@/components/studio/ProfessionalExperience";
 import { getCaseStudy } from "@/content/case-studies";
 import { featuredFieldNotes } from "@/content/field-notes";
 import { site } from "@/content/site";
 
 /**
- * Homepage — per docs/homepage-studio-amendment.md.
+ * Homepage — per docs/homepage-studio-amendment.md, revised 2026-09-03 for
+ * the professional-artifacts homepage (six projects: three professional
+ * roles, three case studies — see the "Homepage projects" section of the
+ * revision brief for the full rationale).
  *
- * Order, exactly as the amendment sets it:
+ * Order:
  *   1. persistent navigation (in the layout)
  *   2. professional introduction
  *   3. the interactive design studio  ← this is the selected-work section
- *   4. a short explanation of how to explore (inside DesignStudio)
- *   5. professional experience
- *   6. practice statement
- *   7. From the Library
- *   8. contact CTA
- *   9. footer (in the layout)
+ *   4. a short explanation of how to explore (inside StudioHomepage)
+ *   5. practice statement
+ *   6. From the Library
+ *   7. contact CTA
+ *   8. footer (in the layout)
  *
- * The three studio projects are deliberately not repeated in a card grid
+ * The six studio projects are deliberately not repeated in a card grid
  * below. The compact route for anyone who would rather scan a list is the
  * "View all work" link in the studio header.
  *
- * Removed here, per the amendment: the glowing moon, the drifting orbs and
- * the pointer-tracking constellation.
+ * The standalone "Professional experience" shelf that used to sit below the
+ * studio is retired: IoT Venture, Zalando and Merlin Mines are now real,
+ * linked artifacts inside the studio itself, which is what that component's
+ * own doc comment said should happen once approved content existed.
+ *
+ * Removed here, per the original amendment: the glowing moon, the drifting
+ * orbs and the pointer-tracking constellation.
  */
 
-const wall = getCaseStudy("holding-pattern");
-const prototype = getCaseStudy("synchearts");
-const dashboard = getCaseStudy("olive-ilive");
+const iotVenture = getCaseStudy("iot-venture");
+const zalando = getCaseStudy("zalando");
+const merlinMines = getCaseStudy("merlin-mines");
+const oliveIlive = getCaseStudy("olive-ilive");
+const vocHub = getCaseStudy("vochub");
+const virtualBuddy = getCaseStudy("virtualbuddy");
+
+const studioArtifacts =
+  iotVenture && zalando && merlinMines && oliveIlive && vocHub && virtualBuddy
+    ? { iotVenture, zalando, merlinMines, oliveIlive, vocHub, virtualBuddy }
+    : null;
 
 const [featuredStory, ...moreStories] = featuredFieldNotes;
 
@@ -42,14 +56,9 @@ export default function HomePage() {
   return (
     <>
       {/* ═══ 2 + 3 + 4. Introduction, studio, and how to explore ═════════ */}
-      {wall && prototype && dashboard ? (
-        <StudioHomepage wall={wall} prototype={prototype} dashboard={dashboard} />
-      ) : null}
+      {studioArtifacts ? <StudioHomepage artifacts={studioArtifacts} /> : null}
 
-      {/* ═══ 5. Professional experience ═════════════════════════════════════ */}
-      <ProfessionalExperience />
-
-      {/* ═══ 6. Practice statement ══════════════════════════════════════════ */}
+      {/* ═══ 5. Practice statement ══════════════════════════════════════════ */}
       <Section labelledBy="practice-heading" className="border-t border-line">
         <Container>
           <div className="lg:grid lg:grid-cols-12 lg:gap-8">
@@ -79,7 +88,7 @@ export default function HomePage() {
         </Container>
       </Section>
 
-      {/* ═══ 7. From the Library ════════════════════════════════════════════
+      {/* ═══ 6. From the Library ════════════════════════════════════════════
           Quieter than the work above it: one featured story at size, the
           rest as a short list. */}
       {featuredStory ? (
@@ -136,7 +145,7 @@ export default function HomePage() {
         </Section>
       ) : null}
 
-      {/* ═══ 8. Contact ═════════════════════════════════════════════════════ */}
+      {/* ═══ 7. Contact ═════════════════════════════════════════════════════ */}
       <ContactCTA />
     </>
   );

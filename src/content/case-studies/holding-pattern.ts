@@ -30,7 +30,10 @@ export const holdingPattern: CaseStudy = {
   headline: "Fieldwork in progress. The reframe — away from communication volume, toward what is withheld and how silence is read — is the finding so far.",
   summary:
     "A Master's capstone on emotional continuity during military separation, centred on the civilian partner holding the home front together. The work reframes the problem away from 'communicate more' and toward what gets shared, what gets withheld, and how silence is read.",
-  featured: true,
+  // Not on the homepage studio (excluded per the professional-artifacts
+  // revision, 2026-09-03) — still published, listed on /work and in the
+  // sitemap.
+  featured: false,
   order: 1,
   status: "research-in-progress",
   year: "2026",

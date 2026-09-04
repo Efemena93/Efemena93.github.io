@@ -1,66 +1,163 @@
 import type { CaseStudy } from "../types";
 
-/** SCAFFOLD — premise taken from the published project; body to be written. */
+/**
+ * Rewritten from the published VocHub case study on udezimena.work.
+ * Figures preserved exactly: 55 survey participants, 4 attitudinal
+ * interviews, 5 usability-test participants. Nothing added that was not
+ * in the original — the source case study gives no exact project duration,
+ * so none is stated here.
+ */
 
 export const vocHub: CaseStudy = {
   slug: "vochub",
-  // Scaffold. Preserved in the repository, excluded from every public
-  // surface until the case study is actually written.
-  visibility: "draft",
+  visibility: "published",
   title: "VocHub",
   premise: "A vocabulary learning application, designed end to end as a study in habit and retention.",
   problemArea: "Language learning · vocabulary retention",
   humanProblem:
-    "People learning vocabulary lose it again, because retention depends on a habit the tools rarely help them keep.",
-  shortRole: "Sole designer, research through UI",
+    "People learning vocabulary lose it again, because retention depends on a habit the tools rarely help them keep — and on having someone to actually practise with.",
+  shortRole: "Research, information architecture and visual design",
   projectType: "Self-directed project",
-  headline: "Complete end-to-end study. Case study currently being rewritten.",
+  headline:
+    "A five-participant usability round before final UI surfaced concrete fixes — clearer sign-up entry points, pronunciation practice, simpler onboarding — and a preference test set the final visual direction.",
   summary:
-    "A vocabulary learning app built to practise the fundamentals of UX and UI design end to end — from research through to a finished interface.",
-  featured: false,
+    "A vocabulary learning app built to practise the fundamentals of UX and UI design end to end — competitor analysis, a 55-respondent survey, four attitudinal interviews, personas and task flows, then wireframes tested with five participants before final UI.",
+  featured: true,
   order: 5,
   status: "complete",
   year: "2022",
-  timeline: "[TODO: duration]",
+  timeline: "End-to-end · 2022",
   context: "Self-directed project",
-  roles: ["UX Designer", "UI Designer"],
-  tools: ["Figma"],
-  disciplines: ["product-design", "interaction-design"],
+  roles: ["UX Researcher", "Information Architect", "Usability Test Moderator", "Visual Designer"],
+  tools: ["InVision", "Mural", "Figma", "Miro", "Draw.io", "Pen & paper"],
+  disciplines: ["ux-research", "product-design", "interaction-design"],
   cover: { alt: "Stacked cards offset in a loose fan", accent: "clay" },
   externalUrl: { label: "Original case study", href: "https://udezimena.work" },
 
   atAGlance: {
-    problem: "[TODO: what makes vocabulary learning fail for people — be specific]",
-    role: "Sole designer, research through UI.",
-    approach: "[TODO: methods used]",
-    outcome: "[TODO: what the design achieved or what you learned]",
+    problem:
+      "Limited time to learn with an instructor, no practice partners to give feedback, and communication barriers while travelling — existing vocabulary apps did not address these together, for a persona built from interview data (\"Richy\").",
+    role: "Market and competitor research, a survey and interviews, personas and task flows, wireframes and usability testing, then final UI and visual design.",
+    approach:
+      "SWOT analysis of Duolingo, Babbel and Tandem; a 55-respondent survey; four qualitative attitudinal interviews analysed with the Thinking-Feeling-Doing method; a persona and problem statement; task flows for adding study friends; low- and mid-fidelity wireframes tested with five participants (Jakob Nielsen's error severity scale, moderated remotely on Zoom and Microsoft Teams); a splash-screen preference test ahead of final UI.",
+    outcome:
+      "Usability testing surfaced concrete fixes — clearer sign-up and login entry points, a voice-practice feature for pronunciation, simpler onboarding — and the preference test set the final splash-screen direction. Further usability and A/B testing was the declared next step.",
   },
 
   sections: [
     {
       id: "context",
       kind: "context",
-      title: "Context",
+      title: "Discover",
+      standfirst: "Competitor research first, then a survey and interviews to find where existing apps fall short.",
       blocks: [
         {
-          type: "todo",
-          note: "Two paragraphs: who this is for, and why existing vocabulary apps do not work for them. If you have research, add it as `evidence` claims with sources.",
+          type: "prose",
+          text: [
+            "I researched vocabulary and language-learning apps against the features language learners actually want, drawing on my own experience learning German and weighing cost against effectiveness. I ran a SWOT analysis on three apps — Duolingo, Babbel and Tandem — and each pointed to a different gap: Duolingo needed difficulty that adapted to the learner's progress, Babbel needed real conversation practice at the intermediate and advanced levels, and Tandem needed tutors and proficiency-based partner matching.",
+          ],
+        },
+        {
+          type: "statRow",
+          stats: [
+            { value: "55", label: "Survey respondents" },
+            { value: "4", label: "Attitudinal interviews" },
+            { value: "5", label: "Usability test participants" },
+          ],
+          source: "Online survey and qualitative interviews conducted for the VocHub project, published on udezimena.work.",
+        },
+        {
+          type: "prose",
+          text: [
+            "The survey gathered 55 respondents' perceptions of a new vocabulary app, their experience with existing apps, and how online learning compared with onsite methods for them. I followed it with four qualitative attitudinal interviews across different backgrounds, analysed with the Thinking-Feeling-Doing method to get at what people actually thought, felt and did around learning a language — not just what they said they wanted.",
+          ],
         },
       ],
     },
+
+    {
+      id: "define",
+      kind: "synthesis",
+      title: "Define",
+      blocks: [
+        {
+          type: "prose",
+          text: [
+            "The interviews and survey converged on a persona, Richy: someone with no time for instructor-led learning, no practice partner to correct her, and real communication barriers when travelling. The problem statement that came out of it — a need for a time-efficient, interactive learning experience with partners, and confident communication while travelling — set the direction for everything that followed.",
+          ],
+        },
+        {
+          type: "list",
+          title: "What the goals and challenges pointed to",
+          items: [
+            "Develop fluency to communicate effectively, and make friends through language proficiency.",
+            "Practise real-life conversation, and stay motivated through in-app incentives.",
+            "Limited time for instructor-led learning, and no practice partners to give feedback.",
+            "Communication barriers when travelling to new cities.",
+          ],
+        },
+        {
+          type: "prose",
+          text: [
+            "I mapped a task flow for the feature that mattered most to the persona — adding study friends — from opening the app through language and level selection to finding people by contact, location or the learning community.",
+          ],
+        },
+      ],
+    },
+
     {
       id: "craft",
       kind: "craft",
-      title: "Design",
+      title: "Develop",
+      standfirst: "Low-fidelity wireframes, five-participant usability testing, then final UI.",
       blocks: [
-        { type: "todo", note: "Export final screens to /public/work/vochub/ and add figure blocks with functional alt text." },
+        {
+          type: "prose",
+          text: [
+            "I built low-fidelity wireframes first, then a digital low-fidelity pass with grids and columns for consistency, and mid-fidelity wireframes that converged on typography, icons and layout while still deliberately withholding colour — the point was to test structure and hierarchy, not finish.",
+            "Five participants each completed four tasks — signing up, viewing the word of the day and a saved-words dictionary, earning experience points, and adding friends — in sessions of 5–10 minutes, moderated remotely on Zoom and Microsoft Teams, scored against Jakob Nielsen's error severity rating scale.",
+          ],
+        },
+        {
+          type: "list",
+          title: "What testing recommended",
+          items: [
+            "Clearer sign-up and login entry points on their own pages.",
+            "A voice-practice feature to help with pronunciation of new words.",
+            "Slides explaining how the app works, instead of a video tour.",
+            "Pop-up reminders explaining each feature on first use.",
+            "Keeping the app as simple as possible throughout.",
+          ],
+        },
+        {
+          type: "prose",
+          text: [
+            "After testing, I built the final screens in Figma, starting with a style guide and a small design system — colour, icons, illustration, avatar imagery, typography, grid and buttons. A preference test on the splash screen found the original layout unbalanced; I revised the logo mark, background and typography until it read as more cohesive.",
+          ],
+        },
       ],
     },
+
     {
       id: "reflection",
       kind: "reflection",
-      title: "Reflection",
-      blocks: [{ type: "todo", note: "One honest paragraph on what you would do differently now." }],
+      title: "What I took from it",
+      blocks: [
+        {
+          type: "list",
+          items: [
+            "Simple is almost always the better answer.",
+            "Design for the user, not for the designer — designing for the ideal user helped the process converge faster.",
+            "Put ideas on paper early, and take design critique from more experienced designers seriously — it limits errors before they compound.",
+            "Stay open to unlearning: design habits and trends change, and holding onto either too tightly gets in the way of the next project.",
+          ],
+        },
+        {
+          type: "callout",
+          title: "Where this project stopped",
+          text: "Further usability and A/B testing, additional screens and continued refinement were the declared next steps and were not completed as part of this study.",
+        },
+      ],
     },
   ],
 };

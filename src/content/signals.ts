@@ -1,4 +1,4 @@
-import { routableCaseStudies } from "./case-studies";
+import { publishedCaseStudies, routableCaseStudies } from "./case-studies";
 
 /**
  * The signal field.
@@ -230,17 +230,20 @@ const NODES: SignalNode[] = [
 ];
 
 /**
- * Only nodes whose destination actually exists in the public build.
+ * Only nodes whose destination is a public, listed case study.
  *
  * Every node links somewhere — a project node to its case study, a theme or
- * observation to the project it came from. When a project is a draft, that
- * destination is not routed, so the node is dropped rather than left pointing
- * at a 404. This is why the field shrinks when work is unfinished, and why it
- * grows again on its own when a scaffold is written and published.
+ * observation to the project it came from. Filtered against
+ * `publishedCaseStudies` rather than `routableCaseStudies`, deliberately:
+ * archived work (e.g. SyncHearts) is still reachable by direct link but is
+ * not listed anywhere, and this decorative field counts as a listing. Drafts
+ * are excluded the same way this always excluded them — this is why the
+ * field shrinks when work is unfinished or archived, and grows again on its
+ * own when a scaffold is published.
  */
-const routableSlugs = new Set(routableCaseStudies.map((s) => s.slug));
+const publishedSlugs = new Set(publishedCaseStudies.map((s) => s.slug));
 
-const VISIBLE = NODES.filter((node) => routableSlugs.has(node.slug ?? node.fromSlug ?? ""));
+const VISIBLE = NODES.filter((node) => publishedSlugs.has(node.slug ?? node.fromSlug ?? ""));
 
 export const signalNodes: SignalNode[] = VISIBLE;
 
