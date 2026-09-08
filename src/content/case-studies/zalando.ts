@@ -54,16 +54,6 @@ export const zalando: CaseStudy = {
             "As a product design intern on Zalando Plus, she led the design process end to end for a set of features — from research and concept through service blueprinting to a pilot launch — and produced a design blueprint meant to keep the team's output cohesive going forward, not just for the features she shipped herself.",
           ],
         },
-        {
-          type: "list",
-          title: "From her résumé, as written",
-          items: [
-            "Led the design process from research and concept through service blueprinting and pilot launch, shipping several features for Zalando Plus.",
-            "Created a comprehensive design blueprint for the Zalando Plus team to ensure cohesive, consistent design across the platform.",
-            "Revamped outdated UI/UX templates with developers, PMs and stakeholders — 15% increase in user engagement.",
-            "Contributed to design rituals, workshops and critiques, and to the design system.",
-          ],
-        },
       ],
     },
     {

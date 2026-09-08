@@ -59,15 +59,6 @@ export const merlinMines: CaseStudy = {
             "As the sole designer on the team, she owned end-to-end UX and UI for an internal workflow web app used by the company's in-house software engineers — a tool that, before this internship, had no dedicated design resource at all. Establishing the product's first UI patterns and components meant setting conventions other engineers would build against, not just designing individual screens.",
           ],
         },
-        {
-          type: "list",
-          title: "From her résumé, as written",
-          items: [
-            "Sole designer on the team: owned end-to-end UX and UI for an internal workflow web app used by the company's in-house software engineers.",
-            "Translated engineers' daily workflows into a clear, streamlined interface — from information architecture and user flows through wireframes and high-fidelity UI.",
-            "Established the product's core UI patterns and components as its first dedicated design resource.",
-          ],
-        },
       ],
     },
     {

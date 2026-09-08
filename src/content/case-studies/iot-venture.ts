@@ -41,7 +41,7 @@ export const iotVenture: CaseStudy = {
       "The 3.0 redesign had to stay compatible with the primary “It's My Bike” app and with multiple white-label partner apps, and it was carried out by a single designer with no other UX/UI resource in the company.",
     role: "Owned all UX and UI: research, the 3.0 redesign, usability testing, and the design system that kept the brand coherent across platforms.",
     approach:
-      "Ran user research and turned insights into the redesign; ran usability tests and iterated on the findings, including menu reordering and simpler report generation; built and maintained the design system used across platforms; partnered with cross-functional teams to align design with business objectives.",
+      "Ran user research and turned insights into the redesign; ran usability tests through an iOS beta ahead of full release and iterated on the findings, including menu reordering and simpler report generation; built and maintained the design system used across platforms; partnered with cross-functional teams to align design with business objectives.",
     outcome:
       "A self-reported 20% increase in user retention. No further metrics, screens or interface detail are published here — see the boundary note above.",
   },
@@ -56,16 +56,6 @@ export const iotVenture: CaseStudy = {
           type: "prose",
           text: [
             "As the company's only designer, she owned UX and UI across the whole product: the consumer-facing “It's My Bike” app, a partner dashboard, and the white-label apps built on the same platform for partner brands. The 3.0 redesign was the central piece of work — a rebuild that had to hold together across every one of those surfaces at once, not just the flagship app.",
-          ],
-        },
-        {
-          type: "list",
-          title: "From her résumé, as written",
-          items: [
-            "Led the 3.0 redesign, running user research and turning insights into design decisions that kept the product compatible with the “It's My Bike” app and white-label partners' apps — increased user retention by 20%.",
-            "Ran usability tests and iterated on feedback, surfacing high-impact fixes such as menu reordering and simpler report generation.",
-            "Built and maintained design systems that kept brand coherence across platforms — consistent colour, typography and components.",
-            "Partnered with cross-functional teams to align design with business objectives.",
           ],
         },
       ],

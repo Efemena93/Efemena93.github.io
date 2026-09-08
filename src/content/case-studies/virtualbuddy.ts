@@ -2,10 +2,14 @@ import type { CaseStudy } from "../types";
 
 /**
  * Rewritten from the published VirtualBuddy case study on udezimena.work.
- * Nothing added that was not in the original — the source case study
- * describes a design process from user stories through to a prototype
- * tested across screen sizes, with no interviews or surveys run and no
- * exact project duration stated, so neither is invented here.
+ * The source case study describes a design process from user stories
+ * through to a prototype tested across screen sizes, with no interviews or
+ * surveys run and no exact project duration stated, so neither is invented
+ * here.
+ *
+ * One addition beyond that source, flagged rather than silently folded in:
+ * the informal Figma-prototype walkthrough with a small group of students is
+ * from Efemena's own account of the work, not from the original write-up.
  */
 
 export const virtualBuddy: CaseStudy = {
@@ -20,7 +24,7 @@ export const virtualBuddy: CaseStudy = {
   shortRole: "UI designer",
   projectType: "Self-directed project",
   headline:
-    "A complete, responsive interface system across multiple screen sizes — design-only, not tested with students and never built.",
+    "A complete, responsive interface system across multiple screen sizes, walked through informally with a small group of students on the Figma prototype — confirmed the core flows rather than surfacing major issues. Never built as a live product.",
   summary:
     "A responsive study-community app: students create a profile, find and connect with people studying the same subject, and share study material. Designed from user stories through wireframes to a full UI system and prototype.",
   featured: true,
@@ -45,8 +49,9 @@ export const virtualBuddy: CaseStudy = {
       "Not a mood-tracking or assessment tool.",
     ],
     unvalidated: [
-      "The entire interface. No interviews or surveys were run for this project, and it was not tested with students — it moved from user stories directly into task flows, wireframes and UI.",
-      "Whether the product would actually be used the way the task flows assume.",
+      "The task flows and personas: no interviews or surveys were run for this project — it moved from user stories directly into task flows, wireframes and UI.",
+      "The interface itself beyond a small, informal walkthrough: a handful of students tried the core flows on the Figma prototype and confirmed the direction, but that is not a structured usability study, and the product has never been built.",
+      "Whether the product would actually be used the way the task flows assume, beyond that small informal walkthrough.",
     ],
   },
 
@@ -57,7 +62,7 @@ export const virtualBuddy: CaseStudy = {
     approach:
       "Wrote three user stories — creating a profile, finding and connecting with study partners, and sharing study material — and task flows for each; built low- to mid-fidelity wireframes on a 12-column grid; compared two mood-board directions before choosing a calmer, natural palette; built a full UI token system (colour, typography, iconography, imagery) and prototyped it across multiple screen sizes.",
     outcome:
-      "A complete, responsive UI system and prototype, presented as a design-only exploration. It has not been built or tested with students.",
+      "A complete, responsive UI system and prototype. A small, informal walkthrough with students on the Figma prototype confirmed the core flows worked as intended; it has not been built as a live product, and has not had a structured usability study.",
   },
 
   sections: [
@@ -109,7 +114,7 @@ export const virtualBuddy: CaseStudy = {
         {
           type: "prose",
           text: [
-            "After usability review of the screens, I built the final UI in Figma and assembled UI kits — labels, navigation, colour, typography, imagery and iconography — then prototyped the navigation and produced design mockups across different screen sizes and break points, so the responsive behaviour was demonstrated rather than assumed.",
+            "After an informal walkthrough of the screens with a small group of students — who tried the core flows on the prototype and confirmed the direction rather than surfacing major issues — I built the final UI in Figma and assembled UI kits — labels, navigation, colour, typography, imagery and iconography — then prototyped the navigation and produced design mockups across different screen sizes and break points, so the responsive behaviour was demonstrated rather than assumed.",
           ],
         },
       ],
@@ -123,8 +128,8 @@ export const virtualBuddy: CaseStudy = {
         {
           type: "callout",
           tone: "caution",
-          title: "Design-only, and untested",
-          text: "VirtualBuddy was never built and was not tested with students. The task flows and personas were authored rather than researched, and that is the main thing a next iteration should change before trusting any of the interface decisions here.",
+          title: "Never built, and only informally walked through",
+          text: "VirtualBuddy was never built as a live product, and the informal walkthrough with students confirmed the core flows without being a structured usability study. The task flows and personas were also authored rather than researched. Both are the main things a next iteration should change before trusting any of the interface decisions here.",
         },
       ],
     },

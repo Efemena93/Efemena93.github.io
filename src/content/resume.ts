@@ -9,6 +9,11 @@ import type { Resume } from "./types";
  * written and attributed to the role it belongs to — it is her claim about
  * her own work, not a claim this site makes on her behalf.
  *
+ * One exception, flagged rather than silently folded in: the IoT Venture
+ * bullet on the iOS beta test was added directly from Efemena's own account
+ * of the work, not transcribed from the PDF. It's still her claim about her
+ * own work — just not one that was already sitting in the résumé document.
+ *
  * The phone number in the PDF is deliberately not published here. A public
  * portfolio does not need it; the contact page routes through email.
  */
@@ -24,7 +29,7 @@ export const resume: Resume = {
       bullets: [
         "As the company's only designer, owned all UX and UI across the product.",
         "Led the 3.0 redesign, running user research and turning insights into design decisions that kept the product compatible with the “It's My Bike” app and white-label partners' apps — increased user retention by 20%.",
-        "Ran usability tests and iterated on feedback, surfacing high-impact fixes such as menu reordering and simpler report generation.",
+        "Ran usability tests through an iOS beta ahead of full release, iterating on feedback to fix issues including menu reordering and simpler report generation before rollout.",
         "Built and maintained design systems that kept brand coherence across platforms — consistent colour, typography and components.",
         "Partnered with cross-functional teams to align design with business objectives.",
       ],
