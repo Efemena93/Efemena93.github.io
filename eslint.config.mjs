@@ -15,6 +15,9 @@ const eslintConfig = [
   ...nextCoreWebVitals,
   ...nextTypescript,
   {
+    // Scope to the same globs eslint-config-next registers the plugin on;
+    // an unscoped block also matches files where jsx-a11y isn't defined.
+    files: ["**/*.{js,jsx,mjs,ts,tsx,mts,cts}"],
     rules: {
       "jsx-a11y/alt-text": "error",
       "jsx-a11y/anchor-has-content": "error",
@@ -30,7 +33,7 @@ const eslintConfig = [
       "jsx-a11y/tabindex-no-positive": "error",
     },
   },
-  { ignores: [".next/**", "node_modules/**", "out/**"] },
+  { ignores: [".next/**", "node_modules/**", "node_modules.nosync/**", "out/**"] },
 ];
 
 export default eslintConfig;

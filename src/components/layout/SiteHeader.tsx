@@ -30,7 +30,7 @@ export function SiteHeader() {
   const sheetId = useId();
 
   const isActive = useCallback(
-    (href: string) => (href === "/" ? pathname === "/" : pathname.startsWith(href)),
+    (href: string) => (href === "/" ? pathname === "/" : (pathname ?? "").startsWith(href)),
     [pathname],
   );
 
