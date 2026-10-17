@@ -37,7 +37,7 @@ export function IotVentureArtifact({
       title="IoT Venture GmbH"
       subtitle="“It's My Bike” app and partner dashboards"
       discipline="Product design · Mobile · IoT · Dashboards"
-      sceneDescription="An illustration of a phone standing on a desk beside a small connected-bike key device, with a fragment of a partner dashboard panel tucked behind the phone. A fine signal travels between the device and the phone on hover or focus. The screens are abstract placeholders, not the product's real interface."
+      sceneDescription="An illustration of a phone standing on a desk beside a small connected-bike key device, with a fragment of a partner dashboard panel tucked behind the phone. A fine signal travels between the device and the phone on hover or focus. This is an illustrative reconstruction, not a real project screen."
     >
       <svg
         viewBox="0 0 300 182"

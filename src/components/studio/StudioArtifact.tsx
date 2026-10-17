@@ -1,6 +1,8 @@
+import Image from "next/image";
 import Link from "next/link";
 import type { ReactNode } from "react";
 
+import { projectImages } from "@/content/project-images";
 import type { CaseStudy } from "@/content/types";
 import { cx } from "@/lib/utils";
 
@@ -27,6 +29,18 @@ import { ArtifactLabel } from "./ArtifactLabel";
  * describes what each scene depicts, so a screen-reader user is told what is
  * on the page rather than walked silently past it.
  */
+
+/** A different physical treatment per project, so the six do not share one
+ *  frame: layered sheet, upright device, wide crop, pinned wall, fanned cards,
+ *  shared workspace. */
+const treatment: Record<string, string> = {
+  zalando: "-rotate-1 lg:max-w-[36rem]",
+  "iot-venture": "rotate-1 lg:max-w-[28rem]",
+  "olive-ilive": "lg:max-w-[46rem]",
+  "merlin-mines": "-rotate-2 lg:max-w-[30rem]",
+  vochub: "rotate-1 lg:max-w-[32rem]",
+  virtualbuddy: "-rotate-1 lg:max-w-[34rem]",
+};
 
 export function StudioArtifact({
   study,
@@ -58,6 +72,8 @@ export function StudioArtifact({
   className?: string;
   raise?: "sm" | "md";
 }) {
+  const image = projectImages[study.slug];
+
   return (
     <article
       className={cx(
@@ -86,7 +102,7 @@ export function StudioArtifact({
             three sit on the same desk line however tall their labels are. */}
         <div
           className={cx(
-            "artifact-stage relative mt-auto pt-8",
+            "artifact-stage relative mt-auto pt-6",
             // Translate, not padding: the article above was pulled up by
             // this amount to raise the label, and the object has to come
             // back down by the same amount to sit on the shared desk line.
@@ -97,7 +113,24 @@ export function StudioArtifact({
             "group-hover:-translate-y-1 group-focus-within:-translate-y-1",
           )}
         >
-          {children}
+          {image ? (
+            <figure className={cx("mx-auto max-w-[34rem]", treatment[study.slug])}>
+              <Image
+                src={image.src}
+                alt={image.alt}
+                width={image.width}
+                height={image.height}
+                className="h-auto w-full rounded-lg shadow-[var(--shadow-object)] ring-1 ring-line"
+              />
+              {image.placeholder ? (
+                <figcaption className="label-type mt-2 text-charcoal-muted">
+                  Placeholder image — real screen to come
+                </figcaption>
+              ) : null}
+            </figure>
+          ) : (
+            children
+          )}
         </div>
       </Link>
     </article>

@@ -76,8 +76,8 @@ export const site = {
   practice: {
     lead: "I don't start with screens. I start with questions.",
     body: [
-      "Most of my work sits close to something tender — a health portal where the honest answer is embarrassing, a couple trying to stay close across nine time zones, a partner at home managing a household alone while trying to sound fine on a video call. In each case the interface is the least interesting part. What matters is which signals a system chooses to notice, and which it quietly discards.",
-      "So I separate what I observed from what I concluded from what I am still only proposing, and I label it — in the work, and on this site. It makes for less confident-sounding case studies. It also makes them true, which means the strong claims are worth something when they come.",
+      "Most of my work sits close to something tender. In each case the interface is the least interesting part — what matters is which signals a system chooses to notice, and which it quietly discards.",
+      "So I separate what I observed from what I concluded from what I am still only proposing, and I label it. The longer version is on the About page.",
     ],
   },
 

@@ -1,4 +1,4 @@
-import { Container, Eyebrow } from "@/components/primitives";
+import { Container } from "@/components/primitives";
 
 import { StudioAmbient, StudioIntro, StudioScene, type StudioArtifacts } from "./StudioScene";
 
@@ -28,12 +28,12 @@ export function StudioHomepage({ artifacts }: { artifacts: StudioArtifacts }) {
   const { iotVenture, zalando, merlinMines, oliveIlive, vocHub, virtualBuddy } = artifacts;
 
   const professional = [
-    { study: iotVenture, name: "IoT Venture GmbH", what: "connected-bike app and partner dashboards" },
     { study: zalando, name: "Zalando", what: "service design and design-system contributions" },
-    { study: merlinMines, name: "Merlin Mines", what: merlinMines.projectType },
+    { study: iotVenture, name: "IoT Venture GmbH", what: "connected-bike app and partner dashboards" },
   ];
   const caseStudies = [
     { study: oliveIlive, name: oliveIlive.title, what: "responsive health portal" },
+    { study: merlinMines, name: "Merlin Mines", what: merlinMines.projectType },
     { study: vocHub, name: vocHub.title, what: "vocabulary-learning app" },
     { study: virtualBuddy, name: virtualBuddy.title, what: "responsive study-community app" },
   ];
@@ -44,30 +44,22 @@ export function StudioHomepage({ artifacts }: { artifacts: StudioArtifacts }) {
         <StudioScene artifacts={artifacts} intro={<StudioIntro />} />
       </section>
 
+      {/* The plain index, for anyone not receiving the picture. The six
+          artifacts above are the only visible list of work. */}
+      <div className="sr-only">
+        <h2 id="studio-heading">Selected work</h2>
+        <p>Six projects, in the order they appear.</p>
+        <ol>
+          {[...professional, ...caseStudies].map(({ study, name, what }) => (
+            <li key={study.slug}>
+              {name} — {what}.
+            </li>
+          ))}
+        </ol>
+      </div>
+
       <Container className="relative pb-16 lg:pb-20">
-        <div className="flex flex-wrap items-start justify-between gap-x-10 gap-y-6 border-t border-line pt-8">
-          <div>
-            <Eyebrow as="h2" id="studio-heading" className="mb-3">
-              Selected work
-            </Eyebrow>
-
-            {/* The plain index, for anyone not receiving the picture. */}
-            <p className="sr-only">
-              Six projects, in the order they appear: three professional roles, then three
-              case studies.
-            </p>
-            <ol className="sr-only">
-              {[...professional, ...caseStudies].map(({ study, name, what }) => (
-                <li key={study.slug}>
-                  {name} — {what}.
-                </li>
-              ))}
-            </ol>
-
-          </div>
-
-          <StudioAmbient />
-        </div>
+        <StudioAmbient />
       </Container>
     </section>
   );

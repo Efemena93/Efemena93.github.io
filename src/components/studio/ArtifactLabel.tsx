@@ -32,7 +32,7 @@ export function ArtifactLabel({
   className?: string;
 }) {
   return (
-    <div className={cx("relative lg:pb-32", className)}>
+    <div className={cx("relative lg:pb-2", className)}>
       <p className="label-type text-blue-deep">{String(index).padStart(2, "0")}</p>
 
       <h3 className="mt-2 font-display text-h3 text-charcoal">
@@ -63,13 +63,12 @@ export function ArtifactLabel({
       <div
         className={cx(
           "mt-5 border-l border-line pl-4",
-          // At scene widths this is taken out of flow and hung under the
-          // label, in the clear band above the object. Reserving its height
-          // in flow instead left a dead 150px gap in every column.
-          "lg:absolute lg:inset-x-0 lg:top-full lg:-mt-28 lg:border-l-0 lg:pl-0",
-          "lg:opacity-0 lg:transition-opacity lg:duration-500 lg:ease-[var(--ease-out-soft)]",
+          // At scene widths the detail floats over the top of the object it
+          // belongs to, on a translucent layer, so no empty band is reserved
+          // for it at rest.
+          "lg:absolute lg:inset-x-3 lg:top-full lg:z-10 lg:mt-5 lg:rounded-md lg:border lg:border-line lg:bg-ivory/90 lg:p-3 lg:backdrop-blur-sm lg:border-l lg:pl-3",
+          "lg:pointer-events-none lg:opacity-0 lg:transition-opacity lg:duration-500 lg:ease-[var(--ease-out-soft)]",
           "lg:group-hover:opacity-100 lg:group-focus-within:opacity-100",
-          "lg:group-hover:border-l lg:group-hover:pl-4 lg:group-focus-within:border-l lg:group-focus-within:pl-4",
         )}
       >
         <p className="text-small leading-relaxed text-charcoal-soft lg:line-clamp-3">

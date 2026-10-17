@@ -44,97 +44,26 @@ import { ZalandoBlueprintArtifact } from "./ZalandoBlueprintArtifact";
  * pointer, so keyboard and touch get the identical experience.
  */
 
-/** The connective threads for the professional-work row. Decorative — the
- *  relationship is stated in text. */
-function ProfessionalThreads() {
+/** One signal line joining the two artifacts beside the introduction. Decorative —
+ *  the relationship is stated in text. */
+function OpeningSignal() {
   return (
     <svg
       aria-hidden="true"
-      viewBox="0 0 1000 120"
+      viewBox="0 0 400 120"
       preserveAspectRatio="none"
-      className="pointer-events-none absolute inset-x-0 bottom-28 hidden h-28 lg:block"
-    >
-      {/* Zalando → IoT Venture: inquiry (indigo) */}
-      <path
-        d="M336 86 C 396 86, 404 42, 476 44"
-        fill="none"
-        stroke="var(--color-blue)"
-        strokeWidth="1"
-        strokeDasharray="3 6"
-        opacity="0.5"
-      />
-      <circle cx="336" cy="86" r="3.5" fill="var(--color-blue)" opacity="0.9" />
-      <circle cx="476" cy="44" r="3" fill="var(--color-blue)" opacity="0.7" />
-
-      {/* IoT Venture → Merlin Mines: evidence (sage) */}
-      <path
-        d="M602 44 C 664 42, 676 76, 748 74"
-        fill="none"
-        stroke="var(--color-sage)"
-        strokeWidth="1"
-        strokeDasharray="3 6"
-        opacity="0.46"
-      />
-      <circle cx="602" cy="44" r="3" fill="var(--color-sage)" opacity="0.7" />
-      <circle cx="748" cy="74" r="3.5" fill="var(--color-sage)" opacity="0.9" />
-    </svg>
-  );
-}
-
-/** A single, quieter thread for the case-studies row: Olive-Ilive → VocHub →
- *  VirtualBuddy, one continuous line rather than two separate ones — this
- *  row is calmer, not busier. */
-function CaseStudyThread() {
-  return (
-    <svg
-      aria-hidden="true"
-      viewBox="0 0 1000 90"
-      preserveAspectRatio="none"
-      className="pointer-events-none absolute inset-x-0 bottom-16 hidden h-20 lg:block"
+      className="pointer-events-none absolute left-[38%] top-[44%] hidden h-24 w-[26%] lg:block"
     >
       <path
-        d="M210 60 C 340 34, 500 78, 620 40 S 780 30, 800 52"
+        d="M4 96 C 110 100, 150 14, 396 24"
         fill="none"
-        stroke="var(--color-clay)"
-        strokeWidth="1"
+        stroke="var(--color-amber)"
+        strokeWidth="1.25"
         strokeDasharray="3 6"
-        opacity="0.38"
+        opacity="0.7"
       />
-      <circle cx="210" cy="60" r="3" fill="var(--color-clay)" opacity="0.75" />
-      <circle cx="500" cy="60" r="2.5" fill="var(--color-clay)" opacity="0.5" />
-      <circle cx="800" cy="52" r="3" fill="var(--color-clay)" opacity="0.75" />
-    </svg>
-  );
-}
-
-/**
- * Desk props. Three restrained line objects — a stack of books, a closed
- * notebook, a cup — at low contrast along the desk. They give the surface
- * scale and stop the objects floating. Deliberately few: the amendment rules
- * out clutter and literal art supplies, and nothing here should read as
- * clickable.
- */
-function DeskProps() {
-  return (
-    <svg
-      aria-hidden="true"
-      viewBox="0 0 1000 90"
-      preserveAspectRatio="none"
-      className="pointer-events-none absolute inset-x-0 bottom-1 hidden h-16 text-charcoal-muted lg:block"
-    >
-      <g stroke="currentColor" strokeOpacity="0.3" fill="none" strokeWidth="1">
-        {/* Stack of books, left */}
-        <rect x="24" y="40" width="150" height="13" rx="2" />
-        <rect x="30" y="53" width="150" height="13" rx="2" />
-        <rect x="26" y="66" width="150" height="13" rx="2" />
-        {/* Closed notebook, centre-left */}
-        <rect x="250" y="52" width="180" height="22" rx="3" />
-        <line x1="250" y1="58" x2="430" y2="58" strokeOpacity="0.18" />
-        {/* Cup, right of centre */}
-        <path d="M690 44 h54 v22 a12 12 0 0 1 -12 12 h-30 a12 12 0 0 1 -12 -12 z" />
-        <path d="M744 50 a11 9 0 0 1 0 18" />
-        <ellipse cx="717" cy="82" rx="40" ry="4" strokeOpacity="0.16" />
-      </g>
+      <circle cx="4" cy="96" r="4" fill="var(--color-amber)" />
+      <circle cx="396" cy="24" r="4" fill="var(--color-amber)" />
     </svg>
   );
 }
@@ -172,60 +101,43 @@ export function StudioScene({
       />
 
       <Container className="relative pb-16 pt-12 sm:pt-14 lg:pb-24 lg:pt-16">
-        <div className="relative lg:grid lg:grid-cols-12 lg:gap-x-8">
-          {/* ── Introduction: upper-left quarter ─────────────────────────── */}
-          <div className="lg:col-span-5 lg:pr-6">{intro}</div>
+        {/* ── The opening corner ──────────────────────────────────────────
+            The introduction is one object among others: a research artifact
+            (Zalando's blueprint) and a product artifact (the IoT Venture
+            phone), joined by a signal line. DOM order is reading order. */}
+        <div className="relative grid gap-y-14 lg:grid-cols-12 lg:items-start lg:gap-x-8 lg:gap-y-0">
+          <div className="lg:col-span-4 lg:pr-4">{intro}</div>
 
-          {/* ── The two right-hand labels sit at introduction height, as in
-                 the reference. Below lg they are part of their artifact. ── */}
-          <div className="hidden lg:col-span-7 lg:block" aria-hidden="true" />
+          <OpeningSignal />
+
+          <div className="grid gap-y-14 md:grid-cols-2 md:gap-x-8 lg:col-span-8 lg:grid-cols-[1.1fr_0.8fr] lg:items-start">
+            <ZalandoBlueprintArtifact study={zalando} index={1} className="lg:mt-6 lg:h-auto" />
+            <IotVentureArtifact study={iotVenture} index={2} className="lg:mt-24 lg:h-auto" />
+          </div>
         </div>
 
-        {/* ── Professional work ───────────────────────────────────────────
-            Given the strongest visual prominence: raised, illuminated,
-            first in reading order. */}
-        <div className="relative mt-16 lg:mt-6">
-          <h3 id="professional-work-heading" className="label-type mb-8 text-blue-deep lg:mb-6">
-            Professional work
-          </h3>
-
-          <ProfessionalThreads />
-
-          <div className="grid gap-y-20 md:grid-cols-2 md:gap-x-8 md:gap-y-16 lg:grid-cols-[1.15fr_0.78fr_1.02fr] lg:gap-x-8 lg:gap-y-0 lg:pb-12">
-            <IotVentureArtifact study={iotVenture} index={1} raise="md" className="lg:order-2" />
-            <ZalandoBlueprintArtifact study={zalando} index={2} className="lg:order-1" />
-            <MerlinMonitorArtifact study={merlinMines} index={3} raise="sm" className="lg:order-3" />
-          </div>
-
-          {/* Desk edge and surface. Sits on the object bases. */}
-          <div
-            aria-hidden="true"
-            className="pointer-events-none absolute bottom-12 left-1/2 hidden h-0 w-screen -translate-x-1/2 lg:block"
-          >
-            {/* Full-bleed: a desk that stops at the text column reads as a
-                rectangle drawn on the page rather than a surface. */}
-            <div className="absolute inset-x-0 top-0 h-24 bg-gradient-to-b from-[color-mix(in_srgb,var(--color-charcoal)_7%,transparent)] to-transparent" />
-            <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-line-strong to-transparent opacity-80" />
-          </div>
-          <DeskProps />
+        {/* ── Row two: a wide interface crop with a monitor offset beside it ── */}
+        <div className="relative mt-20 grid gap-y-14 border-t border-line pt-14 md:grid-cols-2 md:gap-x-8 lg:mt-24 lg:grid-cols-12 lg:items-start lg:gap-x-8 lg:gap-y-0 lg:pt-16">
+          <HealthDashboardArtifact
+            study={oliveIlive}
+            index={3}
+            className="lg:col-span-7 lg:h-auto"
+          />
+          <MerlinMonitorArtifact
+            study={merlinMines}
+            index={4}
+            className="lg:col-span-4 lg:col-start-9 lg:mt-20 lg:h-auto"
+          />
         </div>
 
-        {/* ── Selected case studies ────────────────────────────────────────
-            Quieter — no raise, no lift into the label band — but sharing the
-            same desk surface, object language and a connecting thread. Not
-            diminished: same label treatment, same interaction states. */}
-        <div className="relative mt-20 border-t border-line pt-14 lg:mt-16 lg:pt-12">
-          <h3 id="case-studies-heading" className="label-type mb-8 text-blue-deep lg:mb-6">
-            Selected case studies
-          </h3>
-
-          <CaseStudyThread />
-
-          <div className="grid gap-y-16 md:grid-cols-2 md:gap-x-8 md:gap-y-14 lg:grid-cols-3 lg:gap-x-8 lg:pb-4">
-            <HealthDashboardArtifact study={oliveIlive} index={4} />
-            <VocHubArtifact study={vocHub} index={5} />
-            <VirtualBuddyArtifact study={virtualBuddy} index={6} />
-          </div>
+        {/* ── Row three: two collected, slightly staggered objects ── */}
+        <div className="relative mt-20 grid gap-y-14 md:grid-cols-2 md:gap-x-8 lg:mt-24 lg:grid-cols-12 lg:items-start lg:gap-x-8 lg:gap-y-0">
+          <VocHubArtifact study={vocHub} index={5} className="lg:col-span-5 lg:col-start-2 lg:h-auto" />
+          <VirtualBuddyArtifact
+            study={virtualBuddy}
+            index={6}
+            className="lg:col-span-5 lg:col-start-8 lg:mt-16 lg:h-auto"
+          />
         </div>
       </Container>
     </div>

@@ -33,7 +33,7 @@ export function VocHubArtifact({
       index={index}
       subtitle="Designing a more engaging vocabulary-learning experience"
       discipline="UX research · Education · Mobile design"
-      sceneDescription="An illustration of a small fan of vocabulary cards beside an open, ruled notebook, with a compact phone screen behind them. The cards straighten slightly on hover or focus. The screens and cards are abstract placeholders, not the product's real interface."
+      sceneDescription="An illustration of a small fan of vocabulary cards beside an open, ruled notebook, with a compact phone screen behind them. This is an illustrative reconstruction, not a real project screen."
     >
       <svg
         viewBox="0 0 300 182"

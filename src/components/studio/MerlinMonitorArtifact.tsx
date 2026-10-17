@@ -34,7 +34,7 @@ export function MerlinMonitorArtifact({
       title="Merlin Mines"
       subtitle={study.premise}
       discipline={study.projectType}
-      sceneDescription="An illustration of a studio monitor showing an abstract workflow diagram of connected nodes, with a small notes card beside it. One path through the diagram highlights on hover or focus. This is a schematic placeholder, not the real interface."
+      sceneDescription="An illustration of a studio monitor showing an abstract workflow diagram of connected nodes, with a small notes card beside it. This is an illustrative reconstruction, not a real project screen."
     >
       <svg
         viewBox="0 0 300 182"
