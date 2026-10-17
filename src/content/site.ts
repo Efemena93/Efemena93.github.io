@@ -37,7 +37,7 @@ export const site = {
     "Efemena Udezi is a UX, product and interaction designer working on emotionally intelligent digital experiences — research, storytelling and interaction design for the things people find hard to say.",
 
   locale: "en_GB",
-  themeColor: "#0e0f13",
+  themeColor: "#2a2521",
 
   contact: {
     email: "udezimena@gmail.com",

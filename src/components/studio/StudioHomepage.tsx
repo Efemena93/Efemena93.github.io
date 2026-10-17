@@ -1,5 +1,3 @@
-import Link from "next/link";
-
 import { Container, Eyebrow } from "@/components/primitives";
 
 import { StudioAmbient, StudioIntro, StudioScene, type StudioArtifacts } from "./StudioScene";
@@ -66,17 +64,6 @@ export function StudioHomepage({ artifacts }: { artifacts: StudioArtifacts }) {
               ))}
             </ol>
 
-            <p className="measure text-small leading-relaxed text-charcoal-soft">
-              Six projects, arranged as they sit in the studio: three professional roles —
-              the blueprint on the wall, the prototype on the desk, the monitor on the
-              stand — and three case studies below them. Each object opens its full page,
-              and hovering or tabbing to one brings up its role and where it currently
-              stands. Everything works from the keyboard —{" "}
-              <Link href="/work" className="link-underline text-blue-deep">
-                the conventional list is here
-              </Link>{" "}
-              if you would rather read it that way.
-            </p>
           </div>
 
           <StudioAmbient />

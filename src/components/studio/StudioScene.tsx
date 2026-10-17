@@ -240,25 +240,30 @@ export function StudioScene({
 export function StudioIntro() {
   return (
     <>
-      <p className="label-type eyebrow-tick mb-6 text-blue-deep">{site.hero.eyebrow}</p>
+      <p className="label-type eyebrow-tick mb-6 text-blue-deep">
+        Efemena Udezi · {site.hero.eyebrow}
+      </p>
 
-      {/* display-2 rather than display-1: in a five-column well the larger
-          size ran to five lines and pushed the studio below the fold. Three
-          lines, as in the reference. */}
       <h1 id="hero-heading" className="max-w-[13ch] font-display text-display-2 text-charcoal">
-        {site.hero.heading}
+        Welcome to my studio.
       </h1>
 
       <p className="mt-6 max-w-[46ch] text-body text-charcoal-soft">
-        {site.hero.supporting}
+        I’m Efemena, a product and interaction designer interested in the signals people
+        leave behind — what they do, what they feel and what systems often fail to notice.
+      </p>
+      <p className="mt-4 max-w-[46ch] text-body text-charcoal-soft">
+        This is where I collect those signals, connect patterns and turn them into
+        thoughtful experiences.
       </p>
 
-      <p className="label-type mt-6 text-charcoal-muted">{site.hero.credential}</p>
-
       <div className="mt-9 flex flex-wrap items-center gap-3">
-        <LinkButton href="#studio-heading">Explore the studio</LinkButton>
-        <LinkButton href="/work" variant="outline">
-          View all work
+        <LinkButton href="/work">View all work</LinkButton>
+        <LinkButton href="/resume" variant="outline">
+          Résumé
+        </LinkButton>
+        <LinkButton href="/contact" variant="outline">
+          Contact
         </LinkButton>
       </div>
     </>

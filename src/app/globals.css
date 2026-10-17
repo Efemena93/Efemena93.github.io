@@ -30,30 +30,33 @@
 
 @theme {
   /* Ground — near-black through warm graphite */
-  --color-ivory: #0e0f13;
-  --color-paper: #16171c;
-  --color-sunk: #121319;
-  --color-raised: #1e1f26;
+  --color-ivory: #2a2521;
+  --color-paper: #342e29;
+  --color-sunk: #241f1c;
+  --color-raised: #413a33;
 
   /* Warm cream paper — research notes, pinned material */
-  --color-parchment: #ece4d5;
+  --color-parchment: #efe6d3;
   --color-parchment-ink: #2e2a24;
 
   /* Ink */
-  --color-charcoal: #f2efe9;
-  --color-charcoal-soft: #d3cec4;
-  --color-charcoal-muted: #a49e92;
+  --color-charcoal: #f5eee2;
+  --color-charcoal-soft: #dcd2c1;
+  --color-charcoal-muted: #b8ad9a;
+
+  /* Subtle amber highlight — focal light, never a fill */
+  --color-amber: #d9a860;
 
   /* Accents — markers and surfaces */
-  --color-sage: #8fb39b;
-  --color-blue: #7c82c4;
-  --color-clay: #7e9ab5;
+  --color-sage: #9bbba2;
+  --color-blue: #a79dd6;
+  --color-clay: #8fb0cc;
 
   /* Accents — deep. On a dark ground "deep" is the text-safe variant, which
      is the lighter one. All are ≥ 7:1 on #0E0F13. */
-  --color-sage-deep: #a8c7b2;
-  --color-blue-deep: #a5a9dc;
-  --color-clay-deep: #9fbad2;
+  --color-sage-deep: #b4d0ba;
+  --color-blue-deep: #c0b8e6;
+  --color-clay-deep: #a9c4dc;
 
   /* Structure — warm hairlines, the fine borders of the studio */
   --color-line: rgba(242, 239, 233, 0.13);
@@ -204,8 +207,8 @@
     z-index: -1;
     pointer-events: none;
     background:
-      radial-gradient(ellipse 70% 55% at 26% 6%, rgba(242, 239, 233, 0.055) 0%, transparent 62%),
-      radial-gradient(ellipse 45% 45% at 82% 74%, rgba(124, 130, 196, 0.05) 0%, transparent 58%);
+      radial-gradient(ellipse 70% 55% at 26% 6%, rgba(217, 168, 96, 0.13) 0%, transparent 62%),
+      radial-gradient(ellipse 45% 45% at 82% 74%, rgba(167, 157, 214, 0.09) 0%, transparent 58%);
   }
 
   :root[data-theme="light"] body::before {
@@ -214,8 +217,21 @@
       radial-gradient(ellipse 45% 45% at 82% 74%, rgba(74, 78, 140, 0.04) 0%, transparent 58%);
   }
 
+  /* Fine paper grain over everything; decorative, pointer-transparent. */
+  body::after {
+    content: "";
+    position: fixed;
+    inset: 0;
+    z-index: 60;
+    pointer-events: none;
+    opacity: 0.07;
+    mix-blend-mode: overlay;
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='160' height='160'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='2' stitchTiles='stitch'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>");
+  }
+
   @media (prefers-reduced-transparency: reduce), (prefers-contrast: more) {
-    body::before {
+    body::before,
+    body::after {
       display: none;
     }
   }

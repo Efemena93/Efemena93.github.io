@@ -44,7 +44,7 @@ export function ArtifactLabel({
       </p>
 
       <p className="label-type mt-4 inline-flex min-h-11 items-center gap-2 text-blue-deep">
-        <span className="link-underline">Open case study</span>
+        <span className="link-underline">View project</span>
         <span
           aria-hidden="true"
           className="transition-transform duration-300 ease-[var(--ease-out-soft)] group-hover:translate-x-1 group-focus-within:translate-x-1"
