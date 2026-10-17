@@ -25,7 +25,6 @@ export const monoLabel = JetBrains_Mono({
   subsets: ["latin"],
   display: "swap",
   variable: "--font-mono-label",
-  weight: ["400", "500"],
 });
 
 export const fontVariables = [fraunces.variable, inter.variable, monoLabel.variable].join(" ");
