@@ -32,7 +32,7 @@ const PLACEHOLDER_PATTERNS: Array<{ pattern: RegExp; label: string }> = [
 export class ContentValidationError extends Error {
   constructor(problems: string[]) {
     super(
-      `Content validation failed - ${problems.length} problem${problems.length === 1 ? "" : "s"} in published content:\n` +
+      `Content validation failed: ${problems.length} problem${problems.length === 1 ? "" : "s"} in published content:\n` +
         problems.map((p) => `  · ${p}`).join("\n") +
         "\n\nEither finish the content, or set its visibility to \"draft\".",
     );
@@ -60,7 +60,7 @@ function scanBlocks(where: string, blocks: Block[], problems: string[]): void {
     const at = `${where} block ${i + 1} (${block.type})`;
 
     if (block.type === "todo") {
-      problems.push(`${at} is a "to write" block - published content cannot contain one`);
+      problems.push(`${at} is a "to write" block: published content cannot contain one`);
       return;
     }
 

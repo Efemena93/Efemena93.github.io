@@ -20,14 +20,14 @@ export const holdingPattern: CaseStudy = {
   visibility: "published",
   title: "Emotional Continuity During Military Deployment",
   premise:
-    "Design research into how military families keep a shared life intact across a deployment - from the side that stays.",
+    "Design research into how military families keep a shared life intact across a deployment. From the side that stays.",
   problemArea: "Military family separation · emotional continuity",
   humanProblem:
     "Exploring how the civilian partner at home carries uncertainty, invisible responsibility and emotional distance when everyday communication is constrained.",
   boundary: "Research-led capstone · Not therapy, monitoring or another messaging channel",
   shortRole: "Sole researcher & designer",
   projectType: "Master's capstone · design research",
-  headline: "Fieldwork in progress. The reframe - away from communication volume, toward what is withheld and how silence is read - is the finding so far.",
+  headline: "Fieldwork in progress. The reframe, away from communication volume, toward what is withheld and how silence is read, is the finding so far.",
   summary:
     "A Master's capstone on emotional continuity during military separation, centred on the civilian partner holding the home front together. The work reframes the problem away from 'communicate more' and toward what gets shared, what gets withheld, and how silence is read.",
   // Not on the homepage studio (excluded per the professional-artifacts
@@ -61,7 +61,7 @@ export const holdingPattern: CaseStudy = {
     is: [
       "Design research into how meaning is carried, withheld and misread across a long separation.",
       "Centred on the civilian partner at home, who is usually treated as secondary in this problem space.",
-      "An exploration of what a system should notice - not of what it should measure.",
+      "An exploration of what a system should notice. Not of what it should measure.",
       "Honest about being incomplete: this is live work, and it is presented as live work.",
     ],
     isNot: [
@@ -75,7 +75,7 @@ export const holdingPattern: CaseStudy = {
     unvalidated: [
       "Every design proposition in the Concept section. None has been tested with a participant.",
       "The claim that asynchronous, low-pressure expression reduces the cost of an unanswered message.",
-      "The claim that surfacing the shape of contact - rather than its content - is useful rather than anxiety-producing.",
+      "The claim that surfacing the shape of contact, rather than its content, is useful rather than anxiety-producing.",
       "Whether anything designed here would be wanted at all during the hardest weeks of a deployment.",
     ],
     notRepresented: [
@@ -96,7 +96,7 @@ export const holdingPattern: CaseStudy = {
         {
           type: "prose",
           text: [
-            "A deployment is usually described in terms of the service member: where they are, how long they will be gone, when they can call. The civilian partner appears in that description as the recipient of the call. In practice they are running a household, absorbing every logistical failure that happens while the other person is unreachable, holding the emotional weather for any children involved, and - this is the part that interested me - often managing the tone of the limited contact they do get, so that the person far from home does not have to carry worry they cannot act on.",
+            "A deployment is usually described in terms of the service member: where they are, how long they will be gone, when they can call. The civilian partner appears in that description as the recipient of the call. In practice they are running a household, absorbing every logistical failure that happens while the other person is unreachable, holding the emotional weather for any children involved, and, this is the part that interested me, often managing the tone of the limited contact they do get, so that the person far from home does not have to carry worry they cannot act on.",
             "That last behaviour is the seed of this project. It means the contact that does happen is frequently edited. Both people are being careful. Both people know the other is being careful. And the thing that erodes over months is not the frequency of contact but the confidence that what you are hearing is the whole of it.",
           ],
         },
@@ -108,7 +108,7 @@ export const holdingPattern: CaseStudy = {
         {
           type: "prose",
           text: [
-            "That reframe is the most consequential decision in the work so far, because it rules out the obvious product. If the problem were volume, the answer would be a better messaging app, and there are already good ones. If the problem is interpretation under conditions of scarcity and asymmetry, the answer is somewhere else entirely - and possibly is not an app at all.",
+            "That reframe is the most consequential decision in the work so far, because it rules out the obvious product. If the problem were volume, the answer would be a better messaging app, and there are already good ones. If the problem is interpretation under conditions of scarcity and asymmetry, the answer is somewhere else entirely. And possibly is not an app at all.",
           ],
         },
       ],
@@ -124,7 +124,7 @@ export const holdingPattern: CaseStudy = {
         {
           type: "prose",
           text: [
-            "Before recruiting anyone, I worked the problem through a Playing to Win choice cascade - winning aspiration, where to play, how to win, capabilities, management systems - and then ran the same cascade at three different scales. Doing it three times was the point: the same problem gives very different answers depending on who is imagined to be solving it.",
+            "Before recruiting anyone, I worked the problem through a Playing to Win choice cascade, winning aspiration, where to play, how to win, capabilities, management systems, and then ran the same cascade at three different scales. Doing it three times was the point: the same problem gives very different answers depending on who is imagined to be solving it.",
           ],
         },
         {
@@ -132,15 +132,15 @@ export const holdingPattern: CaseStudy = {
           title: "Three lenses on the same problem",
           steps: [
             {
-              title: "Individual - this project",
+              title: "Individual: this project",
               text: "What one designer with a capstone timeline and no institutional access can meaningfully learn and propose. Narrow, deep, honest about scope.",
             },
             {
-              title: "Ecosystem - a large platform",
+              title: "Ecosystem: a large platform",
               text: "What an organisation already embedded in a family's digital life could do about military-family separation, and what it would be irresponsible for such an organisation to touch.",
             },
             {
-              title: "Venture - a startup",
+              title: "Venture: a startup",
               text: "One repeated, high-impact situation worth building a company around. Candidates under consideration: the first extended training separation, the first PCS move, chronically inconsistent deployment communications, post-relocation adjustment, and reintegration.",
             },
           ],
@@ -169,7 +169,7 @@ export const holdingPattern: CaseStudy = {
         {
           type: "prose",
           text: [
-            "The study is designed around long-form semi-structured interviews rather than surveys. The questions people can answer honestly here are not the ones that fit on a five-point scale - the useful material is in the anecdote, the pause, and the thing said just after 'well, it's fine, but'.",
+            "The study is designed around long-form semi-structured interviews rather than surveys. The questions people can answer honestly here are not the ones that fit on a five-point scale. The useful material is in the anecdote, the pause, and the thing said just after 'well, it's fine, but'.",
           ],
         },
         {
@@ -208,7 +208,7 @@ export const holdingPattern: CaseStudy = {
         {
           type: "callout",
           title: "How participants are handled",
-          text: "No participant is identifiable. Quotes are attributed by role and separation stage only - never by name, unit, base, location or dates. Anything that could identify a service member's posting is removed at transcription, not at publication.",
+          text: "No participant is identifiable. Quotes are attributed by role and separation stage only. Never by name, unit, base, location or dates. Anything that could identify a service member's posting is removed at transcription, not at publication.",
         },
       ],
     },
@@ -223,7 +223,7 @@ export const holdingPattern: CaseStudy = {
         {
           type: "prose",
           text: [
-            "These are directions rather than features. Each one is an attempt to act on the reframe - to change what a system notices, rather than to move more messages through it.",
+            "These are directions rather than features. Each one is an attempt to act on the reframe. To change what a system notices, rather than to move more messages through it.",
           ],
         },
         {
@@ -235,7 +235,7 @@ export const holdingPattern: CaseStudy = {
             },
             {
               level: "concept",
-              text: "Shape without content: making the rhythm of contact visible to both people - that it has been irregular, that a window was missed - without exposing what was said, and without either partner being able to use it to check up on the other.",
+              text: "Shape without content: making the rhythm of contact visible to both people, that it has been irregular, that a window was missed, without exposing what was said, and without either partner being able to use it to check up on the other.",
             },
             {
               level: "concept",

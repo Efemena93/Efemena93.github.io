@@ -89,7 +89,7 @@ export function FeaturedProjectCard({
       <Link
         href={`/work/${study.slug}`}
         className="block pt-6 focus-visible:outline-offset-4"
-        aria-label={`${study.title} - ${study.premise}. Read the case study.`}
+        aria-label={`${study.title}: ${study.premise}. Read the case study.`}
       >
         {/* Cover. Revealed by an upward-lifting mask rather than a fade, so it
             reads as being uncovered. 620ms; skipped entirely under reduced

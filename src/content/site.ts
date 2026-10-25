@@ -34,14 +34,14 @@ export const site = {
 
   /** Used as the meta description and the OG description sitewide. */
   description:
-    "Efemena Udezi is a UX, product and interaction designer working on emotionally intelligent digital experiences - research, storytelling and interaction design for the things people find hard to say.",
+    "Efemena Udezi is a UX, product and interaction designer working on emotionally intelligent digital experiences. Research, storytelling and interaction design for the things people find hard to say.",
 
   locale: "en_GB",
   themeColor: "#2a2521",
 
   contact: {
     email: "udezimena@gmail.com",
-    availability: "Open to design roles - US, Europe and remote",
+    availability: "Open to design roles: US, Europe and remote",
     location: "Denton, Texas",
     responseTime: "I read everything and reply within a few days.",
   },
@@ -76,7 +76,7 @@ export const site = {
   practice: {
     lead: "I don't start with screens. I start with questions.",
     body: [
-      "Most of my work sits close to something tender. In each case the interface is the least interesting part - what matters is which signals a system chooses to notice, and which it quietly discards.",
+      "Most of my work sits close to something tender. In each case the interface is the least interesting part. What matters is which signals a system chooses to notice, and which it quietly discards.",
       "So I separate what I observed from what I concluded from what I am still only proposing, and I label it. The longer version is on the About page.",
     ],
   },
@@ -92,7 +92,7 @@ export const site = {
    * button, the résumé page and the contact page all pick it up automatically
    * and the "not yet available" state disappears.
    */
-  resumePdf: TODO("résumé PDF - see the note above before publishing"),
+  resumePdf: TODO("résumé PDF: see the note above before publishing"),
 } as const;
 
 /* ---------------------------------------------------------------- profile */
@@ -120,7 +120,7 @@ export const profile = {
     {
       title: "Research & discovery",
       items: [
-        "Mixed-method studies - surveys, semi-structured interviews, diary prompts",
+        "Mixed-method studies: surveys, semi-structured interviews, diary prompts",
         "Competitive and comparative analysis",
         "Affinity mapping, thematic synthesis, rainbow spreadsheets",
         "Usability testing, moderated and unmoderated",
@@ -141,7 +141,7 @@ export const profile = {
         "Design language systems and component libraries",
         "Accessible colour, type and interaction design (WCAG 2.2 AA)",
         "Responsive and adaptive layout",
-        "Developer handoff and design–engineering collaboration",
+        "Developer handoff and design to engineering collaboration",
       ],
     },
     {

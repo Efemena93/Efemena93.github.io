@@ -8,7 +8,7 @@ import { pageMetadata } from "@/lib/seo";
 
 export const metadata = pageMetadata({
   title: "Résumé",
-  description: `${site.name} - ${site.role}. Experience, education and capabilities.`,
+  description: `${site.name}, ${site.role}. Experience, education and capabilities.`,
   path: "/resume",
 });
 
@@ -79,7 +79,7 @@ export default function ResumePage() {
                         <div className="flex flex-wrap items-baseline justify-between gap-x-6 gap-y-1">
                           <h3 className="font-display text-h3 text-charcoal">{role.title}</h3>
                           <span className="label-type text-charcoal-muted">
-                            {role.start} - {role.end}
+                            {role.start} to {role.end}
                           </span>
                         </div>
                         <p className="mt-1 text-small text-charcoal-muted">
@@ -117,7 +117,7 @@ export default function ResumePage() {
                           {entry.qualification}
                         </h3>
                         <span className="label-type text-charcoal-muted">
-                          {entry.start} - {entry.end}
+                          {entry.start} to {entry.end}
                         </span>
                       </div>
                       <p className="mt-1 text-small text-charcoal-muted">{entry.institution}</p>

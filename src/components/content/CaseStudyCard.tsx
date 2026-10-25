@@ -35,7 +35,7 @@ export function CaseStudyCard({
       <Link
         href={`/work/${study.slug}`}
         className="block pt-6 focus-visible:outline-offset-4"
-        aria-label={`${study.title} - ${study.premise}`}
+        aria-label={`${study.title}: ${study.premise}`}
       >
         <div
           className={cx(

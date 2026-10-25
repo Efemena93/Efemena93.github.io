@@ -5,7 +5,7 @@
      The site switches theme on an explicit :root[data-theme="light"]
      attribute, not on prefers-color-scheme. An img-loaded SVG cannot see
      that attribute, so a prefers-color-scheme media query here would turn
-     this diagram light while the page around it stayed dark - the exact
+     this diagram light while the page around it stayed dark. The exact
      mismatch it was meant to avoid. These values match the site's default
      (dark) palette and the placeholder SVGs in public/projects/.
      To make these follow the toggle, the figure renderer would have to
@@ -73,5 +73,5 @@
 
 <path class="rule" d="M1003 276 V308 H560" stroke-width="2" fill="none" stroke-dasharray="5 6"/>
 <path class="rule" d="M569 301 L559 308 L569 315" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
-<text class="meta m" x="582" y="313">06 · Investigate - security or docs, at any point, not only at the end</text>
+<text class="meta m" x="582" y="313">06 · Investigate: security or docs, at any point, not only at the end</text>
 </svg>

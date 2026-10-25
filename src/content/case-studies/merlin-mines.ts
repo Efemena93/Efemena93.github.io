@@ -36,18 +36,18 @@ export const merlinMines: CaseStudy = {
     "A CI/CD automation product where the marketing promise and the product interface had to be designed as one continuous journey.",
   problemArea: "Developer tooling · CI/CD automation",
   humanProblem:
-    "A developer evaluating an automation tool has to work out what it does, where to begin, whether it is running, and whether it is safe - usually in that order, usually alone.",
+    "A developer evaluating an automation tool has to work out what it does, where to begin, whether it is running, and whether it is safe. Usually in that order, usually alone.",
   shortRole: "UI/UX design intern · sole designer",
   projectType: "Internship, in-house · Merlin Mines",
   headline:
     "Established the product's first UI patterns and components as its only dedicated design resource. The interface is a design proposition: no part of it has been tested with a developer.",
   summary:
-    "Three months as the sole designer on SpellCarver, a secure-automation product from Merlin Mines. The work spans the public site and the product interface, and the argument running through it is that those are one journey, not two projects - the words a visitor reads on the marketing page should be the words they find in the navigation.",
+    "Three months as the sole designer on SpellCarver, a secure-automation product from Merlin Mines. The work spans the public site and the product interface, and the argument running through it is that those are one journey, not two projects. The words a visitor reads on the marketing page should be the words they find in the navigation.",
   featured: true,
   order: 9,
   status: "next-testing-phase",
   year: "2025",
-  timeline: "Jun – Aug 2025 · Remote, US",
+  timeline: "Jun to Aug 2025 · Remote, US",
   context: "Internship, in-house",
   roles: ["UI/UX Design Intern"],
   tools: [],
@@ -59,12 +59,12 @@ export const merlinMines: CaseStudy = {
 
   atAGlance: {
     problem:
-      "SpellCarver had to persuade a developer on a marketing page and then orient them inside a technical product - and the two surfaces were being designed as if they were unrelated.",
+      "SpellCarver had to persuade a developer on a marketing page and then orient them inside a technical product. And the two surfaces were being designed as if they were unrelated.",
     role: "Sole designer on the team, and the product's first dedicated design resource: end-to-end UX and UI across the public site and the product interface.",
     approach:
       "Treated the site and the product as one journey. Grouped navigation around what a developer is trying to do, gave pipeline state a deliberate reading order, and made security a named destination rather than something to be inferred.",
     outcome:
-      "A coherent screen set, a documented navigation structure and the product's first UI patterns and components. No usability testing, no accessibility audit and no outcome metrics - the evaluation plan below is proposed work, not completed work.",
+      "A coherent screen set, a documented navigation structure and the product's first UI patterns and components. No usability testing, no accessibility audit and no outcome metrics. The evaluation plan below is proposed work, not completed work.",
   },
 
   ethics: {
@@ -75,7 +75,7 @@ export const merlinMines: CaseStudy = {
     isNot: [
       "Not a research study. No user interviews, surveys, competitive analysis or usability testing were conducted.",
       "Not a security or compliance claim. The product is positioned around secure automation; nothing here certifies that it is secure or compliant.",
-      "Not a performance report. The figures visible on the dashboard screens are interface content - sample values that demonstrate a layout. They are not measurements of anything.",
+      "Not a performance report. The figures visible on the dashboard screens are interface content. Sample values that demonstrate a layout. They are not measurements of anything.",
     ],
     unvalidated: [
       "The audience model. Who uses SpellCarver, and what they need first, is reasoned from the product category rather than observed.",
@@ -97,9 +97,9 @@ export const merlinMines: CaseStudy = {
         {
           type: "prose",
           text: [
-            "SpellCarver is a secure-automation product: it runs CI/CD pipelines and keeps the security picture visible while it does. Like most products of its kind, it exists as two things at once - a public site that has to be persuasive, and a product interface that has to be precise.",
+            "SpellCarver is a secure-automation product: it runs CI/CD pipelines and keeps the security picture visible while it does. Like most products of its kind, it exists as two things at once. A public site that has to be persuasive, and a product interface that has to be precise.",
             "The failure mode is familiar to anyone who has evaluated developer tooling. The marketing page promises something in confident, abstract language; you sign in, and the interface greets you with a different vocabulary and no obvious first move. Nothing is broken. The product simply has not told you what it is, and you have to reconstruct it from the navigation.",
-            "I joined as the only designer on the team. The product had never had a dedicated design resource, which meant the question was not which screens needed polishing - it was what conventions the product should have at all, since whatever I established would be what the engineers built against afterwards.",
+            "I joined as the only designer on the team. The product had never had a dedicated design resource, which meant the question was not which screens needed polishing. It was what conventions the product should have at all, since whatever I established would be what the engineers built against afterwards.",
           ],
         },
         {
@@ -107,7 +107,7 @@ export const merlinMines: CaseStudy = {
           title: "What this page is, and what it is not",
           tone: "caution",
           text:
-            "No research was conducted on this project - no interviews, no surveys, no usability testing, no accessibility audit. Everything below is therefore marked as a hypothesis or an unvalidated concept rather than a finding. I would rather show the reasoning honestly labelled than dress a design argument up as evidence it does not have.",
+            "No research was conducted on this project. No interviews, no surveys, no usability testing, no accessibility audit. Everything below is therefore marked as a hypothesis or an unvalidated concept rather than a finding. I would rather show the reasoning honestly labelled than dress a design argument up as evidence it does not have.",
         },
       ],
     },
@@ -134,7 +134,7 @@ export const merlinMines: CaseStudy = {
             },
             {
               level: "hypothesis",
-              text: "A secondary audience - technical leads and security-minded stakeholders - arrives needing confidence in process status and security posture rather than needing to run anything.",
+              text: "A secondary audience, technical leads and security-minded stakeholders, arrives needing confidence in process status and security posture rather than needing to run anything.",
             },
             {
               level: "hypothesis",
@@ -164,11 +164,11 @@ export const merlinMines: CaseStudy = {
           type: "list",
           ordered: true,
           items: [
-            "Connect the story to the product - make the site's value proposition and its calls to action lead naturally into the interface.",
-            "Make navigation predictable - group destinations around tasks, not around the internal feature list.",
-            "Prioritise status and next actions - give pipeline state and progress a deliberate visual hierarchy.",
-            "Make security discoverable - treat it as a first-class destination, not a buried utility.",
-            "Keep the interface technically credible - concise labels, clear status language, consistent patterns for metrics and actions.",
+            "Connect the story to the product. Make the site's value proposition and its calls to action lead naturally into the interface.",
+            "Make navigation predictable: group destinations around tasks, not around the internal feature list.",
+            "Prioritise status and next actions: give pipeline state and progress a deliberate visual hierarchy.",
+            "Make security discoverable: treat it as a first-class destination, not a buried utility.",
+            "Keep the interface technically credible: concise labels, clear status language, consistent patterns for metrics and actions.",
           ],
         },
         {
@@ -181,7 +181,7 @@ export const merlinMines: CaseStudy = {
             height: 560,
           },
           description:
-            "The journey in three stages. Discover, on the marketing site: state the promise, establish security as the frame, make one next step obvious. Get oriented, in the product: group destinations by intent, show current state, name the next action. Act and investigate, in the workspace: configure and run work, read pipeline progress, reach security and documentation. The continuity being designed for is terminology - a word read on the site should be the word found in the navigation.",
+            "The journey in three stages. Discover, on the marketing site: state the promise, establish security as the frame, make one next step obvious. Get oriented, in the product: group destinations by intent, show current state, name the next action. Act and investigate, in the workspace: configure and run work, read pipeline progress, reach security and documentation. The continuity being designed for is terminology. A word read on the site should be the word found in the navigation.",
           },
       ],
     },
@@ -189,7 +189,7 @@ export const merlinMines: CaseStudy = {
     {
       id: "decision-journey",
       kind: "concept",
-      title: "Decision one - the site and the product are one journey",
+      title: "Decision one: the site and the product are one journey",
       standfirst: "Each of the four decisions below is a design proposition. None has been tested.",
       blocks: [
         {
@@ -209,12 +209,12 @@ export const merlinMines: CaseStudy = {
     {
       id: "decision-navigation",
       kind: "concept",
-      title: "Decision two - navigation grouped by intent",
+      title: "Decision two: navigation grouped by intent",
       blocks: [
         {
           type: "prose",
           text: [
-            "The product's destinations - dashboard, the SpellCarver workspace itself, tasks, documentation, security, the Spellbook, notifications - can be listed flat, or grouped by what someone came to do. I grouped them: a place to see state, a place to do work, a place to learn, a place to check trust. A developer arriving mid-task should be able to predict which group a destination belongs to without reading every label.",
+            "The product's destinations, dashboard, the SpellCarver workspace itself, tasks, documentation, security, the Spellbook, notifications, can be listed flat, or grouped by what someone came to do. I grouped them: a place to see state, a place to do work, a place to learn, a place to check trust. A developer arriving mid-task should be able to predict which group a destination belongs to without reading every label.",
           ],
         },
         {
@@ -239,13 +239,13 @@ export const merlinMines: CaseStudy = {
     {
       id: "decision-state",
       kind: "concept",
-      title: "Decision three - operational state gets a reading order",
+      title: "Decision three: operational state gets a reading order",
       blocks: [
         {
           type: "prose",
           text: [
             "A dashboard full of equally weighted numbers is a dashboard nobody reads twice. I separated summary values from live pipeline activity and gave them a deliberate sequence: what you should notice first, what you scan second, where you go for detail. Status is carried by a label as well as a colour, so the distinction between informational and actionable survives both greyscale and a colour-blind reader.",
-            "The figures visible on those screens are sample content. They demonstrate how a metric behaves in a layout - how a long duration wraps, how a count sits next to its label. They are not measurements, and I have been careful not to let them become outcomes later in this page.",
+            "The figures visible on those screens are sample content. They demonstrate how a metric behaves in a layout. How a long duration wraps, how a count sits next to its label. They are not measurements, and I have been careful not to let them become outcomes later in this page.",
           ],
         },
         {
@@ -259,7 +259,7 @@ export const merlinMines: CaseStudy = {
     {
       id: "decision-security",
       kind: "concept",
-      title: "Decision four - security is a destination, not an inference",
+      title: "Decision four: security is a destination, not an inference",
       blocks: [
         {
           type: "prose",
@@ -291,12 +291,12 @@ export const merlinMines: CaseStudy = {
             height: 360,
           },
           description:
-            "Six steps: discover the value, orient to the workspace, configure prerequisites, run a workflow, monitor the status. The sixth, investigate - security or documentation - is drawn as a dashed return path rather than an endpoint, because reaching for the security screen or the docs is something a developer does at any point, not a stage they graduate to.",
+            "Six steps: discover the value, orient to the workspace, configure prerequisites, run a workflow, monitor the status. The sixth, investigate, security or documentation, is drawn as a dashed return path rather than an endpoint, because reaching for the security screen or the docs is something a developer does at any point, not a stage they graduate to.",
         },
         {
           type: "prose",
           text: [
-            "Drawing investigation as a loop rather than a final step changed where documentation and security had to live. If they are the end of a sequence, they can sit deep. If they are something you reach for mid-task, they have to be reachable from wherever you are - which is what made the case for keeping both in the top-level navigation rather than inside the workspace.",
+            "Drawing investigation as a loop rather than a final step changed where documentation and security had to live. If they are the end of a sequence, they can sit deep. If they are something you reach for mid-task, they have to be reachable from wherever you are. Which is what made the case for keeping both in the top-level navigation rather than inside the workspace.",
           ],
         },
         {
@@ -328,7 +328,7 @@ export const merlinMines: CaseStudy = {
             },
             {
               title: "Navigation findability",
-              text: "Ask people to locate a task, the documentation and the security information without guidance. Record misroutes and hesitation, not just success - the pause before a correct click is where the grouping is failing.",
+              text: "Ask people to locate a task, the documentation and the security information without guidance. Record misroutes and hesitation, not just success. The pause before a correct click is where the grouping is failing.",
             },
             {
               title: "Pipeline status interpretation",
@@ -355,9 +355,9 @@ export const merlinMines: CaseStudy = {
         {
           type: "prose",
           text: [
-            "What the internship produced: a coherent screen set across the public site and the product, a documented navigation structure, a consistent content hierarchy for metrics and status, and the product's first UI patterns and components - which, as the first dedicated design resource the product had, is the part that outlasts any individual screen.",
+            "What the internship produced: a coherent screen set across the public site and the product, a documented navigation structure, a consistent content hierarchy for metrics and status, and the product's first UI patterns and components. Which, as the first dedicated design resource the product had, is the part that outlasts any individual screen.",
             "What it did not produce: a single validated claim. The design is reasoned, internally consistent and completely untested. The honest version of this case study is one where the four decisions above are good arguments waiting for someone to check them, and I would rather hand a design director that than a page of invented percentages.",
-            "The lesson I took from it is narrower than \"developer tools should be clear.\" It is that a technical product's mental model gets assembled from four places at once - the marketing story, the navigation structure, the operational states and the security information - and that designing any one of them without the other three produces a product people can use but cannot describe.",
+            "The lesson I took from it is narrower than \"developer tools should be clear.\" It is that a technical product's mental model gets assembled from four places at once, the marketing story, the navigation structure, the operational states and the security information, and that designing any one of them without the other three produces a product people can use but cannot describe.",
           ],
         },
       ],

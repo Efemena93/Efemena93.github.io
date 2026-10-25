@@ -32,7 +32,7 @@ export function VirtualBuddyArtifact({
       index={index}
       subtitle="A responsive study-community experience"
       discipline="Interface design · Education · Responsive design"
-      sceneDescription="An illustration of a small laptop showing a study-community interface - profile cards and a shared feed, drawn as plain blocks - beside a short stack of collaborative notes. This is an illustrative reconstruction, not a real project screen."
+      sceneDescription="An illustration of a small laptop showing a study-community interface, profile cards and a shared feed, drawn as plain blocks, beside a short stack of collaborative notes. This is an illustrative reconstruction, not a real project screen."
     >
       <svg
         viewBox="0 0 300 182"

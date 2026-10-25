@@ -131,7 +131,7 @@ export function StudioArtifact({
               />
               {image.placeholder ? (
                 <figcaption className="label-type mt-2 text-charcoal-muted">
-                  Placeholder image - real screen to come
+                  Placeholder image: real screen to come
                 </figcaption>
               ) : null}
             </figure>

@@ -99,7 +99,7 @@ export function SiteHeader() {
         <Link
           href="/"
           className="gradient-text font-display text-[1.125rem] tracking-tight"
-          aria-label={`${site.name} - home`}
+          aria-label={`${site.name}: home`}
         >
           {site.name}
         </Link>

@@ -49,7 +49,7 @@ export function ContactForm() {
     else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email))
       next.email = "Error: that does not look like an email address.";
     if (message.length < 10)
-      next.message = "Error: please add a little more detail - at least a sentence.";
+      next.message = "Error: please add more detail. Write at least one sentence.";
 
     return next;
   }
@@ -74,7 +74,7 @@ export function ContactForm() {
     }
 
     if (!FORM_ENDPOINT) {
-      const subject = encodeURIComponent(`Portfolio enquiry - ${data.get("name")}`);
+      const subject = encodeURIComponent(`Portfolio enquiry: ${data.get("name")}`);
       const body = encodeURIComponent(
         `${data.get("message")}\n\n- ${data.get("name")}\n${data.get("email")}`,
       );
@@ -166,7 +166,7 @@ export function ContactForm() {
 
         <p aria-live="polite" className="text-small text-charcoal-muted">
           {status === "sent"
-            ? "Thank you - that is on its way."
+            ? "Thank you. That is on its way."
             : status === "failed"
               ? "That did not send. Email me directly and I will pick it up."
               : site.contact.responseTime}

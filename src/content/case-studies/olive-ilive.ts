@@ -15,10 +15,10 @@ export const oliveIlive: CaseStudy = {
     "A responsive health and wellbeing portal designed for inclusivity, privacy and the questions people are embarrassed to ask.",
   problemArea: "Health & wellbeing · access to reliable information",
   humanProblem:
-    "People trying to improve their health cannot reach reliable information or the right specialist - and the questions they most need to ask are the ones they would rather not say out loud.",
+    "People trying to improve their health cannot reach reliable information or the right specialist. And the questions they most need to ask are the ones they would rather not say out loud.",
   shortRole: "Sole designer across research and UI",
   projectType: "End-to-end immersive project",
-  headline: "A/B preference test on 17 participants split 12–5 for the simpler splash screen, reported at 95% significance; card sorting sent me back to revise the sitemap.",
+  headline: "A/B preference test on 17 participants split 12 to 5 for the simpler splash screen, reported at 95% significance; card sorting sent me back to revise the sitemap.",
   summary:
     "An end-to-end study for a responsive health portal: 52 survey participants, 5 interviews, open card sorting, moderated usability testing and an A/B preference test. The design brief made privacy and inclusivity constraints, not features.",
   featured: true,
@@ -49,7 +49,7 @@ export const oliveIlive: CaseStudy = {
       "People trying to improve their physical and mental health struggle to reach reliable information and the right specialist, because the resources are scattered and the questions are often ones they would rather not ask out loud.",
     role: "Sole designer across research, analysis, IA, interaction, visual design and the design language system.",
     approach:
-      "Lean UX - build, measure, learn - with competitive analysis, a 52-person survey, 5 interviews, open card sorting, moderated usability testing against Nielsen's severity scale, and an A/B preference test.",
+      "Lean UX, build, measure, learn, with competitive analysis, a 52-person survey, 5 interviews, open card sorting, moderated usability testing against Nielsen's severity scale, and an A/B preference test.",
     outcome:
       "A tested, responsive design and a documented design language system. The A/B test result was statistically significant; the broader design was iterated but the project is a course project, not a shipped product.",
   },
@@ -80,17 +80,17 @@ export const oliveIlive: CaseStudy = {
         {
           type: "prose",
           text: [
-            "Olive-Ilive is a responsive portal for health information, medical records and appointments, designed to be usable on a phone, a tablet or a desktop. As a designer it helps enormously to have criteria and constraints to work against - constraints are what make the creative decisions decidable.",
+            "Olive-Ilive is a responsive portal for health information, medical records and appointments, designed to be usable on a phone, a tablet or a desktop. As a designer it helps enormously to have criteria and constraints to work against. Constraints are what make the creative decisions decidable.",
           ],
         },
         {
           type: "list",
           title: "The four constraints",
           items: [
-            "Design for a specific circumstance - people with high-stress jobs and no time for a 'work-life balance' they have been told to find.",
-            "Design for inclusivity - users arrive with different physical, psychological and social circumstances, and an inclusive design reaches more of the people who would benefit.",
-            "Educate the user - not everyone knows how to change a behaviour or build a habit; the portal has to support the journey rather than just record it.",
-            "Remember privacy - health and medical information is sensitive, and users must feel reassured before they will use any of it honestly.",
+            "Design for a specific circumstance: people with high-stress jobs and no time for a 'work-life balance' they have been told to find.",
+            "Design for inclusivity: users arrive with different physical, psychological and social circumstances, and an inclusive design reaches more of the people who would benefit.",
+            "Educate the user: not everyone knows how to change a behaviour or build a habit; the portal has to support the journey rather than just record it.",
+            "Remember privacy: health and medical information is sensitive, and users must feel reassured before they will use any of it honestly.",
           ],
         },
         {
@@ -109,7 +109,7 @@ export const oliveIlive: CaseStudy = {
         {
           type: "prose",
           text: [
-            "I began with competitive analysis of two adjacent products - Sanvello, centred on mental health through short activities and a supportive community, and Flo, a women's health app tracking the reproductive cycle. Both are strong in a narrow band, which framed the question of whether a broader portal is a genuine need or a diluted one.",
+            "I began with competitive analysis of two adjacent products. Sanvello, centred on mental health through short activities and a supportive community, and Flo, a women's health app tracking the reproductive cycle. Both are strong in a narrow band, which framed the question of whether a broader portal is a genuine need or a diluted one.",
             "I then ran a survey and follow-up interviews, with three objectives: find where existing apps create friction, understand how people navigate and complete tasks in them, and see how users respond to features derived from the competitive analysis.",
           ],
         },
@@ -161,7 +161,7 @@ export const oliveIlive: CaseStudy = {
         {
           type: "claim",
           level: "interpretation",
-          text: "The recurring shape across these findings is that people want to ask an uncomfortable question without an audience. That reframes the portal's core value from convenience to privacy of enquiry - and it is why the search-and-answer path became the primary flow rather than a secondary one.",
+          text: "The recurring shape across these findings is that people want to ask an uncomfortable question without an audience. That reframes the portal's core value from convenience to privacy of enquiry. And it is why the search-and-answer path became the primary flow rather than a secondary one.",
         },
       ],
     },
@@ -223,7 +223,7 @@ export const oliveIlive: CaseStudy = {
         {
           type: "prose",
           text: [
-            "I moved from low-fidelity wireframes through mid fidelity for rapid prototyping of the onboarding flow, then to a high-fidelity clickable prototype. I planned and moderated the usability test - choosing the method, writing the test plan and a script to keep sessions consistent - then analysed the results with affinity mapping and a rainbow spreadsheet, rating issues against Nielsen's severity scale.",
+            "I moved from low-fidelity wireframes through mid fidelity for rapid prototyping of the onboarding flow, then to a high-fidelity clickable prototype. I planned and moderated the usability test, choosing the method, writing the test plan and a script to keep sessions consistent, then analysed the results with affinity mapping and a rainbow spreadsheet, rating issues against Nielsen's severity scale.",
             "Separately, I ran an A/B preference test on UsabilityHub between two splash screen designs.",
           ],
         },
@@ -274,7 +274,7 @@ export const oliveIlive: CaseStudy = {
           type: "list",
           items: [
             "Research is not optional. Nothing user-centred came out of this project that did not go in through an interview or a survey first.",
-            "The product exists to solve the user's problem, not to express the designer's preferences - a lesson that is easy to agree with and hard to apply when you like your own idea.",
+            "The product exists to solve the user's problem, not to express the designer's preferences. A lesson that is easy to agree with and hard to apply when you like your own idea.",
             "Design guidelines are what hold a design together. Having them written down made intuitiveness, learnability, efficiency and consistency into things I could check rather than things I could claim.",
           ],
         },
