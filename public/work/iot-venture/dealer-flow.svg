@@ -1,0 +1,79 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="520" viewBox="0 0 1200 520" role="img" aria-label="The dealer and workshop inspection flow, showing that the skip action is reachable only from the overdue state">
+<style>
+  :root { color-scheme: dark; }
+  /* Dark-only, deliberately.
+     The site switches theme on an explicit :root[data-theme="light"]
+     attribute, not on prefers-color-scheme. An img-loaded SVG cannot see
+     that attribute, so a prefers-color-scheme media query here would turn
+     this diagram light while the page around it stayed dark — the exact
+     mismatch it was meant to avoid. These values match the site's default
+     (dark) palette and the placeholder SVGs in public/projects/.
+     To make these follow the toggle, the figure renderer would have to
+     inline the SVG so it inherits the page's CSS custom properties. */
+  .bg    { fill: #2a2521; }
+  .card  { fill: #342e29; stroke: rgba(242,239,233,0.16); }
+  .dim   { fill: #2f2a25; stroke: rgba(242,239,233,0.10); }
+  .ttl   { fill: #f5eee2; }
+  .meta  { fill: #b8ad9a; }
+  .rule  { stroke: #8fb0cc; }
+  .late  { stroke: #d9a860; fill: #d9a860; }
+  .ok    { fill: #9bbba2; }
+  .hollow { fill: none; }
+  text { font-family: Inter, "Helvetica Neue", system-ui, sans-serif; }
+  .label { font-family: "JetBrains Mono", ui-monospace, monospace; font-size: 11px; letter-spacing: .09em; }
+  .h { font-size: 15.5px; font-weight: 600; }
+  .m { font-size: 12.5px; }
+</style>
+
+<rect class="bg" width="1200" height="520" rx="12"/>
+
+<text class="label ok" x="56" y="50">CONDITIONAL FLOW</text>
+<text class="ttl" x="56" y="88" font-size="25" font-weight="600">Where “skip” is, and is not, available</text>
+<text class="meta m" x="56" y="116" font-size="13">What a dealer can do depends on the state they find.</text>
+
+<!-- entry -->
+<rect class="card" x="56" y="168" width="208" height="84" rx="12" stroke-width="1.5"/>
+<text class="ttl h" x="78" y="200">Open inspection</text>
+<text class="meta m" x="78" y="224">Read the current state</text>
+
+<path class="rule" d="M264 210 H316" stroke-width="2" fill="none"/>
+<path class="rule" d="M307 203 L317 210 L307 217" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+
+<!-- branch -->
+<rect class="card" x="326" y="168" width="178" height="84" rx="12" stroke-width="1.5"/>
+<text class="ttl h" x="348" y="200">Which state?</text>
+<text class="meta m" x="348" y="224">Three branches</text>
+
+<!-- all good -->
+<path class="rule" d="M504 196 H560 V124 H600" stroke-width="2" fill="none"/>
+<path class="rule" d="M591 117 L601 124 L591 131" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+<rect class="dim" x="610" y="88" width="300" height="72" rx="12" stroke-width="1.5"/>
+<text class="label ok" x="632" y="118">ALL GOOD</text>
+<text class="meta m" x="632" y="142">No action offered. Nothing to skip.</text>
+
+<!-- almost due -->
+<path class="rule" d="M504 210 H600" stroke-width="2" fill="none"/>
+<path class="rule" d="M591 203 L601 210 L591 217" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+<rect class="dim" x="610" y="174" width="300" height="72" rx="12" stroke-width="1.5"/>
+<text class="label" x="632" y="204" fill="#8fb0cc">ALMOST DUE</text>
+<text class="meta m" x="632" y="228">Schedule it. Skip is not offered.</text>
+
+<!-- overdue -->
+<path class="rule" d="M504 224 H560 V332 H600" stroke-width="2" fill="none"/>
+<path class="rule" d="M591 325 L601 332 L591 339" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+<rect class="card" x="610" y="296" width="300" height="72" rx="12" stroke-width="1.5"/>
+<path class="late hollow" d="M639 319 l6 11 l-6 11 l-6 -11 z" stroke-width="2.5" stroke-linejoin="round"/>
+<text class="label late" x="656" y="326" stroke="none">OVERDUE</text>
+<text class="meta m" x="632" y="352">The required workflow, plus one way out.</text>
+
+<path class="late" d="M910 332 H966" stroke-width="2" fill="none"/>
+<path class="late" d="M957 325 L967 332 L957 339" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+<rect class="card" x="976" y="296" width="168" height="72" rx="12" stroke-width="1.5"/>
+<text class="ttl h" x="998" y="328">Skip</text>
+<text class="meta m" x="998" y="352">Available here only</text>
+
+<line class="rule" x1="56" y1="420" x2="1144" y2="420" stroke-width="1" stroke-opacity=".35"/>
+<text class="meta m" x="56" y="452" font-size="13">The asymmetry is the decision. Offering skip in every state would make it a way to dismiss a reminder; offering it</text>
+<text class="meta m" x="56" y="472" font-size="13">only once something is already overdue makes it an escape hatch for a case the workflow cannot otherwise clear —</text>
+<text class="meta m" x="56" y="492" font-size="13">a bike that is not present, or an inspection already done elsewhere.</text>
+</svg>

@@ -1,0 +1,81 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="560" viewBox="0 0 1200 560" role="img" aria-label="The three predictive inspection states — All good, Almost due and Overdue — each with the meaning it carries and the action it offers">
+<style>
+  :root { color-scheme: dark; }
+  /* Dark-only, deliberately.
+     The site switches theme on an explicit :root[data-theme="light"]
+     attribute, not on prefers-color-scheme. An img-loaded SVG cannot see
+     that attribute, so a prefers-color-scheme media query here would turn
+     this diagram light while the page around it stayed dark — the exact
+     mismatch it was meant to avoid. These values match the site's default
+     (dark) palette and the placeholder SVGs in public/projects/.
+     To make these follow the toggle, the figure renderer would have to
+     inline the SVG so it inherits the page's CSS custom properties. */
+  .bg    { fill: #2a2521; }
+  .card  { fill: #342e29; stroke: rgba(242,239,233,0.16); }
+  .ttl   { fill: #f5eee2; }
+  .sub   { fill: #dcd2c1; }
+  .meta  { fill: #b8ad9a; }
+  .hair  { stroke: rgba(242,239,233,0.16); }
+  .ok    { fill: #9bbba2; stroke: #9bbba2; }
+  .soon  { fill: #8fb0cc; stroke: #8fb0cc; }
+  .late  { fill: #d9a860; stroke: #d9a860; }
+  /* Marker shapes must differ, not just their colour: filled disc, hollow
+     ring, hollow diamond. A presentation attribute like fill="none" loses to
+     a class, so the hollow variants need their own rules. */
+  .hollow { fill: none; }
+  text { font-family: Inter, "Helvetica Neue", system-ui, sans-serif; }
+  .label { font-family: "JetBrains Mono", ui-monospace, monospace; font-size: 11.5px; letter-spacing: .09em; }
+  .h { font-size: 21px; font-weight: 600; }
+  .s { font-size: 14.5px; }
+  .m { font-size: 13px; }
+</style>
+
+<rect class="bg" width="1200" height="560" rx="12"/>
+
+<text class="label ok" x="56" y="52">STATE MODEL</text>
+<text class="ttl" x="56" y="90" font-size="26" font-weight="600">Three states, three different jobs</text>
+<text class="meta m" x="56" y="118">Each state carries a distinct meaning and offers a distinct action. Shape and label differ, never colour alone.</text>
+
+<!-- All good -->
+<rect class="card" x="56" y="156" width="340" height="300" rx="14" stroke-width="1.5"/>
+<circle class="ok" cx="88" cy="196" r="7"/>
+<text class="label ok" x="106" y="201">ALL GOOD</text>
+<line class="hair" x1="88" y1="224" x2="364" y2="224" stroke-width="1"/>
+<text class="ttl h" x="88" y="258">Nothing to do</text>
+<text class="sub s" x="88" y="292">Reassure without</text>
+<text class="sub s" x="88" y="314">manufacturing urgency.</text>
+<text class="label meta" x="88" y="358">THE ACTION</text>
+<text class="meta m" x="88" y="384">None offered. A control here</text>
+<text class="meta m" x="88" y="404">would invent a decision the</text>
+<text class="meta m" x="88" y="424">rider does not have to make.</text>
+
+<!-- Almost due -->
+<rect class="card" x="430" y="156" width="340" height="300" rx="14" stroke-width="1.5"/>
+<circle class="soon hollow" cx="462" cy="196" r="6.5" stroke-width="2.5"/>
+<text class="label soon" x="480" y="201">ALMOST DUE</text>
+<line class="hair" x1="462" y1="224" x2="738" y2="224" stroke-width="1"/>
+<text class="ttl h" x="462" y="258">Plan something</text>
+<text class="sub s" x="462" y="292">Explain the timing, so</text>
+<text class="sub s" x="462" y="314">“soon” means something.</text>
+<text class="label meta" x="462" y="358">THE ACTION</text>
+<text class="meta m" x="462" y="384">Forward-looking: book or</text>
+<text class="meta m" x="462" y="404">schedule. Not the same as</text>
+<text class="meta m" x="462" y="424">the overdue action.</text>
+
+<!-- Overdue -->
+<rect class="card" x="804" y="156" width="340" height="300" rx="14" stroke-width="1.5"/>
+<path class="late hollow" d="M836 189 l7 12 l-7 12 l-7 -12 z" stroke-width="2.5" stroke-linejoin="round"/>
+<text class="label late" x="854" y="201">OVERDUE</text>
+<line class="hair" x1="836" y1="224" x2="1112" y2="224" stroke-width="1"/>
+<text class="ttl h" x="836" y="258">Act now</text>
+<text class="sub s" x="836" y="292">Make the requirement</text>
+<text class="sub s" x="836" y="314">and the way out both clear.</text>
+<text class="label meta" x="836" y="358">THE ACTION</text>
+<text class="meta m" x="836" y="384">The required workflow —</text>
+<text class="meta m" x="836" y="404">and the only state where</text>
+<text class="meta m" x="836" y="424">skipping is offered at all.</text>
+
+<line class="hair" x1="56" y1="496" x2="1144" y2="496" stroke-width="1"/>
+<text class="meta m" x="56" y="528">Reconstructed for this case study from the state model as it was built. Exact interface copy and the timing</text>
+<text class="meta m" x="56" y="548">threshold behind “almost due” are not reproduced here.</text>
+</svg>

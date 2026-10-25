@@ -1,6 +1,15 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1200" height="560" viewBox="0 0 1200 560" role="img" aria-label="SpellCarver experience map: discover on the marketing site, get oriented in the product, then act and investigate">
 <style>
-  :root { color-scheme: dark light; }
+  :root { color-scheme: dark; }
+  /* Dark-only, deliberately.
+     The site switches theme on an explicit :root[data-theme="light"]
+     attribute, not on prefers-color-scheme. An img-loaded SVG cannot see
+     that attribute, so a prefers-color-scheme media query here would turn
+     this diagram light while the page around it stayed dark — the exact
+     mismatch it was meant to avoid. These values match the site's default
+     (dark) palette and the placeholder SVGs in public/projects/.
+     To make these follow the toggle, the figure renderer would have to
+     inline the SVG so it inherits the page's CSS custom properties. */
   .bg    { fill: #2a2521; }
   .card  { fill: #342e29; stroke: rgba(242,239,233,0.16); }
   .ttl   { fill: #f5eee2; }
@@ -9,16 +18,6 @@
   .rule  { stroke: #9bbba2; }
   .num   { fill: #9bbba2; }
   .dot   { fill: #8fb0cc; }
-  @media (prefers-color-scheme: light) {
-    .bg   { fill: #f4efe4; }
-    .card { fill: #fbf7ef; stroke: rgba(35,36,42,0.16); }
-    .ttl  { fill: #23242a; }
-    .sub  { fill: #43444d; }
-    .meta { fill: #62636d; }
-    .rule { stroke: #46705a; }
-    .num  { fill: #3a5f4b; }
-    .dot  { fill: #35566f; }
-  }
   text { font-family: Inter, "Helvetica Neue", system-ui, sans-serif; }
   .label { font-family: "JetBrains Mono", ui-monospace, monospace; font-size: 12px; letter-spacing: .09em; }
   .h { font-size: 22px; font-weight: 600; }
