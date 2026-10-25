@@ -176,7 +176,7 @@ export function BlockRenderer({ block }: { block: Block }) {
             className="overflow-x-auto focus-visible:outline-offset-4"
             tabIndex={0}
             role="region"
-            aria-label={block.title ? `${block.title} — table, scrolls sideways` : "Comparison table, scrolls sideways"}
+            aria-label={block.title ? `${block.title} - table, scrolls sideways` : "Comparison table, scrolls sideways"}
           >
             <table className="w-full min-w-[32rem] border-collapse text-left">
               <thead>

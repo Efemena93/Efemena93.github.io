@@ -9,7 +9,7 @@ import { pageMetadata } from "@/lib/seo";
 export const metadata = pageMetadata({
   title: "Work",
   description:
-    "Case studies in UX research, product design and interaction design — health and wellbeing, long-distance communication, enterprise engineering tools, and a capstone on military family separation.",
+    "Case studies in UX research, product design and interaction design - health and wellbeing, long-distance communication, enterprise engineering tools, and a capstone on military family separation.",
   path: "/work",
 });
 

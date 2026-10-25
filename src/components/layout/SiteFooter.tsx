@@ -106,7 +106,7 @@ export function SiteFooter() {
 
         <div className="flex flex-col gap-4 text-small text-charcoal-muted sm:flex-row sm:items-baseline sm:justify-between">
           <p>
-            © {year} {site.name}. Built with care, and with nothing that tracks you — no
+            © {year} {site.name}. Built with care, and with nothing that tracks you - no
             analytics, no cookies, no third-party fonts.
           </p>
           <p className="label-type">

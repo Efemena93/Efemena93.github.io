@@ -109,7 +109,7 @@ const NODES: SignalNode[] = [
     slug: "virtualbuddy",
     title: "VirtualBuddy",
     description:
-      "Encouragement without prescription — and a firm line about what the product must never do.",
+      "Encouragement without prescription - and a firm line about what the product must never do.",
     x: 0.208,
     y: 0.83,
     accent: "sage",
@@ -210,7 +210,7 @@ const NODES: SignalNode[] = [
     kind: "observation",
     title: "A card-sort disagreement is two mental models",
     description:
-      "Not one right answer and one wrong one — which is an argument for more than one path to the same thing.",
+      "Not one right answer and one wrong one - which is an argument for more than one path to the same thing.",
     x: 0.943,
     y: 0.54,
     accent: "clay",

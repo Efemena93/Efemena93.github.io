@@ -35,7 +35,7 @@ import { setSignalOrigin } from "./signal-origin";
  * nothing chases the cursor, nothing reacts faster than ~300ms.
  */
 
-const ORBIT_RADIUS = 0.012; // normalised — a barely-perceptible wander
+const ORBIT_RADIUS = 0.012; // normalised - a barely-perceptible wander
 const ORBIT_SECONDS = 34;
 const PROXIMITY_PX = 96;
 /** Label geometry: 14rem wide plus a 1rem gap. */
@@ -356,7 +356,7 @@ export function SignalConstellation({
       className={cx("relative h-full w-full", className)}
       // The field is a supplementary way to browse. The list below the hero
       // is the primary one, and it is announced as such.
-      aria-label="Signal field — an interactive map of projects, research themes and observations"
+      aria-label="Signal field - an interactive map of projects, research themes and observations"
       role="group"
     >
       <canvas ref={canvasRef} aria-hidden="true" className="atmosphere absolute inset-0" />

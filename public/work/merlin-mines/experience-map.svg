@@ -5,7 +5,7 @@
      The site switches theme on an explicit :root[data-theme="light"]
      attribute, not on prefers-color-scheme. An img-loaded SVG cannot see
      that attribute, so a prefers-color-scheme media query here would turn
-     this diagram light while the page around it stayed dark — the exact
+     this diagram light while the page around it stayed dark - the exact
      mismatch it was meant to avoid. These values match the site's default
      (dark) palette and the placeholder SVGs in public/projects/.
      To make these follow the toggle, the figure renderer would have to
@@ -29,7 +29,7 @@
 
 <text class="label num" x="56" y="54">EXPERIENCE MAP</text>
 <text class="ttl" x="56" y="92" font-size="27" font-weight="600">One journey, two surfaces</text>
-<text class="meta m" x="56" y="120">Proposed structure — not a record of tested behaviour.</text>
+<text class="meta m" x="56" y="120">Proposed structure - not a record of tested behaviour.</text>
 
 <!-- 1. Discover -->
 <rect class="card" x="56" y="160" width="330" height="268" rx="14" stroke-width="1.5"/>

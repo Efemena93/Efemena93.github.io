@@ -26,7 +26,7 @@ export function RouteAnnouncer() {
     const frame = window.requestAnimationFrame(() => {
       const heading = document.querySelector<HTMLElement>("main h1");
       const title = heading?.textContent?.trim() || document.title;
-      setMessage(`${title} — page loaded`);
+      setMessage(`${title} - page loaded`);
 
       if (heading) {
         heading.setAttribute("tabindex", "-1");

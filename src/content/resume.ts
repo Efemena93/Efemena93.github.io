@@ -28,9 +28,9 @@ export const resume: Resume = {
       location: "Darmstadt, Germany",
       bullets: [
         "As the company's only designer, owned all UX and UI across the product.",
-        "Led the 3.0 redesign, running user research and turning insights into design decisions that kept the product compatible with the “It's My Bike” app and white-label partners' apps — increased user retention by 20%.",
+        "Led the 3.0 redesign, running user research and turning insights into design decisions that kept the product compatible with the “It's My Bike” app and white-label partners' apps - increased user retention by 20%.",
         "Ran usability tests through an iOS beta ahead of full release, iterating on feedback to fix issues including menu reordering and simpler report generation before rollout.",
-        "Built and maintained design systems that kept brand coherence across platforms — consistent colour, typography and components.",
+        "Built and maintained design systems that kept brand coherence across platforms - consistent colour, typography and components.",
         "Partnered with cross-functional teams to align design with business objectives.",
       ],
     },
@@ -42,7 +42,7 @@ export const resume: Resume = {
       location: "Remote, US",
       bullets: [
         "Sole designer on the team: owned end-to-end UX and UI for an internal workflow web app used by the company's in-house software engineers.",
-        "Translated engineers' daily workflows into a clear, streamlined interface — from information architecture and user flows through wireframes and high-fidelity UI.",
+        "Translated engineers' daily workflows into a clear, streamlined interface - from information architecture and user flows through wireframes and high-fidelity UI.",
         "Established the product's core UI patterns and components as its first dedicated design resource.",
       ],
     },
@@ -55,7 +55,7 @@ export const resume: Resume = {
       bullets: [
         "Led the design process from research and concept through service blueprinting and pilot launch, shipping several features for Zalando Plus.",
         "Created a comprehensive design blueprint for the Zalando Plus team to ensure cohesive, consistent design across the platform.",
-        "Revamped outdated UI/UX templates with developers, PMs and stakeholders — 15% increase in user engagement.",
+        "Revamped outdated UI/UX templates with developers, PMs and stakeholders - 15% increase in user engagement.",
         "Contributed to design rituals, workshops and critiques, and to the design system.",
       ],
     },
@@ -66,24 +66,24 @@ export const resume: Resume = {
       end: "May 2022",
       location: "Germany",
       bullets: [
-        "Led the design and architecture for converting web templates into iOS and Android mobile templates — seamless cross-device experience and a 25% increase in app downloads.",
-        "Designed UX and UI for the company website and mobile app with a consistent system across touchpoints — 15% increase in website conversion.",
-        "Handed off CSS starter templates to frontend developers via Figma — cut design-to-production timelines by 30%.",
-        "Built user journeys from personas to sharpen the experience — 25% increase in user engagement.",
+        "Led the design and architecture for converting web templates into iOS and Android mobile templates - seamless cross-device experience and a 25% increase in app downloads.",
+        "Designed UX and UI for the company website and mobile app with a consistent system across touchpoints - 15% increase in website conversion.",
+        "Handed off CSS starter templates to frontend developers via Figma - cut design-to-production timelines by 30%.",
+        "Built user journeys from personas to sharpen the experience - 25% increase in user engagement.",
       ],
     },
   ],
 
   education: [
     {
-      institution: "University of North Texas — Denton, TX",
+      institution: "University of North Texas - Denton, TX",
       qualification: "M.A., Interaction Design",
       start: "In progress",
       end: "Expected Dec 2026",
       note: "Capstone: emotional continuity for military families during deployment. The research is ongoing; nothing from it is presented on this site as a validated outcome.",
     },
     {
-      institution: "OTH Amberg-Weiden — Germany",
+      institution: "OTH Amberg-Weiden - Germany",
       qualification: "B.Sc., International Business",
       start: "Feb 2021",
       end: "Feb 2024",
@@ -120,7 +120,7 @@ export const resume: Resume = {
     },
     {
       title: "Languages",
-      items: ["English — fluent", "German — intermediate"],
+      items: ["English - fluent", "German - intermediate"],
     },
   ],
 

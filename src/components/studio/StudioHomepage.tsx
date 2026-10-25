@@ -52,7 +52,7 @@ export function StudioHomepage({ artifacts }: { artifacts: StudioArtifacts }) {
         <ol>
           {[...professional, ...caseStudies].map(({ study, name, what }) => (
             <li key={study.slug}>
-              {name} — {what}.
+              {name} - {what}.
             </li>
           ))}
         </ol>

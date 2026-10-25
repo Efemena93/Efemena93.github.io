@@ -91,7 +91,7 @@ export function ProjectSignalCard({
       <Link
         href={`/work/${study.slug}`}
         className="mt-6 block rounded focus-visible:outline-offset-4"
-        aria-label={`${study.title} — ${study.humanProblem} Read the full case study.`}
+        aria-label={`${study.title} - ${study.humanProblem} Read the full case study.`}
       >
         {/* Cover. Desaturated at rest, full colour and lifted on hover or
             focus. A real image is used when one exists; otherwise the

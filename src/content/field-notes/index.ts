@@ -38,7 +38,7 @@ const feelingsAreRequirements: FieldNote = {
     {
       type: "prose",
       text: [
-        "The standard order of operations is: solve the problem, then make it feel good. Requirements, flows, states, edge cases — and then, near the end, someone adds an illustration of a friendly cloud and a line of copy that says we know this is frustrating. The feeling is treated as a finish. Something you apply to a surface once the structure underneath has been settled by other means.",
+        "The standard order of operations is: solve the problem, then make it feel good. Requirements, flows, states, edge cases - and then, near the end, someone adds an illustration of a friendly cloud and a line of copy that says we know this is frustrating. The feeling is treated as a finish. Something you apply to a surface once the structure underneath has been settled by other means.",
         "I have worked that way. It produces products that are perfectly usable and that people quietly stop using.",
       ],
     },
@@ -46,7 +46,7 @@ const feelingsAreRequirements: FieldNote = {
       type: "prose",
       text: [
         "Here is the version I believe now. On any product that touches something a person finds difficult, their emotional state is not a quality of the experience. It is a constraint on the solution space, and it belongs in the requirements document next to the technical ones.",
-        "A health portal is the clearest case. On Olive-Ilive I kept meeting a problem that looked like an efficiency problem: people abandoned forms partway through. The efficiency answer is well known — fewer fields, better progress indication, save and resume. All good moves. None of them touch the actual reason, which is that some of the questions are humiliating to answer truthfully, and abandoning the form is a rational way to avoid saying the true thing to a screen that has given you no reason to trust it.",
+        "A health portal is the clearest case. On Olive-Ilive I kept meeting a problem that looked like an efficiency problem: people abandoned forms partway through. The efficiency answer is well known - fewer fields, better progress indication, save and resume. All good moves. None of them touch the actual reason, which is that some of the questions are humiliating to answer truthfully, and abandoning the form is a rational way to avoid saying the true thing to a screen that has given you no reason to trust it.",
       ],
     },
     {
@@ -64,7 +64,7 @@ const feelingsAreRequirements: FieldNote = {
     {
       type: "prose",
       text: [
-        "The failure mode I watch for in myself is the opposite one — treating emotional framing as a licence to skip the functional work. It is very pleasant to write a paragraph about dignity and much harder to specify the empty state. A feeling that has not been turned into a decision about a screen is not design yet. It is just a good intention with better vocabulary.",
+        "The failure mode I watch for in myself is the opposite one - treating emotional framing as a licence to skip the functional work. It is very pleasant to write a paragraph about dignity and much harder to specify the empty state. A feeling that has not been turned into a decision about a screen is not design yet. It is just a good intention with better vocabulary.",
         "So the test I apply is blunt: name the feeling, then name the thing it stopped you from building. If there is no second half, the first half was decoration.",
       ],
     },
@@ -84,7 +84,7 @@ const askingAboutTheHardThing: FieldNote = {
     {
       type: "prose",
       text: [
-        "The difficult subject is where the insight is. Everyone knows this, which is why the temptation in a study about something painful is to get there quickly — to spend the warm-up questions impatiently, waiting for the part that will justify the recruitment effort.",
+        "The difficult subject is where the insight is. Everyone knows this, which is why the temptation in a study about something painful is to get there quickly - to spend the warm-up questions impatiently, waiting for the part that will justify the recruitment effort.",
         "I have learned to do the opposite, for reasons that are partly ethical and partly just methodological self-interest.",
       ],
     },
@@ -98,7 +98,7 @@ const askingAboutTheHardThing: FieldNote = {
     {
       type: "callout",
       title: "Why the boring questions",
-      text: "Logistics are safe to answer and impossible to answer without revealing the shape of the difficulty. A person will tell you the truth about a calendar long before they will tell you the truth about a feeling — and the calendar contains the feeling.",
+      text: "Logistics are safe to answer and impossible to answer without revealing the shape of the difficulty. A person will tell you the truth about a calendar long before they will tell you the truth about a feeling - and the calendar contains the feeling.",
     },
     {
       type: "prose",
@@ -110,14 +110,14 @@ const askingAboutTheHardThing: FieldNote = {
     {
       type: "prose",
       text: [
-        "A few practical commitments that follow from this. I say at the start that any question can be skipped without explanation, and I mean it visibly — when someone skips, I move on immediately rather than rephrasing. I do not ask follow-up questions designed to deepen distress, however good the quote would be. I stop early if the session has turned into something the participant needs rather than something I need.",
+        "A few practical commitments that follow from this. I say at the start that any question can be skipped without explanation, and I mean it visibly - when someone skips, I move on immediately rather than rephrasing. I do not ask follow-up questions designed to deepen distress, however good the quote would be. I stop early if the session has turned into something the participant needs rather than something I need.",
         "And I accept in advance that some of what I learn will not be publishable. Not because it is confidential in the formal sense, but because a finding that is only usable by exposing a specific person's private life is not a finding I have earned the right to use. There is a version of this work that would make a more affecting case study. I would rather have the participants.",
       ],
     },
     {
       type: "prose",
       text: [
-        "The thing I am still working out is where the line sits between careful and evasive. Research that never approaches the difficult subject at all is not sensitive, it is timid, and it produces a study about scheduling when the study was supposed to be about separation. I do not think the answer is a rule. I think it is paying attention to who the caution is protecting — and being honest when the answer is me.",
+        "The thing I am still working out is where the line sits between careful and evasive. Research that never approaches the difficult subject at all is not sensitive, it is timid, and it produces a study about scheduling when the study was supposed to be about separation. I do not think the answer is a rule. I think it is paying attention to who the caution is protecting - and being honest when the answer is me.",
       ],
     },
   ],
@@ -143,14 +143,14 @@ const careIsASystem: FieldNote = {
       type: "prose",
       text: [
         "What changed is that I stopped thinking about care as a feeling.",
-        "Before, if you had asked me to design something caring, I would have reached for tone. Gentler copy. Softer corners. A slower transition. Warmth, essentially, applied at the surface — which is the same instinct I have written about elsewhere and still catch myself having.",
+        "Before, if you had asked me to design something caring, I would have reached for tone. Gentler copy. Softer corners. A slower transition. Warmth, essentially, applied at the surface - which is the same instinct I have written about elsewhere and still catch myself having.",
         "Care in practice turned out to be almost entirely logistics. It is remembering, on someone else's behalf, at a time that is not convenient, repeatedly, while tired. It is holding a schedule that only exists in your head. It is the invisible labour of tracking what another person needs before they can say it. Very little of that is warm. Most of it is administrative, and the administrative part is the part that is actually hard.",
       ],
     },
     {
       type: "callout",
       title: "What that means for an interface",
-      text: "If care is mostly load-bearing memory and timing, then a caring product is one that carries some of the load — not one that expresses sympathy about it.",
+      text: "If care is mostly load-bearing memory and timing, then a caring product is one that carries some of the load - not one that expresses sympathy about it.",
     },
     {
       type: "prose",
@@ -163,7 +163,7 @@ const careIsASystem: FieldNote = {
     {
       type: "prose",
       text: [
-        "It also gave me the question that most of my work now turns on. When a system says nothing — when the status has not changed, when the reply has not come, when the notification stops arriving — the person on the other end concludes something anyway. Interfaces are careful about what they say and careless about what a silence means. That is the thread running through the capstone, and it is not a thread I would have been able to see clearly from a desk.",
+        "It also gave me the question that most of my work now turns on. When a system says nothing - when the status has not changed, when the reply has not come, when the notification stops arriving - the person on the other end concludes something anyway. Interfaces are careful about what they say and careless about what a silence means. That is the thread running through the capstone, and it is not a thread I would have been able to see clearly from a desk.",
         "I am not romanticising the season. It was exhausting and a good deal of it had nothing to do with design. But I would not trade what it taught me about what people are actually carrying when they open something I made.",
       ],
     },
@@ -208,7 +208,7 @@ const labelledClaims: FieldNote = {
     {
       type: "prose",
       text: [
-        "The failure mode I am watching for is that labels become decoration — a badge next to every sentence, applied loosely, meaning nothing. The discipline only holds if downgrading is possible: if a claim can move from observed to interpretation when the evidence turns out to be thinner than remembered, and if a concept that fails testing gets deleted rather than quietly relabelled.",
+        "The failure mode I am watching for is that labels become decoration - a badge next to every sentence, applied loosely, meaning nothing. The discipline only holds if downgrading is possible: if a claim can move from observed to interpretation when the evidence turns out to be thinner than remembered, and if a concept that fails testing gets deleted rather than quietly relabelled.",
       ],
     },
   ],
@@ -227,7 +227,7 @@ const notAnApp: FieldNote = {
   blocks: [
     {
       type: "todo",
-      note: "The argument: committing to a screen too early narrows the research to questions a screen can answer. Open with the moment you wrote the guardrail down. Middle: something you would not have asked if you had been heading for a prototype. End: the honest counter-argument — that this guardrail can also become an excuse not to commit to anything. Around 600 words, no headings, no bullet list.",
+      note: "The argument: committing to a screen too early narrows the research to questions a screen can answer. Open with the moment you wrote the guardrail down. Middle: something you would not have asked if you had been heading for a prototype. End: the honest counter-argument - that this guardrail can also become an excuse not to commit to anything. Around 600 words, no headings, no bullet list.",
     },
   ],
 };

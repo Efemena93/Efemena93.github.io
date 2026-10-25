@@ -162,7 +162,7 @@ export function StudioIntro() {
 
       <p className="mt-6 max-w-[46ch] text-body text-charcoal-soft">
         I’m Efemena, a product and interaction designer interested in the signals people
-        leave behind — what they do, what they feel and what systems often fail to notice.
+        leave behind - what they do, what they feel and what systems often fail to notice.
       </p>
       <p className="mt-4 max-w-[46ch] text-body text-charcoal-soft">
         This is where I collect those signals, connect patterns and turn them into

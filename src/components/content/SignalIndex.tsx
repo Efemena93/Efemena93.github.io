@@ -27,7 +27,7 @@ export function SignalIndex() {
     {
       kind: "observation",
       nodes: observationNodes,
-      note: "Things noticed during the research. Interpretations, not statistics — each traces back to a project.",
+      note: "Things noticed during the research. Interpretations, not statistics - each traces back to a project.",
     },
   ];
 

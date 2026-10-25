@@ -22,7 +22,7 @@ export const syncHearts: CaseStudy = {
   shortRole: "Sole designer & researcher",
   projectType: "Self-directed product project · 16 weeks",
   headline:
-    "Card sorting surfaced three distinct mental models of the same feature set — the argument for cross-referenced navigation rather than one fixed hierarchy. The design itself is untested; usability testing was the declared next step.",
+    "Card sorting surfaced three distinct mental models of the same feature set - the argument for cross-referenced navigation rather than one fixed hierarchy. The design itself is untested; usability testing was the declared next step.",
   summary:
     "Sixteen weeks of research and design on how couples stay close across time-zone gaps and clashing schedules. Card sorting surfaced three distinct mental models of the same feature set, which became the argument for flexible rather than fixed navigation.",
   featured: false,
@@ -85,7 +85,7 @@ export const syncHearts: CaseStudy = {
       id: "research",
       kind: "research",
       title: "Research",
-      standfirst: "Mixed method — a survey across several communities, then interviews.",
+      standfirst: "Mixed method - a survey across several communities, then interviews.",
       blocks: [
         {
           type: "statRow",
@@ -99,7 +99,7 @@ export const syncHearts: CaseStudy = {
         {
           type: "prose",
           text: [
-            "I defined the research strategy and objectives at kickoff, built the survey in Google Forms and shared it with relevant communities, then followed up with interviews to understand how people actually manage communication day to day — not what they say they want from an app, but what they do when a call gets missed.",
+            "I defined the research strategy and objectives at kickoff, built the survey in Google Forms and shared it with relevant communities, then followed up with interviews to understand how people actually manage communication day to day - not what they say they want from an app, but what they do when a call gets missed.",
           ],
         },
         {
@@ -138,7 +138,7 @@ export const syncHearts: CaseStudy = {
         {
           type: "prose",
           text: [
-            "I built two personas from the survey and interview data, updating them through the project as more evidence arrived, and mapped a journey for one of them — a scenario following the step-by-step actions of communicating with a partner around an anniversary, which concentrates every pain point into a single high-stakes day.",
+            "I built two personas from the survey and interview data, updating them through the project as more evidence arrived, and mapped a journey for one of them - a scenario following the step-by-step actions of communicating with a partner around an anniversary, which concentrates every pain point into a single high-stakes day.",
             "I then ran a design studio session with three additional stakeholders. Ideas were grouped by the pain point they addressed, mapped on an affinity board, and scored on an impact/effort grid before anything was drawn.",
           ],
         },
@@ -203,7 +203,7 @@ export const syncHearts: CaseStudy = {
         {
           type: "claim",
           level: "interpretation",
-          text: "A single fixed information architecture would therefore be wrong for at least a third of users. The overlap is not noise to be resolved by picking a winner — it is an argument for flexible categorisation or cross-referenced navigation, so the same feature can be found down more than one path.",
+          text: "A single fixed information architecture would therefore be wrong for at least a third of users. The overlap is not noise to be resolved by picking a winner - it is an argument for flexible categorisation or cross-referenced navigation, so the same feature can be found down more than one path.",
         },
       ],
     },
@@ -216,7 +216,7 @@ export const syncHearts: CaseStudy = {
         {
           type: "prose",
           text: [
-            "The concept centres on three things: a shared calendar for scheduling calls across time zones, a Message in a Bottle feature for sending something that arrives later, and lightweight mood sharing. The second is the one that most directly answers the research — it lets a person say something without requiring the other to be awake, available, or ready to respond.",
+            "The concept centres on three things: a shared calendar for scheduling calls across time zones, a Message in a Bottle feature for sending something that arrives later, and lightweight mood sharing. The second is the one that most directly answers the research - it lets a person say something without requiring the other to be awake, available, or ready to respond.",
             "I designed greyscale wireframes in Figma at mid fidelity, with the layout defined well enough to test and loose enough to change once testing had happened.",
           ],
         },
@@ -243,7 +243,7 @@ export const syncHearts: CaseStudy = {
           type: "list",
           items: [
             "Ground design decisions in research and feedback rather than in taste, especially when the subject is one you have personal opinions about.",
-            "Use storytelling to communicate insight — a journey map of one anniversary persuaded stakeholders faster than a summary of 27 responses.",
+            "Use storytelling to communicate insight - a journey map of one anniversary persuaded stakeholders faster than a summary of 27 responses.",
             "Take the emotional consequences of a design seriously when the use case is personal. A delayed message is a different object depending on what it says.",
             "Balance ambition against what can actually be finished. Stopping at mid fidelity with testing declared as the next step was more honest than rushing a polished screen nobody had used.",
           ],

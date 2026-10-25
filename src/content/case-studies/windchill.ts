@@ -18,7 +18,7 @@ export const windchill: CaseStudy = {
     "Engineers raising a change in a high-consequence PLM system work inside software that knows the process better than it explains it.",
   shortRole: "UX/UI designer within an existing design system",
   projectType: "Enterprise UI · four-page wireframe set",
-  headline: "In progress — four-page set drafted against the existing component library.",
+  headline: "In progress - four-page set drafted against the existing component library.",
   summary:
     "Enterprise PLM work: taking a dense, high-consequence engineering change process and designing an interface that respects both the complexity of the task and the expertise of the people doing it.",
   featured: false,
@@ -34,9 +34,9 @@ export const windchill: CaseStudy = {
 
   atAGlance: {
     problem:
-      "[TODO: what was wrong with the existing engineering change workflow — the specific friction, not 'it was outdated']",
+      "[TODO: what was wrong with the existing engineering change workflow - the specific friction, not 'it was outdated']",
     role: "Designed a four-page wireframe set working within an established design system.",
-    approach: "[TODO: how you approached it — who you talked to, what you looked at, what you tried]",
+    approach: "[TODO: how you approached it - who you talked to, what you looked at, what you tried]",
     outcome: "[TODO: what changed as a result, or what stage it reached]",
   },
 
@@ -52,7 +52,7 @@ export const windchill: CaseStudy = {
         },
         {
           type: "todo",
-          note: "State the constraint that mattered most — an existing design system, a fixed data model, a user group of experts who already know the process better than you do. Enterprise work is judged on how well you handled the constraint.",
+          note: "State the constraint that mattered most - an existing design system, a fixed data model, a user group of experts who already know the process better than you do. Enterprise work is judged on how well you handled the constraint.",
         },
       ],
     },
