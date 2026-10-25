@@ -26,10 +26,28 @@ const stand = (slug: string, alt: string): ProjectImage => ({
   height: 520,
 });
 
+const real = (path: string, alt: string, width: number, height: number): ProjectImage => ({
+  src: `${base}${path}`,
+  alt,
+  placeholder: false,
+  width,
+  height,
+});
+
 export const projectImages: Record<string, ProjectImage> = {
   zalando: stand("zalando", "Layered service-blueprint sheets with swimlanes and touchpoints"),
-  "iot-venture": stand("iot-venture", "A phone app, a partner dashboard and a connected device linked by a signal line"),
-  "merlin-mines": stand("merlin-mines", "A workflow wall of connected steps with a pinned note"),
+  "iot-venture": real(
+    "/work/iot-venture/dealer-assign-tracker.png",
+    "The IoT Venture dealer portal screen for assigning an order to a tracker",
+    1100,
+    715,
+  ),
+  "merlin-mines": real(
+    "/work/merlin-mines/experience-map.svg",
+    "SpellCarver experience map: discover on the marketing site, get oriented in the product, then act and investigate",
+    1200,
+    560,
+  ),
   "olive-ilive": stand("olive-ilive", "A responsive health portal on desktop and mobile"),
   vochub: stand("vochub", "A fan of vocabulary cards"),
   virtualbuddy: stand("virtualbuddy", "A study-community workspace with shared feed and profiles"),
