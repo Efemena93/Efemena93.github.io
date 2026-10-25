@@ -81,7 +81,7 @@ export const iotVenture: CaseStudy = {
     approach:
       "Ran user research into the redesign and a 15-participant usability test before full release, acting on what came back. Designed the predictive inspection state model and its conditional dealer workflow, the responsive dealer ordering portal across phone, tablet and desktop, the iOS and Android permission sequences, the fleet-portal views and the stale-data indicator.",
     outcome:
-      "The 3.0 redesign shipped across the flagship app and the white-label apps, with a design system that kept them coherent. A 20% increase in user retention followed — her own figure, unaudited, and reported here as such.",
+      "The 3.0 redesign shipped in October–November 2024 across the flagship app and the white-label apps, with a design system that kept them coherent. A 20% increase in user retention followed — her own figure, unaudited, and reported here as such.",
   },
 
   ethics: {
@@ -148,7 +148,7 @@ export const iotVenture: CaseStudy = {
             { value: "5", label: "Likert statements" },
             { value: "27", label: "Written recommendations" },
           ],
-          source: "Usability test, 15 participants, 5-point Likert scale plus open feedback, ahead of the 3.0 release",
+          source: "Usability test, December 2023 — 15 participants, 5-point Likert scale plus open feedback",
         },
         {
           type: "claimGroup",
@@ -157,7 +157,7 @@ export const iotVenture: CaseStudy = {
             {
               level: "evidence",
               text: "Across the five statements, mean ratings ran from 4.4 to 4.9 out of 5 — computed over the fourteen complete responses — with ease of navigation and overall satisfaction both at 4.4, the two lowest.",
-              source: "Usability test, 15 participants (14 complete responses), 5-point Likert scale, ahead of the 3.0 release",
+              source: "Usability test, December 2023 — 15 participants, 14 complete responses, 5-point Likert scale",
             },
             {
               level: "interpretation",
@@ -172,17 +172,17 @@ export const iotVenture: CaseStudy = {
             {
               level: "evidence",
               text: "The report-theft call to action was rewritten to be simpler, and profile management was moved out to the settings page.",
-              source: "Usability test recommendations, marked Done in the design file",
+              source: "Usability test recommendations, December 2023, marked Done in the design file",
             },
             {
               level: "evidence",
               text: "All linked trackers were surfaced on the home screen map, which testers had reported as missing compared with the previous app.",
-              source: "Usability test recommendations, marked Done in the design file",
+              source: "Usability test recommendations, December 2023, marked Done in the design file",
             },
             {
               level: "evidence",
               text: "Tracker status was promoted above trip history on the home page, after testers judged status the more important of the two.",
-              source: "Usability test recommendations, ahead of the 3.0 release",
+              source: "Usability test recommendations, December 2023",
             },
           ],
         },
@@ -194,13 +194,14 @@ export const iotVenture: CaseStudy = {
         {
           type: "prose",
           text: [
-            "Not everything was accepted, and the record of what was refused is as much a part of the work as the list of fixes. Several recommendations were marked not a priority or technically not possible, and a few were logged as needing more thought rather than being quietly dropped — a GPS-signal indicator, an in-app notification popup, and a request to make the map half-screen with an expand control.",
+            "The twenty-seven items are tagged in the file — done, to-do, not a priority, technically not possible yet — and it would be easy to read those as verdicts. They are not. They are a snapshot of what could be committed to in December 2023, two months into the role, with a release still most of a year away.",
+            "By the time 3.0 shipped in October–November 2024, and across the updates after it, every item on that list had been designed for. A GPS-signal indicator, an in-app notification popup, the half-screen map with an expand control — all were parked at the time of the test and all were picked back up. Nothing was quietly dropped.",
           ],
         },
         {
           type: "claim",
           level: "interpretation",
-          text: "Keeping a refused recommendation on the list, with a reason, is what stops a test result becoming a wish list. Someone reading it later can tell the difference between an idea that failed on its merits and one that failed on the calendar.",
+          text: "Keeping the parked items on the list, tagged rather than deleted, is what made it possible to come back to them. A test result pruned down to what shipped that quarter stops being a record and becomes a changelog.",
         },
         {
           type: "callout",
@@ -425,7 +426,7 @@ export const iotVenture: CaseStudy = {
         {
           type: "prose",
           text: [
-            "The 3.0 redesign shipped across the flagship app and the white-label apps built on the same platform, with a design system — colour, type, components — that kept them coherent without requiring each partner brand to be designed separately. For a company with one designer, that system was the only thing making the surface area tractable.",
+            "The 3.0 redesign shipped in October–November 2024, across the flagship app and the white-label apps built on the same platform, with a design system — colour, type, components — that kept them coherent without requiring each partner brand to be designed separately. Roughly ten months separated the usability test from release, and the updates that followed carried the rest of the test's recommendations into design. For a company with one designer, that system was the only thing making the surface area tractable.",
             "A 20% increase in user retention followed. That figure is mine and unaudited: I have not attached a measurement window, a baseline or an analytics source to it on this page, because I would be reconstructing those after the fact. It is reported here the way it appears on my résumé, as my own account rather than as a verified result.",
             "What the work does demonstrate without needing a number: a state model that distinguishes three different asks rather than three shades of one, a conditional rule designed so its exception stays legible, and permission and freshness behaviour treated as primary design surfaces instead of error handling. Those stand or fall on the reasoning, which is on this page to be argued with.",
           ],
