@@ -15,8 +15,11 @@ import type { CaseStudy } from "../types";
  *   · CAN field names, units and value semantics. Described only as
  *     "vendor-specific technical values", never enumerated.
  *   · Exact rider-app copy, timing thresholds and stale-data trigger rules.
- *   · The usability study's participant table. It records responses by
- *     name, six of them full names. Neither the table nor any participant
+ *   · The usability study's participant table. It lists 15 people by name,
+ *     six of them full names; 14 returned a complete set of scores, and the
+ *     means in the file are computed over those 14 (Q1 totals 61, 61/14 =
+ *     4.36, matching the stated 4.4 — over 15 it would read 4.1). The page
+ *     states both numbers rather than rounding to one. Neither the table nor any participant
  *     name is reproduced anywhere — only aggregate figures (n, means) and
  *     themes, per the site-wide rule that participants are described by
  *     role, never by name.
@@ -76,7 +79,7 @@ export const iotVenture: CaseStudy = {
       "A connected-bike product spanning a consumer app, a partner dashboard and several white-label apps, where the hardest screens were the ones reporting a state the rider had not asked about — maintenance due, data gone stale, permission declined.",
     role: "Sole designer. Owned all UX and UI: research, the 3.0 redesign, usability testing, and the design system holding the surfaces together.",
     approach:
-      "Ran user research into the redesign and a 14-participant usability test before full release, acting on what came back. Designed the predictive inspection state model and its conditional dealer workflow, the responsive dealer ordering portal across phone, tablet and desktop, the iOS and Android permission sequences, the fleet-portal views and the stale-data indicator.",
+      "Ran user research into the redesign and a 15-participant usability test before full release, acting on what came back. Designed the predictive inspection state model and its conditional dealer workflow, the responsive dealer ordering portal across phone, tablet and desktop, the iOS and Android permission sequences, the fleet-portal views and the stale-data indicator.",
     outcome:
       "The 3.0 redesign shipped across the flagship app and the white-label apps, with a design system that kept them coherent. A 20% increase in user retention followed — her own figure, unaudited, and reported here as such.",
   },
@@ -84,7 +87,7 @@ export const iotVenture: CaseStudy = {
   ethics: {
     is: [
       "Interface and interaction design for a connected-hardware product, across mobile and fleet-facing surfaces.",
-      "Grounded in user research and a 14-participant usability test she ran herself, named where the claims rest on them.",
+      "Grounded in user research and a 15-participant usability test she ran herself, named where the claims rest on them.",
     ],
     isNot: [
       "Not a disclosure of the vendor integrations, their technical field definitions, exact interface copy or timing thresholds. Those remain confidential.",
@@ -134,17 +137,18 @@ export const iotVenture: CaseStudy = {
           type: "prose",
           text: [
             "The 3.0 redesign was shaped by user research and tested through an iOS beta before full release rather than after it. That sequencing mattered more than the method: it meant findings could still change the build.",
-            "Fourteen people rated the design against five statements on a five-point scale, and left open feedback alongside. The scores were high, which is the least interesting thing about them — a design author running her own test should expect that. The twenty-seven written comments were the useful part.",
+            "Fifteen people took part, fourteen of whom returned a complete set of scores. They rated the design against five statements on a five-point scale and left open feedback alongside. The scores were high, which is the least interesting thing about them — a design author running her own test should expect that. The twenty-seven written comments were the useful part.",
           ],
         },
         {
           type: "statRow",
           stats: [
-            { value: "14", label: "Participants" },
+            { value: "15", label: "Participants" },
+            { value: "14", label: "Complete responses" },
             { value: "5", label: "Likert statements" },
             { value: "27", label: "Written recommendations" },
           ],
-          source: "Usability test, 5-point Likert scale plus open feedback, ahead of the 3.0 release",
+          source: "Usability test, 15 participants, 5-point Likert scale plus open feedback, ahead of the 3.0 release",
         },
         {
           type: "claimGroup",
@@ -152,8 +156,8 @@ export const iotVenture: CaseStudy = {
           claims: [
             {
               level: "evidence",
-              text: "Across the five statements, mean ratings ran from 4.4 to 4.9 out of 5, with ease of navigation and overall satisfaction both at 4.4 — the two lowest.",
-              source: "Usability test, 14 participants, 5-point Likert scale, ahead of the 3.0 release",
+              text: "Across the five statements, mean ratings ran from 4.4 to 4.9 out of 5 — computed over the fourteen complete responses — with ease of navigation and overall satisfaction both at 4.4, the two lowest.",
+              source: "Usability test, 15 participants (14 complete responses), 5-point Likert scale, ahead of the 3.0 release",
             },
             {
               level: "interpretation",
