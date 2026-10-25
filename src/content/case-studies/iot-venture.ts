@@ -15,6 +15,11 @@ import type { CaseStudy } from "../types";
  *   · CAN field names, units and value semantics. Described only as
  *     "vendor-specific technical values", never enumerated.
  *   · Exact rider-app copy, timing thresholds and stale-data trigger rules.
+ *   · The usability study's participant table. It records responses by
+ *     name, six of them full names. Neither the table nor any participant
+ *     name is reproduced anywhere — only aggregate figures (n, means) and
+ *     themes, per the site-wide rule that participants are described by
+ *     role, never by name.
  *   · Any partner or customer identifier. The dealer-portal screens below
  *     carried a partner's name and support hotline in their side panel; that
  *     block is cropped or painted out of every export in
@@ -71,7 +76,7 @@ export const iotVenture: CaseStudy = {
       "A connected-bike product spanning a consumer app, a partner dashboard and several white-label apps, where the hardest screens were the ones reporting a state the rider had not asked about — maintenance due, data gone stale, permission declined.",
     role: "Sole designer. Owned all UX and UI: research, the 3.0 redesign, usability testing, and the design system holding the surfaces together.",
     approach:
-      "Ran user research into the redesign and usability tests through an iOS beta before full release, iterating on what came back. Designed the predictive inspection state model and its conditional dealer workflow, the responsive dealer ordering portal across phone, tablet and desktop, the iOS and Android permission sequences, the fleet-portal views and the stale-data indicator.",
+      "Ran user research into the redesign and a 14-participant usability test before full release, acting on what came back. Designed the predictive inspection state model and its conditional dealer workflow, the responsive dealer ordering portal across phone, tablet and desktop, the iOS and Android permission sequences, the fleet-portal views and the stale-data indicator.",
     outcome:
       "The 3.0 redesign shipped across the flagship app and the white-label apps, with a design system that kept them coherent. A 20% increase in user retention followed — her own figure, unaudited, and reported here as such.",
   },
@@ -79,7 +84,7 @@ export const iotVenture: CaseStudy = {
   ethics: {
     is: [
       "Interface and interaction design for a connected-hardware product, across mobile and fleet-facing surfaces.",
-      "Grounded in user research and usability testing she ran herself, named where the claims rest on them.",
+      "Grounded in user research and a 14-participant usability test she ran herself, named where the claims rest on them.",
     ],
     isNot: [
       "Not a disclosure of the vendor integrations, their technical field definitions, exact interface copy or timing thresholds. Those remain confidential.",
@@ -128,29 +133,76 @@ export const iotVenture: CaseStudy = {
         {
           type: "prose",
           text: [
-            "The 3.0 redesign was shaped by user research, and tested through an iOS beta before full release rather than after it. That sequencing mattered more than the method: it meant the findings could still change the build.",
+            "The 3.0 redesign was shaped by user research and tested through an iOS beta before full release rather than after it. That sequencing mattered more than the method: it meant findings could still change the build.",
+            "Fourteen people rated the design against five statements on a five-point scale, and left open feedback alongside. The scores were high, which is the least interesting thing about them — a design author running her own test should expect that. The twenty-seven written comments were the useful part.",
+          ],
+        },
+        {
+          type: "statRow",
+          stats: [
+            { value: "14", label: "Participants" },
+            { value: "5", label: "Likert statements" },
+            { value: "27", label: "Written recommendations" },
+          ],
+          source: "Usability test, 5-point Likert scale plus open feedback, ahead of the 3.0 release",
+        },
+        {
+          type: "claimGroup",
+          title: "What the scores said",
+          claims: [
+            {
+              level: "evidence",
+              text: "Across the five statements, mean ratings ran from 4.4 to 4.9 out of 5, with ease of navigation and overall satisfaction both at 4.4 — the two lowest.",
+              source: "Usability test, 14 participants, 5-point Likert scale, ahead of the 3.0 release",
+            },
+            {
+              level: "interpretation",
+              text: "Those two sitting lowest is the only signal worth taking from a set of scores this uniformly high, and it points the same way the written feedback does: finding things, rather than understanding them.",
+            },
           ],
         },
         {
           type: "claimGroup",
-          title: "From the beta",
+          title: "What changed as a result",
           claims: [
             {
               level: "evidence",
-              text: "Testers could not reliably find features under the existing menu order, which was reworked before rollout rather than after.",
-              source: "Usability testing via the iOS beta, ahead of the 3.0 release",
+              text: "The report-theft call to action was rewritten to be simpler, and profile management was moved out to the settings page.",
+              source: "Usability test recommendations, marked Done in the design file",
             },
             {
               level: "evidence",
-              text: "Report generation was too involved for the frequency with which people actually did it, and was simplified before release.",
-              source: "Usability testing via the iOS beta, ahead of the 3.0 release",
+              text: "All linked trackers were surfaced on the home screen map, which testers had reported as missing compared with the previous app.",
+              source: "Usability test recommendations, marked Done in the design file",
+            },
+            {
+              level: "evidence",
+              text: "Tracker status was promoted above trip history on the home page, after testers judged status the more important of the two.",
+              source: "Usability test recommendations, ahead of the 3.0 release",
             },
           ],
         },
         {
           type: "claim",
           level: "interpretation",
-          text: "Both findings were navigation and effort problems rather than comprehension problems — people understood what the app was offering and could not get to it economically. That pushed the redesign toward reducing steps rather than adding explanation.",
+          text: "Almost none of the accepted changes were about making something clearer. They were about ordering and reach — what sits above what, and how few steps away a thing is. The redesign responded by moving things rather than explaining them.",
+        },
+        {
+          type: "prose",
+          text: [
+            "Not everything was accepted, and the record of what was refused is as much a part of the work as the list of fixes. Several recommendations were marked not a priority or technically not possible, and a few were logged as needing more thought rather than being quietly dropped — a GPS-signal indicator, an in-app notification popup, and a request to make the map half-screen with an expand control.",
+          ],
+        },
+        {
+          type: "claim",
+          level: "interpretation",
+          text: "Keeping a refused recommendation on the list, with a reason, is what stops a test result becoming a wish list. Someone reading it later can tell the difference between an idea that failed on its merits and one that failed on the calendar.",
+        },
+        {
+          type: "callout",
+          title: "On the participants",
+          text:
+            "The study recorded responses by name. Nothing here reproduces the table or identifies anyone — only the aggregate figures and themes are published, in line with the rule applied across this site that research participants are described by role, never by name.",
         },
         {
           type: "callout",
@@ -298,6 +350,36 @@ export const iotVenture: CaseStudy = {
       kind: "craft",
       title: "Three more places the system had to admit what it didn't know",
       blocks: [
+        {
+          type: "prose",
+          text: [
+            "The home screen is where this is most visible. Two alert conditions — the bike shaking, and the bike leaving a 100 m radius — can each be on or off independently, which is four combinations of one screen. Rather than keep a fixed label per combination, the status card composes a sentence from whichever conditions are live, and greys the icon of the one that is not.",
+          ],
+        },
+        {
+          type: "figure",
+          width: "wide",
+          image: {
+            src: "/work/iot-venture/home-state-matrix.png",
+            alt: "Three versions of the app home screen side by side, each with a different pair of alert conditions active and a status sentence rewritten to match, with the inactive condition's icon greyed out",
+            width: 1523,
+            height: 1166,
+            caption: "Three of the four combinations. Sample data throughout — placeholder tracker and owner names.",
+          },
+          description:
+            "With distance alone active, the card reads that an alert will come if the bike moves 100 m away. With movement alone, that it will come if the bike moves or shakes while parked. With both, that it will come if the bike shakes or moves 100 m away. The icon for the inactive condition greys out, so the sentence and the icon row always agree. The fourth combination — neither condition — is the alerts-off state.",
+        },
+        {
+          type: "claim",
+          level: "interpretation",
+          text: "Composing the status sentence from the live conditions, rather than storing one string per combination, is what keeps it honest as conditions are added. A fixed set of labels goes stale the moment a third condition exists.",
+        },
+        {
+          type: "prose",
+          text: [
+            "The same screen carries the freshness problem in its top corner: a small timestamp saying how long ago the last position was recorded. It is the smallest element on the page and the one doing the most work, because without it a ten-hour-old position looks exactly like a live one.",
+          ],
+        },
         {
           type: "steps",
           steps: [
