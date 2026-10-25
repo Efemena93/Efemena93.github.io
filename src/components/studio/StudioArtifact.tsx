@@ -83,9 +83,18 @@ export function StudioArtifact({
         className,
       )}
     >
+      {/* No aria-label here, deliberately.
+          An aria-label REPLACES the element's accessible name rather than
+          adding to it, so the previous one ("<title> — <subtitle>. Open the
+          full case study.") hid the rest of the label from screen-reader
+          users while it stayed visible on screen — the visible text and the
+          announced name disagreed. That is axe's
+          `label-content-name-mismatch` (serious, WCAG 2.5.3), and it fired on
+          all six cards at every breakpoint. Letting the link be named by its
+          own contents keeps the two in step: index, project name, subtitle,
+          and the visible "View project" action all read out, in that order. */}
       <Link
         href={`/work/${study.slug}`}
-        aria-label={`${title ?? study.title} — ${subtitle}. Open the full case study.`}
         className="flex flex-1 flex-col rounded focus-visible:outline-offset-4"
       >
         <ArtifactLabel
@@ -95,8 +104,6 @@ export function StudioArtifact({
           subtitle={subtitle}
           discipline={discipline}
         />
-
-        <p className="sr-only">{sceneDescription}</p>
 
         {/* The object itself, pushed to the bottom of the column so that all
             three sit on the same desk line however tall their labels are. */}
@@ -133,6 +140,14 @@ export function StudioArtifact({
           )}
         </div>
       </Link>
+
+      {/* Text equivalent for the illustration. Outside the link on purpose:
+          inside it, this paragraph became part of the link's accessible name
+          and every card announced a paragraph of scene description before the
+          reader reached the action. Here it is still in the accessibility
+          tree, read in document order, and attributed to the artifact rather
+          than to the link. */}
+      <p className="sr-only">{sceneDescription}</p>
     </article>
   );
 }

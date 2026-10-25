@@ -1,0 +1,76 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="360" viewBox="0 0 1200 360" role="img" aria-label="Proposed developer flow in six steps: discover, orient, configure, run, monitor, investigate">
+<style>
+  :root { color-scheme: dark light; }
+  .bg    { fill: #2a2521; }
+  .card  { fill: #342e29; stroke: rgba(242,239,233,0.16); }
+  .ttl   { fill: #f5eee2; }
+  .meta  { fill: #b8ad9a; }
+  .rule  { stroke: #8fb0cc; }
+  .num   { fill: #9bbba2; }
+  @media (prefers-color-scheme: light) {
+    .bg   { fill: #f4efe4; }
+    .card { fill: #fbf7ef; stroke: rgba(35,36,42,0.16); }
+    .ttl  { fill: #23242a; }
+    .meta { fill: #62636d; }
+    .rule { stroke: #35566f; }
+    .num  { fill: #3a5f4b; }
+  }
+  text { font-family: Inter, "Helvetica Neue", system-ui, sans-serif; }
+  .label { font-family: "JetBrains Mono", ui-monospace, monospace; font-size: 11.5px; letter-spacing: .09em; }
+  .h { font-size: 17px; font-weight: 600; }
+  .m { font-size: 12.5px; }
+</style>
+
+<rect class="bg" width="1200" height="360" rx="12"/>
+
+<text class="label num" x="48" y="50">PROPOSED FLOW</text>
+<text class="ttl" x="48" y="86" font-size="24" font-weight="600">How a developer is meant to move through it</text>
+<text class="meta m" x="48" y="112" font-size="13.5">A design proposition. No task path here has been tested with a developer.</text>
+
+<g>
+  <rect class="card" x="48" y="156" width="166" height="112" rx="12" stroke-width="1.5"/>
+  <text class="label num" x="68" y="186">01</text>
+  <text class="ttl h" x="68" y="214">Discover</text>
+  <text class="meta m" x="68" y="240">Understand the value</text>
+</g>
+<path class="rule" d="M222 212 H258" stroke-width="2" fill="none"/>
+<path class="rule" d="M250 205 L259 212 L250 219" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+
+<g>
+  <rect class="card" x="266" y="156" width="166" height="112" rx="12" stroke-width="1.5"/>
+  <text class="label num" x="286" y="186">02</text>
+  <text class="ttl h" x="286" y="214">Orient</text>
+  <text class="meta m" x="286" y="240">Find the workspace</text>
+</g>
+<path class="rule" d="M440 212 H476" stroke-width="2" fill="none"/>
+<path class="rule" d="M468 205 L477 212 L468 219" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+
+<g>
+  <rect class="card" x="484" y="156" width="166" height="112" rx="12" stroke-width="1.5"/>
+  <text class="label num" x="504" y="186">03</text>
+  <text class="ttl h" x="504" y="214">Configure</text>
+  <text class="meta m" x="504" y="240">Connect prerequisites</text>
+</g>
+<path class="rule" d="M658 212 H694" stroke-width="2" fill="none"/>
+<path class="rule" d="M686 205 L695 212 L686 219" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+
+<g>
+  <rect class="card" x="702" y="156" width="166" height="112" rx="12" stroke-width="1.5"/>
+  <text class="label num" x="722" y="186">04</text>
+  <text class="ttl h" x="722" y="214">Run</text>
+  <text class="meta m" x="722" y="240">Start a workflow</text>
+</g>
+<path class="rule" d="M876 212 H912" stroke-width="2" fill="none"/>
+<path class="rule" d="M904 205 L913 212 L904 219" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+
+<g>
+  <rect class="card" x="920" y="156" width="166" height="112" rx="12" stroke-width="1.5"/>
+  <text class="label num" x="940" y="186">05</text>
+  <text class="ttl h" x="940" y="214">Monitor</text>
+  <text class="meta m" x="940" y="240">Read the status</text>
+</g>
+
+<path class="rule" d="M1003 276 V308 H560" stroke-width="2" fill="none" stroke-dasharray="5 6"/>
+<path class="rule" d="M569 301 L559 308 L569 315" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+<text class="meta m" x="582" y="313">06 · Investigate — security or docs, at any point, not only at the end</text>
+</svg>

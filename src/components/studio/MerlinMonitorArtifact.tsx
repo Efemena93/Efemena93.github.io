@@ -31,7 +31,7 @@ export function MerlinMonitorArtifact({
       raise={raise}
       study={study}
       index={index}
-      title="Merlin Mines"
+      title="SpellCarver"
       subtitle={study.premise}
       discipline={study.projectType}
       sceneDescription="An illustration of a studio monitor showing an abstract workflow diagram of connected nodes, with a small notes card beside it. This is an illustrative reconstruction, not a real project screen."

@@ -1,0 +1,74 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="560" viewBox="0 0 1200 560" role="img" aria-label="SpellCarver experience map: discover on the marketing site, get oriented in the product, then act and investigate">
+<style>
+  :root { color-scheme: dark light; }
+  .bg    { fill: #2a2521; }
+  .card  { fill: #342e29; stroke: rgba(242,239,233,0.16); }
+  .ttl   { fill: #f5eee2; }
+  .sub   { fill: #dcd2c1; }
+  .meta  { fill: #b8ad9a; }
+  .rule  { stroke: #9bbba2; }
+  .num   { fill: #9bbba2; }
+  .dot   { fill: #8fb0cc; }
+  @media (prefers-color-scheme: light) {
+    .bg   { fill: #f4efe4; }
+    .card { fill: #fbf7ef; stroke: rgba(35,36,42,0.16); }
+    .ttl  { fill: #23242a; }
+    .sub  { fill: #43444d; }
+    .meta { fill: #62636d; }
+    .rule { stroke: #46705a; }
+    .num  { fill: #3a5f4b; }
+    .dot  { fill: #35566f; }
+  }
+  text { font-family: Inter, "Helvetica Neue", system-ui, sans-serif; }
+  .label { font-family: "JetBrains Mono", ui-monospace, monospace; font-size: 12px; letter-spacing: .09em; }
+  .h { font-size: 22px; font-weight: 600; }
+  .s { font-size: 15px; }
+  .m { font-size: 13.5px; }
+</style>
+
+<rect class="bg" width="1200" height="560" rx="12"/>
+
+<text class="label num" x="56" y="54">EXPERIENCE MAP</text>
+<text class="ttl" x="56" y="92" font-size="27" font-weight="600">One journey, two surfaces</text>
+<text class="meta m" x="56" y="120">Proposed structure — not a record of tested behaviour.</text>
+
+<!-- 1. Discover -->
+<rect class="card" x="56" y="160" width="330" height="268" rx="14" stroke-width="1.5"/>
+<text class="label num" x="86" y="196">01 · MARKETING SITE</text>
+<text class="ttl h" x="86" y="230">Discover</text>
+<line class="rule" x1="86" y1="248" x2="146" y2="248" stroke-width="2"/>
+<text class="sub s" x="86" y="282">“What is this, and is it for me?”</text>
+<circle class="dot" cx="92" cy="318" r="3.5"/><text class="meta m" x="108" y="323">State the promise plainly</text>
+<circle class="dot" cx="92" cy="350" r="3.5"/><text class="meta m" x="108" y="355">Establish security as the frame</text>
+<circle class="dot" cx="92" cy="382" r="3.5"/><text class="meta m" x="108" y="387">Make one next step obvious</text>
+
+<!-- 2. Get oriented -->
+<rect class="card" x="435" y="160" width="330" height="268" rx="14" stroke-width="1.5"/>
+<text class="label num" x="465" y="196">02 · PRODUCT</text>
+<text class="ttl h" x="465" y="230">Get oriented</text>
+<line class="rule" x1="465" y1="248" x2="525" y2="248" stroke-width="2"/>
+<text class="sub s" x="465" y="282">“Where do I go first?”</text>
+<circle class="dot" cx="471" cy="318" r="3.5"/><text class="meta m" x="487" y="323">Group destinations by intent</text>
+<circle class="dot" cx="471" cy="350" r="3.5"/><text class="meta m" x="487" y="355">Show current state at a glance</text>
+<circle class="dot" cx="471" cy="382" r="3.5"/><text class="meta m" x="487" y="387">Name the next action</text>
+
+<!-- 3. Act and investigate -->
+<rect class="card" x="814" y="160" width="330" height="268" rx="14" stroke-width="1.5"/>
+<text class="label num" x="844" y="196">03 · WORKSPACE</text>
+<text class="ttl h" x="844" y="230">Act &amp; investigate</text>
+<line class="rule" x1="844" y1="248" x2="904" y2="248" stroke-width="2"/>
+<text class="sub s" x="844" y="282">“Is it working, and is it safe?”</text>
+<circle class="dot" cx="850" cy="318" r="3.5"/><text class="meta m" x="866" y="323">Configure and run work</text>
+<circle class="dot" cx="850" cy="350" r="3.5"/><text class="meta m" x="866" y="355">Read pipeline progress</text>
+<circle class="dot" cx="850" cy="382" r="3.5"/><text class="meta m" x="866" y="387">Reach security and docs</text>
+
+<!-- connectors -->
+<path class="rule" d="M386 294 H425" stroke-width="2" fill="none"/>
+<path class="rule" d="M416 286 L426 294 L416 302" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+<path class="rule" d="M765 294 H804" stroke-width="2" fill="none"/>
+<path class="rule" d="M795 286 L805 294 L795 302" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+
+<line class="rule" x1="56" y1="474" x2="1144" y2="474" stroke-width="1" stroke-opacity=".35"/>
+<text class="meta m" x="56" y="508">The continuity being designed for is terminology: a word a visitor reads on the marketing site should be the</text>
+<text class="meta m" x="56" y="530">same word they find in the product navigation, so the promise and the interface do not have to be reconciled.</text>
+</svg>

@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 import { Eyebrow, Hairline } from "@/components/primitives";
 import { SignalPoint } from "@/components/signals/SignalPoint";
 import type { Block } from "@/content/types";
@@ -131,9 +133,24 @@ export function BlockRenderer({ block }: { block: Block }) {
                 : "measure"
           }
         >
-          <div className="forced-border flex aspect-[16/10] w-full items-center justify-center rounded border border-line bg-sunk">
-            <p className="label-type px-6 text-center text-charcoal-muted">{block.image.alt}</p>
-          </div>
+          {block.image.src ? (
+            // Real artwork exists, so show it. Unoptimised by config (static
+            // export), which is also what lets an SVG through untouched.
+            <Image
+              src={block.image.src}
+              alt={block.image.alt}
+              width={block.image.width}
+              height={block.image.height}
+              className="forced-border h-auto w-full rounded border border-line"
+              sizes="(min-width: 1024px) 52rem, 100vw"
+            />
+          ) : (
+            // No artwork yet. The box says so in words rather than pretending
+            // a screenshot exists — the honest state, not a broken one.
+            <div className="forced-border flex aspect-[16/10] w-full items-center justify-center rounded border border-line bg-sunk">
+              <p className="label-type px-6 text-center text-charcoal-muted">{block.image.alt}</p>
+            </div>
+          )}
           {block.image.caption ? (
             <figcaption className="mt-3 text-small text-charcoal-muted">
               {block.image.caption}
@@ -149,7 +166,18 @@ export function BlockRenderer({ block }: { block: Block }) {
       return (
         <div className="measure">
           {block.title ? <h3 className="mb-5 text-h3 text-charcoal">{block.title}</h3> : null}
-          <div className="overflow-x-auto">
+          {/* The table has a min-width, so below roughly 32rem this container
+              scrolls sideways. A scrollable box that cannot be focused is
+              unreachable by keyboard — there is no way to scroll it without a
+              pointer — which is axe's `scrollable-region-focusable` (serious).
+              tabIndex makes it a stop; the role and name mean a screen-reader
+              user is told what they have landed in rather than "group". */}
+          <div
+            className="overflow-x-auto focus-visible:outline-offset-4"
+            tabIndex={0}
+            role="region"
+            aria-label={block.title ? `${block.title} — table, scrolls sideways` : "Comparison table, scrolls sideways"}
+          >
             <table className="w-full min-w-[32rem] border-collapse text-left">
               <thead>
                 <tr>
