@@ -48,7 +48,17 @@ export const projectImages: Record<string, ProjectImage> = {
     1200,
     560,
   ),
-  "olive-ilive": stand("olive-ilive", "A responsive health portal on desktop and mobile"),
-  vochub: stand("vochub", "A fan of vocabulary cards"),
+  "olive-ilive": real(
+    "/work/olive-ilive/splash-preference-test.png",
+    "The two Olive-Ilive splash screens tested against each other, beside a bar showing 12 of 17 people chose the first design",
+    1028,
+    700,
+  ),
+  vochub: real(
+    "/work/vochub/splash-before-after.png",
+    "The VocHub splash screen before and after the preference test",
+    996,
+    781,
+  ),
   virtualbuddy: stand("virtualbuddy", "A study-community workspace with shared feed and profiles"),
 };
