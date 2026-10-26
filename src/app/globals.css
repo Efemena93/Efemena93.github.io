@@ -114,6 +114,17 @@
   /* Layout */
   --container-page: 77.5rem; /* 1240px */
 
+  /* ---- Text over the studio photograph -------------------------------
+     The hero image does not change with the theme, so text sitting on it
+     cannot use the theme tokens: in light mode those resolve to near-black,
+     which is unreadable against a photograph that has been darkened for
+     light text. These are fixed, and they are the only fixed colours in the
+     file. Everything outside the hero still uses the theme. */
+  --studio-ink: #fcf8f0;
+  --studio-ink-soft: rgba(252, 248, 240, 0.88);
+  --studio-ink-muted: rgba(252, 248, 240, 0.72);
+  --studio-rule: rgba(252, 248, 240, 0.28);
+
   /* Height of the sticky site header. It participates in normal flow, so a
      full-viewport hero has to subtract it or its own bottom edge — and the
      scroll cue sitting on that edge — falls below the fold by exactly this

@@ -54,7 +54,7 @@ export function StudioHour() {
   );
 
   return (
-    <p className="label-type min-h-5 text-charcoal-muted" aria-live="off">
+    <p className="label-type min-h-5 text-[var(--studio-ink-muted)]" aria-live="off">
       {line}
     </p>
   );
