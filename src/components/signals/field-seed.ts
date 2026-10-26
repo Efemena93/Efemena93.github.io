@@ -28,9 +28,6 @@ export const FIELD_SEED = 20210704;
 /** Threads are drawn between points closer than this, in CSS pixels. */
 export const THREAD_DISTANCE = 180;
 export const THREAD_MAX_ALPHA = 0.32;
-export const POINTER_RADIUS = 220;
-export const POINTER_PULL = 0.04;
-export const POINTER_THREAD_ALPHA = 0.5;
 
 export function buildField(count: number, seed = FIELD_SEED): SignalSeed[] {
   const rand = seededRandom(seed);
@@ -54,12 +51,4 @@ export function buildField(count: number, seed = FIELD_SEED): SignalSeed[] {
   }
 
   return points;
-}
-
-/** Point count scales with viewport so a phone is not asked to do desktop work. */
-export function pointCountFor(width: number): number {
-  if (width < 380) return 0; // static SVG only
-  if (width < 640) return 16;
-  if (width < 1024) return 22;
-  return 34;
 }

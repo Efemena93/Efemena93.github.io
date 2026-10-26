@@ -256,8 +256,6 @@ export const featuredFieldNotes = fieldNotes.slice(0, 3);
 /** Published and archived both get a page; drafts do not. */
 export const routableFieldNotes = allFieldNotes.filter((n) => n.visibility !== "draft");
 
-export const draftFieldNotes = allFieldNotes.filter((n) => n.visibility === "draft");
-
 /** Returns undefined for drafts, so a draft slug cannot render by accident. */
 export function getFieldNote(slug: string): FieldNote | undefined {
   return routableFieldNotes.find((note) => note.slug === slug);

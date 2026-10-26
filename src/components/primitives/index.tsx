@@ -209,13 +209,3 @@ export function TextLink({
     </Link>
   );
 }
-
-/* ---------------------------------------------------------------- prose */
-
-export function Prose({ children, className }: { children: ReactNode; className?: string }) {
-  return (
-    <div className={cx("measure space-y-5 text-body text-charcoal-soft", className)}>
-      {children}
-    </div>
-  );
-}

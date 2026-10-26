@@ -152,33 +152,6 @@ export function validateFieldNotes(notes: FieldNote[]): string[] {
 }
 
 /**
- * Contact and identity values that must be real before they are published.
- * The résumé PDF is exempt: it is allowed to be absent, and the UI already
- * degrades to a "read résumé" link when it is.
- */
-export function validateSiteConfig(site: {
-  url: string;
-  name: string;
-  contact: { email: string; location: string; availability: string };
-  socials: ReadonlyArray<{ label: string; href: string }>;
-}): string[] {
-  const problems: string[] = [];
-  requireNonEmpty("site.url", site.url, problems);
-  requireNonEmpty("site.name", site.name, problems);
-  requireNonEmpty("site.contact.email", site.contact.email, problems);
-  requireNonEmpty("site.contact.location", site.contact.location, problems);
-  requireNonEmpty("site.contact.availability", site.contact.availability, problems);
-  if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(site.contact.email))
-    problems.push(`site.contact.email is not a valid address: "${site.contact.email}"`);
-  site.socials.forEach((s) => {
-    scanText(`site.socials["${s.label}"]`, s.href, problems);
-    if (!/^https?:\/\//.test(s.href))
-      problems.push(`site.socials["${s.label}"] is not a URL: "${s.href}"`);
-  });
-  return problems;
-}
-
-/**
  * Throws in production so the build fails; warns in development so an
  * in-progress edit does not block the dev server.
  */

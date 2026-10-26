@@ -63,9 +63,6 @@ export const archivedCaseStudies = allCaseStudies.filter((s) => s.visibility ===
  */
 export const routableCaseStudies = allCaseStudies.filter((s) => s.visibility !== "draft");
 
-/** Kept for the content report and for `npm run content:todo`. */
-export const draftCaseStudies = allCaseStudies.filter((s) => s.visibility === "draft");
-
 /* ------------------------------------------------------------- lookups */
 
 /** Returns undefined for drafts, so a draft slug cannot be rendered by accident. */
