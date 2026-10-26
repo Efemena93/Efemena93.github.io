@@ -35,7 +35,7 @@ export function ZalandoBlueprintArtifact({
       title="Zalando"
       subtitle="Plus early access and design-system contributions"
       discipline="Service design · Design systems · Product strategy"
-      sceneDescription="An illustration of a service blueprint pinned to a research wall (swimlanes and touchpoints, drawn as plain shapes) with a row of design-token colour swatches beneath it. This is an illustrative reconstruction, not a real project screen."
+      sceneDescription="The Zalando logo. The work was a service blueprint with touchpoints and design-token contributions. The designs are under NDA, so the logo is shown instead."
       symbol="garment"
     >
       <svg

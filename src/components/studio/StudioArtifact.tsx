@@ -144,6 +144,8 @@ export function StudioArtifact({
                 <figcaption className="label-type mt-2 text-charcoal-muted">
                   Placeholder image, real screen to come
                 </figcaption>
+              ) : image.caption ? (
+                <figcaption className="label-type mt-2 text-charcoal-muted">{image.caption}</figcaption>
               ) : null}
             </figure>
           ) : (

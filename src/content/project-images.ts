@@ -11,6 +11,8 @@ export interface ProjectImage {
   alt: string;
   /** True while the file is a stand-in rather than real project evidence. */
   placeholder: boolean;
+  /** Optional visible note, for example why real designs are not shown. */
+  caption?: string;
   width: number;
   height: number;
 }
@@ -26,16 +28,17 @@ const stand = (slug: string, alt: string): ProjectImage => ({
   height: 520,
 });
 
-const real = (path: string, alt: string, width: number, height: number): ProjectImage => ({
+const real = (path: string, alt: string, width: number, height: number, caption?: string): ProjectImage => ({
   src: `${base}${path}`,
   alt,
   placeholder: false,
+  caption,
   width,
   height,
 });
 
 export const projectImages: Record<string, ProjectImage> = {
-  zalando: stand("zalando", "Layered service-blueprint sheets with swimlanes and touchpoints"),
+  zalando: real("/work/zalando/zalando-logo.png", "The Zalando wordmark in white on an orange rounded card", 2000, 1211, "Designs are under NDA, so the logo is shown."),
   "iot-venture": real(
     "/work/iot-venture/dealer-assign-tracker.png",
     "The IoT Venture dealer portal screen for assigning an order to a tracker",
