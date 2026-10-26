@@ -92,9 +92,9 @@ Three route handlers that Next would otherwise treat as dynamic — `opengraph-i
 
 ### Verified against the built output, not the dev server
 
-- All 18 pages return 200 from a plain static file server; unknown paths 404
-- 0 axe violations across all nine route templates
-- The client bundle hydrates: the signal field drifts, hover and focus both reveal labels, and selecting a point navigates
+- Every page returns 200 from a plain static file server; unknown paths 404
+- 0 axe violations across the route templates
+- The client bundle hydrates: the studio objects drift, hover and focus both reveal their titles, and selecting one navigates
 - Every internal link on the homepage resolves
 - No console errors
 - The project-site build (`NEXT_PUBLIC_BASE_PATH=/efemena-portfolio`) was served under that subpath and re-tested: fonts load, JS hydrates, navigation resolves, no failed requests
@@ -103,44 +103,27 @@ Three route handlers that Next would otherwise treat as dynamic — `opengraph-i
 
 ## The homepage
 
-The first screen carries the name, the discipline and the positioning line as plain text at first paint, with no entrance animation and nothing layered behind them. Three actions sit directly beneath: **View selected work**, **About me**, and **Download résumé** (which reads "Read résumé" and links to `/resume` until you drop a PDF in and set `site.resumePdf` — it will not promise a download that does not exist).
+Two sections, then three short ones. Navigation and footer come from the layout.
 
-### The signal field
+**01. The studio.** A full-height photograph of a working room, with the name, the discipline and a short introduction over it as plain text. No project card, thumbnail or project name appears in this first screen: the visitor gets the room, and finds the work by scrolling or by touching one of the objects.
 
-To the right of the headline, sixteen points drift on slow seeded orbits. Each one is a real thing, defined in `src/content/signals.ts`:
+- **Four floating objects** (`FloatingSymbols`) drift in the edges of the room from `md` upward. Each links to a real project: a bicycle to IoT Venture, a wand to SpellCarver, a garment to Zalando and glasses to HearEase. The list lives in one place, `src/content/project-objects.ts`.
+- **On phones** the objects do not float. `StudioObjectRow` shows the same four links as a labelled row of chips, in the same order.
+- **One line that follows the visitor's own hour** (`StudioHour`), for example "A morning for noticing". It describes the hour, not the designer's availability. The server cannot know the visitor's time, so it renders after hydration, and the slot keeps its height so nothing below moves.
+- The photograph is an `img` with `srcset` and a portrait crop for phones, in `public/studio/`. A scrim anchored to the darkest corner keeps the text readable.
 
-| Kind | What it is | Where it goes |
-| --- | --- | --- |
-| **Project** | A case study | That case study |
-| **Research theme** | A question the work keeps returning to | The project it came from |
-| **Observation** | Something noticed during research — an interpretation, never a statistic | The project it came from |
+**02. Selected work.** Below the first screen, under its own heading, seven artifacts in this order: IoT Venture, SpellCarver (Merlin Mines), Zalando, HearEase, Olive-Ilive, VocHub and VirtualBuddy. Each has a name, a one-line description, a short label and a link to its case study. The work is not repeated in a card grid. A "View all work" link goes to the full list at `/work`.
 
-Bringing the pointer near a point brightens it, strengthens its threads, and reveals the title and a one-sentence description. Threads are **authored, not distance-derived** — each line in `signalThreads` is a relationship that actually exists between two ideas, so the network means something rather than just looking like one.
+Then: the practice statement ("How I work"), "From the Library", and the contact call to action.
 
-Four rules keep this from becoming a puzzle:
+### Project images
 
-1. **Every point is a real `<a>` in the DOM**, positioned over a decorative canvas. Keyboard-reachable, with a visible focus ring; **focus reveals exactly what hover reveals** — verified, not assumed.
-2. **The canvas draws threads and glow only.** It is `aria-hidden` and never carries information that is not also in the DOM. A live region announces the active point.
-3. **`SignalIndex` renders all sixteen as plain text** directly below the hero — always, not behind a toggle. Nothing has to be discovered.
-4. **Below 1024px the field is not rendered at all.** Pointer proximity has no honest touch equivalent, so the list is the whole experience there.
+Each artifact shows an image from `src/content/project-images.ts`, keyed by case-study slug.
 
-The field element is offset to the right of the headline column, so no point can hide behind text. Label placement is measured at runtime — right, left, or below — with a margin that absorbs a full orbit of drift. Verified across every node at 1440, 1280 and 1024: no label overlaps the copy, none goes off-screen.
-
-### Spatial continuity
-
-Selecting a point records its screen position (`signal-origin.ts`, sessionStorage), expands a bloom from that exact spot over 420ms, then navigates. The case study renders `ArrivalBloom`, which continues outward from the same coordinates over 700ms and clears. Open a case study any other way — direct link, work index, bookmark — and nothing is shown. Under reduced motion the origin is still consumed, so it cannot leak into a later navigation, but nothing is drawn.
-
-### Ambient status
-
-One line above the name that changes with **the visitor's own local hour** — "An afternoon for observing", "An evening for reflecting". Client-rendered, because the server has no idea what time it is where you are. It claims nothing: no visitor count, no "currently available", no fabricated recency. It acknowledges that someone is here at a particular moment, and no more.
-
-### Scroll behaviour
-
-Scroll-*linked* rather than scroll-triggered, so the page reads as one continuous space. The hero recedes to 18% opacity as the work arrives, holding full opacity through the first third of the travel so a slow reader is not fading the headline out from under themselves. A thread draws itself from the hero down into the featured work. Project covers are uncovered by a lifting mask rather than a fade. Everything sits in the 300–700ms band, and all of it is off under reduced motion — where covers are simply present rather than hidden.
-
-### Featured cards
-
-Each prints the facts a recruiter scans before deciding whether to read further, none of it behind a hover: **problem area**, **my role**, **project type**, and one **outcome** — or, where there is not one yet, the honest **current status**. Those four are required fields on `CaseStudy`, so a project cannot be added to the site without them. The whole card is one link and one tab stop.
+- To use a real image, put the file in `public/work/<slug>/`, point the entry's `src` at it and describe it in `alt`. Use the `real(...)` helper.
+- An entry made with `stand(...)` is a placeholder. It shows the caption "Placeholder image, real screen to come" until it is replaced. VirtualBuddy is the only one left.
+- If a project has no entry, its artifact falls back to a drawn illustration.
+- Only add images that are approved for public display.
 
 ---
 
@@ -178,10 +161,12 @@ src/
                            contact, 404, sitemap, robots, opengraph-image
   components/
     layout/                header, footer, skip link, route announcer
-    primitives/            container, section, eyebrow, prose, links, meta
+    primitives/            container, section, eyebrow, links, meta
     motion/                MotionProvider + Reveal / RevealGroup / toggle
     signals/               the atmosphere: thread field, cover fields,
                            glow, grain, cursor trace
+    studio/                the homepage: photographic hero, floating objects,
+                           project artifacts
     content/               case study & field note rendering, evidence system
     seo/                   JSON-LD
   content/                 all site content, as typed data
@@ -211,14 +196,14 @@ Evidence markers never animate under any setting. Evidence that shimmers reads a
 
 ## Accessibility
 
-Verified with axe-core across all 10 route templates at 1440px, plus mobile, reduced-motion and keyboard passes.
+Verified with axe-core across the route templates at 1440px and 375px, plus mobile, reduced-motion and keyboard passes.
 
 - **0 axe violations** on every route
 - Skip link is the first Tab stop on every page
 - Exactly one `<h1>` per page; no skipped heading levels
 - No horizontal scroll at 375px or 1440px
 - Mobile nav: labelled `Menu` button (never a bare icon), focus trapped, Escape closes, focus returns to the trigger
-- Signal field: all sixteen points keyboard-reachable; focus and hover reveal identical content; positions verified stable under reduced motion
+- Studio objects: real links with accessible names, in the same order as the work section; each is a tab stop with a visible focus ring and a hit area of at least 44 by 44 pixels; focus and hover show the same title; they stop moving under reduced motion
 - Body text at 13.9:1; every text colour ≥ 5:1; light accents are markers and surfaces only, never type
 - `forced-colors`, `prefers-contrast: more` and `prefers-reduced-transparency` all drop the atmosphere layer and keep the content
 - Contact form: visible persistent labels, `autocomplete` tokens, inline errors linked with `aria-describedby` plus an assertive summary, and **no CAPTCHA** — a honeypot and a timing check instead, so no puzzle is put in front of a human
@@ -228,8 +213,8 @@ Verified with axe-core across all 10 route templates at 1440px, plus mobile, red
 
 ---
 
-## Replacing the placeholder covers
+## Case study images
 
-Each project currently shows a constellation seeded from its slug — stable, unique per project, and part of the same visual environment as the hero. To use real artwork, put images in `public/work/<slug>/` and swap `CoverField` for `next/image` in `src/components/content/CaseStudyCard.tsx`. Nothing else changes.
+Images inside a case study are set in the content file, in a `figure` block with `src`, `alt` and a caption. Put the files in `public/work/<slug>/`. For the homepage artifacts, see "Project images" above.
 
 Alt text policy: describe what a screen *does* and what decision it supports. Never "screenshot of app". Complex diagrams get a short `alt` plus a visible text equivalent, so the reasoning is available to everyone.
