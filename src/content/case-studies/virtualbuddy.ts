@@ -10,6 +10,16 @@ import type { CaseStudy } from "../types";
  * One addition beyond that source, flagged rather than silently folded in:
  * the informal Figma-prototype walkthrough with a small group of students is
  * from Efemena's own account of the work, not from the original write-up.
+ *
+ * DO NOT upgrade the research claims here from the "My Portfolio" Figma deck
+ * (file 2lc62uPpDKu9hiSs3O91lM). Its VirtualBuddy case study contains a
+ * "Research Analysis" table of 14 participants with Likert means of 4.4-4.9.
+ * That table is NOT VirtualBuddy's: its six column totals (61, 65, 66, 62,
+ * 65, 69) and all six means are identical to the usability study in the IoT
+ * mobility app file, where the same table carries 15 real participant names.
+ * Efemena confirmed on 2026-10-25 that the study is IoT Venture's and the
+ * table was reused as a layout in the deck. The claims below — an informal
+ * walkthrough, not a structured usability study — are the accurate ones.
  */
 
 export const virtualBuddy: CaseStudy = {
@@ -17,18 +27,18 @@ export const virtualBuddy: CaseStudy = {
   visibility: "published",
   title: "VirtualBuddy",
   premise:
-    "A study-together platform concept for students to connect, share materials and encourage each other. Without tipping into prescribing how someone should feel.",
+    "A study-together platform concept for students to connect, share materials and encourage each other, without tipping into prescribing how someone should feel.",
   problemArea: "Education · study community",
   humanProblem:
-    "Students need a safe place to find study partners and share materials, but a product built around encouragement can easily slide from supporting someone into prescribing to them. A line this project set out to hold.",
+    "Students need a safe place to find study partners and share materials, but a product built around encouragement can easily slide from supporting someone into prescribing to them, a line this project set out to hold.",
   shortRole: "UI designer",
   projectType: "Self-directed project",
   headline:
-    "A complete, responsive interface system across multiple screen sizes, walked through informally with a small group of students on the Figma prototype. Confirmed the core flows rather than surfacing major issues. Never built as a live product.",
+    "A complete, responsive interface system across multiple screen sizes, walked through informally with a small group of students on the Figma prototype, which confirmed the core flows rather than surfacing major issues. Never built as a live product.",
   summary:
     "A responsive study-community app: students create a profile, find and connect with people studying the same subject, and share study material. Designed from user stories through wireframes to a full UI system and prototype.",
   featured: true,
-  order: 6,
+  order: 9,
   status: "complete",
   year: "2022",
   timeline: "End-to-end · 2022",
@@ -49,7 +59,7 @@ export const virtualBuddy: CaseStudy = {
       "Not a mood-tracking or assessment tool.",
     ],
     unvalidated: [
-      "The task flows and personas: no interviews or surveys were run for this project. It moved from user stories directly into task flows, wireframes and UI.",
+      "The task flows and personas: no interviews or surveys were run for this project; it moved from user stories directly into task flows, wireframes and UI.",
       "The interface itself beyond a small, informal walkthrough: a handful of students tried the core flows on the Figma prototype and confirmed the direction, but that is not a structured usability study, and the product has never been built.",
       "Whether the product would actually be used the way the task flows assume, beyond that small informal walkthrough.",
     ],
@@ -60,7 +70,7 @@ export const virtualBuddy: CaseStudy = {
       "Students needed a straightforward way to find and connect with peers studying the same subject and to share study material, in a product that supports rather than prescribes a positive outlook.",
     role: "UI designer: task flows, wireframes, the visual system and prototype.",
     approach:
-      "Wrote three user stories, creating a profile, finding and connecting with study partners, and sharing study material, and task flows for each; built low- to mid-fidelity wireframes on a 12-column grid; compared two mood-board directions before choosing a calmer, natural palette; built a full UI token system (colour, typography, iconography, imagery) and prototyped it across multiple screen sizes.",
+      "Wrote three user stories (creating a profile, finding and connecting with study partners, and sharing study material), and task flows for each; built low- to mid-fidelity wireframes on a 12-column grid; compared two mood-board directions before choosing a calmer, natural palette; built a full UI token system (colour, typography, iconography, imagery), and prototyped it across multiple screen sizes.",
     outcome:
       "A complete, responsive UI system and prototype. A small, informal walkthrough with students on the Figma prototype confirmed the core flows worked as intended; it has not been built as a live product, and has not had a structured usability study.",
   },
@@ -74,8 +84,8 @@ export const virtualBuddy: CaseStudy = {
         {
           type: "prose",
           text: [
-            "VirtualBuddy is a study-together platform: a place for students to connect, find people studying the same or a related subject, and make study material available to each other. I chose it because I have always wanted to work on projects that foster an optimistic outlook without tipping into anything prescriptive. I'm an advocate for education, and this project let me explore that alongside my study skills.",
-            "That distinction, support, not prescription, is the boundary that shaped every decision after it. The product had to help students find each other and share material, and nothing about it was allowed to read as monitoring how someone felt or telling them how they should feel.",
+            "VirtualBuddy is a study-together platform: a place for students to connect, find people studying the same or a related subject, and make study material available to each other. I chose it because I have always wanted to work on projects that foster an optimistic outlook without tipping into anything prescriptive; I'm an advocate for education, and this project let me explore that alongside my study skills.",
+            "That distinction (support, not prescription) is the boundary that shaped every decision after it. The product had to help students find each other and share material, and nothing about it was allowed to read as monitoring how someone felt or telling them how they should feel.",
           ],
         },
         {
@@ -99,7 +109,7 @@ export const virtualBuddy: CaseStudy = {
         {
           type: "prose",
           text: [
-            "Each user story became a task flow. Landing page, sign up or sign in, study-profile setup, then the story-specific steps: selecting language and study location and connecting with others, or opening the information hub to view and share study material. I moved from low-fidelity wireframes to a mid-fidelity mockup on a 12-column grid (11pt gutter, 16pt margin, stretch type), chosen because a fluid grid keeps elements balanced and holds up when the design has to adapt to other screen sizes.",
+            "Each user story became a task flow, landing page, sign up or sign in, study-profile setup, then the story-specific steps: selecting language and study location and connecting with others, or opening the information hub to view and share study material. I moved from low-fidelity wireframes to a mid-fidelity mockup on a 12-column grid (11pt gutter, 16pt margin, stretch type), chosen because a fluid grid keeps elements balanced and holds up when the design has to adapt to other screen sizes.",
           ],
         },
         {
@@ -107,14 +117,14 @@ export const virtualBuddy: CaseStudy = {
           title: "Two mood-board directions",
           columns: ["Direction", "Why"],
           rows: [
-            ["Natural, calm palette: chosen", "Reflects the target market's lifestyle and communicates the product's tone more clearly."],
-            ["Bright, playful palette, not chosen", "Better suited to entertainment products, music, games, comedy, than to a study tool."],
+            ["Natural, calm palette, chosen", "Reflects the target market's lifestyle and communicates the product's tone more clearly."],
+            ["Bright, playful palette (not chosen", "Better suited to entertainment products) music, games, comedy, than to a study tool."],
           ],
         },
         {
           type: "prose",
           text: [
-            "After an informal walkthrough of the screens with a small group of students, who tried the core flows on the prototype and confirmed the direction rather than surfacing major issues, I built the final UI in Figma and assembled UI kits, labels, navigation, colour, typography, imagery and iconography, then prototyped the navigation and produced design mockups across different screen sizes and break points, so the responsive behaviour was demonstrated rather than assumed.",
+            "After an informal walkthrough of the screens with a small group of students (who tried the core flows on the prototype and confirmed the direction rather than surfacing major issues) I built the final UI in Figma and assembled UI kits (labels, navigation, colour, typography, imagery and iconography) then prototyped the navigation and produced design mockups across different screen sizes and break points, so the responsive behaviour was demonstrated rather than assumed.",
           ],
         },
       ],

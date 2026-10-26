@@ -51,7 +51,7 @@ export const merlinMines: CaseStudy = {
     "A CI/CD automation product where the marketing promise and the product interface had to be designed as one continuous journey.",
   problemArea: "Developer tooling · CI/CD automation",
   humanProblem:
-    "A developer evaluating an automation tool has to work out what it does, where to begin, whether it is running, and whether it is safe. Usually in that order, usually alone.",
+    "A developer evaluating an automation tool has to work out what it does, where to begin, whether it is running, and whether it is safe, usually in that order, usually alone.",
   shortRole: "UI/UX design intern · sole designer",
   projectType: "Internship, in-house · Merlin Mines",
   boundary:
@@ -59,9 +59,9 @@ export const merlinMines: CaseStudy = {
   headline:
     "Established the product's first UI patterns and components as its only dedicated design resource, across three design iterations tested with the in-house developers who use the tool. Implemented by the end of the internship.",
   summary:
-    "Three months as the sole designer on SpellCarver, a secure-automation product from Merlin Mines. The work spans the public site and the product interface, and the argument running through it is that those are one journey, not two projects. The words a visitor reads on the marketing page should be the words they find in the navigation. Three iterations, tested with the in-house developers who use it, implemented before the internship ended.",
+    "Three months as the sole designer on SpellCarver, a secure-automation product from Merlin Mines, across the public site and the product interface. Three iterations, tested with the in-house developers who use it, implemented before the internship ended.",
   featured: true,
-  order: 9,
+  order: 2,
   status: "complete",
   year: "2025",
   timeline: "Jun to Aug 2025 · Remote, US",
@@ -76,10 +76,10 @@ export const merlinMines: CaseStudy = {
 
   atAGlance: {
     problem:
-      "SpellCarver had to persuade a developer on a marketing page and then orient them inside a technical product. And the two surfaces were being designed as if they were unrelated.",
+      "SpellCarver had to persuade a developer on a marketing page and then orient them inside a technical product, and the two surfaces were being designed as if they were unrelated.",
     role: "Sole designer on the team, and the product's first dedicated design resource: end-to-end UX and UI across the public site and the product interface.",
     approach:
-      "Worked alongside the in-house developers who use the tool, through three design iterations and usability testing with them. Treated the site and the product as one journey, grouped navigation around what a developer is trying to do, gave pipeline state a deliberate reading order, and made security a named destination rather than something to be inferred.",
+      "Worked alongside the in-house developers who use the tool, through three design iterations and usability testing with them. Grouped navigation around what a developer is trying to do, gave pipeline state a reading order, and made security a named destination.",
     outcome:
       "Implemented by the end of the internship, with the product's first UI patterns and components established for the engineers to build against. No accessibility audit, and no outcome metrics were measured.",
   },
@@ -87,13 +87,13 @@ export const merlinMines: CaseStudy = {
   ethics: {
     is: [
       "An interface design project: information architecture, content hierarchy and UI patterns for a developer-facing automation product.",
-      "Designed with its users in the building, the in-house developers who run the tool, across three iterations and usability testing with them.",
+      "Designed with its users in the building (the in-house developers who run the tool) across three iterations and usability testing with them.",
       "A record of design decisions and the reasoning behind each one.",
     ],
     isNot: [
       "Not a published-interface case study. The screens are NDA-protected and none appear here.",
       "Not a security or compliance claim. The product is positioned around secure automation; nothing here certifies that it is secure or compliant.",
-      "Not a performance report. The figures on the dashboard screens are interface content, sample values demonstrating a layout, and nothing was measured after release.",
+      "Not a performance report. The figures on the dashboard screens are interface content (sample values demonstrating a layout), and nothing was measured after release.",
     ],
     unvalidated: [
       "The specific design arguments below. Testing happened, but what it found is not reproduced on this page, so no individual decision here should be read as validated by it.",
@@ -114,17 +114,17 @@ export const merlinMines: CaseStudy = {
         {
           type: "prose",
           text: [
-            "SpellCarver is a secure-automation product: it runs CI/CD pipelines and keeps the security picture visible while it does. Like most products of its kind, it exists as two things at once. A public site that has to be persuasive, and a product interface that has to be precise.",
-            "The failure mode is familiar to anyone who has evaluated developer tooling. The marketing page promises something in confident, abstract language; you sign in, and the interface greets you with a different vocabulary and no obvious first move. Nothing is broken. The product simply has not told you what it is, and you have to reconstruct it from the navigation.",
-            "I joined as the only designer on the team. The product had never had a dedicated design resource, which meant the question was not which screens needed polishing. It was what conventions the product should have at all, since whatever I established would be what the engineers built against afterwards.",
-            "The one real advantage of the brief was that the users were in the building. SpellCarver is used by Merlin Mines' own in-house developers, so the people I was designing for were colleagues I could sit with, watch work, and put a prototype in front of. Not a persona assembled from a category.",
+            "SpellCarver is a secure-automation product: it runs CI/CD pipelines and keeps the security picture visible while it does. Like most products of its kind, it exists as two things at once, a public site that has to be persuasive, and a product interface that has to be precise.",
+            "The failure mode is familiar. The marketing page promises something in confident, abstract language; you sign in, and the interface greets you with a different vocabulary and no obvious first move. Nothing is broken, but you have to reconstruct the product from its navigation.",
+            "I joined as the only designer. The product had never had a dedicated design resource, so the question was not which screens needed polishing: it was what conventions the product should have at all, since whatever I set would be what the engineers built against.",
+            "The one real advantage was that the users were in the building. SpellCarver is used by Merlin Mines' own developers, so the people I designed for were colleagues I could sit with, watch work, and put a prototype in front of.",
           ],
         },
         {
           type: "callout",
           title: "Why there are no screens here",
           text:
-            "The interface is covered by an NDA, so this page carries the reasoning and the diagrams rather than the product itself. That constraint is also why the design arguments below stay marked as arguments: the work was tested and implemented, but reproducing what the testing showed, screen by screen, would mean showing the screens. I am glad to walk through them in an interview.",
+            "The interface is covered by an NDA, so this page carries the reasoning and the diagrams rather than the product. That is also why the design arguments below stay arguments: the work was tested and implemented, but showing what the testing changed would mean showing the screens.",
         },
       ],
     },
@@ -138,7 +138,7 @@ export const merlinMines: CaseStudy = {
         {
           type: "prose",
           text: [
-            "Most internship projects end at a handsome prototype nobody has used. This one did not, for one structural reason: the users sat in the same company. I could work with them directly rather than inferring what they needed from the product category.",
+            "Most internship projects end at a prototype nobody has used. This one did not, for a structural reason: the users sat in the same company, so I could work with them directly rather than infer what they needed.",
           ],
         },
         {
@@ -152,19 +152,19 @@ export const merlinMines: CaseStudy = {
             },
             {
               level: "evidence",
-              text: "The people tested were the product's actual users, the Merlin Mines developers whose daily workflow the tool supports, not proxies recruited to stand in for them.",
+              text: "The people tested were the product's actual users (the Merlin Mines developers whose daily workflow the tool supports), not proxies recruited to stand in for them.",
               source: "My own record of the internship, Jun to Aug 2025",
             },
             {
               level: "interpretation",
-              text: "Having the users in the building changed what the iterations were for. Each round was less about whether a layout was attractive and more about whether a developer could predict where something lived. Which is the kind of question you can only settle by watching someone look for it.",
+              text: "Having the users in the building changed what the iterations were for. Each round was less about whether a layout was attractive and more about whether a developer could predict where something lived, which is the kind of question you can only settle by watching someone look for it.",
             },
           ],
         },
         {
           type: "prose",
           text: [
-            "What I have not reproduced here is what each round of testing surfaced and what changed between the three iterations. That detail lives in the screens, and the screens are under NDA. It is the honest limit of this page: the process is documented, the findings are not public, and so none of the individual design arguments below should be read as proven by the testing.",
+            "What I have not reproduced is what each round surfaced and what changed between the three iterations. That detail lives in the screens, and the screens are under NDA. So the process is documented, the findings are not public, and no individual decision below should be read as proven by the testing.",
           ],
         },
         {
@@ -188,7 +188,7 @@ export const merlinMines: CaseStudy = {
         {
           type: "prose",
           text: [
-            "That last one shaped more of the work than it looks like it should. Merlin Mines has a warm brand with a light sense of craft to it, and the instinct is to carry that voice everywhere. I kept it on the marketing surface and deliberately did not carry it into status labels, where a developer is making an operational decision and needs the literal word.",
+            "That last one shaped more than it looks like it should. Merlin Mines has a warm brand, and the instinct is to carry that voice everywhere. I kept it on the marketing surface and out of status labels, where a developer is making an operational decision and needs the literal word.",
           ],
         },
       ],
@@ -203,7 +203,7 @@ export const merlinMines: CaseStudy = {
           type: "list",
           ordered: true,
           items: [
-            "Connect the story to the product. Make the site's value proposition and its calls to action lead naturally into the interface.",
+            "Connect the story to the product: make the site's value proposition and its calls to action lead naturally into the interface.",
             "Make navigation predictable: group destinations around tasks, not around the internal feature list.",
             "Prioritise status and next actions: give pipeline state and progress a deliberate visual hierarchy.",
             "Make security discoverable: treat it as a first-class destination, not a buried utility.",
@@ -220,7 +220,7 @@ export const merlinMines: CaseStudy = {
             height: 560,
           },
           description:
-            "The journey in three stages. Discover, on the marketing site: state the promise, establish security as the frame, make one next step obvious. Get oriented, in the product: group destinations by intent, show current state, name the next action. Act and investigate, in the workspace: configure and run work, read pipeline progress, reach security and documentation. The continuity being designed for is terminology. A word read on the site should be the word found in the navigation.",
+            "Three stages. Discover, on the marketing site: state the promise, establish security as the frame, make one next step obvious. Get oriented, in the product: group destinations by intent, show current state, name the next action. Act and investigate: configure and run work, read progress, reach security and documentation.",
           },
       ],
     },
@@ -253,7 +253,7 @@ export const merlinMines: CaseStudy = {
         {
           type: "prose",
           text: [
-            "The product's destinations, dashboard, the SpellCarver workspace itself, tasks, documentation, security, the Spellbook, notifications, can be listed flat, or grouped by what someone came to do. I grouped them: a place to see state, a place to do work, a place to learn, a place to check trust. A developer arriving mid-task should be able to predict which group a destination belongs to without reading every label.",
+            "The product's destinations can be listed flat, or grouped by what someone came to do. I grouped them: a place to see state, a place to do work, a place to learn, a place to check trust. A developer arriving mid-task should be able to predict which group a destination belongs to without reading every label.",
           ],
         },
         {
@@ -283,8 +283,8 @@ export const merlinMines: CaseStudy = {
         {
           type: "prose",
           text: [
-            "A dashboard full of equally weighted numbers is a dashboard nobody reads twice. I separated summary values from live pipeline activity and gave them a deliberate sequence: what you should notice first, what you scan second, where you go for detail. Status is carried by a label as well as a colour, so the distinction between informational and actionable survives both greyscale and a colour-blind reader.",
-            "The figures visible on those screens are sample content. They demonstrate how a metric behaves in a layout. How a long duration wraps, how a count sits next to its label. They are not measurements, and I have been careful not to let them become outcomes later in this page.",
+            "A dashboard of equally weighted numbers is one nobody reads twice. I separated summary values from live pipeline activity and gave them a sequence: what to notice first, what to scan second, where to go for detail. Status carries a label as well as a colour, so it survives greyscale.",
+            "The figures on those screens are sample content, demonstrating how a metric behaves in a layout. They are not measurements.",
           ],
         },
         {
@@ -310,7 +310,7 @@ export const merlinMines: CaseStudy = {
         {
           type: "claim",
           level: "hypothesis",
-          text: "In a product whose promise is security, a dedicated security destination is where users will look first. The cheapest check being to ask where someone would look before showing them anything.",
+          text: "In a product whose promise is security, a dedicated security destination is where users will look first, the cheapest check being to ask where someone would look before showing them anything.",
         },
       ],
     },
@@ -330,12 +330,12 @@ export const merlinMines: CaseStudy = {
             height: 360,
           },
           description:
-            "Six steps: discover the value, orient to the workspace, configure prerequisites, run a workflow, monitor the status. The sixth, investigate, security or documentation, is drawn as a dashed return path rather than an endpoint, because reaching for the security screen or the docs is something a developer does at any point, not a stage they graduate to.",
+            "Six steps: discover, orient, configure, run, monitor. The sixth, investigate, is drawn as a dashed return path rather than an endpoint, because reaching for security or the docs is something a developer does at any point.",
         },
         {
           type: "prose",
           text: [
-            "Drawing investigation as a loop rather than a final step changed where documentation and security had to live. If they are the end of a sequence, they can sit deep. If they are something you reach for mid-task, they have to be reachable from wherever you are. Which is what made the case for keeping both in the top-level navigation rather than inside the workspace.",
+            "Drawing investigation as a loop changed where documentation and security had to live. Something you reach for mid-task has to be reachable from wherever you are, which is what kept both in the top-level navigation rather than inside the workspace.",
           ],
         },
         {
@@ -370,16 +370,12 @@ export const merlinMines: CaseStudy = {
               text: "Everyone who tested this already worked at Merlin Mines and already knew roughly what the product was for. That is the right group for the in-product work and the wrong one for judging whether the marketing page explains itself to a stranger.",
             },
             {
-              title: "A developer meeting it cold",
-              text: "Testing with colleagues cannot tell you what a first run feels like to someone with no context. Which prerequisites are obvious, which are assumed, and what happens when setup fails for a reason nobody anticipated.",
-            },
-            {
               title: "An accessibility audit",
               text: "Contrast, focus visibility, keyboard access, status that does not rely on colour alone, behaviour at narrow widths and under zoom. All designed against as a standard; none of it formally audited.",
             },
             {
               title: "Anything after release",
-              text: "It was implemented and I left. No measurement was taken of whether it made the developers' work faster, clearer or less error-prone. So there is no outcome figure on this page, and I would not trust one invented afterwards.",
+              text: "It was implemented and I left. No measurement was taken of whether it made the developers' work faster, clearer or less error-prone, so there is no outcome figure on this page, and I would not trust one invented afterwards.",
             },
           ],
         },
@@ -394,10 +390,10 @@ export const merlinMines: CaseStudy = {
         {
           type: "prose",
           text: [
-            "It was implemented before the internship ended. For a three-month placement on a product that had never had a designer, getting into the build rather than into a handover deck is the outcome I would point at. And it happened because the developers who had to build it were the same people I had been testing with, so by the time the design was finished they had already seen it three times.",
-            "What the internship produced: a coherent screen set across the public site and the product, a documented navigation structure, a consistent content hierarchy for metrics and status, and the product's first UI patterns and components. Which, as the first dedicated design resource the product had, is the part that outlasts any individual screen.",
-            "What it did not produce: a number. Nobody measured whether the thing worked better afterwards, and the NDA means the evidence that does exist, what the three rounds of testing showed, is not mine to publish. I would rather hand a design director a page that says that plainly than one with a percentage invented to fill the gap.",
-            "The lesson I took from it is narrower than \"developer tools should be clear.\" It is that a technical product's mental model gets assembled from four places at once, the marketing story, the navigation structure, the operational states and the security information, and that designing any one of them without the other three produces a product people can use but cannot describe.",
+            "It was implemented before the internship ended. For a three-month placement on a product that had never had a designer, getting into the build rather than into a handover deck is the outcome I would point at, and it happened because the developers who built it had already seen the design three times.",
+            "What the internship produced: a coherent screen set across the public site and the product, a documented navigation structure, a consistent content hierarchy for metrics and status, and the product's first UI patterns and components, which, as the first dedicated design resource the product had, is the part that outlasts any individual screen.",
+            "What it did not produce is a number. Nobody measured whether it worked better afterwards, and the NDA keeps the evidence that does exist out of public view. I would rather say that plainly than invent a percentage.",
+            "The lesson is narrower than \"developer tools should be clear\": a technical product's mental model is assembled from four places at once, the marketing story, the navigation, the operational states and the security information. Design any one without the other three and you get a product people can use but cannot describe.",
           ],
         },
       ],

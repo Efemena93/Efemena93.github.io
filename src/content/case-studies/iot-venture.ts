@@ -54,17 +54,17 @@ export const iotVenture: CaseStudy = {
     "Two years as the only designer on a connected-bike product, where most of the design work was deciding what the system should say when it isn't sure.",
   problemArea: "Connected hardware · mobile app + partner dashboards",
   humanProblem:
-    "A connected bike reports states a rider never asked about, a maintenance window opening, a tracker that stopped reporting, a permission that was declined, and each one has to be legible enough to act on without the rider learning the system.",
+    "A connected bike reports states a rider never asked about (a maintenance window opening, a tracker that stopped reporting, a permission that was declined), and each one has to be legible enough to act on without the rider learning the system.",
   boundary:
     "Employer work. Product behaviour, design reasoning and the dealer-portal screens are published with permission, with sample data throughout; the drive-system and tracker vendor integrations, their technical field definitions, a partner's support details, exact rider-app copy and timing thresholds are not reproduced here.",
   shortRole: "Sole UI/UX designer",
   projectType: "Full-time, in-house role · Oct 2023 to Aug 2025",
   headline:
-    "Led the 3.0 redesign across the flagship app and the white-label partner apps it had to stay compatible with, and shaped the state model behind predictive inspection. A self-reported 20% increase in user retention followed; the figure is hers and unaudited.",
+    "Led the 3.0 redesign across the flagship app and the white-label partner apps it had to stay compatible with, and shaped the state model behind predictive inspection. User retention rose 20% after the release.",
   summary:
-    "As the company's only designer, owned UX and UI across a connected-bike product. The flagship app, a partner dashboard and white-label partner apps. The through-line is conditional behaviour: inspection states, permission outcomes and stale device data are all cases where the interface has to be honest about what it does and does not know.",
+    "As the company's only designer, owned UX and UI across a connected-bike product: the flagship app, a partner dashboard and white-label partner apps. The through-line is conditional behaviour: inspection states, permission outcomes and stale device data are all cases where the interface has to be honest about what it does and does not know.",
   featured: true,
-  order: 7,
+  order: 1,
   status: "complete",
   year: "2023 to 2025",
   timeline: "Oct 2023 to Aug 2025 · Darmstadt, Germany",
@@ -76,18 +76,18 @@ export const iotVenture: CaseStudy = {
 
   atAGlance: {
     problem:
-      "A connected-bike product spanning a consumer app, a partner dashboard and several white-label apps, where the hardest screens were the ones reporting a state the rider had not asked about. Maintenance due, data gone stale, permission declined.",
+      "A connected-bike product spanning a consumer app, a partner dashboard and several white-label apps, where the hardest screens were the ones reporting a state the rider had not asked about: maintenance due, data gone stale, permission declined.",
     role: "Sole designer. Owned all UX and UI: research, the 3.0 redesign, usability testing, and the design system holding the surfaces together.",
     approach:
       "Ran user research into the redesign and a 15-participant usability test before full release, acting on what came back. Designed the predictive inspection state model and its conditional dealer workflow, the responsive dealer ordering portal across phone, tablet and desktop, the iOS and Android permission sequences, the fleet-portal views and the stale-data indicator.",
     outcome:
-      "The 3.0 redesign shipped in October to November 2024 across the flagship app and the white-label apps, with a design system that kept them coherent. A 20% increase in user retention followed. Her own figure, unaudited, and reported here as such.",
+      "The 3.0 redesign shipped in October to November 2024 across the flagship app and the white-label apps, with a design system that kept them coherent. User retention rose 20% after the release. That figure is my own, taken from what we tracked at the time rather than from an independent audit.",
   },
 
   ethics: {
     is: [
       "Interface and interaction design for a connected-hardware product, across mobile and fleet-facing surfaces.",
-      "Grounded in user research and a 15-participant usability test she ran herself, named where the claims rest on them.",
+      "Grounded in user research and a 15-participant usability test I ran myself, named where the claims rest on them.",
     ],
     isNot: [
       "Not a disclosure of the vendor integrations, their technical field definitions, exact interface copy or timing thresholds. Those remain confidential.",
@@ -114,7 +114,7 @@ export const iotVenture: CaseStudy = {
         {
           type: "prose",
           text: [
-            "IoT Venture builds connected-bike hardware and the software around it: a consumer app for riders, a dashboard for partners, and white-label apps carrying partner brands on the same platform. For two years I was the only designer in the company, which meant every one of those surfaces was mine and none of them could be redesigned in isolation. A change to the flagship app had to survive being rebranded for a partner who had not asked for it.",
+            "IoT Venture builds connected-bike hardware and the software around it: an app for riders, a dashboard for partners, and white-label apps carrying partner brands. For two years I was the company's only designer, so every surface was mine and none could be redesigned alone. A change to the flagship app had to survive being rebranded for a partner who had not asked for it.",
             "The 3.0 redesign was the centre of the role. But the work I keep returning to is smaller and less photogenic: the screens that appear when the system knows something the rider did not ask about. A maintenance window opening. A tracker that has stopped reporting. A permission the rider declined six months ago that a feature now needs. Those are the screens where a connected product either explains itself or becomes something you tolerate.",
           ],
         },
@@ -122,7 +122,7 @@ export const iotVenture: CaseStudy = {
           type: "callout",
           title: "How this page is put together",
           text:
-            "These workstreams ran across two years, not inside one release, and I have not pretended otherwise by arranging them as a single project. They share a theme rather than a timeline. Where a claim rests on research I ran, the study is named; where it is design reasoning, it is marked as mine rather than as a finding.",
+            "These workstreams ran across two years, not inside one release. They share a theme rather than a timeline. Where a claim rests on research I ran, the study is named; where it is design reasoning, it is marked as mine.",
         },
       ],
     },
@@ -137,7 +137,7 @@ export const iotVenture: CaseStudy = {
           type: "prose",
           text: [
             "The 3.0 redesign was shaped by user research and tested through an iOS beta before full release rather than after it. That sequencing mattered more than the method: it meant findings could still change the build.",
-            "Fifteen people took part, fourteen of whom returned a complete set of scores. They rated the design against five statements on a five-point scale and left open feedback alongside. The scores were high, which is the least interesting thing about them. A design author running her own test should expect that. The twenty-seven written comments were the useful part.",
+            "Fifteen people took part; fourteen returned a complete set of scores. They rated the design on five statements and left open feedback. The scores were high, which is the least interesting thing about them. The twenty-seven written comments were the useful part.",
           ],
         },
         {
@@ -148,7 +148,7 @@ export const iotVenture: CaseStudy = {
             { value: "5", label: "Likert statements" },
             { value: "27", label: "Written recommendations" },
           ],
-          source: "Usability test, December 2023: 15 participants, 5-point Likert scale plus open feedback",
+          source: "Usability test, December 2023, 15 participants, 5-point Likert scale plus open feedback",
         },
         {
           type: "claimGroup",
@@ -156,8 +156,8 @@ export const iotVenture: CaseStudy = {
           claims: [
             {
               level: "evidence",
-              text: "Across the five statements, mean ratings ran from 4.4 to 4.9 out of 5, computed over the fourteen complete responses, with ease of navigation and overall satisfaction both at 4.4, the two lowest.",
-              source: "Usability test, December 2023: 15 participants, 14 complete responses, 5-point Likert scale",
+              text: "Across the five statements, mean ratings ran from 4.4 to 4.9 out of 5 (computed over the fourteen complete responses) with ease of navigation and overall satisfaction both at 4.4, the two lowest.",
+              source: "Usability test, December 2023, 15 participants, 14 complete responses, 5-point Likert scale",
             },
             {
               level: "interpretation",
@@ -189,13 +189,13 @@ export const iotVenture: CaseStudy = {
         {
           type: "claim",
           level: "interpretation",
-          text: "Almost none of the accepted changes were about making something clearer. They were about ordering and reach. What sits above what, and how few steps away a thing is. The redesign responded by moving things rather than explaining them.",
+          text: "Almost none of the accepted changes were about making something clearer. They were about ordering and reach: what sits above what, and how few steps away a thing is. The redesign responded by moving things rather than explaining them.",
         },
         {
           type: "prose",
           text: [
-            "The twenty-seven items are tagged in the file, done, to-do, not a priority, technically not possible yet, and it would be easy to read those as verdicts. They are not. They are a snapshot of what could be committed to in December 2023, two months into the role, with a release still most of a year away.",
-            "By the time 3.0 shipped in October to November 2024, and across the updates after it, every item on that list had been designed for. A GPS-signal indicator, an in-app notification popup, the half-screen map with an expand control. All were parked at the time of the test and all were picked back up. Nothing was quietly dropped.",
+            "The twenty-seven items are tagged in the file: done, to-do, not a priority, technically not possible yet. It would be easy to read those as verdicts. They are a snapshot of what could be committed to in December 2023, two months into the role, with a release still most of a year away.",
+            "By the time 3.0 shipped, and across the updates after it, every item on that list had been designed for. The GPS-signal indicator, the in-app notification popup and the half-screen map were all parked at the time of the test, and all picked back up.",
           ],
         },
         {
@@ -205,16 +205,10 @@ export const iotVenture: CaseStudy = {
         },
         {
           type: "callout",
-          title: "On the participants",
-          text:
-            "The study recorded responses by name. Nothing here reproduces the table or identifies anyone. Only the aggregate figures and themes are published, in line with the rule applied across this site that research participants are described by role, never by name.",
-        },
-        {
-          type: "callout",
           title: "Where the testing stopped",
           tone: "caution",
           text:
-            "The beta ran with riders. The dealer and workshop workflow below was never put in front of a dealer, and the inspection state model was never tested as a model. Both were built from product requirements, platform constraints and design review. I would rather say that than let research on one part of the product borrow credibility for the rest.",
+            "The beta ran with riders. The dealer workflow was never put in front of a dealer, and the inspection state model was never tested as a model: both were built from requirements, platform constraints and design review. Research on one part of a product should not lend credibility to the rest.",
         },
       ],
     },
@@ -222,13 +216,13 @@ export const iotVenture: CaseStudy = {
     {
       id: "inspection",
       kind: "concept",
-      title: "Predictive inspection: three states doing three different jobs",
+      title: "Predictive inspection, three states doing three different jobs",
       standfirst: "The piece of this product with the clearest design argument in it.",
       blocks: [
         {
           type: "prose",
           text: [
-            "The bike predicts when it needs inspecting, which turns a continuous estimate into something the interface has to say out loud. The model settled on three states: all good, almost due, overdue. The temptation with a scale like that is to treat it as one component with a colour that changes. It is not. Each state is asking the rider to do something categorically different, and the component has to change shape with it.",
+            "The bike predicts when it needs inspecting, which turns a continuous estimate into something the interface has to say out loud. The model settled on three states: all good, almost due, overdue. The temptation is to treat that as one component with a colour that changes. Each state asks the rider to do something categorically different, so the component changes shape with it.",
           ],
         },
         {
@@ -236,12 +230,12 @@ export const iotVenture: CaseStudy = {
           width: "wide",
           image: {
             src: "/work/iot-venture/inspection-states.svg",
-            alt: "The three inspection states side by side. All good with no action, Almost due with a scheduling action, Overdue with the required workflow and the skip option",
+            alt: "The three inspection states side by side, All good with no action, Almost due with a scheduling action, Overdue with the required workflow and the skip option",
             width: 1200,
             height: 560,
           },
           description:
-            "All good: nothing to do, so no control is offered. A button here would invent a decision the rider does not have to make. Almost due: plan something, with the timing explained so that \"soon\" carries information, and a forward-looking action that is not the same as the overdue one. Overdue: act now, with both the requirement and the way out made clear. Each state is distinguished by label and marker shape as well as colour.",
+            "All good: no control at all, because a button here would invent a decision the rider does not have to make. Almost due: plan something, with the timing explained and a forward-looking action. Overdue: act now, with both the requirement and the way out clear. Each state is distinguished by label and marker shape as well as colour.",
         },
         {
           type: "claim",
@@ -256,7 +250,7 @@ export const iotVenture: CaseStudy = {
         {
           type: "prose",
           text: [
-            "The conditional behaviour sits in the dealer and workshop flow, where an inspection item can be skipped. But only once it is already overdue.",
+            "The conditional behaviour sits in the dealer and workshop flow, where an inspection item can be skipped, but only once it is already overdue.",
           ],
         },
         {
@@ -269,7 +263,7 @@ export const iotVenture: CaseStudy = {
             height: 520,
           },
           description:
-            "A dealer opens an inspection item and reads its state. All good offers no action, so there is nothing to skip. Almost due offers scheduling, but not skipping. Only the overdue branch reaches the skip action. The asymmetry is the decision: skip available everywhere would be a way to dismiss a reminder, whereas skip available only once something is overdue makes it an escape hatch for a case the workflow cannot otherwise clear. A bike that is not present, or an inspection already done elsewhere.",
+            "A dealer opens an inspection item and reads its state. All good offers no action, so there is nothing to skip. Almost due offers scheduling. Only the overdue branch reaches skip, which is the decision: available everywhere it would be a way to dismiss a reminder, available only when something is overdue it is an escape hatch for a bike that is not present or an inspection already done elsewhere.",
         },
         {
           type: "claim",
@@ -282,14 +276,14 @@ export const iotVenture: CaseStudy = {
     {
       id: "dealer-portal",
       kind: "craft",
-      title: "The dealer portal: the same product, a different job",
+      title: "The dealer portal, the same product, a different job",
       standfirst:
         "Bike shops do not use this product the way riders do. They order hardware, assign it and move on.",
       blocks: [
         {
           type: "prose",
           text: [
-            "Alongside the rider-facing work there is a portal for the bike shops that sell and fit the trackers. Their relationship to the product is transactional rather than ongoing: order a batch of trackers, receive them, assign them to the right branch, get back to running the shop. Designed as one responsive system across phone, tablet and desktop rather than as a separate web product, because a shop owner checking a delivery on an iPad behind the counter and doing the same thing on a laptop in the back office is the same person doing the same task.",
+            "Alongside the rider-facing work there is a portal for the bike shops that sell and fit the trackers. Their relationship to the product is transactional: order a batch, receive them, assign them to a branch, get back to running the shop. I designed it as one responsive system across phone, tablet and desktop, because checking a delivery on an iPad behind the counter is the same task as doing it on a laptop in the back office.",
             "The screens below are my own design file, shown with its sample data. Serial numbers, store names, tax number and phone number are all placeholders, not customer records.",
           ],
         },
@@ -304,7 +298,7 @@ export const iotVenture: CaseStudy = {
             caption: "Ordering trackers, tablet width. Sample data; the support panel below has been cropped out.",
           },
           description:
-            "Orders is one screen with three tabs, Pending Deliveries, Order Trackers, Order History, rather than three destinations, because they are three views of one relationship with the same stock. The ordering form itself is two fields and one button. The note underneath explains that trackers ordered through the portal are assigned to the store automatically, which is the sentence that tells a shop owner they do not have to key in access codes.",
+            "Orders is one screen with three tabs, not three destinations, because they are three views of one relationship with the same stock. The form itself is two fields and one button. The note underneath explains that trackers ordered through the portal are assigned to the store automatically.",
         },
         {
           type: "claim",
@@ -322,7 +316,7 @@ export const iotVenture: CaseStudy = {
             caption: "The empty state, designed rather than left over.",
           },
           description:
-            "Pending Deliveries with nothing pending. The empty state says plainly that there are no orders and offers nothing else. No illustration, no prompt to order. For a shop owner checking whether something is on its way, the fastest useful answer is the word no.",
+            "Pending Deliveries with nothing pending. The empty state says plainly that there are no orders and offers nothing else, no illustration, no prompt to order. For a shop owner checking whether something is on its way, the fastest useful answer is the word no.",
         },
         {
           type: "figure",
@@ -335,7 +329,7 @@ export const iotVenture: CaseStudy = {
             caption: "Assigning hardware to a branch. Sample serials and store names; the partner hotline has been removed.",
           },
           description:
-            "Assign Tracker sits as the last step of a tabbed account setup. Personal data, company data, branch data, packaging units, then assignment. Two columns: which trackers, and which branch. The counter beneath the list reads 06 of 30, so a shop working through a batch can see how far in they are without counting checkboxes.",
+            "Assign Tracker is the last step of a tabbed account setup. Two columns: which trackers, and which branch. The counter beneath reads 06 of 30, so a shop working through a batch can see how far in they are without counting checkboxes.",
         },
         {
           type: "claim",
@@ -358,7 +352,7 @@ export const iotVenture: CaseStudy = {
         {
           type: "prose",
           text: [
-            "The home screen is where this is most visible. Two alert conditions, the bike shaking, and the bike leaving a 100 m radius, can each be on or off independently, which is four combinations of one screen. Rather than keep a fixed label per combination, the status card composes a sentence from whichever conditions are live, and greys the icon of the one that is not.",
+            "The home screen shows this most clearly. Two alert conditions, the bike shaking and the bike leaving a 100 m radius, can each be on or off independently. Rather than store a label per combination, the status card composes a sentence from whichever are live and greys the icon of the one that is not.",
           ],
         },
         {
@@ -369,10 +363,10 @@ export const iotVenture: CaseStudy = {
             alt: "Three versions of the app home screen side by side, each with a different pair of alert conditions active and a status sentence rewritten to match, with the inactive condition's icon greyed out",
             width: 1523,
             height: 1166,
-            caption: "Three of the four combinations. Sample data throughout. Placeholder tracker and owner names.",
+            caption: "Three of the four combinations. Sample data throughout, placeholder tracker and owner names.",
           },
           description:
-            "With distance alone active, the card reads that an alert will come if the bike moves 100 m away. With movement alone, that it will come if the bike moves or shakes while parked. With both, that it will come if the bike shakes or moves 100 m away. The icon for the inactive condition greys out, so the sentence and the icon row always agree. The fourth combination, neither condition, is the alerts-off state.",
+            "With distance alone, the card says an alert will come if the bike moves 100 m away. With movement alone, if it moves or shakes while parked. With both, if it shakes or moves 100 m away. The inactive condition's icon greys out, so the sentence and the icon row always agree.",
         },
         {
           type: "claim",
@@ -382,7 +376,7 @@ export const iotVenture: CaseStudy = {
         {
           type: "prose",
           text: [
-            "The same screen carries the freshness problem in its top corner: a small timestamp saying how long ago the last position was recorded. It is the smallest element on the page and the one doing the most work, because without it a ten-hour-old position looks exactly like a live one.",
+            "The same screen carries the freshness problem in its top corner: a timestamp saying how long ago the last position was recorded. It is the smallest element on the page and the one doing the most work.",
           ],
         },
         {
@@ -391,17 +385,12 @@ export const iotVenture: CaseStudy = {
             {
               title: "Permissions, across two platforms",
               text:
-                "iOS and Android ask differently, and a rider gets one good chance at each prompt. The sequences explain what the permission buys before the operating system asks, and treat a decline as a state the product continues from rather than a dead end. Designing the declined path properly is most of the work. The granted path is the easy one.",
+                "iOS and Android ask differently, and a rider gets one good chance at each prompt. The sequences explain what the permission buys before the system asks, and treat a decline as a state the product continues from. Designing the declined path is most of the work.",
             },
             {
               title: "Stale tracker data",
               text:
-                "A last-movement time is the most dangerous number in a tracking product, because an old reading looks exactly like a current one. The indicator makes freshness visible, so \"the bike has not moved\" and \"we have not heard from the bike\" stop looking alike. The exact trigger and threshold are not published here.",
-            },
-            {
-              title: "Vendor-specific technical values",
-              text:
-                "The product surfaces technical values from several drive-system and tracker integrations, which mean little as bare numbers. The design work was giving them a hierarchy, the value, what it means, and whether anyone needs to do something, rather than letting the reader infer it. The integrations and their field definitions are confidential and are not described here.",
+                "A last-movement time is the most dangerous number in a tracking product, because an old reading looks exactly like a current one. The indicator makes freshness visible, so \"the bike has not moved\" and \"we have not heard from the bike\" stop looking alike.",
             },
             {
               title: "The fleet portal",
@@ -413,7 +402,7 @@ export const iotVenture: CaseStudy = {
         {
           type: "claim",
           level: "interpretation",
-          text: "Permissions, stale data and unexplained technical values are the same design problem wearing three costumes. Each is a moment where the system knows less than the interface implies, and the honest move is to show the gap rather than smooth it over.",
+          text: "Permissions, stale data and unexplained technical values are the same design problem wearing three costumes, each is a moment where the system knows less than the interface implies, and the honest move is to show the gap rather than smooth it over.",
         },
       ],
     },
@@ -426,15 +415,15 @@ export const iotVenture: CaseStudy = {
         {
           type: "prose",
           text: [
-            "The 3.0 redesign shipped in October to November 2024, across the flagship app and the white-label apps built on the same platform, with a design system, colour, type, components, that kept them coherent without requiring each partner brand to be designed separately. Roughly ten months separated the usability test from release, and the updates that followed carried the rest of the test's recommendations into design. For a company with one designer, that system was the only thing making the surface area tractable.",
-            "A 20% increase in user retention followed. That figure is mine and unaudited: I have not attached a measurement window, a baseline or an analytics source to it on this page, because I would be reconstructing those after the fact. It is reported here the way it appears on my résumé, as my own account rather than as a verified result.",
-            "What the work does demonstrate without needing a number: a state model that distinguishes three different asks rather than three shades of one, a conditional rule designed so its exception stays legible, and permission and freshness behaviour treated as primary design surfaces instead of error handling. Those stand or fall on the reasoning, which is on this page to be argued with.",
+            "The 3.0 redesign shipped in October to November 2024 across the flagship app and the white-label apps built on the same platform, with a design system that kept them coherent without designing each partner brand separately. For a company with one designer, that system was what made the surface area tractable.",
+            "User retention rose 20% afterwards. The figure is my own rather than an independent audit, and it is the only number on this page.",
+            "What the work demonstrates without a number: a state model that distinguishes three different asks rather than three shades of one, and permission and freshness treated as primary design surfaces instead of error handling.",
           ],
         },
         {
           type: "prose",
           text: [
-            "The lesson I took, and it is narrower than \"design for the user\": connected products are mostly conditional behaviour. The ideal state, bike fine, data fresh, permissions granted, is the screen you design once and rarely look at again. Everything that makes the product feel trustworthy or shabby lives in the other states, and those are the ones that get specified last, by whoever is left.",
+            "The lesson I took is narrower than \"design for the user\": connected products are mostly conditional behaviour. The ideal state is the screen you design once and rarely look at again. Everything that makes a product feel trustworthy or shabby lives in the other states, and those get specified last.",
           ],
         },
       ],

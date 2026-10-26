@@ -35,6 +35,7 @@ export function MerlinMonitorArtifact({
       subtitle={study.premise}
       discipline={study.projectType}
       sceneDescription="An illustration of a studio monitor showing an abstract workflow diagram of connected nodes, with a small notes card beside it. This is an illustrative reconstruction, not a real project screen."
+      symbol="wand"
     >
       <svg
         viewBox="0 0 300 182"
@@ -51,7 +52,7 @@ export function MerlinMonitorArtifact({
         <rect x="128" y="142" width="24" height="26" className="fill-raised" opacity="0.95" />
         <rect x="104" y="168" width="72" height="7" rx="3.5" className="fill-raised" opacity="0.95" />
 
-        {/* Workflow diagram — connected nodes, one path highlighted. */}
+        {/* Workflow diagram, connected nodes, one path highlighted. */}
         <g className="opacity-65 transition-opacity duration-500 ease-[var(--ease-out-soft)] group-hover:opacity-100 group-focus-within:opacity-100">
           {[
             [66, 88],

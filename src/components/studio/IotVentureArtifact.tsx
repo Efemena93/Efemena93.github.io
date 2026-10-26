@@ -38,6 +38,7 @@ export function IotVentureArtifact({
       subtitle="“It's My Bike” app and partner dashboards"
       discipline="Product design · Mobile · IoT · Dashboards"
       sceneDescription="An illustration of a phone standing on a desk beside a small connected-bike key device, with a fragment of a partner dashboard panel tucked behind the phone. A fine signal travels between the device and the phone on hover or focus. This is an illustrative reconstruction, not a real project screen."
+      symbol="bicycle"
     >
       <svg
         viewBox="0 0 300 182"
@@ -79,7 +80,7 @@ export function IotVentureArtifact({
         <rect x="136" y="160" width="90" height="12" rx="3" className="fill-raised"
               stroke="currentColor" strokeOpacity="0.22" />
 
-        {/* Connected-bike device — a small fob with a wheel glyph. */}
+        {/* Connected-bike device, a small fob with a wheel glyph. */}
         <ellipse cx="52" cy="150" rx="30" ry="4" fill="#000" opacity="0.45" />
         <rect x="30" y="96" width="44" height="54" rx="10" className="fill-raised"
               stroke="currentColor" strokeOpacity="0.32" strokeWidth="1" />

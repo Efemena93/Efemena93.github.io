@@ -1,66 +1,67 @@
 import { Container } from "@/components/primitives";
 
-import { StudioAmbient, StudioIntro, StudioScene, type StudioArtifacts } from "./StudioScene";
+import { StudioHero } from "./StudioHero";
+import { StudioAmbient, StudioScene, type StudioArtifacts } from "./StudioScene";
 
 /**
- * StudioHomepage — "Efemena's Design Studio".
+ * StudioHomepage — the two halves of the homepage, in order.
  *
- * The homepage's introduction and selected-work section, on one surface.
+ * Section 01 is the studio: a full-viewport introduction with four objects
+ * drifting around it and nothing else. Section 02 is the work, beginning
+ * below that viewport under its own heading.
  *
- * ── Landmarks ─────────────────────────────────────────────────────────────
- * The whole thing is one region labelled by the page's h1, with the six
- * artifacts inside it as their own "Selected work" section — three
- * professional roles, then three case studies, each group under its own
- * heading inside StudioScene. A screen-reader user navigating by landmark
- * reaches "Selected work" and finds all six there, rather than six
- * unexplained articles adrift in the hero.
+ * ── Why they are separate landmarks ───────────────────────────────────────
+ * They used to be one region, with the introduction tucked into the corner of
+ * the same surface as the projects. Splitting them gives a screen-reader user
+ * navigating by landmark the same two-beat structure a sighted user gets by
+ * scrolling: here is who she is, and here is the work.
  *
  * ── The screen-reader index ───────────────────────────────────────────────
  * A spatial arrangement is worth nothing to someone who cannot see it, so the
- * section opens with a plain ordered list of the six projects, in the same
- * priority order used on mobile: the three professional roles, then the
- * three case studies. It is deliberately not links — the artifacts below are
- * the links, and duplicating them would give a keyboard user twelve tab
- * stops for six projects.
+ * work section opens with a plain ordered list of the seven projects in the
+ * order they appear. It is deliberately not links — the artifacts below are
+ * the links, and duplicating them would give a keyboard user fourteen tab
+ * stops for seven projects.
  */
 
 export function StudioHomepage({ artifacts }: { artifacts: StudioArtifacts }) {
-  const { iotVenture, zalando, merlinMines, oliveIlive, vocHub, virtualBuddy } = artifacts;
+  const { iotVenture, merlinMines, zalando, hearEase, oliveIlive, vocHub, virtualBuddy } =
+    artifacts;
 
-  const professional = [
+  const index = [
+    { study: iotVenture, name: "IoT Venture GmbH, It's My Bike", what: "connected-bike app and partner dashboards" },
+    { study: merlinMines, name: merlinMines.title, what: "CI/CD automation product for in-house developers" },
     { study: zalando, name: "Zalando", what: "service design and design-system contributions" },
-    { study: iotVenture, name: "IoT Venture GmbH", what: "connected-bike app and partner dashboards" },
-  ];
-  const caseStudies = [
+    { study: hearEase, name: hearEase.title, what: "assistive smart glasses and companion app" },
     { study: oliveIlive, name: oliveIlive.title, what: "responsive health portal" },
-    { study: merlinMines, name: "Merlin Mines", what: merlinMines.projectType },
     { study: vocHub, name: vocHub.title, what: "vocabulary-learning app" },
     { study: virtualBuddy, name: virtualBuddy.title, what: "responsive study-community app" },
   ];
 
   return (
-    <section aria-labelledby="hero-heading" className="relative overflow-hidden">
-      <section aria-labelledby="studio-heading" className="contents">
-        <StudioScene artifacts={artifacts} intro={<StudioIntro />} />
+    <>
+      {/* ── Section 01: the studio ── */}
+      <StudioHero />
+
+      {/* ── Section 02: the work ── */}
+      <section id="selected-work" aria-labelledby="selected-work-heading" className="scroll-mt-24">
+        <div className="sr-only">
+          <p>Seven projects, in the order they appear.</p>
+          <ol>
+            {index.map(({ study, name, what }) => (
+              <li key={study.slug}>
+                {name}, {what}.
+              </li>
+            ))}
+          </ol>
+        </div>
+
+        <StudioScene artifacts={artifacts} />
+
+        <Container className="relative pb-16 lg:pb-20">
+          <StudioAmbient />
+        </Container>
       </section>
-
-      {/* The plain index, for anyone not receiving the picture. The six
-          artifacts above are the only visible list of work. */}
-      <div className="sr-only">
-        <h2 id="studio-heading">Selected work</h2>
-        <p>Six projects, in the order they appear.</p>
-        <ol>
-          {[...professional, ...caseStudies].map(({ study, name, what }) => (
-            <li key={study.slug}>
-              {name}: {what}.
-            </li>
-          ))}
-        </ol>
-      </div>
-
-      <Container className="relative pb-16 lg:pb-20">
-        <StudioAmbient />
-      </Container>
-    </section>
+    </>
   );
 }

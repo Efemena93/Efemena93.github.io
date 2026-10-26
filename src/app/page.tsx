@@ -10,44 +10,42 @@ import { featuredFieldNotes } from "@/content/field-notes";
 import { site } from "@/content/site";
 
 /**
- * Homepage — per docs/homepage-studio-amendment.md, revised 2026-09-03 for
- * the professional-artifacts homepage (six projects: three professional
- * roles, three case studies — see the "Homepage projects" section of the
- * revision brief for the full rationale).
+ * Homepage — the floating studio, revised 2026-10-25.
  *
- * Order:
- *   1. persistent navigation (in the layout)
- *   2. professional introduction
- *   3. the interactive design studio  ← this is the selected-work section
- *   4. a short explanation of how to explore (inside StudioHomepage)
- *   5. practice statement
- *   6. From the Library
- *   7. contact CTA
- *   8. footer (in the layout)
+ * Two clearly separated sections, which is the whole of the revision:
  *
- * The six studio projects are deliberately not repeated in a card grid
+ *   Section 01  The studio. A full-viewport introduction with four objects
+ *               drifting around it. No project cards, thumbnails or names
+ *               appear in the first viewport — the studio is the experience,
+ *               and the work is discovered after it.
+ *   Section 02  Selected work, beginning below that viewport under its own
+ *               heading: IoT Venture, SpellCarver, Zalando, HearEase, then
+ *               Olive-Ilive, VocHub and VirtualBuddy.
+ *
+ * Then: practice statement, From the Library, contact CTA. Navigation and
+ * footer come from the layout.
+ *
+ * The seven studio projects are deliberately not repeated in a card grid
  * below. The compact route for anyone who would rather scan a list is the
- * "View all work" link in the studio header.
+ * "View all work" link in the work section's header.
  *
- * The standalone "Professional experience" shelf that used to sit below the
- * studio is retired: IoT Venture, Zalando and Merlin Mines are now real,
- * linked artifacts inside the studio itself, which is what that component's
- * own doc comment said should happen once approved content existed.
- *
- * Removed here, per the original amendment: the glowing moon, the drifting
- * orbs and the pointer-tracking constellation.
+ * Earlier revisions removed the glowing moon, the drifting orbs and the
+ * pointer-tracking constellation; the four studio symbols are not a return
+ * to those. They are fixed to the hero's peripheral space, aria-hidden,
+ * non-interactive, and they stop entirely under reduced motion.
  */
 
 const iotVenture = getCaseStudy("iot-venture");
-const zalando = getCaseStudy("zalando");
 const merlinMines = getCaseStudy("merlin-mines");
+const zalando = getCaseStudy("zalando");
+const hearEase = getCaseStudy("hearease");
 const oliveIlive = getCaseStudy("olive-ilive");
 const vocHub = getCaseStudy("vochub");
 const virtualBuddy = getCaseStudy("virtualbuddy");
 
 const studioArtifacts =
-  iotVenture && zalando && merlinMines && oliveIlive && vocHub && virtualBuddy
-    ? { iotVenture, zalando, merlinMines, oliveIlive, vocHub, virtualBuddy }
+  iotVenture && merlinMines && zalando && hearEase && oliveIlive && vocHub && virtualBuddy
+    ? { iotVenture, merlinMines, zalando, hearEase, oliveIlive, vocHub, virtualBuddy }
     : null;
 
 const [featuredStory, ...moreStories] = featuredFieldNotes;

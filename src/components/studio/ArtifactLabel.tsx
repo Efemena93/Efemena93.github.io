@@ -1,6 +1,8 @@
 import { STATUS_LABEL, type CaseStudy } from "@/content/types";
 import { cx } from "@/lib/utils";
 
+import { ProjectSymbol, type SymbolName } from "./ProjectSymbol";
+
 /**
  * The label that sits above each studio artifact.
  *
@@ -19,6 +21,7 @@ export function ArtifactLabel({
   title,
   subtitle,
   discipline,
+  symbol,
   className,
 }: {
   study: CaseStudy;
@@ -29,11 +32,27 @@ export function ArtifactLabel({
   subtitle: string;
   /** Discipline line, e.g. "Graduate capstone · Research in progress". */
   discipline: string;
+  /**
+   * The object that drifts around the hero for this project, repeated here
+   * beside the index as a quiet identifier. Only the four projects with one
+   * pass it. Decorative — it sits next to the project name, so announcing it
+   * would only say that name twice.
+   */
+  symbol?: SymbolName;
   className?: string;
 }) {
   return (
     <div className={cx("relative lg:pb-2", className)}>
-      <p className="label-type text-blue-deep">{String(index).padStart(2, "0")}</p>
+      <p className="label-type flex items-center gap-2.5 text-blue-deep">
+        {String(index).padStart(2, "0")}
+        {symbol ? (
+          <ProjectSymbol
+            name={symbol}
+            className="h-5 w-5 text-charcoal-muted opacity-55 transition-opacity duration-500 ease-[var(--ease-out-soft)] group-hover:opacity-90 group-focus-within:opacity-90"
+            strokeWidth={1.4}
+          />
+        ) : null}
+      </p>
 
       <h3 className="mt-2 font-display text-h3 text-charcoal">
         <span className="link-underline">{title}</span>
@@ -54,7 +73,7 @@ export function ArtifactLabel({
       </p>
 
       {/* Revealed detail. Present in the DOM and the accessibility tree at
-          all times — this changes visual emphasis, it is not a disclosure.
+          all times, this changes visual emphasis, it is not a disclosure.
 
           Kept to two short blocks on purpose. An earlier version listed role,
           timeline and status as a definition list and ran ~250px tall, which
@@ -74,7 +93,7 @@ export function ArtifactLabel({
         <p className="text-small leading-relaxed text-charcoal-soft lg:line-clamp-3">
           {study.humanProblem}
         </p>
-        {/* Role and timeline on one line, then the discipline line — with
+        {/* Role and timeline on one line, then the discipline line, with
             the status appended only when the discipline does not already
             say it, so the capstone does not read "Research in progress ·
             Research in progress". Status is words, never colour alone. */}

@@ -53,7 +53,7 @@ export function HealthDashboardArtifact({
         className="stage-svg text-sage"
         preserveAspectRatio="xMidYMax meet"
       >
-        {/* Monitor on the desk, tablet beside it — the same layout, responsive. */}
+        {/* Monitor on the desk, tablet beside it, the same layout, responsive. */}
         <ellipse cx="132" cy="176" rx="76" ry="4" fill="#000" opacity="0.5" />
         <rect x="40" y="18" width="184" height="120" rx="5" className="fill-raised"
               stroke="currentColor" strokeOpacity="0.32" strokeWidth="1" />
@@ -61,10 +61,10 @@ export function HealthDashboardArtifact({
         <rect x="122" y="138" width="20" height="30" className="fill-raised" opacity="0.95" />
         <rect x="100" y="168" width="64" height="6" rx="3" className="fill-raised" opacity="0.95" />
 
-        {/* Screen contents — layered regions that come into focus together,
+        {/* Screen contents, layered regions that come into focus together,
             with two of them taking a restrained highlight. */}
         <g className="opacity-70 transition-opacity duration-500 ease-[var(--ease-out-soft)] group-hover:opacity-100 group-focus-within:opacity-100">
-          {/* Navigation rail — highlighted region 1 */}
+          {/* Navigation rail, highlighted region 1 */}
           <rect
             x="52" y="30" width="32" height="96" rx="2"
             className="fill-charcoal opacity-[0.07] transition-[fill,opacity] duration-500 group-hover:fill-sage group-hover:opacity-[0.26] group-focus-within:fill-sage group-focus-within:opacity-[0.26]"
@@ -73,7 +73,7 @@ export function HealthDashboardArtifact({
             <rect key={y} x="58" y={y} width="20" height="3" rx="1.5" className="fill-charcoal" opacity="0.24" />
           ))}
 
-          {/* Primary content card — highlighted region 2 */}
+          {/* Primary content card, highlighted region 2 */}
           <rect
             x="90" y="30" width="122" height="42" rx="2"
             className="fill-charcoal opacity-[0.07] transition-[fill,opacity] duration-500 group-hover:fill-sage group-hover:opacity-[0.19] group-focus-within:fill-sage group-focus-within:opacity-[0.19]"

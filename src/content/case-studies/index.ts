@@ -1,6 +1,7 @@
 import { assertContentIntegrity, validateCaseStudies } from "../validate";
 import type { CaseStudy } from "../types";
 
+import { hearEase } from "./hearease";
 import { holdingPattern } from "./holding-pattern";
 import { iotVenture } from "./iot-venture";
 import { merlinMines } from "./merlin-mines";
@@ -21,6 +22,7 @@ import { zalando } from "./zalando";
  */
 const allCaseStudies: CaseStudy[] = [
   holdingPattern,
+  hearEase,
   syncHearts,
   oliveIlive,
   windchill,

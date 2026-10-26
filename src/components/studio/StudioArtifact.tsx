@@ -7,6 +7,7 @@ import type { CaseStudy } from "@/content/types";
 import { cx } from "@/lib/utils";
 
 import { ArtifactLabel } from "./ArtifactLabel";
+import type { SymbolName } from "./ProjectSymbol";
 
 /**
  * StudioArtifact — the shared shell every case-study object in the studio uses.
@@ -40,6 +41,7 @@ const treatment: Record<string, string> = {
   "merlin-mines": "-rotate-2 lg:max-w-[30rem]",
   vochub: "rotate-1 lg:max-w-[32rem]",
   virtualbuddy: "-rotate-1 lg:max-w-[34rem]",
+  hearease: "rotate-1 lg:max-w-[30rem]",
 };
 
 export function StudioArtifact({
@@ -50,6 +52,13 @@ export function StudioArtifact({
   discipline,
   /** Plain-language description of the scene, for assistive technology. */
   sceneDescription,
+  /**
+   * The drifting object from the hero that belongs to this project, repeated
+   * here as a quiet identifier. Only the four projects that have one pass it;
+   * the rest render without, which is why it is optional rather than keyed
+   * off the slug.
+   */
+  symbol,
   children,
   className,
   /**
@@ -68,6 +77,7 @@ export function StudioArtifact({
   subtitle: string;
   discipline: string;
   sceneDescription: string;
+  symbol?: SymbolName;
   children: ReactNode;
   className?: string;
   raise?: "sm" | "md";
@@ -85,9 +95,9 @@ export function StudioArtifact({
     >
       {/* No aria-label here, deliberately.
           An aria-label REPLACES the element's accessible name rather than
-          adding to it, so the previous one ("<title> — <subtitle>. Open the
+          adding to it, so the previous one ("<title>, <subtitle>. Open the
           full case study.") hid the rest of the label from screen-reader
-          users while it stayed visible on screen — the visible text and the
+          users while it stayed visible on screen, the visible text and the
           announced name disagreed. That is axe's
           `label-content-name-mismatch` (serious, WCAG 2.5.3), and it fired on
           all six cards at every breakpoint. Letting the link be named by its
@@ -103,6 +113,7 @@ export function StudioArtifact({
           title={title ?? study.title}
           subtitle={subtitle}
           discipline={discipline}
+          symbol={symbol}
         />
 
         {/* The object itself, pushed to the bottom of the column so that all
@@ -131,7 +142,7 @@ export function StudioArtifact({
               />
               {image.placeholder ? (
                 <figcaption className="label-type mt-2 text-charcoal-muted">
-                  Placeholder image: real screen to come
+                  Placeholder image, real screen to come
                 </figcaption>
               ) : null}
             </figure>

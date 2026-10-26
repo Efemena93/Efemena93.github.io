@@ -168,15 +168,15 @@ export function BlockRenderer({ block }: { block: Block }) {
           {block.title ? <h3 className="mb-5 text-h3 text-charcoal">{block.title}</h3> : null}
           {/* The table has a min-width, so below roughly 32rem this container
               scrolls sideways. A scrollable box that cannot be focused is
-              unreachable by keyboard — there is no way to scroll it without a
-              pointer — which is axe's `scrollable-region-focusable` (serious).
+              unreachable by keyboard, there is no way to scroll it without a
+              pointer, which is axe's `scrollable-region-focusable` (serious).
               tabIndex makes it a stop; the role and name mean a screen-reader
               user is told what they have landed in rather than "group". */}
           <div
             className="overflow-x-auto focus-visible:outline-offset-4"
             tabIndex={0}
             role="region"
-            aria-label={block.title ? `${block.title}: table, scrolls sideways` : "Comparison table, scrolls sideways"}
+            aria-label={block.title ? `${block.title}, table, scrolls sideways` : "Comparison table, scrolls sideways"}
           >
             <table className="w-full min-w-[32rem] border-collapse text-left">
               <thead>

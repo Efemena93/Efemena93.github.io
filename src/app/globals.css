@@ -113,6 +113,12 @@
 
   /* Layout */
   --container-page: 77.5rem; /* 1240px */
+
+  /* Height of the sticky site header. It participates in normal flow, so a
+     full-viewport hero has to subtract it or its own bottom edge — and the
+     scroll cue sitting on that edge — falls below the fold by exactly this
+     much. Measured from SiteHeader at every breakpoint; it does not vary. */
+  --header-h: 77px;
   --spacing-measure: 68ch;
 
   /* Depth. On a dark ground a shadow alone is invisible, so the lift is a
@@ -680,4 +686,78 @@ html:not([data-motion="full"]) :focus-visible {
     background: #fff;
     color: #000;
   }
+}
+
+/* --------------------------------------------------------------------------
+   Floating studio symbols — see components/studio/FloatingSymbols.tsx.
+
+   Four objects drifting in the hero's peripheral space. Each gets its own
+   keyframe so the amplitudes, directions and periods differ: synchronised
+   decoration reads as a carousel, and the point here is that you should have
+   to stop and watch to notice it moving at all.
+
+   Translations stay between 6 and 13px, rotations between 1 and 2.5deg. The
+   resting rotation is set per-symbol on the wrapper's `rotate` property,
+   which composes with the `transform` these animate — so the keyframes stay
+   shared-safe and no symbol snaps upright when its animation starts.
+
+   Motion is clamped globally under prefers-reduced-motion (above), so these
+   simply hold their resting position for readers who ask for that.
+   -------------------------------------------------------------------------- */
+
+.drifting {
+  animation-duration: 12s;
+  animation-timing-function: var(--ease-in-out-soft);
+  animation-iteration-count: infinite;
+  will-change: transform;
+}
+
+@keyframes float-a {
+  0%,
+  100% { transform: translate3d(0, 0, 0) rotate(0deg); }
+  50%  { transform: translate3d(5px, -11px, 0) rotate(1.6deg); }
+}
+
+@keyframes float-b {
+  0%,
+  100% { transform: translate3d(0, 0, 0) rotate(0deg); }
+  50%  { transform: translate3d(-7px, 9px, 0) rotate(-2deg); }
+}
+
+@keyframes float-c {
+  0%,
+  100% { transform: translate3d(0, 0, 0) rotate(0deg); }
+  50%  { transform: translate3d(6px, 8px, 0) rotate(2.4deg); }
+}
+
+@keyframes float-d {
+  0%,
+  100% { transform: translate3d(0, 0, 0) rotate(0deg); }
+  50%  { transform: translate3d(-5px, -13px, 0) rotate(-1.2deg); }
+}
+
+/* Independent periods and offsets, so the four never beat together. */
+.drifting[style*="float-a"] { animation-duration: 11s; animation-delay: -2s; }
+.drifting[style*="float-b"] { animation-duration: 14s; animation-delay: -6s; }
+.drifting[style*="float-c"] { animation-duration: 9.5s; animation-delay: -1s; }
+.drifting[style*="float-d"] { animation-duration: 12.5s; animation-delay: -4s; }
+
+/* The symbols are links now, so each handles its own hover and focus state in
+   the component. What belongs here is the drift: it pauses while a pointer is
+   on an object or it holds focus, because a target that keeps moving is a
+   target you have to chase. */
+.studio-symbol:hover .drifting,
+.studio-symbol:focus-visible .drifting {
+  animation-play-state: paused;
+}
+
+/* The scroll cue's line, drawn down and released. */
+@keyframes scroll-cue {
+  0%        { transform: scaleY(0); transform-origin: top; opacity: 0; }
+  35%       { transform: scaleY(1); transform-origin: top; opacity: 1; }
+  70%, 100% { transform: scaleY(1); transform-origin: bottom; opacity: 0; }
+}
+
+.scroll-cue-line {
+  animation: scroll-cue 2.8s var(--ease-in-out-soft) infinite;
 }

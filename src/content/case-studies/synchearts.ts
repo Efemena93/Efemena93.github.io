@@ -22,11 +22,11 @@ export const syncHearts: CaseStudy = {
   shortRole: "Sole designer & researcher",
   projectType: "Self-directed product project · 16 weeks",
   headline:
-    "Card sorting surfaced three distinct mental models of the same feature set. The argument for cross-referenced navigation rather than one fixed hierarchy. The design itself is untested; usability testing was the declared next step.",
+    "Card sorting surfaced three distinct mental models of the same feature set: the argument for cross-referenced navigation rather than one fixed hierarchy. The design itself is untested; usability testing was the declared next step.",
   summary:
     "Sixteen weeks of research and design on how couples stay close across time-zone gaps and clashing schedules. Card sorting surfaced three distinct mental models of the same feature set, which became the argument for flexible rather than fixed navigation.",
   featured: false,
-  order: 2,
+  order: 6,
   status: "next-testing-phase",
   year: "2024",
   timeline: "16 weeks · Aug to Dec 2024",
@@ -99,7 +99,7 @@ export const syncHearts: CaseStudy = {
         {
           type: "prose",
           text: [
-            "I defined the research strategy and objectives at kickoff, built the survey in Google Forms and shared it with relevant communities, then followed up with interviews to understand how people actually manage communication day to day. Not what they say they want from an app, but what they do when a call gets missed.",
+            "I defined the research strategy and objectives at kickoff, built the survey in Google Forms and shared it with relevant communities, then followed up with interviews to understand how people actually manage communication day to day, not what they say they want from an app, but what they do when a call gets missed.",
           ],
         },
         {
@@ -138,7 +138,7 @@ export const syncHearts: CaseStudy = {
         {
           type: "prose",
           text: [
-            "I built two personas from the survey and interview data, updating them through the project as more evidence arrived, and mapped a journey for one of them. A scenario following the step-by-step actions of communicating with a partner around an anniversary, which concentrates every pain point into a single high-stakes day.",
+            "I built two personas from the survey and interview data, updating them through the project as more evidence arrived, and mapped a journey for one of them, a scenario following the step-by-step actions of communicating with a partner around an anniversary, which concentrates every pain point into a single high-stakes day.",
             "I then ran a design studio session with three additional stakeholders. Ideas were grouped by the pain point they addressed, mapped on an affinity board, and scored on an impact/effort grid before anything was drawn.",
           ],
         },
@@ -203,7 +203,7 @@ export const syncHearts: CaseStudy = {
         {
           type: "claim",
           level: "interpretation",
-          text: "A single fixed information architecture would therefore be wrong for at least a third of users. The overlap is not noise to be resolved by picking a winner. It is an argument for flexible categorisation or cross-referenced navigation, so the same feature can be found down more than one path.",
+          text: "A single fixed information architecture would therefore be wrong for at least a third of users. The overlap is not noise to be resolved by picking a winner; it is an argument for flexible categorisation or cross-referenced navigation, so the same feature can be found down more than one path.",
         },
       ],
     },
@@ -216,7 +216,7 @@ export const syncHearts: CaseStudy = {
         {
           type: "prose",
           text: [
-            "The concept centres on three things: a shared calendar for scheduling calls across time zones, a Message in a Bottle feature for sending something that arrives later, and lightweight mood sharing. The second is the one that most directly answers the research. It lets a person say something without requiring the other to be awake, available, or ready to respond.",
+            "The concept centres on three things: a shared calendar for scheduling calls across time zones, a Message in a Bottle feature for sending something that arrives later, and lightweight mood sharing. The second is the one that most directly answers the research; it lets a person say something without requiring the other to be awake, available, or ready to respond.",
             "I designed greyscale wireframes in Figma at mid fidelity, with the layout defined well enough to test and loose enough to change once testing had happened.",
           ],
         },
