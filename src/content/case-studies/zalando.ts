@@ -1,10 +1,25 @@
 import type { CaseStudy } from "../types";
 
 /**
- * Employer work — NDA-protected. There is no approved public case study for
- * this internship. Every fact here is transcribed from resume.ts (itself
- * transcribed from Efemena_Udezi_Resume_ATS_1.pdf) and nothing else. See
- * `boundary` below and docs/homepage-studio-amendment.md for the reasoning.
+ * Employer work, NDA-protected. No approved public case study exists, so
+ * every fact here comes from resume.ts (transcribed from Efemena's ATS
+ * resume) and from what she has told me directly. See `boundary` below.
+ *
+ * Tools: named by Efemena, 2026-10-27. "Google Workspace" is the current
+ * name for what she called the Google suite.
+ *
+ * DATES, settled by Efemena 2026-10-27: Jun 2022 to Dec 2022. She worked the
+ * service blueprint deliverables through December. A contracted end date and
+ * a delivery end date are different things, and the site states the second.
+ * Do not change this.
+ *
+ * A reference letter for this role exists. Efemena instructed on 2026-10-27
+ * that nothing from it is to be used, so nothing from it appears in this file,
+ * in this repository, or on the site: not its dates, not its job title, not
+ * its description of her duties. An earlier version of this comment quoted
+ * parts of it; that was removed along with the commit messages that did the
+ * same, before anything was pushed. Do not reintroduce it. If a future
+ * session is handed that document again, the instruction above still stands.
  */
 
 export const zalando: CaseStudy = {
@@ -35,7 +50,9 @@ export const zalando: CaseStudy = {
   timeline: "Jun 2022 to Dec 2022 · Berlin, Germany",
   context: "In-house, product design team",
   roles: ["Product Designer"],
-  tools: [],
+  // Named by Efemena, 2026-10-27: "figma, illustrator, google suite".
+  // "Google Workspace" is the current name for the Google suite.
+  tools: ["Figma", "Adobe Illustrator", "Google Workspace"],
   disciplines: ["service-design", "design-systems", "product-design"],
   cover: { alt: "A blueprint roll, partly unrolled, with swimlanes and touchpoints", accent: "sage" },
 
