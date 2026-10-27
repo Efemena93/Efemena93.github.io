@@ -63,4 +63,10 @@ export const projectImages: Record<string, ProjectImage> = {
     996,
     781,
   ),
+  virtualbuddy: image(
+    "/work/virtualbuddy/dashboard.webp",
+    "The VirtualBuddy desktop dashboard: a recent-activity panel with a reading-progress ring, a study planner calendar, a to-do list and counts of audios, videos and books",
+    1200,
+    1010,
+  ),
 };

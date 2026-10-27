@@ -20,6 +20,21 @@ import type { CaseStudy } from "../types";
  * Efemena confirmed on 2026-10-25 that the study is IoT Venture's and the
  * table was reused as a layout in the deck. The claims below — an informal
  * walkthrough, not a structured usability study — are the accurate ones.
+ *
+ * SCREENS AND SYSTEM, added 2026-10-27. Efemena supplied the VirtualBuddy
+ * Figma file (Cfl6URq4ZbO5k0AZyadhtg). Three things came out of it: the
+ * desktop dashboard, the text-field states, and the nine-section style guide
+ * on its own page. The style guide is why `design-systems` is now in
+ * `disciplines`: the atAGlance already claimed a UI token system, and this is
+ * the artefact behind that claim rather than an assertion of it.
+ *
+ * NOT USED: the web landing-page frames, which still carry lorem ipsum, and
+ * the two empty 4:3 slide frames.
+ *
+ * Worth knowing, not acted on: the dashboard's sample content includes a real
+ * book cover (Nir Eyal, "Hooked") and two stock-photo avatars with invented
+ * names. Both are ordinary placeholder content inside her own design, and
+ * both are flagged to her.
  */
 
 export const virtualBuddy: CaseStudy = {
@@ -45,7 +60,7 @@ export const virtualBuddy: CaseStudy = {
   context: "Self-directed project",
   roles: ["UI Designer"],
   tools: ["UsabilityHub", "Figma", "Canva", "Vectornator", "Lucidchart", "Pen & paper"],
-  disciplines: ["interaction-design", "product-design"],
+  disciplines: ["interaction-design", "product-design", "design-systems"],
   cover: { alt: "A small circle orbiting a larger one", accent: "sage" },
   externalUrl: { label: "Original case study", href: "https://udezimena.work" },
 
@@ -126,6 +141,32 @@ export const virtualBuddy: CaseStudy = {
           text: [
             "After an informal walkthrough of the screens with a small group of students (who tried the core flows on the prototype and confirmed the direction rather than surfacing major issues) I built the final UI in Figma and assembled UI kits (labels, navigation, colour, typography, imagery and iconography) then prototyped the navigation and produced design mockups across different screen sizes and break points, so the responsive behaviour was demonstrated rather than assumed.",
           ],
+        },
+        {
+          type: "figure",
+          width: "wide",
+          image: {
+            src: "/work/virtualbuddy/text-fields.webp",
+            alt: "The text-field section of the style guide: label, placeholder and status variants on the left, and success, warning and error input states on the right, each state carrying a written label under the field",
+            width: 1152,
+            height: 768,
+            caption:
+              "Input states carry a word as well as a colour. Success, warning and error are each written under the field, so the state survives being read by someone who cannot separate the green border from the red one.",
+          },
+        },
+        {
+          type: "figure",
+          width: "wide",
+          image: {
+            src: "/work/virtualbuddy/design-system.webp",
+            alt: "The VirtualBuddy style guide as one sheet: an index followed by nine numbered sections covering colours, typography, iconography, grid systems, spacing, text fields, selectors, buttons and UI elements",
+            width: 1013,
+            height: 2600,
+            caption:
+              "The whole system on one sheet, indexed and numbered: colour, a Roboto type scale, iconography, grid, spacing, text fields, selectors, buttons, UI elements.",
+          },
+          description:
+            "Nine sections under an index. Colours separate brand, state, black and grey ramps. Typography sets a Roboto scale from display down to title, each with a font size and a line height. Grid systems and spacing are specified as their own sections rather than left implicit. Text fields, selectors and buttons each carry their states. The last section collects assembled UI elements: upload areas, progress rings, tags, avatars and tooltips.",
         },
       ],
     },
