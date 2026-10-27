@@ -65,14 +65,14 @@ export const merlinMines: CaseStudy = {
   problemArea: "Developer tooling · CI/CD automation",
   humanProblem:
     "A developer evaluating an automation tool has to work out what it does, where to begin, whether it is running, and whether it is safe, usually in that order, usually alone.",
-  shortRole: "UI/UX design intern · sole designer",
-  projectType: "Internship, in-house · Merlin Mines",
+  shortRole: "Sole designer",
+  projectType: "In-house product design · Merlin Mines",
   boundary:
     "Three screens appear here with permission, with the run ID and repository name painted out. The rest of the interface stays unpublished, and so do the numbers on these screens: they are interface content, not product performance.",
   headline:
-    "Established the product's first UI patterns and components as its only dedicated design resource, across three design iterations tested with the in-house developers who use the tool. Implemented by the end of the internship.",
+    "Established the product's first UI patterns and components as its only dedicated design resource, across three design iterations tested with the in-house developers who use the tool. Implemented before I left.",
   summary:
-    "Three months as the sole designer on SpellCarver, a secure-automation product from Merlin Mines, across the public site and the product interface. Three iterations, tested with the in-house developers who use it, implemented before the internship ended.",
+    "Three months as the sole designer on SpellCarver, a secure-automation product from Merlin Mines, across the public site and the product interface. Three iterations, tested with the in-house developers who use it, implemented before I left.",
   featured: true,
   card: {
     description:
@@ -83,8 +83,8 @@ export const merlinMines: CaseStudy = {
   status: "complete",
   year: "2025",
   timeline: "Jun to Aug 2025 · Remote, US",
-  context: "Internship, in-house",
-  roles: ["UI/UX Design Intern"],
+  context: "In-house, sole designer",
+  roles: ["UI/UX Designer"],
   tools: [],
   disciplines: ["ux-research", "product-design", "interaction-design", "design-systems"],
   cover: {
@@ -99,7 +99,7 @@ export const merlinMines: CaseStudy = {
     approach:
       "Worked alongside the in-house developers who use the tool, through three design iterations and usability testing with them. Grouped navigation around what a developer is trying to do, gave pipeline state a reading order, and made security a named destination.",
     outcome:
-      "Implemented by the end of the internship, with the product's first UI patterns and components established for the engineers to build against. No accessibility audit, and no outcome metrics were measured.",
+      "Implemented by the end of my time there, with the product's first UI patterns and components established for the engineers to build against. No accessibility audit, and no outcome metrics were measured.",
   },
 
   ethics: {
@@ -122,200 +122,138 @@ export const merlinMines: CaseStudy = {
   },
 
   sections: [
+    /* ── TOP: the answer ────────────────────────────────────────────────
+       The result first. For a three-month engagement on a product that had
+       never had a designer, reaching the build is the outcome worth leading
+       with, and it is the one this page can actually support. */
     {
-      id: "context",
-      kind: "context",
-      title: "Two surfaces, one decision",
+      id: "outcome",
+      kind: "synthesis",
+      title: "What shipped",
       standfirst:
-        "A developer tool has to say what it can do and show what it is doing. Those usually get designed by different people, at different times, in different words.",
+        "Implemented before I left, as the product's first UI patterns and components.",
       blocks: [
         {
           type: "prose",
           text: [
-            "SpellCarver explores the challenge of making technical infrastructure easier to understand and navigate. Through pipeline monitoring, security reporting, and documentation discovery, the interface brings complex operational information into a coherent experience that supports developer decision-making.",
-            "It is a secure-automation product: it runs CI/CD pipelines and keeps the security picture visible while it does. Like most products of its kind, it exists as two things at once, a public site that has to be persuasive, and a product interface that has to be precise.",
-            "The failure mode is familiar. The marketing page promises something in confident, abstract language; you sign in, and the interface greets you with a different vocabulary and no obvious first move. Nothing is broken, but you have to reconstruct the product from its navigation.",
-            "I joined as the only designer. The product had never had a dedicated design resource, so the question was not which screens needed polishing: it was what conventions the product should have at all, since whatever I set would be what the engineers built against.",
-            "The one real advantage was that the users were in the building. SpellCarver is used by Merlin Mines' own developers, so the people I designed for were colleagues I could sit with, watch work, and put a prototype in front of.",
+            "SpellCarver is a secure-automation product: it runs CI/CD pipelines and keeps the security picture visible while it does. I was its only designer for three months, across the public site and the product interface.",
+            "The work went into the build rather than into a handover deck, and it did so because the developers who built it had already seen the design three times. What came out of it: a coherent screen set across the site and the product, a documented navigation structure, a consistent hierarchy for metrics and status, and the first UI patterns and components the product had.",
           ],
         },
         {
           type: "callout",
-          title: "Why there are no screens here",
+          title: "No outcome metrics",
+          tone: "caution",
           text:
-            "The interface is covered by an NDA, so this page carries the reasoning and the diagrams rather than the product. That is also why the design arguments below stay arguments: the work was tested and implemented, but showing what the testing changed would mean showing the screens.",
+            "Nothing here was measured after release. There is no adoption figure, no task-time change and no accessibility audit. Everything below is process and reasoning, not proof of effect.",
+        },
+      ],
+    },
+
+    /* ── MIDDLE: the arguments ─────────────────────────────────────────── */
+    {
+      id: "decisions",
+      kind: "synthesis",
+      title: "Three decisions that shaped it",
+      blocks: [
+        {
+          type: "claimGroup",
+          claims: [
+            {
+              level: "interpretation",
+              text:
+                "Group navigation by intent, not by feature. Navigation was the only friction that showed up in all three journeys I mapped, which made it the first decision rather than a later refinement.",
+            },
+            {
+              level: "interpretation",
+              text:
+                "Make the product speak at the moments it was going quiet. The mapping kept surfacing the same gap: after a failure, after an adjustment, after a vulnerability is resolved. Status in words, log output on the run itself and explicit confirmation all answer that.",
+            },
+            {
+              level: "interpretation",
+              text:
+                "Give security a destination. A product positioned around secure automation should not ask anyone to hunt for the security picture, so it became a named top-level area with a predictable location.",
+            },
+          ],
+        },
+      ],
+    },
+
+    /* ── BOTTOM: the evidence, as the double diamond ───────────────────── */
+    {
+      id: "discover",
+      kind: "research",
+      title: "Discover",
+      standfirst: "The users sat in the same building, so I worked with them rather than inferred them.",
+      blocks: [
+        {
+          type: "claimGroup",
+          claims: [
+            {
+              level: "evidence",
+              text:
+                "The design went through three iterations rather than one pass, with usability testing run with the in-house developers who use the tool.",
+              source: "My own record of the engagement, Jun to Aug 2025",
+            },
+            {
+              level: "evidence",
+              text:
+                "The people tested were the product's actual users, the Merlin Mines developers whose daily workflow the tool supports, not proxies recruited to stand in for them.",
+              source: "My own record of the engagement, Jun to Aug 2025",
+            },
+            {
+              level: "interpretation",
+              text:
+                "Having the users in the building changed what the iterations were for. Each round was less about whether a layout was attractive and more about whether a developer could predict where something lived, which is a question you can only settle by watching someone look for it.",
+            },
+          ],
+        },
+        {
+          type: "prose",
+          text: [
+            "One thing shaped more than it looks like it should: Merlin Mines has a warm brand, and the instinct is to carry that voice everywhere. I kept it on the marketing surface and out of status labels, where a developer is making an operational decision and needs the literal word.",
+          ],
         },
       ],
     },
 
     {
-      id: "audience",
-      kind: "research",
-      title: "Designing with the users, not for them",
-      standfirst: "Three iterations, tested with the developers who would have to live with the result.",
+      id: "define",
+      kind: "synthesis",
+      title: "Define",
+      standfirst: "Three journeys, with the friction in each one ranked rather than listed.",
       blocks: [
-        {
-          type: "prose",
-          text: [
-            "Most internship projects end at a prototype nobody has used. This one did not, for a structural reason: the users sat in the same company, so I could work with them directly rather than infer what they needed.",
-          ],
-        },
-        {
-          type: "claimGroup",
-          title: "How the work actually ran",
-          claims: [
-            {
-              level: "evidence",
-              text: "The design went through three iterations rather than one pass, with usability testing run with the in-house developers who use the tool.",
-              source: "My own record of the internship, Jun to Aug 2025",
-            },
-            {
-              level: "evidence",
-              text: "The people tested were the product's actual users (the Merlin Mines developers whose daily workflow the tool supports), not proxies recruited to stand in for them.",
-              source: "My own record of the internship, Jun to Aug 2025",
-            },
-            {
-              level: "interpretation",
-              text: "Having the users in the building changed what the iterations were for. Each round was less about whether a layout was attractive and more about whether a developer could predict where something lived, which is the kind of question you can only settle by watching someone look for it.",
-            },
-          ],
-        },
-        {
-          type: "prose",
-          text: [
-            "I mapped the product as three journeys and marked where each one costs a developer something. The friction points below are that analysis, ranked within each journey. They are the reason the four decisions further down this page are the four decisions, rather than a tidier set I could have arrived at from the brief alone.",
-          ],
-        },
         {
           type: "figure",
           width: "wide",
           image: {
             src: "/work/merlin-mines/user-flows-1065.webp",
-            alt:
-              "Three user-flow diagrams, each with a ranked list of friction points beside it: new user onboarding, pipeline management, and vulnerability resolution",
+            alt: "Three user-flow diagrams, each with a ranked list of friction points beside it: new user onboarding, pipeline management, and vulnerability resolution",
             width: 1065,
             height: 1042,
             caption:
-              "The flow mapping. Three journeys, each with its friction ranked rather than listed, because a ranked list is a design brief and an unranked one is a complaint.",
+              "The flow mapping. A ranked list is a design brief; an unranked one is a complaint.",
           },
           description:
-            "Journey one, new user onboarding, runs from landing page through registration or login to a personal access token, a first pipeline and an initial run. Its ranked friction: token complexity, where users struggle most often; unclear error handling, where a failure does not say what to do next; navigation uncertainty on reaching the dashboard; uncertainty about the value on offer at the landing page; and a success state that does not confirm itself. Journey two, pipeline management, runs from the dashboard through managing a pipeline to adjusting or triggering a run. Its friction: difficulty finding the pipeline management tools, ambiguous status from delayed or unclear updates, uncertainty about the options when adjusting a configuration, failures and successes that are not clearly communicated, and no reinforcement on success. Journey three, vulnerability resolution, runs from the dashboard through the security section to identifying, resolving and confirming a vulnerability. Its friction: severity indicators and remediation steps that read as confusing, navigation to the security areas that is unintuitive, ambiguity about which remediation to take, weak confirmation after acting, and nothing that marks the problem as closed.",
-        },
-        {
-          type: "claimGroup",
-          title: "What the mapping put at the top of each journey",
-          claims: [
-            {
-              level: "interpretation",
-              text:
-                "Navigation is the only friction that appears in all three journeys: finding the pipeline tools, reaching the security area, and knowing where to go on first arrival. That is what made grouping by intent the first decision rather than a later refinement.",
-            },
-            {
-              level: "interpretation",
-              text:
-                "The second recurring theme is that the product goes quiet at exactly the moments a developer most needs it to speak: after a failure, after an adjustment, and after a vulnerability is resolved. Status in words, log output on the run itself, and explicit confirmation all answer that rather than a visual preference.",
-            },
-            {
-              level: "hypothesis",
-              text:
-                "Ranking the friction within each journey, rather than pooling it into one list, keeps a fix proportionate to where it hurts. Token complexity leads onboarding and nothing else; treating it as the product's biggest problem would have been a misreading of one journey as the whole.",
-            },
-          ],
+            "Onboarding runs from landing page to a first pipeline run, and its friction is led by access-token complexity, then unclear error handling, then not knowing where to go on arrival. Pipeline management runs from the dashboard to adjusting or triggering a run, and its friction is led by difficulty finding the pipeline tools, then ambiguous status, then uncertainty about the options when adjusting. Vulnerability resolution runs from the dashboard through the security section to a confirmed fix, and its friction is led by confusing severity indicators and remediation steps, then unintuitive navigation to security, then ambiguity about which remediation to take. All three end on weak or missing confirmation.",
         },
         {
           type: "callout",
           title: "What this does and does not establish",
           text:
-            "These friction points are my own analysis, recorded on the flow-mapping sheet. Whether each one was observed in the testing sessions with the developers or reasoned out beforehand is not something the sheet records, so they are marked as interpretation rather than as findings. The three iterations and the testing are separately documented above; what each round changed is still not public.",
-        },
-        {
-          type: "claimGroup",
-          title: "What I was designing against",
-          claims: [
-            {
-              level: "interpretation",
-              text: "The primary audience is developers and platform engineers who configure and monitor automation workflows as part of their day, not as a project.",
-            },
-            {
-              level: "interpretation",
-              text: "On arriving in the product, a developer's first three questions are, in order: what is my next action, is work progressing, and where is the security information. The interface should answer them in that order.",
-            },
-            {
-              level: "interpretation",
-              text: "Approachable language helps a visitor on the marketing page and hurts a developer in the product, where an imprecise status label is worse than a dull one.",
-            },
-          ],
-        },
-        {
-          type: "prose",
-          text: [
-            "That last one shaped more than it looks like it should. Merlin Mines has a warm brand, and the instinct is to carry that voice everywhere. I kept it on the marketing surface and out of status labels, where a developer is making an operational decision and needs the literal word.",
-          ],
-        },
-      ],
-    },
-
-    {
-      id: "goals",
-      kind: "synthesis",
-      title: "What I set out to do",
-      blocks: [
-        {
-          type: "list",
-          ordered: true,
-          items: [
-            "Connect the story to the product: make the site's value proposition and its calls to action lead naturally into the interface.",
-            "Make navigation predictable: group destinations around tasks, not around the internal feature list.",
-            "Prioritise status and next actions: give pipeline state and progress a deliberate visual hierarchy.",
-            "Make security discoverable: treat it as a first-class destination, not a buried utility.",
-            "Keep the interface technically credible: concise labels, clear status language, consistent patterns for metrics and actions.",
-          ],
+            "These friction points are my own analysis, recorded on the flow-mapping sheet. Whether each was observed in the testing sessions or reasoned out beforehand is not something the sheet records, so they are marked as interpretation rather than as findings.",
         },
         {
           type: "figure",
           width: "wide",
           image: {
-            src: "/work/merlin-mines/experience-map.svg",
-            alt: "Experience map in three stages: discover on the marketing site, get oriented in the product, then act and investigate in the workspace, with arrows running left to right between them",
-            width: 1200,
-            height: 560,
+            src: "/work/merlin-mines/site-map-1065.webp",
+            alt: "Site map of SpellCarver: a dashboard branching into Spellcarver, Settings, Spellbook, Account and Documents, each with its own destinations beneath it",
+            width: 1065,
+            height: 914,
+            caption:
+              "The site map that answered it. Five areas, each matching a different reason for opening the product.",
           },
-          description:
-            "Three stages. Discover, on the marketing site: state the promise, establish security as the frame, make one next step obvious. Get oriented, in the product: group destinations by intent, show current state, name the next action. Act and investigate: configure and run work, read progress, reach security and documentation.",
-          },
-      ],
-    },
-
-    {
-      id: "decision-journey",
-      kind: "concept",
-      title: "Decision one: the site and the product are one journey",
-      standfirst: "Four decisions, each argued from the problem rather than from a screenshot. All four went through the three iterations; what testing said about each is the part that stays behind the NDA.",
-      blocks: [
-        {
-          type: "prose",
-          text: [
-            "The public page and the first product screen were being drafted as separate artefacts with separate vocabularies. I designed them against a shared terminology instead, so the path from a call to action to a first meaningful task is a continuation rather than a translation. The promise a visitor reads is the promise the interface is shaped to fulfil.",
-          ],
-        },
-        {
-          type: "claim",
-          level: "concept",
-          text: "Holding terminology constant between the marketing page and the product navigation reduces the gap between understanding the promise and knowing where to begin.",
-        },
-      ],
-    },
-
-    {
-      id: "decision-navigation",
-      kind: "concept",
-      title: "Decision two: navigation grouped by intent",
-      blocks: [
-        {
-          type: "prose",
-          text: [
-            "The product's destinations can be listed flat, or grouped by what someone came to do. I grouped them: a place to see state, a place to do work, a place to learn, a place to check trust. A developer arriving mid-task should be able to predict which group a destination belongs to without reading every label.",
-          ],
         },
         {
           type: "comparison",
@@ -328,50 +266,19 @@ export const merlinMines: CaseStudy = {
             ["Security sits among the utilities", "Security is a named area of its own"],
           ],
         },
-        {
-          type: "figure",
-          width: "wide",
-          image: {
-            src: "/work/merlin-mines/site-map-1065.webp",
-            alt:
-              "Site map of SpellCarver: a dashboard branching into Spellcarver, Settings, Spellbook, Account and Documents, each with its own destinations beneath it",
-            width: 1065,
-            height: 914,
-            caption:
-              "The site map behind the grouping. Five areas, each answering a different reason for opening the product: run work, configure scanning, ask the assistant, manage the account, read the documentation.",
-          },
-        },
-        {
-          type: "figure",
-          width: "wide",
-          image: {
-            src: "/work/merlin-mines/doc-search-1400.webp",
-            alt:
-              "The documentation search modal open over the docs page, with the query getting matched against two guides, each labelled guide and summarised in a line, and keyboard hints for navigate, select and close along the bottom",
-            width: 1400,
-            height: 865,
-            caption:
-              "Documentation search as a modal over the page rather than a separate destination. Results carry a kind and a one-line summary, so the choice is made before the reader leaves what they were doing, and the whole thing is reachable and dismissible from the keyboard.",
-          },
-        },
-        {
-          type: "claim",
-          level: "hypothesis",
-          text: "Grouping destinations by intent lets a developer predict where a task belongs without reading the full navigation. Watching a developer hesitate before a correct click is how you tell whether a grouping works, and hesitation is what the iterations were for.",
-        },
       ],
     },
 
     {
-      id: "decision-state",
-      kind: "concept",
-      title: "Decision three: operational state gets a reading order",
+      id: "develop",
+      kind: "craft",
+      title: "Develop",
+      standfirst: "Where those decisions met a screen.",
       blocks: [
         {
           type: "prose",
           text: [
-            "A dashboard of equally weighted numbers is one nobody reads twice. I separated summary values from live pipeline activity and gave them a sequence: what to notice first, what to scan second, where to go for detail. Status carries a label as well as a colour, so it survives greyscale.",
-            "The figures on those screens are sample content, demonstrating how a metric behaves in a layout. They are not measurements.",
+            "A dashboard of equally weighted numbers is one nobody reads twice. I separated summary values from live pipeline activity and gave them a sequence: what to notice first, what to scan second, where to go for detail.",
           ],
         },
         {
@@ -379,134 +286,90 @@ export const merlinMines: CaseStudy = {
           width: "wide",
           image: {
             src: "/work/merlin-mines/pipeline-builder-1400.webp",
-            alt:
-              "The SpellCarver Pipeline Builder above a list of active pipeline runs, each showing repository, branch, elapsed duration, a Running status pill, the latest log line and a progress bar",
+            alt: "The SpellCarver Pipeline Builder above a list of active pipeline runs, each showing repository, branch, elapsed duration, a Running status pill, the latest log line and a progress bar",
             width: 1400,
             height: 879,
             caption:
-              "Pipeline Builder above Active Pipeline. Each run states its repository and branch, how long it has been going, a status in words as well as colour, the latest log line and its progress, so a developer can tell whether it is running and how far without opening anything.",
+              "Each run states its repository, branch, elapsed time, status in words as well as colour, latest log line and progress, so \"is it running, and how far\" is answered without opening anything.",
           },
-        },
-        {
-          type: "claim",
-          level: "concept",
-          text: "Separating summary metrics from live pipeline state, and giving each a distinct visual treatment, lets a developer orient before acting rather than while acting.",
-        },
-      ],
-    },
-
-    {
-      id: "decision-security",
-      kind: "concept",
-      title: "Decision four: security is a destination, not an inference",
-      blocks: [
-        {
-          type: "prose",
-          text: [
-            "The product is positioned around secure automation, which makes it strange to ask someone to hunt for the security information. It became a named top-level area with a predictable location, so there is one answer to \"where would I look\" rather than several plausible ones.",
-            "Worth saying plainly: making security easy to find is an interface decision. It does not make the product secure, and nothing in this case study should be read as a compliance claim.",
-          ],
         },
         {
           type: "figure",
           width: "wide",
           image: {
             src: "/work/merlin-mines/security-report-1400.webp",
-            alt:
-              "The security report: three panels counting SAST, CVE and Bearer findings by critical, high, medium and low severity, above a filterable list of all vulnerabilities with the affected component and an open status on each",
+            alt: "The security report: three panels counting SAST, CVE and Bearer findings by critical, high, medium and low severity, above a filterable list of all vulnerabilities with the affected component and an open status on each",
             width: 1400,
             height: 919,
             caption:
-              "The security report. Three scanners summarised by severity, then every finding in one filterable list with its affected component. Counts are stated as numbers and as words, and each finding carries its status in text, so nothing here depends on telling red from amber. The run identifier and repository name are painted out; the figures are sample content, not a measurement of anything.",
+              "Three scanners summarised by severity, then every finding in one filterable list. Counts are numbers and words, and each finding carries its status in text, so nothing depends on telling red from amber. The run identifier and repository name are painted out; the figures are sample content.",
           },
         },
-        {
-          type: "claim",
-          level: "hypothesis",
-          text: "In a product whose promise is security, a dedicated security destination is where users will look first, the cheapest check being to ask where someone would look before showing them anything.",
-        },
-      ],
-    },
-
-    {
-      id: "flow",
-      kind: "craft",
-      title: "The path through it",
-      blocks: [
         {
           type: "figure",
           width: "wide",
           image: {
-            src: "/work/merlin-mines/core-flow.svg",
-            alt: "A six-step flow: discover, orient, configure, run, monitor, and a dashed return path to investigate security or docs from any point",
-            width: 1200,
-            height: 360,
+            src: "/work/merlin-mines/doc-search-1400.webp",
+            alt: "The documentation search modal open over the docs page, with the query getting matched against two guides, each labelled guide and summarised in a line, and keyboard hints for navigate, select and close along the bottom",
+            width: 1400,
+            height: 865,
+            caption:
+              "Documentation search as a modal over the page rather than a separate destination, so the choice is made before the reader leaves what they were doing. Reachable and dismissible from the keyboard.",
           },
-          description:
-            "Six steps: discover, orient, configure, run, monitor. The sixth, investigate, is drawn as a dashed return path rather than an endpoint, because reaching for security or the docs is something a developer does at any point.",
         },
+        {
+          type: "claim",
+          level: "interpretation",
+          text:
+            "The public page and the first product screen were being drafted as separate artefacts with separate vocabularies. Designing them against shared terminology makes the path from a call to action to a first real task a continuation rather than a translation.",
+        },
+      ],
+    },
+
+    {
+      id: "deliver",
+      kind: "craft",
+      title: "Deliver",
+      standfirst: "Into the build, not into a deck.",
+      blocks: [
         {
           type: "prose",
           text: [
-            "Drawing investigation as a loop changed where documentation and security had to live. Something you reach for mid-task has to be reachable from wherever you are, which is what kept both in the top-level navigation rather than inside the workspace.",
-          ],
-        },
-        {
-          type: "list",
-          title: "Distinctions the UI has to hold consistently",
-          items: [
-            "Primary action versus secondary navigation",
-            "Summary metric versus live operational state",
-            "Informational status versus actionable warning",
-            "Global navigation versus workspace-specific actions",
-            "Marketing language versus precise in-product terminology",
+            "The screen set went to the engineers as patterns and components rather than as finished pictures, which is the part that outlasts any individual screen. A product that has never had a designer does not need one good layout; it needs the vocabulary to make the next twenty consistent.",
           ],
         },
       ],
     },
 
     {
-      id: "validation",
+      id: "limits",
       kind: "reflection",
       title: "What stayed untested",
-      standfirst: "Testing ran with the developers. These are the questions it did not reach.",
       blocks: [
         {
-          type: "steps",
-          steps: [
+          type: "claimGroup",
+          claims: [
             {
-              title: "The marketing promise, on a stranger",
-              text: "Show someone the landing page, take it away, ask them to explain what the product does and who it is for. If the promise does not survive being paraphrased, the public surface is doing less work than it appears to. The whole site-to-product argument rests on this and it was never checked.",
+              level: "hypothesis",
+              text:
+                "That grouping destinations by intent lets a developer predict where a task belongs without reading the full navigation. Watching someone hesitate before a correct click is how you tell, and that is what the iterations were for.",
             },
             {
-              title: "Anyone outside the company",
-              text: "Everyone who tested this already worked at Merlin Mines and already knew roughly what the product was for. That is the right group for the in-product work and the wrong one for judging whether the marketing page explains itself to a stranger.",
+              level: "hypothesis",
+              text:
+                "That restricting an action to the state where it is genuinely an exception keeps it legible as an escape hatch rather than a way to dismiss a reminder.",
             },
             {
-              title: "An accessibility audit",
-              text: "Contrast, focus visibility, keyboard access, status that does not rely on colour alone, behaviour at narrow widths and under zoom. All designed against as a standard; none of it formally audited.",
-            },
-            {
-              title: "Anything after release",
-              text: "It was implemented and I left. No measurement was taken of whether it made the developers' work faster, clearer or less error-prone, so there is no outcome figure on this page, and I would not trust one invented afterwards.",
+              level: "concept",
+              text:
+                "Making security easy to find is an interface decision. It does not make the product secure, and nothing here should be read as a compliance claim.",
             },
           ],
         },
-      ],
-    },
-
-    {
-      id: "outcome",
-      kind: "reflection",
-      title: "Where it got to",
-      blocks: [
         {
           type: "prose",
           text: [
-            "It was implemented before the internship ended. For a three-month placement on a product that had never had a designer, getting into the build rather than into a handover deck is the outcome I would point at, and it happened because the developers who built it had already seen the design three times.",
-            "What the internship produced: a coherent screen set across the public site and the product, a documented navigation structure, a consistent content hierarchy for metrics and status, and the product's first UI patterns and components, which, as the first dedicated design resource the product had, is the part that outlasts any individual screen.",
-            "What it did not produce is a number. Nobody measured whether it worked better afterwards, and the NDA keeps the evidence that does exist out of public view. I would rather say that plainly than invent a percentage.",
-            "The lesson is narrower than \"developer tools should be clear\": a technical product's mental model is assembled from four places at once, the marketing story, the navigation, the operational states and the security information. Design any one without the other three and you get a product people can use but cannot describe.",
+            "What I still cannot publish is what each testing round surfaced and what changed between the three iterations. Without that, \"tested\" cannot become \"validated\" for any single decision above.",
           ],
         },
       ],

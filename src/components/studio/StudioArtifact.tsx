@@ -154,11 +154,7 @@ export function StudioArtifact({
                 height={image.height}
                 className="h-auto w-full rounded-lg shadow-[var(--shadow-object)] ring-1 ring-line"
               />
-              {image.placeholder ? (
-                <figcaption className="label-type mt-2 text-charcoal-muted">
-                  Placeholder image, real screen to come
-                </figcaption>
-              ) : null}
+
             </figure>
           ) : (
             children

@@ -156,17 +156,17 @@ export function StudioScene({ artifacts }: { artifacts: StudioArtifacts }) {
 /**
  * One exploration: a thumbnail where a real one exists, a name, a line.
  *
- * Image only when `projectImages` says it is real evidence. VirtualBuddy's
- * entry is still a stand-in illustration, and a placeholder on the homepage
- * is worse than no image at all — it dresses an empty slot as a screen. That
- * card renders as type alone until an approved screen exists for it.
+ * Image only where one exists. VirtualBuddy has no approved screen, so it
+ * renders an empty labelled frame: a stand-in illustration on the homepage
+ * is worse than no image at all, because it dresses an empty slot as a
+ * screen. The frame holds the row's baseline and says why it is empty.
  *
  * One link per card, named by its own contents, so a keyboard user gets three
  * stops here rather than six.
  */
 function ExplorationCard({ study, index }: { study: CaseStudy; index: number }) {
   const image = projectImages[study.slug];
-  const showImage = image && !image.placeholder;
+  const showImage = Boolean(image);
 
   return (
     <li>

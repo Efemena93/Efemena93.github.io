@@ -45,12 +45,50 @@ export const vocHub: CaseStudy = {
   },
 
   sections: [
+    /* ── TOP: the answer. Self-directed work, so the honest headline is what
+       the testing changed, not a business metric that was never measured. ── */
+    {
+      id: "outcome",
+      kind: "synthesis",
+      title: "What the testing changed",
+      standfirst:
+        "Five participants on the wireframes, before the final UI rather than after it.",
+      blocks: [
+        {
+          type: "prose",
+          text: [
+            "VocHub is a vocabulary-learning app I designed end to end to practise the fundamentals: research, definition, wireframes, testing, UI. The usability round surfaced three concrete fixes, clearer sign-up and login entry points, a voice feature for pronunciation practice, and simpler onboarding, and a preference test set the final splash-screen direction.",
+          ],
+        },
+        {
+          type: "callout",
+          title: "A self-directed project",
+          tone: "caution",
+          text:
+            "Nothing here shipped to users, so there are no adoption or retention figures. The numbers on this page are research sample sizes, not outcomes.",
+        },
+      ],
+    },
+
     {
       id: "context",
       kind: "context",
       title: "Discover",
       standfirst: "Competitor research first, then a survey and interviews to find where existing apps fall short.",
       blocks: [
+        {
+          type: "figure",
+          width: "wide",
+          image: {
+            src: "/work/vochub/design-process.webp",
+            alt:
+              "A hand-drawn double diamond labelled Discover, Define, Design and Deliver, with Research, Empathize, Ideate and Testing tagged onto its edges",
+            width: 1024,
+            height: 768,
+            caption:
+              "The process, as I set it out at the time. Divergent thinking through discovery, convergent through development.",
+          },
+        },
         {
           type: "prose",
           text: [
@@ -71,6 +109,19 @@ export const vocHub: CaseStudy = {
           text: [
             "The survey gathered 55 respondents' perceptions of a new vocabulary app, their experience with existing apps, and how online learning compared with onsite methods for them. I followed it with four qualitative attitudinal interviews across different backgrounds, analysed with the Thinking-Feeling-Doing method to get at what people actually thought, felt and did around learning a language, not just what they said they wanted.",
           ],
+        },
+        {
+          type: "figure",
+          width: "wide",
+          image: {
+            src: "/work/vochub/research.webp",
+            alt:
+              "A research slide summarising a fifty-five participant online survey and four attitudinal interviews, with the seven guiding interview questions listed",
+            width: 1024,
+            height: 768,
+            caption:
+              "Fifty-five survey responses, then four attitudinal interviews against seven guiding questions.",
+          },
         },
       ],
     },
@@ -101,6 +152,19 @@ export const vocHub: CaseStudy = {
           text: [
             "I mapped a task flow for the feature that mattered most to the persona (adding study friends) from opening the app through language and level selection to finding people by contact, location or the learning community.",
           ],
+        },
+        {
+          type: "figure",
+          width: "wide",
+          image: {
+            src: "/work/vochub/task-flow.webp",
+            alt:
+              "An eight-step numbered task list for adding study friends, above a boxes-and-arrows task flow with a decision diamond branching to contacts, location and user community",
+            width: 1024,
+            height: 768,
+            caption:
+              "Adding a study friend, as a task list and then as a flow. The decision diamond is the point: three ways in, and the design has to carry all three.",
+          },
         },
       ],
     },
@@ -171,6 +235,46 @@ export const vocHub: CaseStudy = {
           type: "claim",
           level: "interpretation",
           text: "Giving each form-field state a word as well as a colour was the one accessibility decision I made without being told to, and it is the one I would carry into every project since.",
+        },
+        {
+          type: "figure",
+          width: "wide",
+          image: {
+            src: "/work/vochub/wireframes.webp",
+            alt:
+              "Photographed paper sketches of four screens above a sixteen-screen digital low-fidelity wireframe grid including splash, sign up, log in, onboarding, earn XP and library",
+            width: 1024,
+            height: 768,
+            caption:
+              "Sixteen low-fidelity screens, which is what the five-participant session was run against.",
+          },
+        },
+      ],
+    },
+
+    {
+      id: "deliver",
+      kind: "craft",
+      title: "Deliver",
+      standfirst: "A token sheet rather than a set of finished screens.",
+      blocks: [
+        {
+          type: "figure",
+          width: "wide",
+          image: {
+            src: "/work/vochub/ui-tokens.webp",
+            alt: "A design-token sheet: seven named colour swatches with hex values, a Lato type scale with sizes, button default, hover and inactive states, and badge and avatar components",
+            width: 1024,
+            height: 768,
+            caption:
+              "Colour, type scale, button states, badges, avatars. Naming the states is what stops the fifth screen disagreeing with the first.",
+          },
+        },
+        {
+          type: "claim",
+          level: "interpretation",
+          text:
+            "Specifying hover and inactive states alongside the default is the part that makes a token sheet useful rather than decorative. A palette tells you what the product looks like; a state tells you what it does.",
         },
       ],
     },

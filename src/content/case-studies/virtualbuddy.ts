@@ -79,7 +79,7 @@ export const virtualBuddy: CaseStudy = {
     {
       id: "context",
       kind: "context",
-      title: "Why this project",
+      title: "Discover and define",
       blocks: [
         {
           type: "prose",
@@ -103,7 +103,7 @@ export const virtualBuddy: CaseStudy = {
     {
       id: "craft",
       kind: "craft",
-      title: "From task flow to interface",
+      title: "Develop and deliver",
       standfirst: "Low- to mid-fidelity wireframes on a strict grid, then a full visual system.",
       blocks: [
         {

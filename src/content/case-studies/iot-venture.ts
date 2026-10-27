@@ -89,29 +89,29 @@ export const iotVenture: CaseStudy = {
 
   atAGlance: {
     problem:
-      "A connected-bike product spanning a consumer app, a partner dashboard and several white-label apps, where the hardest screens were the ones reporting a state the rider had not asked about: maintenance due, data gone stale, permission declined.",
+      "A connected-bike product across a consumer app, a partner dashboard and several white-label apps, where the hardest screens report a state the rider never asked about.",
     role: "Sole designer. Owned all UX and UI: research, the 3.0 redesign, usability testing, and the design system holding the surfaces together.",
     approach:
-      "Ran user research into the redesign and a 15-participant usability test before full release, acting on what came back. Designed the predictive inspection state model and its conditional dealer workflow, the responsive dealer ordering portal across phone, tablet and desktop, the iOS and Android permission sequences, the fleet-portal views and the stale-data indicator.",
+      "Double diamond. Research and a 15-participant beta test before the build was fixed, then the inspection state model, the responsive dealer portal, the permission sequences and the stale-data indicator, delivered on one design system.",
     outcome:
-      "The 3.0 redesign shipped in October to November 2024 across the flagship app and the white-label apps, with a design system that kept them coherent. User retention rose 20% after the release. That figure is my own, taken from what we tracked at the time rather than from an independent audit.",
+      "3.0 shipped October to November 2024 across the flagship and white-label apps on one design system. Retention rose 20% after release, a figure of my own rather than an independent audit.",
   },
 
   ethics: {
     is: [
       "Interface and interaction design for a connected-hardware product, across mobile and fleet-facing surfaces.",
-      "Grounded in user research and a 15-participant usability test I ran myself, named where the claims rest on them.",
+      "Grounded in a 15-participant usability test I ran myself, named where the claims rest on it.",
     ],
     isNot: [
       "Not a disclosure of the vendor integrations, their technical field definitions, exact interface copy or timing thresholds. Those remain confidential.",
-      "Not a claim that every workstream here belonged to a single release. Inspection, permissions, the fleet portal and the freshness indicator ran as separate pieces of work across two years, and are gathered under one theme for the telling.",
+      "Not a claim that every workstream belonged to one release. These ran across two years and are gathered under one theme for the telling.",
       "Not a measured impact report. One retention figure exists and it is self-reported.",
     ],
     unvalidated: [
-      "The reasoning behind the three-state inspection model. The states were built; the argument for why three is the right number was never tested against users.",
-      "Whether the conditional skip rule reads as an escape hatch rather than a dismissal, to the dealers who use it.",
+      "Why three inspection states is the right number. The states were built; the argument was never tested against users.",
+      "Whether the conditional skip rule reads as an escape hatch rather than a dismissal.",
       "Whether the pre-permission explanation improves the grant rate. No measurement was taken.",
-      "The stale-data indicator's threshold. The design makes freshness visible; nobody checked whether the chosen window matches what riders treat as current.",
+      "The stale-data threshold. The design makes freshness visible; nobody checked whether the window matches what riders treat as current.",
     ],
     notRepresented: [
       "Dealers and workshop staff were not part of the usability testing, which ran with riders through the iOS beta. The workflow designed for them rests on requirements and review, not observation.",
@@ -119,39 +119,70 @@ export const iotVenture: CaseStudy = {
   },
 
   sections: [
+    /* ── TOP OF THE PYRAMID: the answer ──────────────────────────────────
+       Minto's rule, and the reason this section exists at all: the result
+       goes first, before the role, the problem or the process. A hiring
+       designer who reads only this box should already know what happened. */
     {
-      id: "role",
-      kind: "context",
-      title: "One designer, several surfaces",
+      id: "outcome",
+      kind: "synthesis",
+      title: "What shipped",
+      standfirst:
+        "Mobility 3.0, October to November 2024, across the flagship app and the white-label apps built on the same platform.",
       blocks: [
         {
           type: "prose",
           text: [
-            "As the sole designer at IoT Venture, I led the design and continued evolution of It's My Bike, shaping a complex connected-mobility product into a more intuitive experience. From the Mobility 3.0 release in 2024 to subsequent iterations, the work combined user research, interaction design, visual systems, and product-level decision-making.",
-            "IoT Venture builds connected-bike hardware and the software around it: an app for riders, a dashboard for partners, and white-label apps carrying partner brands. For two years every surface was mine, and none could be redesigned alone. A change to the flagship app had to survive being rebranded for a partner who had not asked for it.",
-            "The 3.0 redesign was the centre of the role. But the work I keep returning to is smaller and less photogenic: the screens that appear when the system knows something the rider did not ask about. A maintenance window opening. A tracker that has stopped reporting. A permission the rider declined six months ago that a feature now needs. Those are the screens where a connected product either explains itself or becomes something you tolerate.",
+            "I was the only designer at IoT Venture for two years, and 3.0 was the centre of it: a redesign of It's My Bike that had to land on the flagship app and on every partner-branded app built from the same platform.",
+            "User retention rose 20% after the release. That figure is my own, taken from what we tracked at the time rather than from an independent audit, and it is the only number of its kind on this page.",
+            "After 3.0 the work continued as evolution rather than a second redesign. Version 3.3 was on the roadmap, scheduled for October 2026, when I left. I designed toward it and did not ship it.",
           ],
-        },
-        {
-          type: "callout",
-          title: "How this page is put together",
-          text:
-            "These workstreams ran across two years, not inside one release. They share a theme rather than a timeline. Where a claim rests on research I ran, the study is named; where it is design reasoning, it is marked as mine.",
         },
       ],
     },
 
+    /* ── MIDDLE OF THE PYRAMID: the arguments ────────────────────────────
+       Three decisions, each stated once and each carrying the result above.
+       The evidence for them is the double diamond below, in that order. */
     {
-      id: "research",
+      id: "decisions",
+      kind: "synthesis",
+      title: "Three decisions that got it there",
+      blocks: [
+        {
+          type: "claimGroup",
+          claims: [
+            {
+              level: "interpretation",
+              text:
+                "Test before the build is fixed, not after. The 3.0 research ran through an iOS beta while findings could still change what was being built, which is the difference between research and a report.",
+            },
+            {
+              level: "interpretation",
+              text:
+                "Treat conditional behaviour as the product. Inspection states, permission outcomes and stale device data are all moments where the system knows less than the interface implies, and they are where a connected product earns trust or loses it.",
+            },
+            {
+              level: "interpretation",
+              text:
+                "Build one system, not several skins. With one designer and a flagship app plus white-label partner apps, a shared system was the only thing that made the surface area tractable.",
+            },
+          ],
+        },
+      ],
+    },
+
+    /* ── BOTTOM OF THE PYRAMID: the evidence, as the double diamond ───── */
+    {
+      id: "discover",
       kind: "research",
-      title: "What was actually tested",
-      standfirst: "Modest, and real. Worth separating from the parts that were neither.",
+      title: "Discover",
+      standfirst: "Fifteen riders, in a beta, ten months before release.",
       blocks: [
         {
           type: "prose",
           text: [
-            "The 3.0 redesign was shaped by user research and tested through an iOS beta before full release rather than after it. That sequencing mattered more than the method: it meant findings could still change the build.",
-            "Fifteen people took part; fourteen returned a complete set of scores. They rated the design on five statements and left open feedback. The scores were high, which is the least interesting thing about them. The twenty-seven written comments were the useful part.",
+            "Fifteen people took part; fourteen returned a complete set of scores, plus open feedback. The scores were high, which is the least interesting thing about them. The twenty-seven written comments were the useful part.",
           ],
         },
         {
@@ -159,84 +190,97 @@ export const iotVenture: CaseStudy = {
           stats: [
             { value: "15", label: "Participants" },
             { value: "14", label: "Complete responses" },
-            { value: "5", label: "Likert statements" },
+            { value: "6", label: "Rated questions" },
             { value: "27", label: "Written recommendations" },
           ],
-          source: "Usability test, December 2023, 15 participants, 5-point Likert scale plus open feedback",
+          source: "Usability test results board, December 2023, 15 participants, 5-point scale plus open feedback",
         },
         {
           type: "claimGroup",
-          title: "What the scores said",
           claims: [
             {
               level: "evidence",
-              text: "Across the five statements, mean ratings ran from 4.4 to 4.9 out of 5 (computed over the fourteen complete responses) with ease of navigation and overall satisfaction both at 4.4, the two lowest.",
-              source: "Usability test, December 2023, 15 participants, 14 complete responses, 5-point Likert scale",
+              text:
+                "Across the six rated questions, mean ratings ran from 4.4 to 4.9 out of 5 over the fourteen complete responses, with the two lowest both at 4.4.",
+              source: "Usability test results board, December 2023, 15 participants, 14 complete responses, 5-point scale",
+            },
+            {
+              level: "evidence",
+              text:
+                "Three changes followed directly: the report-theft call to action was simplified, all linked trackers were surfaced on the home screen map, and tracker status was promoted above trip history.",
+              source: "Usability test recommendations, December 2023, marked Done in the design file",
             },
             {
               level: "interpretation",
-              text: "Those two sitting lowest is the only signal worth taking from a set of scores this uniformly high, and it points the same way the written feedback does: finding things, rather than understanding them.",
+              text:
+                "Almost none of the accepted changes were about making something clearer. They were about ordering and reach: what sits above what, and how few steps away a thing is.",
             },
           ],
         },
         {
-          type: "claimGroup",
-          title: "What changed as a result",
-          claims: [
-            {
-              level: "evidence",
-              text: "The report-theft call to action was rewritten to be simpler, and profile management was moved out to the settings page.",
-              source: "Usability test recommendations, December 2023, marked Done in the design file",
-            },
-            {
-              level: "evidence",
-              text: "All linked trackers were surfaced on the home screen map, which testers had reported as missing compared with the previous app.",
-              source: "Usability test recommendations, December 2023, marked Done in the design file",
-            },
-            {
-              level: "evidence",
-              text: "Tracker status was promoted above trip history on the home page, after testers judged status the more important of the two.",
-              source: "Usability test recommendations, December 2023",
-            },
-          ],
+          type: "figure",
+          width: "wide",
+          image: {
+            src: "/work/iot-venture/usability-scores.webp",
+            alt: "The usability results table: fifteen anonymised participants down the side, six rated questions across the top, with per-question totals and means along the bottom",
+            width: 1400,
+            height: 724,
+            caption:
+              "The results board from my own file. Participants are anonymised; the blank row is the incomplete response, which is why the means are computed over fourteen.",
+          },
         },
         {
-          type: "claim",
-          level: "interpretation",
-          text: "Almost none of the accepted changes were about making something clearer. They were about ordering and reach: what sits above what, and how few steps away a thing is. The redesign responded by moving things rather than explaining them.",
+          type: "figure",
+          width: "wide",
+          image: {
+            src: "/work/iot-venture/usability-recommendations.webp",
+            alt: "The twenty-seven numbered feedback items, colour-coded by whether each was done, to do, not a priority, or not yet technically possible",
+            width: 1084,
+            height: 776,
+            caption:
+              "All twenty-seven, colour-coded by status rather than pruned to the ones that shipped. Keeping the parked items on the list is what made it possible to come back to them later.",
+          },
         },
         {
           type: "prose",
           text: [
-            "The twenty-seven items are tagged in the file: done, to-do, not a priority, technically not possible yet. It would be easy to read those as verdicts. They are a snapshot of what could be committed to in December 2023, two months into the role, with a release still most of a year away.",
-            "By the time 3.0 shipped, and across the updates after it, every item on that list had been designed for. The GPS-signal indicator, the in-app notification popup and the half-screen map were all parked at the time of the test, and all picked back up.",
+            "The twenty-seven items are tagged done, to-do, not a priority, or not yet possible. Those tags are a snapshot of December 2023, not verdicts: by the time 3.0 shipped, every item on the list had been designed for.",
           ],
-        },
-        {
-          type: "claim",
-          level: "interpretation",
-          text: "Keeping the parked items on the list, tagged rather than deleted, is what made it possible to come back to them. A test result pruned down to what shipped that quarter stops being a record and becomes a changelog.",
-        },
-        {
-          type: "callout",
-          title: "Where the testing stopped",
-          tone: "caution",
-          text:
-            "The beta ran with riders. The dealer workflow was never put in front of a dealer, and the inspection state model was never tested as a model: both were built from requirements, platform constraints and design review. Research on one part of a product should not lend credibility to the rest.",
         },
       ],
     },
 
     {
-      id: "inspection",
-      kind: "concept",
-      title: "Predictive inspection, three states doing three different jobs",
-      standfirst: "The piece of this product with the clearest design argument in it.",
+      id: "define",
+      kind: "synthesis",
+      title: "Define",
+      standfirst: "The hard screens were never the ones a rider asks for.",
       blocks: [
         {
           type: "prose",
           text: [
-            "The bike predicts when it needs inspecting, which turns a continuous estimate into something the interface has to say out loud. The model settled on three states: all good, almost due, overdue. The temptation is to treat that as one component with a colour that changes. Each state asks the rider to do something categorically different, so the component changes shape with it.",
+            "A maintenance window opening. A tracker that has stopped reporting. A permission declined six months ago that a feature now needs. None is a screen anyone navigates to, and all are where the product either explains itself or becomes something you tolerate.",
+          ],
+        },
+        {
+          type: "claim",
+          level: "interpretation",
+          text:
+            "Permissions, stale data and unexplained technical values are one design problem wearing three costumes. Each is a moment where the system knows less than the interface implies, and the honest move is to show the gap rather than smooth it over.",
+        },
+      ],
+    },
+
+    {
+      id: "develop",
+      kind: "craft",
+      title: "Develop",
+      standfirst: "Three places that argument had to survive contact with a screen.",
+      blocks: [
+        {
+          type: "prose",
+          text: [
+            "The bike predicts when it needs inspecting, which turns a continuous estimate into something the interface has to say out loud. The model settled on three states, and each asks the rider for something categorically different, so the component changes shape rather than only colour.",
           ],
         },
         {
@@ -249,88 +293,19 @@ export const iotVenture: CaseStudy = {
             height: 560,
           },
           description:
-            "All good: no control at all, because a button here would invent a decision the rider does not have to make. Almost due: plan something, with the timing explained and a forward-looking action. Overdue: act now, with both the requirement and the way out clear. Each state is distinguished by label and marker shape as well as colour.",
+            "All good offers no control at all. Almost due offers scheduling, with the timing explained. Overdue states both the requirement and the way out. Each is distinguished by label and marker shape as well as colour.",
         },
         {
           type: "claim",
           level: "interpretation",
-          text: "The three states are not three severities of one message. \"Nothing to do\", \"plan something\" and \"act now\" are different speech acts, and an interface that renders them as one component with a changing colour flattens that distinction back out.",
-        },
-        {
-          type: "claim",
-          level: "concept",
-          text: "Offering no control at all in the \"all good\" state is better than offering a disabled or decorative one. An untested proposition, and the one I would most want to check.",
+          text:
+            "These are not three severities of one message. \"Nothing to do\", \"plan something\" and \"act now\" are different speech acts, and rendering them as one component with a changing colour flattens that distinction back out.",
         },
         {
           type: "prose",
           text: [
-            "The conditional behaviour sits in the dealer and workshop flow, where an inspection item can be skipped, but only once it is already overdue.",
+            "The same reasoning runs through the dealer portal, where bike shops order hardware, assign it and get back to work. One responsive system across phone, tablet and desktop: checking a delivery on an iPad behind the counter is the same task as doing it on a laptop out back. Own design file, sample data.",
           ],
-        },
-        {
-          type: "figure",
-          width: "wide",
-          image: {
-            src: "/work/iot-venture/dealer-flow.svg",
-            alt: "The dealer and workshop flow branching on inspection state, with the skip action reachable only from the overdue branch",
-            width: 1200,
-            height: 520,
-          },
-          description:
-            "A dealer opens an inspection item and reads its state. All good offers no action, so there is nothing to skip. Almost due offers scheduling. Only the overdue branch reaches skip, which is the decision: available everywhere it would be a way to dismiss a reminder, available only when something is overdue it is an escape hatch for a bike that is not present or an inspection already done elsewhere.",
-        },
-        {
-          type: "claim",
-          level: "hypothesis",
-          text: "Restricting skip to the overdue state keeps it legible as an exception rather than a dismissal. Asking dealers when they reach for it, and what they expect it to mean, would settle this.",
-        },
-      ],
-    },
-
-    {
-      id: "dealer-portal",
-      kind: "craft",
-      title: "The dealer portal, the same product, a different job",
-      standfirst:
-        "Bike shops do not use this product the way riders do. They order hardware, assign it and move on.",
-      blocks: [
-        {
-          type: "prose",
-          text: [
-            "Alongside the rider-facing work there is a portal for the bike shops that sell and fit the trackers. Their relationship to the product is transactional: order a batch, receive them, assign them to a branch, get back to running the shop. I designed it as one responsive system across phone, tablet and desktop, because checking a delivery on an iPad behind the counter is the same task as doing it on a laptop in the back office.",
-            "The screens below are my own design file, shown with its sample data. Serial numbers, store names, tax number and phone number are all placeholders, not customer records.",
-          ],
-        },
-        {
-          type: "figure",
-          width: "wide",
-          image: {
-            src: "/work/iot-venture/dealer-order-trackers.png",
-            alt: "Tablet view of the dealer Orders screen on the Order Trackers tab, with the shop name, a tax identification field, a quantity selector and a single Order Now action",
-            width: 769,
-            height: 672,
-            caption: "Ordering trackers, tablet width. Sample data; the support panel below has been cropped out.",
-          },
-          description:
-            "Orders is one screen with three tabs, not three destinations, because they are three views of one relationship with the same stock. The form itself is two fields and one button. The note underneath explains that trackers ordered through the portal are assigned to the store automatically.",
-        },
-        {
-          type: "claim",
-          level: "interpretation",
-          text: "Collapsing pending, ordering and history into tabs on a single Orders screen treats them as one relationship viewed three ways. Splitting them into separate destinations would have implied they were separate jobs.",
-        },
-        {
-          type: "figure",
-          width: "wide",
-          image: {
-            src: "/work/iot-venture/dealer-pending-empty.png",
-            alt: "Tablet view of the Pending Deliveries tab in its empty state, reading “There are no orders”",
-            width: 834,
-            height: 500,
-            caption: "The empty state, designed rather than left over.",
-          },
-          description:
-            "Pending Deliveries with nothing pending. The empty state says plainly that there are no orders and offers nothing else, no illustration, no prompt to order. For a shop owner checking whether something is on its way, the fastest useful answer is the word no.",
         },
         {
           type: "figure",
@@ -343,30 +318,18 @@ export const iotVenture: CaseStudy = {
             caption: "Assigning hardware to a branch. Sample serials and store names; the partner hotline has been removed.",
           },
           description:
-            "Assign Tracker is the last step of a tabbed account setup. Two columns: which trackers, and which branch. The counter beneath reads 06 of 30, so a shop working through a batch can see how far in they are without counting checkboxes.",
+            "Two columns: which trackers, and which branch. The counter beneath reads 06 of 30, so a shop working through a batch can see how far in they are without counting checkboxes.",
         },
         {
           type: "claim",
           level: "interpretation",
-          text: "Pairing a paginated serial list against a branch list, with a running count, treats assignment as a batch task someone is partway through rather than as a form they fill in once.",
+          text:
+            "Pairing a paginated serial list against a branch list, with a running count, treats assignment as a batch task someone is partway through rather than a form they fill in once.",
         },
-        {
-          type: "claim",
-          level: "hypothesis",
-          text: "Ordering the account tabs so assignment comes last implies a setup sequence that matches how a shop actually onboards. Whether shops move through it in that order was never checked.",
-        },
-      ],
-    },
-
-    {
-      id: "uncertainty",
-      kind: "craft",
-      title: "Three more places the system had to admit what it didn't know",
-      blocks: [
         {
           type: "prose",
           text: [
-            "The home screen shows this most clearly. Two alert conditions, the bike shaking and the bike leaving a 100 m radius, can each be on or off independently. Rather than store a label per combination, the status card composes a sentence from whichever are live and greys the icon of the one that is not.",
+            "And on the home screen, where two alert conditions can each be on or off independently, the status card composes a sentence from whichever are live rather than storing a label per combination.",
           ],
         },
         {
@@ -380,17 +343,27 @@ export const iotVenture: CaseStudy = {
             caption: "Three of the four combinations. Sample data throughout, placeholder tracker and owner names.",
           },
           description:
-            "With distance alone, the card says an alert will come if the bike moves 100 m away. With movement alone, if it moves or shakes while parked. With both, if it shakes or moves 100 m away. The inactive condition's icon greys out, so the sentence and the icon row always agree.",
+            "With distance alone, the card says an alert will come if the bike moves 100 m away. With movement alone, if it moves or shakes while parked. With both, either. The inactive condition's icon greys out, so the sentence and the icon row always agree.",
         },
         {
           type: "claim",
           level: "interpretation",
-          text: "Composing the status sentence from the live conditions, rather than storing one string per combination, is what keeps it honest as conditions are added. A fixed set of labels goes stale the moment a third condition exists.",
+          text:
+            "Composing the sentence from the live conditions is what keeps it honest as conditions are added. A fixed set of labels goes stale the moment a third condition exists.",
         },
+      ],
+    },
+
+    {
+      id: "deliver",
+      kind: "craft",
+      title: "Deliver",
+      standfirst: "One system, several brands, one designer.",
+      blocks: [
         {
           type: "prose",
           text: [
-            "The same screen carries the freshness problem in its top corner: a timestamp saying how long ago the last position was recorded. It is the smallest element on the page and the one doing the most work.",
+            "3.0 went out across the flagship and the white-label apps together. The design system is what made that possible: partner brands were configured rather than redrawn, so a change to a shared pattern did not become a week of reconciling four apps by hand.",
           ],
         },
         {
@@ -409,36 +382,29 @@ export const iotVenture: CaseStudy = {
             {
               title: "The fleet portal",
               text:
-                "Fleet operators look at many assets rather than one bike, which inverts the problem: the question is not \"what is this bike doing\" but \"which of these needs me\". Same underlying states, different unit of attention.",
+                "Fleet operators look at many assets rather than one bike, which inverts the question from \"what is this bike doing\" to \"which of these needs me\". Same states, different unit of attention.",
             },
           ],
-        },
-        {
-          type: "claim",
-          level: "interpretation",
-          text: "Permissions, stale data and unexplained technical values are the same design problem wearing three costumes, each is a moment where the system knows less than the interface implies, and the honest move is to show the gap rather than smooth it over.",
         },
       ],
     },
 
     {
-      id: "outcome",
+      id: "limits",
       kind: "reflection",
-      title: "What shipped, and what that does and does not prove",
+      title: "What this does not prove",
       blocks: [
         {
-          type: "prose",
-          text: [
-            "The 3.0 redesign shipped in October to November 2024 across the flagship app and the white-label apps built on the same platform, with a design system that kept them coherent without designing each partner brand separately. For a company with one designer, that system was what made the surface area tractable.",
-            "User retention rose 20% afterwards. The figure is my own rather than an independent audit, and it is the only number on this page.",
-            "After 3.0 the work continued as product evolution rather than a second redesign: successive releases took the state model, the permission patterns and the design system further into the product. Version 3.3 was on the roadmap, scheduled for release in October 2026, when I left. I designed toward it; I did not ship it, and nothing on this page should be read as showing a released 3.3.",
-            "What the work demonstrates without a number: a state model that distinguishes three different asks rather than three shades of one, and permission and freshness treated as primary design surfaces instead of error handling.",
-          ],
+          type: "callout",
+          title: "Where the testing stopped",
+          tone: "caution",
+          text:
+            "The beta ran with riders. The dealer workflow was never put in front of a dealer, and the inspection state model was never tested as a model: both were built from requirements, platform constraints and design review. Research on one part of a product should not lend credibility to the rest.",
         },
         {
           type: "prose",
           text: [
-            "The lesson I took is narrower than \"design for the user\": connected products are mostly conditional behaviour. The ideal state is the screen you design once and rarely look at again. Everything that makes a product feel trustworthy or shabby lives in the other states, and those get specified last.",
+            "The lesson is narrower than \"design for the user\": connected products are mostly conditional behaviour. The ideal state is the screen you design once and rarely look at again. Everything that makes a product feel trustworthy or shabby lives in the other states, and those get specified last.",
           ],
         },
       ],

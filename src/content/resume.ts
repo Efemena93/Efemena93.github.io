@@ -36,7 +36,7 @@ export const resume: Resume = {
     },
     {
       organisation: "Merlinmines",
-      title: "UI/UX Design Intern",
+      title: "UI/UX Designer",
       start: "Jun 2025",
       end: "Aug 2025",
       location: "Remote, US",
@@ -48,7 +48,7 @@ export const resume: Resume = {
     },
     {
       organisation: "Zalando SE",
-      title: "Product Design Intern",
+      title: "Product Designer",
       start: "Jun 2022",
       end: "Dec 2022",
       location: "Berlin, Germany",

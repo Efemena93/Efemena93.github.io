@@ -104,7 +104,7 @@ export const oliveIlive: CaseStudy = {
     {
       id: "research",
       kind: "research",
-      title: "Research",
+      title: "Discover",
       blocks: [
         {
           type: "prose",
@@ -163,13 +163,26 @@ export const oliveIlive: CaseStudy = {
           level: "interpretation",
           text: "The recurring shape across these findings is that people want to ask an uncomfortable question without an audience. That reframes the portal's core value from convenience to privacy of enquiry, and it is why the search-and-answer path became the primary flow rather than a secondary one.",
         },
+        {
+          type: "figure",
+          width: "wide",
+          image: {
+            src: "/work/olive-ilive/research.webp",
+            alt:
+              "A research slide listing the objectives, the problems surfaced by the survey, the proposed solutions, and a note on the five interview participants",
+            width: 1024,
+            height: 768,
+            caption:
+              "Research objectives, what the survey surfaced, and where the interviews went next.",
+          },
+        },
       ],
     },
 
     {
       id: "definition",
       kind: "synthesis",
-      title: "Hypothesis and problem statement",
+      title: "Define",
       blocks: [
         {
           type: "claim",
@@ -193,7 +206,7 @@ export const oliveIlive: CaseStudy = {
     {
       id: "ia",
       kind: "craft",
-      title: "Information architecture",
+      title: "Define: the information architecture",
       blocks: [
         {
           type: "prose",
@@ -212,13 +225,26 @@ export const oliveIlive: CaseStudy = {
           level: "interpretation",
           text: "The clusters did not match my original sitemap, so I revised the sitemap rather than the participants' mental model. This is the cheapest correction in the whole process and the one most often skipped.",
         },
+        {
+          type: "figure",
+          width: "wide",
+          image: {
+            src: "/work/olive-ilive/card-sorting.webp",
+            alt:
+              "Two OptimalSort dendrograms, an actual-agreement matrix and a best-merge tree, across twenty card labels, with explanatory text on each method",
+            width: 1024,
+            height: 768,
+            caption:
+              "The card sort, read two ways. Where the actual-agreement matrix and the best-merge tree disagreed is where the sitemap got rewritten.",
+          },
+        },
       ],
     },
 
     {
       id: "testing",
       kind: "craft",
-      title: "Testing, and an argument about splash screens",
+      title: "Develop",
       blocks: [
         {
           type: "prose",
@@ -260,13 +286,26 @@ export const oliveIlive: CaseStudy = {
           level: "interpretation",
           text: "For a first screen in a health context, simpler wins. My reading is that a splash screen is the moment a user decides how much of themselves to hand over, and ornament reads as a product with something to sell.",
         },
+        {
+          type: "figure",
+          width: "wide",
+          image: {
+            src: "/work/olive-ilive/wireframes.webp",
+            alt:
+              "Photographed paper wireframes of twelve screens above two rows of labelled mid-fidelity digital wireframes including splash, sign in, goal selection, food plan, community and search results",
+            width: 1024,
+            height: 768,
+            caption:
+              "Paper first, then mid fidelity. Twelve screens on paper cost an afternoon; the same twelve in a prototype cost a week.",
+          },
+        },
       ],
     },
 
     {
       id: "visual",
       kind: "craft",
-      title: "Visual design and the design language system",
+      title: "Deliver",
       blocks: [
         {
           type: "prose",
