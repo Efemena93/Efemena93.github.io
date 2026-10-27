@@ -8,7 +8,7 @@ import type { CaseStudy } from "../types";
  *
  * TEAM PROJECT — the single most important thing to get right here. This was
  * built by three people: Efemena Udezi, Kristy Yin and Miti Shah, as "Team
- * Golden Griffins" for ADES 5420 in autumn 2024, with Michael R Gibson as the
+ * Golden Griffins" in autumn 2024, with Michael R Gibson as the
  * course lead. The file's Roles slide lists four roles — User Researcher, User
  * Experience Designer, Visual Designer, Interaction Designer — for the TEAM as
  * a set, not split per person. Efemena confirmed she worked across all four.
@@ -48,7 +48,7 @@ export const hearEase: CaseStudy = {
   boundary:
     "A university team project, designed and tested but never engineered. Nothing here was manufactured, and no claim is made that the transcription or accent adaptation works; that was the premise of the design, not a result of it.",
   shortRole: "One of three designers",
-  projectType: "Graduate team project · ADES 5420, autumn 2024",
+  projectType: "Graduate team project · Autumn 2024",
   headline:
     "Usability testing found the calibration step was the problem (rated 4.4 out of 5 for confusion, against 1.4 at the best elsewhere), and the setup flow was rebuilt around it.",
   summary:
@@ -62,7 +62,7 @@ export const hearEase: CaseStudy = {
   order: 4,
   status: "prototype",
   year: "2024",
-  timeline: "Autumn 2024 · ADES 5420, University of North Texas",
+  timeline: "Autumn 2024 · University of North Texas",
   context: "Graduate team project",
   team: "Efemena Udezi, Kristy Yin and Miti Shah (Team Golden Griffins). Course lead: Michael R Gibson.",
   roles: ["User Researcher", "UX Designer", "Interaction Designer", "Visual Designer"],

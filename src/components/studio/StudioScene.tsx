@@ -75,16 +75,14 @@ export function StudioScene({ artifacts }: { artifacts: StudioArtifacts }) {
       />
 
       <Container className="relative pb-16 pt-16 sm:pt-20 lg:pb-24 lg:pt-24">
-        <div className="mb-14 flex flex-wrap items-end justify-between gap-x-8 gap-y-4 lg:mb-20">
+        <div className="mb-12 flex flex-wrap items-baseline justify-between gap-x-8 gap-y-3 lg:mb-16">
           <div>
+            {/* The heading stays even though the blurb under it has gone: the
+                section is labelled by this id, and removing it would leave the
+                work region with no accessible name. */}
             <Eyebrow as="h2" id="selected-work-heading">
               Selected work
             </Eyebrow>
-            <p className="mt-4 max-w-[46ch] text-body text-charcoal-soft">
-              Four projects I would want to be judged on: two shipped products, a
-              contribution inside a large product organisation, and a research-led
-              concept. Each one opens into the reasoning behind it.
-            </p>
           </div>
           <Link href="/work" className="link-underline label-type text-charcoal-soft">
             View all work →
