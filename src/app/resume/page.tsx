@@ -3,7 +3,7 @@ import { Reveal } from "@/components/motion/Reveal";
 import { Container, Eyebrow, Hairline, LinkButton, Section, Tag } from "@/components/primitives";
 import { GlowField } from "@/components/signals/GlowField";
 import { resume } from "@/content/resume";
-import { profile, site } from "@/content/site";
+import { site, toolList } from "@/content/site";
 import { pageMetadata } from "@/lib/seo";
 
 export const metadata = pageMetadata({
@@ -183,7 +183,7 @@ export default function ResumePage() {
                   Tools
                 </Eyebrow>
                 <ul className="flex flex-wrap gap-2">
-                  {profile.tools.map((tool) => (
+                  {toolList.map((tool) => (
                     <li key={tool}>
                       <Tag>{tool}</Tag>
                     </li>

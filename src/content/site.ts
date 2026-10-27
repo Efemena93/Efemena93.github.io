@@ -155,23 +155,89 @@ export const profile = {
     },
   ],
 
-  /** Tools listed on the résumé and on her own landing page. */
-  tools: [
-    "Figma",
-    "FigJam",
-    "Adobe XD",
-    "Sketch",
-    "Miro",
-    "Mural",
-    "Smaply",
-    "InVision",
-    "Optimal Sort",
-    "UsabilityHub",
-    "Notion",
-    "Jira",
-    "Confluence",
+  /**
+   * The current stack, grouped by what each tool is for.
+   *
+   * Three names here are corrections rather than changes of tool. UsabilityHub
+   * rebranded to Lyssna in October 2023; Optimal Sort is the card-sorting tool
+   * inside Optimal Workshop, which is what the suite is called; and the Adobe
+   * applications are listed by the suite rather than by XD, which Adobe has
+   * end-of-lifed. InVision is gone outright: it shut down at the end of 2024,
+   * and naming a dead product on a portfolio dates the portfolio.
+   *
+   * Case studies keep the tool names that were true at the time, because that
+   * is history. This list is the present tense.
+   */
+  toolGroups: [
+    {
+      title: "Design and prototyping",
+      items: ["Figma", "FigJam", "Adobe Creative Cloud", "Balsamiq", "Canva"],
+    },
+    {
+      title: "Research and testing",
+      items: ["Lyssna", "Optimal Workshop", "Google Forms"],
+    },
+    {
+      title: "Mapping and synthesis",
+      items: ["Miro", "Mural", "Smaply", "Lucidchart", "Pen and paper"],
+    },
+    {
+      title: "Delivery and collaboration",
+      items: ["Notion", "Jira", "Confluence", "Asana", "Microsoft Teams"],
+    },
+  ],
+
+  /**
+   * How I got here. Built from the résumé rather than from the older About
+   * page, which had IoT Venture running "till present" and placed the first
+   * role eight months late.
+   */
+  path: [
+    {
+      when: "2021",
+      what:
+        "Qualified as a UX designer with CareerFoundry, then took their UI specialisation. A visual design course the same year is where the UI half of my practice actually started, and it is the reason I do not treat research and craft as two jobs.",
+    },
+    {
+      when: "Dec 2021",
+      what:
+        "First professional design role, at World Simplified UG. Converting web templates into iOS and Android, designing the company's own site and app, and handing CSS starter templates to the frontend developers through Figma.",
+    },
+    {
+      when: "Jun 2022",
+      what:
+        "Zalando SE in Berlin, as a product designer on Zalando Plus. Research through service blueprinting to a pilot launch, inside an organisation large enough that the seams between teams were the real problem.",
+    },
+    {
+      when: "Oct 2023",
+      what:
+        "IoT Venture GmbH in Darmstadt, as the company's only designer. Two years across a connected-bike app, a partner dashboard and the white-label apps built on the same platform, ending with the 3.0 release.",
+    },
+    {
+      when: "Aug 2024",
+      what:
+        "Started an M.A. in Interaction Design at the University of North Texas, which I am still reading for. The capstone is on emotional continuity for military families during a deployment.",
+    },
+    {
+      when: "Jun 2025",
+      what:
+        "Merlinmines, remote, designing SpellCarver for the in-house engineers who use it. Three months, three iterations, and the first UI patterns the product had.",
+    },
+  ],
+
+  /** The part of a portfolio that is allowed to be a person. */
+  awayFromWork: [
+    "I am usually still at the computer. When I am not working, I am catching up on the season's anime and manga.",
+    "I travel as often as I can, and mostly for the parts of a place you only get by being in it: how people there do ordinary things, and what they eat. I am a foodie and I am not going to pretend otherwise.",
+    "And I like meeting people. They are most of what makes a place worth having gone to, and the rest of what makes a project worth doing. My bucket list says I am adventurous. I am inclined to believe it.",
   ],
 } as const;
+
+/**
+ * The flat tool list, derived so the two can never disagree. The footer takes
+ * the first three; the résumé page lists all of them.
+ */
+export const toolList: string[] = profile.toolGroups.flatMap((group) => [...group.items]);
 
 /* ------------------------------------------------------------- navigation */
 

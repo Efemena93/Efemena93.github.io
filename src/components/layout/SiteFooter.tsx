@@ -2,7 +2,7 @@ import Link from "next/link";
 
 import { MotionToggle } from "@/components/motion/MotionToggle";
 import { Container, Eyebrow, Hairline } from "@/components/primitives";
-import { primaryNav, profile, site } from "@/content/site";
+import { primaryNav, site, toolList } from "@/content/site";
 
 export function SiteFooter() {
   const year = new Date().getFullYear();
@@ -110,7 +110,7 @@ export function SiteFooter() {
             analytics, no cookies, no third-party fonts.
           </p>
           <p className="label-type">
-            {profile.tools.slice(0, 3).join(" · ")} · Next.js
+            {toolList.slice(0, 3).join(" · ")} · Next.js
           </p>
         </div>
       </Container>
