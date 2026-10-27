@@ -83,7 +83,20 @@ export const iotVenture: CaseStudy = {
   timeline: "Oct 2023 to Aug 2025 · Darmstadt, Germany",
   context: "Full-time, in-house role",
   roles: ["Sole UI/UX Designer"],
-  tools: [],
+  // Named by Efemena, 2026-10-27: "i used figma, adobe suite, jira,
+  // confluence, gpt enterprise, personio for my work with iot".
+  //
+  // Personio is deliberately not in this list. It is HR administration
+  // (leave, contracts, payroll), not design tooling, and a Tools row that
+  // includes it tells a reader nothing about how the work was made. It is
+  // hers to put back in one line if she wants it there.
+  tools: [
+    "Figma",
+    "Adobe Creative Cloud",
+    "Jira",
+    "Confluence",
+    "ChatGPT Enterprise",
+  ],
   disciplines: ["ux-research", "product-design", "interaction-design", "design-systems"],
   cover: { alt: "A phone and a connected-device panel, joined by a single line", accent: "blue" },
 
