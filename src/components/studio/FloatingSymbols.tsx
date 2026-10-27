@@ -125,7 +125,11 @@ const PLACEMENT: Record<
     visibility: "grid",
     animation: "float-b",
     rotate: "8deg",
-    halo: 0.88,
+    // Deepest of the four. It floats over the window, and once the uniform
+    // scrim came down to let the room show, this was the one object whose
+    // backdrop got brighter rather than darker. Measured at 3.13:1 before
+    // this change, which clears the 3:1 floor by nothing worth having.
+    halo: 0.96,
   },
   garment: {
     position: "left-[3%] top-[48%]",

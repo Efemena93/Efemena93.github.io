@@ -86,14 +86,20 @@ export function StudioHero() {
         style={{
           background: [
             // Localised: heaviest in the corner the introduction occupies.
-            "radial-gradient(ellipse 95% 80% at 6% 94%, rgba(20,16,13,0.88) 0%, rgba(20,16,13,0.72) 30%, rgba(20,16,13,0.42) 54%, rgba(20,16,13,0.12) 74%, rgba(20,16,13,0) 88%)",
+            // This layer does nearly all the contrast work now, so it is
+            // deeper and tighter than it was, and the rest of the room is
+            // left alone.
+            "radial-gradient(ellipse 88% 76% at 4% 96%, rgba(20,16,13,0.93) 0%, rgba(20,16,13,0.80) 28%, rgba(20,16,13,0.46) 52%, rgba(20,16,13,0.14) 74%, rgba(20,16,13,0) 90%)",
             // Grounds the floor, so the lower edge does not glare.
-            "linear-gradient(to top, rgba(20,16,13,0.55) 0%, rgba(20,16,13,0.16) 38%, rgba(20,16,13,0) 62%)",
-            // Uniform base. Takes the whole room down far enough that the
-            // drifting objects read against the window and the pinboard as
-            // well as against the wall, and turns the photograph into a
-            // lit room rather than an image competing with the text.
-            "linear-gradient(rgba(20,16,13,0.52), rgba(20,16,13,0.52))",
+            "linear-gradient(to top, rgba(20,16,13,0.50) 0%, rgba(20,16,13,0.14) 38%, rgba(20,16,13,0) 62%)",
+            // Uniform base, now light. It used to sit at 0.52, which held the
+            // text comfortably and cost the room everything that made it worth
+            // photographing: the pinboard, the shelf clutter, the books under
+            // the desk, the throw over the armchair. A studio is lived in
+            // because of its mess, and at 0.52 the mess was gone. At 0.26 the
+            // detail returns and the introduction still measures far above
+            // what it needs, because the ellipse above is doing that job.
+            "linear-gradient(rgba(20,16,13,0.26), rgba(20,16,13,0.26))",
           ].join(", "),
         }}
       />
