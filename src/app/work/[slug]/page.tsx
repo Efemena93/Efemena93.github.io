@@ -22,7 +22,7 @@ import {
   getCaseStudy,
   routableCaseStudies,
 } from "@/content/case-studies";
-import { DISCIPLINE_LABEL, SECTION_LABEL, STATUS_LABEL } from "@/content/types";
+import { DISCIPLINE_LABEL, STATUS_LABEL } from "@/content/types";
 import { pageMetadata } from "@/lib/seo";
 
 export function generateStaticParams() {
@@ -152,8 +152,15 @@ export default async function CaseStudyPage({
                 aria-labelledby={`${section.id}-heading`}
                 className="scroll-mt-28"
               >
+                {/* No kind eyebrow. Every section used to be stamped
+                    SYNTHESIS / RESEARCH / CRAFT / REFLECTION above its own
+                    title, twelve to twenty-two times a page. A reader does
+                    not need a taxonomy to know that a section headed
+                    "Discover" is research, and a page that labels its own
+                    parts that evenly reads as generated rather than written.
+                    `kind` stays on the data: it is still useful for ordering
+                    and for tooling, it just does not need printing. */}
                 <header className="mb-10">
-                  <Eyebrow className="mb-3">{SECTION_LABEL[section.kind]}</Eyebrow>
                   <h2
                     id={`${section.id}-heading`}
                     className="font-display text-h2 text-charcoal"

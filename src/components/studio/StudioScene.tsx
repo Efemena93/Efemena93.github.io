@@ -31,9 +31,15 @@ import { ZalandoBlueprintArtifact } from "./ZalandoBlueprintArtifact";
  * four at full size and three in a row does the ranking for them, which is
  * the job of a portfolio rather than of its reader.
  *
- * IoT Venture takes the first row largely to itself — the widest column, the
- * only one given a full row — because it is the flagship shipped product.
- * The other three share a staggered rhythm, so none reads as filler.
+ * IoT Venture takes the first row largely to itself, the widest column and
+ * the only one given a full row, because it is the flagship shipped product.
+ *
+ * The other three are deliberately not a rhythm. They were a 5/6 pair and a
+ * centred 6, which is a grid being even-handed rather than a page making a
+ * judgement. Now the widths differ (5, 4, 7), the starts differ (1, 9, 4) and
+ * the drops differ, each set by what the project actually has to show:
+ * SpellCarver has screens, Zalando has a wordmark, HearEase has a prototype.
+ * A column should be the size of its material.
  *
  * DOM order is visual order at every breakpoint, so what a keyboard or
  * screen-reader user meets matches what a sighted user reads. No `order-*`
@@ -94,7 +100,7 @@ export function StudioScene({ artifacts }: { artifacts: StudioArtifacts }) {
           <IotVentureArtifact
             study={iotVenture}
             index={1}
-            className="lg:col-span-8 lg:col-start-1 lg:h-auto"
+            className="lg:col-span-9 lg:col-start-1 lg:h-auto"
           />
         </div>
 
@@ -103,12 +109,15 @@ export function StudioScene({ artifacts }: { artifacts: StudioArtifacts }) {
           <MerlinMonitorArtifact
             study={merlinMines}
             index={2}
-            className="lg:col-span-5 lg:h-auto"
+            className="lg:col-span-5 lg:col-start-1 lg:h-auto"
           />
+          {/* Narrow and dropped. Zalando's only approved asset is a wordmark,
+              so giving it a screenshot-sized column was the layout insisting
+              on a rhythm the material could not fill. */}
           <ZalandoBlueprintArtifact
             study={zalando}
             index={3}
-            className="lg:col-span-6 lg:col-start-7 lg:mt-16 lg:h-auto"
+            className="lg:col-span-4 lg:col-start-9 lg:mt-28 lg:h-auto"
           />
         </div>
 
@@ -117,7 +126,7 @@ export function StudioScene({ artifacts }: { artifacts: StudioArtifacts }) {
           <HearEaseArtifact
             study={hearEase}
             index={4}
-            className="lg:col-span-6 lg:col-start-2 lg:h-auto"
+            className="lg:col-span-7 lg:col-start-4 lg:h-auto"
           />
         </div>
 
