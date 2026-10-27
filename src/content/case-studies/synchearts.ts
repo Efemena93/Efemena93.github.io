@@ -1,7 +1,7 @@
 import type { CaseStudy } from "../types";
 
 /**
- * Rewritten from the published SyncHearts case study on udezimena.work.
+ * Rewritten from the published SyncHearts case study on udezimena.work, which went offline in 2026. The text here is the record; the original is not retrievable.
  * All figures preserved exactly: 27 survey respondents, 19 questions,
  * 5 interviews, Aug–Dec 2024, 16 weeks. Nothing added that was not there.
  */
@@ -38,7 +38,6 @@ export const syncHearts: CaseStudy = {
     alt: "Two clock faces at different hours joined by a single line",
     accent: "clay",
   },
-  externalUrl: { label: "Original case study", href: "https://udezimena.work" },
 
   atAGlance: {
     problem:

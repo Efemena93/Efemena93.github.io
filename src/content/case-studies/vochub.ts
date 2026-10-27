@@ -1,7 +1,7 @@
 import type { CaseStudy } from "../types";
 
 /**
- * Rewritten from the published VocHub case study on udezimena.work.
+ * Rewritten from the published VocHub case study on udezimena.work, which went offline in 2026. The text here is the record; the original is not retrievable.
  * Figures preserved exactly: 55 survey participants, 4 attitudinal
  * interviews, 5 usability-test participants. Nothing added that was not
  * in the original — the source case study gives no exact project duration,
@@ -32,7 +32,6 @@ export const vocHub: CaseStudy = {
   tools: ["InVision", "Mural", "Figma", "Miro", "Draw.io", "Pen & paper"],
   disciplines: ["ux-research", "product-design", "interaction-design"],
   cover: { alt: "Stacked cards offset in a loose fan", accent: "clay" },
-  externalUrl: { label: "Original case study", href: "https://udezimena.work" },
 
   atAGlance: {
     problem:
@@ -102,7 +101,7 @@ export const vocHub: CaseStudy = {
             { value: "4", label: "Attitudinal interviews" },
             { value: "5", label: "Usability test participants" },
           ],
-          source: "Online survey and qualitative interviews conducted for the VocHub project, published on udezimena.work.",
+          source: "Online survey and qualitative interviews conducted for the VocHub project, 2022.",
         },
         {
           type: "prose",

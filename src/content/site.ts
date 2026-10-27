@@ -46,9 +46,12 @@ export const site = {
     responseTime: "I read everything and reply within a few days.",
   },
 
+  // udezimena.work is offline as of 2026-10-27. Every link to it has been
+  // removed rather than left to rot: a dead link on a portfolio is worse
+  // than no link, because a recruiter who clicks it learns something true
+  // about how carefully the site is kept.
   socials: [
     { label: "LinkedIn", href: "https://www.linkedin.com/in/efemena-udezi/" },
-    { label: "Previous portfolio", href: "https://udezimena.work" },
   ] as Array<{ label: string; href: string }>,
 
   /**

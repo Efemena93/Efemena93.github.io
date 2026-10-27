@@ -1,7 +1,7 @@
 import type { CaseStudy } from "../types";
 
 /**
- * Rewritten from the published VirtualBuddy case study on udezimena.work.
+ * Rewritten from the published VirtualBuddy case study on udezimena.work, which went offline in 2026. The text here is the record; the original is not retrievable.
  * The source case study describes a design process from user stories
  * through to a prototype tested across screen sizes, with no interviews or
  * surveys run and no exact project duration stated, so neither is invented
@@ -62,7 +62,6 @@ export const virtualBuddy: CaseStudy = {
   tools: ["UsabilityHub", "Figma", "Canva", "Vectornator", "Lucidchart", "Pen & paper"],
   disciplines: ["interaction-design", "product-design", "design-systems"],
   cover: { alt: "A small circle orbiting a larger one", accent: "sage" },
-  externalUrl: { label: "Original case study", href: "https://udezimena.work" },
 
   ethics: {
     is: [

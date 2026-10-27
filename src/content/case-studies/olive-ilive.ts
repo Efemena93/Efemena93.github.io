@@ -1,7 +1,7 @@
 import type { CaseStudy } from "../types";
 
 /**
- * Rewritten from the published Olive-Ilive case study on udezimena.work.
+ * Rewritten from the published Olive-Ilive case study on udezimena.work, which went offline in 2026. The text here is the record; the original is not retrievable.
  * Figures preserved exactly: 52 survey participants, 19 questions,
  * 5 interviews; A/B preference test n=17, split 12/5, reported at 95%
  * significance. Nothing added that was not in the original.
@@ -42,7 +42,6 @@ export const oliveIlive: CaseStudy = {
     alt: "A soft grid of overlapping circles, one filled",
     accent: "sage",
   },
-  externalUrl: { label: "Original case study", href: "https://udezimena.work/p/03aa289f" },
 
   atAGlance: {
     problem:
