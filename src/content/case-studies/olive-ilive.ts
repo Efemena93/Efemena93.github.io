@@ -21,7 +21,7 @@ export const oliveIlive: CaseStudy = {
   headline: "A/B preference test on 17 participants split 12 to 5 for the simpler splash screen, reported at 95% significance; card sorting sent me back to revise the sitemap.",
   summary:
     "An end-to-end study for a responsive health portal: 52 survey participants, 5 interviews, open card sorting, moderated usability testing and an A/B preference test. The design brief made privacy and inclusivity constraints, not features.",
-  featured: true,
+  featured: false,
   order: 7,
   status: "complete",
   year: "2022",

@@ -22,7 +22,7 @@ export const vocHub: CaseStudy = {
     "A five-participant usability round before final UI surfaced concrete fixes (clearer sign-up entry points, pronunciation practice, simpler onboarding), and a preference test set the final visual direction.",
   summary:
     "A vocabulary learning app built to practise the fundamentals of UX and UI design end to end: competitor analysis, a 55-respondent survey, four attitudinal interviews, personas and task flows, then wireframes tested with five participants before final UI.",
-  featured: true,
+  featured: false,
   order: 8,
   status: "complete",
   year: "2022",

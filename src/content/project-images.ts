@@ -42,11 +42,14 @@ export const projectImages: Record<string, ProjectImage> = {
     1100,
     715,
   ),
+  // The security report rather than the experience map. The map is Efemena's
+  // own diagram and still opens the case study; this is the product itself,
+  // which is what the card is for.
   "merlin-mines": real(
-    "/work/merlin-mines/experience-map.svg",
-    "SpellCarver experience map: discover on the marketing site, get oriented in the product, then act and investigate",
-    1200,
-    560,
+    "/work/merlin-mines/security-report-1400.webp",
+    "The SpellCarver security report: SAST, CVE and Bearer vulnerability counts by severity, above a filterable list of findings",
+    1400,
+    919,
   ),
   "olive-ilive": real(
     "/work/olive-ilive/splash-preference-test.png",

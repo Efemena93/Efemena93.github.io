@@ -37,7 +37,7 @@ export const virtualBuddy: CaseStudy = {
     "A complete, responsive interface system across multiple screen sizes, walked through informally with a small group of students on the Figma prototype, which confirmed the core flows rather than surfacing major issues. Never built as a live product.",
   summary:
     "A responsive study-community app: students create a profile, find and connect with people studying the same subject, and share study material. Designed from user stories through wireframes to a full UI system and prototype.",
-  featured: true,
+  featured: false,
   order: 9,
   status: "complete",
   year: "2022",

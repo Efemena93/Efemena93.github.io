@@ -9,10 +9,10 @@ import type { SymbolName } from "@/components/studio/ProjectSymbol";
  * apart, and a studio object pointing at a different project than its own
  * chip is the kind of bug nobody notices until a recruiter clicks it.
  *
- * `href` values are routes that exist. The brief named a fourth project
- * "Calando", which is not a project in this portfolio; its own rule ("use an
- * existing matching project section if available") points at Zalando, the
- * garment project, which is what the garment links to.
+ * `href` values are routes that exist. An earlier brief called the garment
+ * project "Calando", which matched nothing in this portfolio; the refinement
+ * brief of 2026-10-27 settled it as Zalando Plus, which is what the garment
+ * links to and what its label says.
  */
 
 export interface ProjectObject {
@@ -25,6 +25,6 @@ export interface ProjectObject {
 export const PROJECT_OBJECTS: ProjectObject[] = [
   { name: "bicycle", href: "/work/iot-venture", label: "IoT Venture, It's My Bike" },
   { name: "wand", href: "/work/merlin-mines", label: "SpellCarver" },
-  { name: "garment", href: "/work/zalando", label: "Zalando" },
+  { name: "garment", href: "/work/zalando", label: "Zalando Plus" },
   { name: "glasses", href: "/work/hearease", label: "HearEase" },
 ];

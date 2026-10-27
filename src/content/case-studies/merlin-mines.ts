@@ -40,7 +40,20 @@ import type { CaseStudy } from "../types";
  *     never product performance.
  *   · Participant count for the usability testing. She said "the developers",
  *     not how many.
- *   · Any screenshot. The interface is NDA-protected; see `boundary`.
+ *
+ * SCREENS, added 2026-10-27. Efemena supplied three SpellCarver screenshots
+ * directly, against a brief that asks for them by name: the Pipeline Builder
+ * with the Active Pipeline list, the documentation search modal, and the
+ * security report. They supersede the earlier NDA position on imagery, which
+ * was hers to set and hers to lift, and `boundary` has been narrowed to match.
+ *
+ * Two identifiers were painted out of the security report before it was
+ * published: the pipeline run ID and the repository name
+ * (`public/work/merlin-mines/security-report-*.webp`). Neither is design
+ * evidence, and together they said which internal repository had open
+ * findings on a given date. The CVE identifiers left visible are public
+ * advisories against base OS packages, not Merlin Mines code. The unredacted
+ * originals are not in this repository.
  */
 
 export const merlinMines: CaseStudy = {
@@ -55,12 +68,17 @@ export const merlinMines: CaseStudy = {
   shortRole: "UI/UX design intern · sole designer",
   projectType: "Internship, in-house · Merlin Mines",
   boundary:
-    "The interface itself is NDA-protected, so no screens appear on this page. The design reasoning, the process and the outcome are published with permission; the screens are available to talk through in an interview.",
+    "Three screens appear here with permission, with the run ID and repository name painted out. The rest of the interface stays unpublished, and so do the numbers on these screens: they are interface content, not product performance.",
   headline:
     "Established the product's first UI patterns and components as its only dedicated design resource, across three design iterations tested with the in-house developers who use the tool. Implemented by the end of the internship.",
   summary:
     "Three months as the sole designer on SpellCarver, a secure-automation product from Merlin Mines, across the public site and the product interface. Three iterations, tested with the in-house developers who use it, implemented before the internship ended.",
   featured: true,
+  card: {
+    description:
+      "Bringing clarity to complex DevSecOps workflows through actionable security insights, pipeline visibility, and developer-focused interfaces.",
+    category: "B2B SaaS / Developer Experience / Complex Workflows",
+  },
   order: 2,
   status: "complete",
   year: "2025",
@@ -114,7 +132,8 @@ export const merlinMines: CaseStudy = {
         {
           type: "prose",
           text: [
-            "SpellCarver is a secure-automation product: it runs CI/CD pipelines and keeps the security picture visible while it does. Like most products of its kind, it exists as two things at once, a public site that has to be persuasive, and a product interface that has to be precise.",
+            "SpellCarver explores the challenge of making technical infrastructure easier to understand and navigate. Through pipeline monitoring, security reporting, and documentation discovery, the interface brings complex operational information into a coherent experience that supports developer decision-making.",
+            "It is a secure-automation product: it runs CI/CD pipelines and keeps the security picture visible while it does. Like most products of its kind, it exists as two things at once, a public site that has to be persuasive, and a product interface that has to be precise.",
             "The failure mode is familiar. The marketing page promises something in confident, abstract language; you sign in, and the interface greets you with a different vocabulary and no obvious first move. Nothing is broken, but you have to reconstruct the product from its navigation.",
             "I joined as the only designer. The product had never had a dedicated design resource, so the question was not which screens needed polishing: it was what conventions the product should have at all, since whatever I set would be what the engineers built against.",
             "The one real advantage was that the users were in the building. SpellCarver is used by Merlin Mines' own developers, so the people I designed for were colleagues I could sit with, watch work, and put a prototype in front of.",
@@ -164,8 +183,50 @@ export const merlinMines: CaseStudy = {
         {
           type: "prose",
           text: [
-            "What I have not reproduced is what each round surfaced and what changed between the three iterations. That detail lives in the screens, and the screens are under NDA. So the process is documented, the findings are not public, and no individual decision below should be read as proven by the testing.",
+            "I mapped the product as three journeys and marked where each one costs a developer something. The friction points below are that analysis, ranked within each journey. They are the reason the four decisions further down this page are the four decisions, rather than a tidier set I could have arrived at from the brief alone.",
           ],
+        },
+        {
+          type: "figure",
+          width: "wide",
+          image: {
+            src: "/work/merlin-mines/user-flows-1065.webp",
+            alt:
+              "Three user-flow diagrams, each with a ranked list of friction points beside it: new user onboarding, pipeline management, and vulnerability resolution",
+            width: 1065,
+            height: 1042,
+            caption:
+              "The flow mapping. Three journeys, each with its friction ranked rather than listed, because a ranked list is a design brief and an unranked one is a complaint.",
+          },
+          description:
+            "Journey one, new user onboarding, runs from landing page through registration or login to a personal access token, a first pipeline and an initial run. Its ranked friction: token complexity, where users struggle most often; unclear error handling, where a failure does not say what to do next; navigation uncertainty on reaching the dashboard; uncertainty about the value on offer at the landing page; and a success state that does not confirm itself. Journey two, pipeline management, runs from the dashboard through managing a pipeline to adjusting or triggering a run. Its friction: difficulty finding the pipeline management tools, ambiguous status from delayed or unclear updates, uncertainty about the options when adjusting a configuration, failures and successes that are not clearly communicated, and no reinforcement on success. Journey three, vulnerability resolution, runs from the dashboard through the security section to identifying, resolving and confirming a vulnerability. Its friction: severity indicators and remediation steps that read as confusing, navigation to the security areas that is unintuitive, ambiguity about which remediation to take, weak confirmation after acting, and nothing that marks the problem as closed.",
+        },
+        {
+          type: "claimGroup",
+          title: "What the mapping put at the top of each journey",
+          claims: [
+            {
+              level: "interpretation",
+              text:
+                "Navigation is the only friction that appears in all three journeys: finding the pipeline tools, reaching the security area, and knowing where to go on first arrival. That is what made grouping by intent the first decision rather than a later refinement.",
+            },
+            {
+              level: "interpretation",
+              text:
+                "The second recurring theme is that the product goes quiet at exactly the moments a developer most needs it to speak: after a failure, after an adjustment, and after a vulnerability is resolved. Status in words, log output on the run itself, and explicit confirmation all answer that rather than a visual preference.",
+            },
+            {
+              level: "hypothesis",
+              text:
+                "Ranking the friction within each journey, rather than pooling it into one list, keeps a fix proportionate to where it hurts. Token complexity leads onboarding and nothing else; treating it as the product's biggest problem would have been a misreading of one journey as the whole.",
+            },
+          ],
+        },
+        {
+          type: "callout",
+          title: "What this does and does not establish",
+          text:
+            "These friction points are my own analysis, recorded on the flow-mapping sheet. Whether each one was observed in the testing sessions with the developers or reasoned out beforehand is not something the sheet records, so they are marked as interpretation rather than as findings. The three iterations and the testing are separately documented above; what each round changed is still not public.",
         },
         {
           type: "claimGroup",
@@ -268,6 +329,32 @@ export const merlinMines: CaseStudy = {
           ],
         },
         {
+          type: "figure",
+          width: "wide",
+          image: {
+            src: "/work/merlin-mines/site-map-1065.webp",
+            alt:
+              "Site map of SpellCarver: a dashboard branching into Spellcarver, Settings, Spellbook, Account and Documents, each with its own destinations beneath it",
+            width: 1065,
+            height: 914,
+            caption:
+              "The site map behind the grouping. Five areas, each answering a different reason for opening the product: run work, configure scanning, ask the assistant, manage the account, read the documentation.",
+          },
+        },
+        {
+          type: "figure",
+          width: "wide",
+          image: {
+            src: "/work/merlin-mines/doc-search-1400.webp",
+            alt:
+              "The documentation search modal open over the docs page, with the query getting matched against two guides, each labelled guide and summarised in a line, and keyboard hints for navigate, select and close along the bottom",
+            width: 1400,
+            height: 865,
+            caption:
+              "Documentation search as a modal over the page rather than a separate destination. Results carry a kind and a one-line summary, so the choice is made before the reader leaves what they were doing, and the whole thing is reachable and dismissible from the keyboard.",
+          },
+        },
+        {
           type: "claim",
           level: "hypothesis",
           text: "Grouping destinations by intent lets a developer predict where a task belongs without reading the full navigation. Watching a developer hesitate before a correct click is how you tell whether a grouping works, and hesitation is what the iterations were for.",
@@ -288,6 +375,19 @@ export const merlinMines: CaseStudy = {
           ],
         },
         {
+          type: "figure",
+          width: "wide",
+          image: {
+            src: "/work/merlin-mines/pipeline-builder-1400.webp",
+            alt:
+              "The SpellCarver Pipeline Builder above a list of active pipeline runs, each showing repository, branch, elapsed duration, a Running status pill, the latest log line and a progress bar",
+            width: 1400,
+            height: 879,
+            caption:
+              "Pipeline Builder above Active Pipeline. Each run states its repository and branch, how long it has been going, a status in words as well as colour, the latest log line and its progress, so a developer can tell whether it is running and how far without opening anything.",
+          },
+        },
+        {
           type: "claim",
           level: "concept",
           text: "Separating summary metrics from live pipeline state, and giving each a distinct visual treatment, lets a developer orient before acting rather than while acting.",
@@ -306,6 +406,19 @@ export const merlinMines: CaseStudy = {
             "The product is positioned around secure automation, which makes it strange to ask someone to hunt for the security information. It became a named top-level area with a predictable location, so there is one answer to \"where would I look\" rather than several plausible ones.",
             "Worth saying plainly: making security easy to find is an interface decision. It does not make the product secure, and nothing in this case study should be read as a compliance claim.",
           ],
+        },
+        {
+          type: "figure",
+          width: "wide",
+          image: {
+            src: "/work/merlin-mines/security-report-1400.webp",
+            alt:
+              "The security report: three panels counting SAST, CVE and Bearer findings by critical, high, medium and low severity, above a filterable list of all vulnerabilities with the affected component and an open status on each",
+            width: 1400,
+            height: 919,
+            caption:
+              "The security report. Three scanners summarised by severity, then every finding in one filterable list with its affected component. Counts are stated as numbers and as words, and each finding carries its status in text, so nothing here depends on telling red from amber. The run identifier and repository name are painted out; the figures are sample content, not a measurement of anything.",
+          },
         },
         {
           type: "claim",

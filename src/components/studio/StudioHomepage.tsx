@@ -18,21 +18,27 @@ import { StudioAmbient, StudioScene, type StudioArtifacts } from "./StudioScene"
  *
  * ── The screen-reader index ───────────────────────────────────────────────
  * A spatial arrangement is worth nothing to someone who cannot see it, so the
- * work section opens with a plain ordered list of the seven projects in the
- * order they appear. It is deliberately not links — the artifacts below are
- * the links, and duplicating them would give a keyboard user fourteen tab
- * stops for seven projects.
+ * work section opens with two plain ordered lists: the four featured projects,
+ * then the three explorations. Two lists rather than one because the split is
+ * the editorial point of the section, and a single list of seven would flatten
+ * exactly the hierarchy the visual layout exists to express.
+ *
+ * Deliberately not links — the artifacts below are the links, and duplicating
+ * them would give a keyboard user fourteen tab stops for seven projects.
  */
 
 export function StudioHomepage({ artifacts }: { artifacts: StudioArtifacts }) {
   const { iotVenture, merlinMines, zalando, hearEase, oliveIlive, vocHub, virtualBuddy } =
     artifacts;
 
-  const index = [
+  const featured = [
     { study: iotVenture, name: "IoT Venture GmbH, It's My Bike", what: "connected-bike app and partner dashboards" },
     { study: merlinMines, name: merlinMines.title, what: "CI/CD automation product for in-house developers" },
-    { study: zalando, name: "Zalando", what: "service design and design-system contributions" },
+    { study: zalando, name: "Zalando Plus", what: "service design and design-system contributions" },
     { study: hearEase, name: hearEase.title, what: "assistive smart glasses and companion app" },
+  ];
+
+  const explorations = [
     { study: oliveIlive, name: oliveIlive.title, what: "responsive health portal" },
     { study: vocHub, name: vocHub.title, what: "vocabulary-learning app" },
     { study: virtualBuddy, name: virtualBuddy.title, what: "responsive study-community app" },
@@ -46,9 +52,17 @@ export function StudioHomepage({ artifacts }: { artifacts: StudioArtifacts }) {
       {/* ── Section 02: the work ── */}
       <section id="selected-work" aria-labelledby="selected-work-heading" className="scroll-mt-24">
         <div className="sr-only">
-          <p>Seven projects, in the order they appear.</p>
+          <p>Four featured projects, in the order they appear.</p>
           <ol>
-            {index.map(({ study, name, what }) => (
+            {featured.map(({ study, name, what }) => (
+              <li key={study.slug}>
+                {name}, {what}.
+              </li>
+            ))}
+          </ol>
+          <p>Then three further explorations.</p>
+          <ol>
+            {explorations.map(({ study, name, what }) => (
               <li key={study.slug}>
                 {name}, {what}.
               </li>

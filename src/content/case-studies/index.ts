@@ -43,12 +43,23 @@ assertContentIntegrity(validateCaseStudies(allCaseStudies));
 export const publishedCaseStudies = allCaseStudies.filter((s) => s.visibility === "published");
 
 /**
- * Selected work — the homepage and the work index.
+ * Selected work — the four projects the portfolio leads with.
  *
- * Only completed projects appear here. Scaffolds are preserved in the
- * repository but never compete with finished work for a recruiter's attention.
+ * `featured` is an editorial judgement, not a quality gate: everything here
+ * is published, complete and reachable. It marks the four that answer the
+ * question a hiring designer is actually asking, so the homepage can give
+ * them room instead of spreading attention across seven.
  */
 export const selectedWork = publishedCaseStudies.filter((s) => s.featured);
+
+/**
+ * Everything else that is published: the self-directed and course work.
+ *
+ * Demoted, never hidden. Each one keeps its route, its images, its place in
+ * /work and in the sitemap, and its position in next/previous navigation.
+ * The only thing that changes is how much of the homepage it occupies.
+ */
+export const moreExplorations = publishedCaseStudies.filter((s) => !s.featured);
 
 /**
  * Archived work: reachable by direct link, deliberately not listed and not in

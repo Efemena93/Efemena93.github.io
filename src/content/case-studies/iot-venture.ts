@@ -8,6 +8,14 @@ import type { CaseStudy } from "../types";
  * product-level material is cleared for public disclosure. The slug is
  * unchanged so the existing URL keeps working.
  *
+ * NEEDS EFEMENA'S CONFIRMATION — the 3.3 date.
+ * The refinement brief of 2026-10-27 states that version 3.3 "was scheduled
+ * for release in October 2026 when I left". Her tenure on this page, and on
+ * the résumé, is Oct 2023 to Aug 2025, which puts that date fourteen months
+ * after she left. Both can be true (a roadmap slot a year out), so the page
+ * says what she said and claims nothing more. If the date is wrong, the
+ * sentence in the "outcome" section is the only place it appears.
+ *
  * WHAT IS DELIBERATELY WITHHELD, and must stay withheld unless she says
  * otherwise — the source pack flags each of these as needing permission:
  *   · The vendor/OEM integration names (the drive-system and tracker
@@ -64,6 +72,11 @@ export const iotVenture: CaseStudy = {
   summary:
     "As the company's only designer, owned UX and UI across a connected-bike product: the flagship app, a partner dashboard and white-label partner apps. The through-line is conditional behaviour: inspection states, permission outcomes and stale device data are all cases where the interface has to be honest about what it does and does not know.",
   featured: true,
+  card: {
+    description:
+      "Making connected mobility simpler through intuitive tracking, thoughtful security interactions, and a unified product experience.",
+    category: "Product Design / Interaction Design / Design Systems",
+  },
   order: 1,
   status: "complete",
   year: "2023 to 2025",
@@ -114,7 +127,8 @@ export const iotVenture: CaseStudy = {
         {
           type: "prose",
           text: [
-            "IoT Venture builds connected-bike hardware and the software around it: an app for riders, a dashboard for partners, and white-label apps carrying partner brands. For two years I was the company's only designer, so every surface was mine and none could be redesigned alone. A change to the flagship app had to survive being rebranded for a partner who had not asked for it.",
+            "As the sole designer at IoT Venture, I led the design and continued evolution of It's My Bike, shaping a complex connected-mobility product into a more intuitive experience. From the Mobility 3.0 release in 2024 to subsequent iterations, the work combined user research, interaction design, visual systems, and product-level decision-making.",
+            "IoT Venture builds connected-bike hardware and the software around it: an app for riders, a dashboard for partners, and white-label apps carrying partner brands. For two years every surface was mine, and none could be redesigned alone. A change to the flagship app had to survive being rebranded for a partner who had not asked for it.",
             "The 3.0 redesign was the centre of the role. But the work I keep returning to is smaller and less photogenic: the screens that appear when the system knows something the rider did not ask about. A maintenance window opening. A tracker that has stopped reporting. A permission the rider declined six months ago that a feature now needs. Those are the screens where a connected product either explains itself or becomes something you tolerate.",
           ],
         },
@@ -417,6 +431,7 @@ export const iotVenture: CaseStudy = {
           text: [
             "The 3.0 redesign shipped in October to November 2024 across the flagship app and the white-label apps built on the same platform, with a design system that kept them coherent without designing each partner brand separately. For a company with one designer, that system was what made the surface area tractable.",
             "User retention rose 20% afterwards. The figure is my own rather than an independent audit, and it is the only number on this page.",
+            "After 3.0 the work continued as product evolution rather than a second redesign: successive releases took the state model, the permission patterns and the design system further into the product. Version 3.3 was on the roadmap, scheduled for release in October 2026, when I left. I designed toward it; I did not ship it, and nothing on this page should be read as showing a released 3.3.",
             "What the work demonstrates without a number: a state model that distinguishes three different asks rather than three shades of one, and permission and freshness treated as primary design surfaces instead of error handling.",
           ],
         },

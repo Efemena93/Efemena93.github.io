@@ -32,7 +32,7 @@ export function ZalandoBlueprintArtifact({
       raise={raise}
       study={study}
       index={index}
-      title="Zalando"
+      title="Zalando Plus"
       subtitle="Plus early access and design-system contributions"
       discipline="Service design · Design systems · Product strategy"
       sceneDescription="The Zalando logo. The work was a service blueprint with touchpoints and design-token contributions."

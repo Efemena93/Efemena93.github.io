@@ -54,6 +54,11 @@ export const hearEase: CaseStudy = {
   summary:
     "A three-person graduate project on assistive wearables: smart glasses that transcribe conversation in real time and adapt to accents, with a companion app for setup, noise control and saved transcripts. The work ran from user and expert interviews through to a tested high-fidelity prototype.",
   featured: true,
+  card: {
+    description:
+      "Exploring more inclusive conversations through adaptive speech-to-text glasses and a companion experience designed around communication needs.",
+    category: "Accessibility / UX Research / Interaction Design / Concept",
+  },
   order: 4,
   status: "prototype",
   year: "2024",
@@ -108,6 +113,7 @@ export const hearEase: CaseStudy = {
         {
           type: "prose",
           text: [
+            "HearEase is a research-led design concept exploring how assistive technology could make everyday conversations more accessible for people with hearing difficulties. Through user scenarios, interaction flows, prototyping, and usability feedback, the project investigates how speech transcription, speaker recognition, and environmental controls could work together.",
             "The situation we designed for is specific: not a quiet room with one person talking, but a fast, crowded discussion where several people speak over each other in unfamiliar accents. Existing captioning handles the easy version well. The hard version is where someone stops being able to follow, and to contribute, before they can ask anyone to repeat themselves.",
             "HearEase is a pair of smart glasses that transcribes speech in real time, adapts to different accents, and lets the wearer isolate background noise by how much they choose, with a companion app for setting it up, choosing the environment, and reading back saved conversations.",
           ],

@@ -1,14 +1,13 @@
+import Image from "next/image";
 import Link from "next/link";
 
 import { Container, Eyebrow } from "@/components/primitives";
+import { projectImages } from "@/content/project-images";
 import type { CaseStudy } from "@/content/types";
 
-import { HealthDashboardArtifact } from "./HealthDashboardArtifact";
 import { HearEaseArtifact } from "./HearEaseArtifact";
 import { IotVentureArtifact } from "./IotVentureArtifact";
 import { MerlinMonitorArtifact } from "./MerlinMonitorArtifact";
-import { VirtualBuddyArtifact } from "./VirtualBuddyArtifact";
-import { VocHubArtifact } from "./VocHubArtifact";
 import { ZalandoBlueprintArtifact } from "./ZalandoBlueprintArtifact";
 
 /**
@@ -20,16 +19,25 @@ import { ZalandoBlueprintArtifact } from "./ZalandoBlueprintArtifact";
  * work. That separation is the point of the revision — the studio is the
  * experience, the projects are discovered after it.
  *
- * ── Order ─────────────────────────────────────────────────────────────────
- * IoT Venture, SpellCarver, Zalando, HearEase, then the remaining projects in
- * their existing relative order. DOM order is that order, at every
- * breakpoint, so what a keyboard or screen-reader user meets matches what a
- * sighted user reads. No `order-*` utility reshuffles anything here.
+ * ── Two tiers, not seven equals ───────────────────────────────────────────
+ * Selected work is the four featured projects: IoT Venture, SpellCarver,
+ * Zalando Plus, HearEase. They get the artifacts, the space and the staggered
+ * composition. The three self-directed and course projects follow in "More
+ * explorations", a compact row that is plainly subordinate.
+ *
+ * Demoted is not hidden. Each exploration keeps its route, its images, its
+ * place in /work and in the sitemap, and its position in next/previous
+ * navigation. Seven projects at equal weight asked a visitor to rank them;
+ * four at full size and three in a row does the ranking for them, which is
+ * the job of a portfolio rather than of its reader.
  *
  * IoT Venture takes the first row largely to itself — the widest column, the
  * only one given a full row — because it is the flagship shipped product.
- * Everything after it shares a two-column rhythm with staggered offsets, so
- * no project reads as filler.
+ * The other three share a staggered rhythm, so none reads as filler.
+ *
+ * DOM order is visual order at every breakpoint, so what a keyboard or
+ * screen-reader user meets matches what a sighted user reads. No `order-*`
+ * utility reshuffles anything here.
  *
  * ── Zero client JavaScript ────────────────────────────────────────────────
  * Server component throughout. Illumination and the 2–4px lift are CSS on
@@ -51,6 +59,8 @@ export function StudioScene({ artifacts }: { artifacts: StudioArtifacts }) {
   const { iotVenture, merlinMines, zalando, hearEase, oliveIlive, vocHub, virtualBuddy } =
     artifacts;
 
+  const explorations = [oliveIlive, vocHub, virtualBuddy];
+
   return (
     <div className="relative border-t border-line bg-paper">
       {/* The transition out of the hero: the room's light falls away and the
@@ -70,9 +80,10 @@ export function StudioScene({ artifacts }: { artifacts: StudioArtifacts }) {
             <Eyebrow as="h2" id="selected-work-heading">
               Selected work
             </Eyebrow>
-            <p className="mt-4 max-w-[44ch] text-body text-charcoal-soft">
-              Seven projects, shipped products, a graduate team project and self-directed
-              studies. Each one opens into the reasoning behind it.
+            <p className="mt-4 max-w-[46ch] text-body text-charcoal-soft">
+              Four projects I would want to be judged on: two shipped products, a
+              contribution inside a large product organisation, and a research-led
+              concept. Each one opens into the reasoning behind it.
             </p>
           </div>
           <Link href="/work" className="link-underline label-type text-charcoal-soft">
@@ -103,35 +114,108 @@ export function StudioScene({ artifacts }: { artifacts: StudioArtifacts }) {
           />
         </div>
 
-        {/* ── 4 and 5. HearEase and Olive-Ilive ── */}
-        <div className="mt-20 grid gap-y-16 border-t border-line pt-14 md:grid-cols-2 md:gap-x-8 lg:mt-24 lg:grid-cols-12 lg:items-start lg:gap-x-8 lg:gap-y-0 lg:pt-16">
+        {/* ── 4. HearEase, closing the featured four ── */}
+        <div className="mt-20 grid border-t border-line pt-14 lg:mt-24 lg:grid-cols-12 lg:pt-16">
           <HearEaseArtifact
             study={hearEase}
             index={4}
-            className="lg:col-span-5 lg:col-start-2 lg:h-auto"
-          />
-          <HealthDashboardArtifact
-            study={oliveIlive}
-            index={5}
-            className="lg:col-span-5 lg:col-start-8 lg:mt-20 lg:h-auto"
+            className="lg:col-span-6 lg:col-start-2 lg:h-auto"
           />
         </div>
 
-        {/* ── 6 and 7. VocHub and VirtualBuddy ── */}
-        <div className="mt-20 grid gap-y-16 border-t border-line pt-14 md:grid-cols-2 md:gap-x-8 lg:mt-24 lg:grid-cols-12 lg:items-start lg:gap-x-8 lg:gap-y-0 lg:pt-16">
-          <VocHubArtifact
-            study={vocHub}
-            index={6}
-            className="lg:col-span-5 lg:col-start-1 lg:h-auto"
-          />
-          <VirtualBuddyArtifact
-            study={virtualBuddy}
-            index={7}
-            className="lg:col-span-5 lg:col-start-7 lg:mt-16 lg:h-auto"
-          />
+        {/* ── More explorations ──
+            Deliberately a different shape from everything above: a row, not a
+            scene. No artifact illustrations, smaller type, one line each. The
+            contrast is the message — these are real projects worth reading,
+            and they are not what this portfolio is arguing. */}
+        <div className="mt-24 border-t border-line pt-14 lg:mt-28 lg:pt-16">
+          <div className="flex flex-wrap items-end justify-between gap-x-8 gap-y-3">
+            <div>
+              <Eyebrow as="h3" id="more-explorations-heading">
+                More explorations
+              </Eyebrow>
+              <p className="mt-3 max-w-[48ch] text-small leading-relaxed text-charcoal-soft">
+                Self-directed and course projects, kept because the thinking in them
+                still holds up.
+              </p>
+            </div>
+          </div>
+
+          <ul className="mt-10 grid gap-x-8 gap-y-10 sm:grid-cols-2 lg:grid-cols-3">
+            {explorations.map((study, i) => (
+              <ExplorationCard key={study.slug} study={study} index={5 + i} />
+            ))}
+          </ul>
         </div>
+
       </Container>
     </div>
+  );
+}
+
+/**
+ * One exploration: a thumbnail where a real one exists, a name, a line.
+ *
+ * Image only when `projectImages` says it is real evidence. VirtualBuddy's
+ * entry is still a stand-in illustration, and a placeholder on the homepage
+ * is worse than no image at all — it dresses an empty slot as a screen. That
+ * card renders as type alone until an approved screen exists for it.
+ *
+ * One link per card, named by its own contents, so a keyboard user gets three
+ * stops here rather than six.
+ */
+function ExplorationCard({ study, index }: { study: CaseStudy; index: number }) {
+  const image = projectImages[study.slug];
+  const showImage = image && !image.placeholder;
+
+  return (
+    <li>
+      <Link
+        href={`/work/${study.slug}`}
+        className="group/exp block rounded focus-visible:outline-offset-4"
+      >
+        <p className="label-type text-charcoal-muted">{String(index).padStart(2, "0")}</p>
+
+        {showImage ? (
+          <div className="mt-3 overflow-hidden rounded-md ring-1 ring-line">
+            <Image
+              src={image.src}
+              alt={image.alt}
+              width={image.width}
+              height={image.height}
+              sizes="(min-width: 1024px) 22rem, (min-width: 640px) 45vw, 90vw"
+              className="h-40 w-full object-cover object-top opacity-90 transition-opacity duration-500 ease-[var(--ease-out-soft)] group-hover/exp:opacity-100 group-focus-visible/exp:opacity-100"
+            />
+          </div>
+        ) : (
+          /* An empty frame, not a stand-in picture. It holds the row's
+             baseline so the card without a screen does not read as a
+             rendering fault, and it says plainly why it is empty rather
+             than dressing the gap with an illustration. */
+          <div className="mt-3 flex h-40 items-center justify-center rounded-md border border-dashed border-line px-4">
+            <p className="label-type text-center text-charcoal-muted">
+              No approved screen yet
+            </p>
+          </div>
+        )}
+
+        <h4 className="mt-4 font-display text-h4 text-charcoal">
+          <span className="link-underline">{study.title}</span>
+        </h4>
+        <p className="mt-1.5 text-small leading-snug text-charcoal-soft">
+          {study.problemArea}
+        </p>
+        <p className="label-type mt-3 inline-flex min-h-11 items-center gap-2 text-blue-deep">
+          <span className="link-underline">View project</span>
+          <span
+            aria-hidden="true"
+            className="transition-transform duration-300 ease-[var(--ease-out-soft)] group-hover/exp:translate-x-1 group-focus-visible/exp:translate-x-1"
+          >
+            →
+          </span>
+        </p>
+      </Link>
+    </li>
   );
 }
 

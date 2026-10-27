@@ -286,6 +286,30 @@ export interface CaseStudy {
   /** Two or three sentences. Used on cards and in social metadata. */
   summary: string;
   featured: boolean;
+  /**
+   * How the project introduces itself on the homepage.
+   *
+   * Separate from `summary` on purpose. `summary` says what the project was;
+   * this says what the work achieved, in the voice a recruiter meets first.
+   * It lives here rather than as a prop on the artifact component so that the
+   * sentence a visitor reads is content, reviewable alongside every other
+   * claim, rather than markup buried in an SVG scene.
+   *
+   * `category` is an editorial line, not the typed `disciplines` list below.
+   * The two differ deliberately: "B2B SaaS", "Developer Experience" and
+   * "Accessibility" describe a project's territory and have no place in a
+   * closed taxonomy of what Efemena practises, while `disciplines` stays the
+   * typed, filterable set. Where only one of the two can be right, the
+   * discipline list is the one the case-study page uses.
+   *
+   * Optional: only the featured projects carry one.
+   */
+  card?: {
+    /** One sentence. What the work achieved, not what the product is. */
+    description: string;
+    /** Editorial territory line, e.g. "Service Design / UX/UI / Design Systems". */
+    category: string;
+  };
   order: number;
   status: ProjectStatus;
   year: string;

@@ -58,7 +58,7 @@ export function ArtifactLabel({
         <span className="link-underline">{title}</span>
       </h3>
 
-      <p className="mt-1.5 max-w-[34ch] text-small leading-snug text-charcoal-soft">
+      <p className="mt-1.5 max-w-[40ch] text-small leading-snug text-charcoal-soft">
         {subtitle}
       </p>
 

@@ -10,7 +10,7 @@ import type { CaseStudy } from "../types";
 export const zalando: CaseStudy = {
   slug: "zalando",
   visibility: "published",
-  title: "Zalando",
+  title: "Zalando Plus",
   premise: "Product design intern leading research through service blueprinting and pilot launch for Zalando Plus.",
   problemArea: "E-commerce · service design for Zalando Plus",
   humanProblem:
@@ -23,6 +23,11 @@ export const zalando: CaseStudy = {
   summary:
     "Led design from research through service blueprinting and pilot launch, shipping features for Zalando Plus and producing a design blueprint used across the team.",
   featured: true,
+  card: {
+    description:
+      "Shaping more cohesive membership experiences through service design, scalable interface patterns, and cross-functional collaboration.",
+    category: "Service Design / UX/UI / Design Systems",
+  },
   order: 3,
   status: "complete",
   year: "2022",
@@ -51,7 +56,8 @@ export const zalando: CaseStudy = {
         {
           type: "prose",
           text: [
-            "As a product design intern on Zalando Plus, I led the design process end to end for a set of features, from research and concept through service blueprinting to a pilot launch. I also produced a design blueprint meant to keep the team's output cohesive going forward, not just for the features I shipped myself.",
+            "My work on Zalando Plus involved contributing to a larger product ecosystem where consistency, collaboration, and service experiences intersect. Through service blueprinting, interface patterns, and design-system contributions, I supported the development of more coherent customer experiences.",
+            "As a product design intern, I led the design process end to end for a set of features, from research and concept through service blueprinting to a pilot launch. I also produced a design blueprint meant to keep the team's output cohesive going forward, not just for the features I shipped myself.",
           ],
         },
       ],

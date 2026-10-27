@@ -22,6 +22,11 @@ import type { SymbolName } from "./ProjectSymbol";
  * `group-focus-within` on this element. Nothing tracks the pointer, so it
  * behaves identically to touch, keyboard and mouse.
  *
+ * ── Where the words come from ─────────────────────────────────────────────
+ * A featured project supplies its own homepage description and category in
+ * `study.card`. The `subtitle` and `discipline` props are the fallback for
+ * projects without one, which is why both remain required.
+ *
  * ── The visual is decorative; the text is the content ─────────────────────
  * The SVG scenes are schematic — geometric regions standing in for research
  * material and interface layers. They are `aria-hidden`, and they carry no
@@ -35,7 +40,10 @@ import type { SymbolName } from "./ProjectSymbol";
  *  frame: layered sheet, upright device, wide crop, pinned wall, fanned cards,
  *  shared workspace. */
 const treatment: Record<string, string> = {
-  zalando: "-rotate-1 lg:max-w-[36rem]",
+  // A wordmark, not a screen. Zalando's interfaces are under NDA, so the
+  // logo is the only approved asset — and at screenshot scale it read as
+  // the project's strongest visual, which it is not. Sized as the mark it is.
+  zalando: "-rotate-1 max-w-[15rem] lg:max-w-[17rem]",
   "iot-venture": "rotate-1 lg:max-w-[28rem]",
   "olive-ilive": "lg:max-w-[46rem]",
   "merlin-mines": "-rotate-2 lg:max-w-[30rem]",
@@ -84,6 +92,12 @@ export function StudioArtifact({
 }) {
   const image = projectImages[study.slug];
 
+  // Content wins over markup. A featured project carries its own homepage
+  // sentence and category in its case-study file; the props below remain the
+  // fallback for the projects that do not.
+  const cardDescription = study.card?.description ?? subtitle;
+  const cardCategory = study.card?.category ?? discipline;
+
   return (
     <article
       className={cx(
@@ -111,8 +125,8 @@ export function StudioArtifact({
           study={study}
           index={index}
           title={title ?? study.title}
-          subtitle={subtitle}
-          discipline={discipline}
+          subtitle={cardDescription}
+          discipline={cardCategory}
           symbol={symbol}
         />
 

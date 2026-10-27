@@ -25,7 +25,7 @@ import { ProjectSymbol } from "./ProjectSymbol";
 const SHORT_LABEL: Record<string, string> = {
   bicycle: "IoT Venture",
   wand: "SpellCarver",
-  garment: "Zalando",
+  garment: "Zalando Plus",
   glasses: "HearEase",
 };
 
