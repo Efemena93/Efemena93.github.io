@@ -20,7 +20,7 @@ export const site = {
    * canonical links, the sitemap and social cards are correct wherever the
    * site actually lives. The fallback is the intended production domain.
    */
-  url: process.env.NEXT_PUBLIC_SITE_URL ?? "https://efemena93.github.io",
+  url: process.env.NEXT_PUBLIC_SITE_URL ?? "https://udezimena.design",
   name: "Efemena Udezi",
   shortName: "Efemena Udezi",
   role: "Product & Interaction Designer",

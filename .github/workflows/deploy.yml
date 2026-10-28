@@ -42,7 +42,11 @@ jobs:
           OWNER=$(echo "${{ github.repository_owner }}" | tr '[:upper:]' '[:lower:]')
           REPO="${{ github.event.repository.name }}"
           REPO_LC=$(echo "$REPO" | tr '[:upper:]' '[:lower:]')
-          if [ "$REPO_LC" = "$OWNER.github.io" ]; then
+          if [ -s public/CNAME ]; then
+            # A custom domain lives at the root, whatever the repository is called.
+            echo "base=" >> "$GITHUB_OUTPUT"
+            echo "url=https://$(tr -d '[:space:]' < public/CNAME)" >> "$GITHUB_OUTPUT"
+          elif [ "$REPO_LC" = "$OWNER.github.io" ]; then
             echo "base=" >> "$GITHUB_OUTPUT"
             echo "url=https://$OWNER.github.io" >> "$GITHUB_OUTPUT"
           else
