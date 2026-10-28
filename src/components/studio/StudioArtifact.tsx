@@ -40,16 +40,20 @@ import type { SymbolName } from "./ProjectSymbol";
  *  frame: layered sheet, upright device, wide crop, pinned wall, fanned cards,
  *  shared workspace. */
 const treatment: Record<string, string> = {
-  // A wordmark, not a screen. Zalando's interfaces are under NDA, so the
-  // logo is the only approved asset — and at screenshot scale it read as
-  // the project's strongest visual, which it is not. Sized as the mark it is.
-  zalando: "-rotate-1 max-w-[15rem] lg:max-w-[17rem]",
-  "iot-venture": "rotate-1 lg:max-w-[28rem]",
+  // Width only. These used to carry a one or two degree rotation each, so no
+  // screenshot on the page was straight. Scattering a set of screens at
+  // slight angles is a photograph-on-a-desk gesture, and it costs more than
+  // it gives: a UI screenshot has its own horizon, and tilting it fights the
+  // grid the interface was designed on.
+  //
+  // Zalando's is a wordmark rather than a screen, so it stays small.
+  zalando: "max-w-[15rem] lg:max-w-[17rem]",
+  "iot-venture": "lg:max-w-[28rem]",
   "olive-ilive": "lg:max-w-[46rem]",
-  "merlin-mines": "-rotate-2 lg:max-w-[30rem]",
-  vochub: "rotate-1 lg:max-w-[32rem]",
-  virtualbuddy: "-rotate-1 lg:max-w-[34rem]",
-  hearease: "rotate-1 lg:max-w-[30rem]",
+  "merlin-mines": "lg:max-w-[30rem]",
+  vochub: "lg:max-w-[32rem]",
+  virtualbuddy: "lg:max-w-[34rem]",
+  hearease: "lg:max-w-[30rem]",
 };
 
 export function StudioArtifact({
@@ -150,8 +154,13 @@ export function StudioArtifact({
             "group-hover:-translate-y-1 group-focus-within:-translate-y-1",
           )}
         >
+          {/* mr-auto, not mx-auto. Centring the image inside its column while
+              the label above it was left-aligned put every screenshot at a
+              different offset from its own title: IoT's sat 202px right of its
+              heading, SpellCarver's 5px left of its own and outside the
+              container. Now every image starts where its title starts. */}
           {image ? (
-            <figure className={cx("mx-auto max-w-[34rem]", treatment[study.slug])}>
+            <figure className={cx("mr-auto max-w-[34rem]", treatment[study.slug])}>
               <Image
                 src={image.src}
                 alt={image.alt}
