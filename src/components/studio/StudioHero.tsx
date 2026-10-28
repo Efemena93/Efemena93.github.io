@@ -118,8 +118,20 @@ export function StudioHero() {
               Efemena Udezi
             </h1>
 
-            <p className="mt-6 max-w-[46ch] text-lead text-[var(--studio-ink-soft)]">
-              I design thoughtful digital experiences for everyday life.
+            {/* Specific rather than warm-and-broad. "I design thoughtful
+                digital experiences for everyday life" described no one: a
+                reviewer had to open a case study before learning what kind
+                of designer this is. Every clause here is supported by work
+                on the site, and two of the three are unusual enough to be
+                worth leading with: sole ownership, and developer tools. */}
+            <p className="mt-6 max-w-[48ch] text-lead text-[var(--studio-ink-soft)]">
+              Product and interaction designer. I spent two years as the only
+              designer on a connected-bike product, and I like the work most when
+              the interface has to admit what the system does not know.
+            </p>
+            <p className="mt-3 max-w-[48ch] text-body text-[var(--studio-ink-muted)]">
+              Connected hardware, developer tools, and the design systems that
+              hold several surfaces together.
             </p>
 
             <p className="mt-8">

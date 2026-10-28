@@ -41,7 +41,9 @@ export const zalando: CaseStudy = {
   featured: true,
   card: {
     description:
-      "Shaping more cohesive membership experiences through service design, scalable interface patterns, and cross-functional collaboration.",
+      "Product designer on a membership product inside a large organisation. Research through service blueprinting to a pilot launch, plus the design blueprint the team worked from afterwards.",
+    ownership: "Product designer, in a team",
+    reached: "Pilot launched",
     category: "Service Design / UX/UI / Design Systems",
   },
   order: 3,

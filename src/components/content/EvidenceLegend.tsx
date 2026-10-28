@@ -1,5 +1,4 @@
 import { SignalPoint } from "@/components/signals/SignalPoint";
-import { Eyebrow } from "@/components/primitives";
 import { EVIDENCE, type EvidenceLevel } from "@/content/types";
 
 const ORDER: EvidenceLevel[] = ["evidence", "interpretation", "hypothesis", "concept"];
@@ -15,20 +14,36 @@ const MARK: Record<
 };
 
 /**
- * Renders once near the top of a case study, so the vocabulary is established
- * before it is used. Without this the markers would be decoration; with it
- * they are a contract with the reader.
+ * Renders once near the top of a case study.
+ *
+ * It used to be an open panel: four definitions a reader had to walk past
+ * before reaching any of the work. That put a classification system in front
+ * of the thing being classified, which is the wrong way round, and it was the
+ * same four definitions on all seven pages.
+ *
+ * Now it is one line and a disclosure. The line says what the markers mean
+ * well enough to carry on reading; the definitions are a click away for
+ * anyone who wants them. `details` rather than a scripted accordion, so it
+ * works without JavaScript, is keyboard-operable for free, and is announced
+ * as an expandable group.
+ *
+ * Nothing is hidden that qualifies a claim: every marker still sits against
+ * the sentence it belongs to, and the "Observed" ones still name their source
+ * in full on the page.
  */
 export function EvidenceLegend() {
   return (
-    <div className="forced-border rounded border border-line bg-paper p-6 sm:p-8">
-      <Eyebrow as="h2" className="mb-3">
-        How to read this case study
-      </Eyebrow>
-      <p className="measure text-small text-charcoal-soft">
-        Research writing gets less useful the more it blurs what was found with what was
-        guessed. Every claim below is labelled with how much weight it can carry.
-      </p>
+    <details className="forced-border group/legend rounded border border-line bg-paper px-6 py-5 sm:px-8">
+      <summary className="flex cursor-pointer list-none items-baseline gap-3 rounded focus-visible:outline-offset-4 [&::-webkit-details-marker]:hidden">
+        <span className="measure text-small text-charcoal-soft">
+          Claims on this page are marked by how much weight they carry: observed,
+          interpreted, hypothesis, unvalidated.
+        </span>
+        <span className="label-type shrink-0 text-blue-deep">
+          <span className="link-underline group-open/legend:hidden">What these mean</span>
+          <span className="link-underline hidden group-open/legend:inline">Hide</span>
+        </span>
+      </summary>
 
       <dl className="mt-7 grid gap-6 sm:grid-cols-2">
         {ORDER.map((level) => {
@@ -46,6 +61,6 @@ export function EvidenceLegend() {
           );
         })}
       </dl>
-    </div>
+    </details>
   );
 }

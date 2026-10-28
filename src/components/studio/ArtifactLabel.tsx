@@ -22,6 +22,7 @@ export function ArtifactLabel({
   subtitle,
   discipline,
   symbol,
+  facts,
   className,
 }: {
   study: CaseStudy;
@@ -39,6 +40,8 @@ export function ArtifactLabel({
    * would only say that name twice.
    */
   symbol?: SymbolName;
+  /** Ownership and reached-state, shown at rest. Featured projects only. */
+  facts?: { ownership: string; reached: string };
   className?: string;
 }) {
   return (
@@ -58,7 +61,17 @@ export function ArtifactLabel({
         <span className="link-underline">{title}</span>
       </h3>
 
-      <p className="mt-1.5 max-w-[40ch] text-small leading-snug text-charcoal-soft">
+      {/* Ownership and how far the work got, at rest rather than on hover.
+          These were inside the revealed detail block, which meant the two
+          facts a hiring reviewer scans for first were the two that needed a
+          mouse to find. */}
+      {facts ? (
+        <p className="label-type mt-2 text-charcoal-muted">
+          {facts.ownership} <span aria-hidden="true">·</span> {facts.reached}
+        </p>
+      ) : null}
+
+      <p className="mt-2.5 max-w-[42ch] text-small leading-snug text-charcoal-soft">
         {subtitle}
       </p>
 
@@ -98,7 +111,7 @@ export function ArtifactLabel({
             say it, so the capstone does not read "Research in progress ·
             Research in progress". Status is words, never colour alone. */}
         <p className="label-type mt-3 text-charcoal-muted">
-          {study.shortRole} · {study.timeline}
+          {facts ? study.timeline : `${study.shortRole} · ${study.timeline}`}
         </p>
         <p className="label-type mt-1.5 text-charcoal-muted">
           {discipline.toLowerCase().includes(STATUS_LABEL[study.status].toLowerCase())

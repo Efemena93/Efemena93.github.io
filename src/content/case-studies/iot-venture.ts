@@ -74,7 +74,9 @@ export const iotVenture: CaseStudy = {
   featured: true,
   card: {
     description:
-      "Making connected mobility simpler through intuitive tracking, thoughtful security interactions, and a unified product experience.",
+      "Sole designer for two years. Led the 3.0 redesign across the flagship app and the white-label partner apps it had to stay compatible with, and designed the state model behind predictive inspection.",
+    ownership: "Sole designer",
+    reached: "Shipped, Oct to Nov 2024",
     category: "Product Design / Interaction Design / Design Systems",
   },
   order: 1,

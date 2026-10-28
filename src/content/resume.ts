@@ -28,7 +28,7 @@ export const resume: Resume = {
       location: "Darmstadt, Germany",
       bullets: [
         "As the company's only designer, owned all UX and UI across the product.",
-        "Led the 3.0 redesign, running user research and turning insights into design decisions that kept the product compatible with the “It's My Bike” app and white-label partners' apps. Increased user retention by 20%.",
+        "Led the 3.0 redesign, running user research and turning insights into design decisions that kept the product compatible with the “It's My Bike” app and white-label partners' apps. User retention rose 20% after the release; the figure is my own rather than an independent audit.",
         "Ran usability tests through an iOS beta ahead of full release, iterating on feedback to fix issues including menu reordering and simpler report generation before rollout.",
         "Built and maintained design systems that kept brand coherence across platforms. Consistent colour, typography and components.",
         "Partnered with cross-functional teams to align design with business objectives.",

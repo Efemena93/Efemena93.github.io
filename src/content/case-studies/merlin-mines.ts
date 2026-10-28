@@ -1,7 +1,7 @@
 import type { CaseStudy } from "../types";
 
 /**
- * Merlin Mines internship, presented through the SpellCarver work.
+ * Merlinmines internship, presented through the SpellCarver work.
  *
  * History: this file previously published nothing about the interface, on the
  * grounds that the internship was NDA-protected. Efemena confirmed on
@@ -52,7 +52,7 @@ import type { CaseStudy } from "../types";
  * (`public/work/merlin-mines/security-report-*.webp`). Neither is design
  * evidence, and together they said which internal repository had open
  * findings on a given date. The CVE identifiers left visible are public
- * advisories against base OS packages, not Merlin Mines code. The unredacted
+ * advisories against base OS packages, not Merlinmines code. The unredacted
  * originals are not in this repository.
  */
 
@@ -66,17 +66,19 @@ export const merlinMines: CaseStudy = {
   humanProblem:
     "A developer evaluating an automation tool has to work out what it does, where to begin, whether it is running, and whether it is safe, usually in that order, usually alone.",
   shortRole: "Sole designer",
-  projectType: "In-house product design · Merlin Mines",
+  projectType: "In-house product design · Merlinmines",
   boundary:
     "Three screens appear here with permission, with the run ID and repository name painted out. The rest of the interface stays unpublished, and so do the numbers on these screens: they are interface content, not product performance.",
   headline:
     "Established the product's first UI patterns and components as its only dedicated design resource, across three design iterations tested with the in-house developers who use the tool. Implemented before I left.",
   summary:
-    "Three months as the sole designer on SpellCarver, a secure-automation product from Merlin Mines, across the public site and the product interface. Three iterations, tested with the in-house developers who use it, implemented before I left.",
+    "Three months as the sole designer on SpellCarver, a secure-automation product from Merlinmines, across the public site and the product interface. Three iterations, tested with the in-house developers who use it, implemented before I left.",
   featured: true,
   card: {
     description:
-      "Bringing clarity to complex DevSecOps workflows through actionable security insights, pipeline visibility, and developer-focused interfaces.",
+      "Sole designer for three months on a CI/CD product used by the engineers who sat in the same building. Grouped navigation by intent, and gave pipeline state and security findings a reading order.",
+    ownership: "Sole designer",
+    reached: "Implemented before I left",
     category: "B2B SaaS / Developer Experience / Complex Workflows",
   },
   order: 2,
@@ -85,6 +87,9 @@ export const merlinMines: CaseStudy = {
   timeline: "Jun to Aug 2025 · Remote, US",
   context: "In-house, sole designer",
   roles: ["UI/UX Designer"],
+  // Deliberately empty, and the page omits the row rather than printing an
+  // empty one. The source pack lists Figma as "to verify" and Efemena has
+  // not confirmed it. A guessed tool is a fabricated fact like any other.
   tools: [],
   disciplines: ["ux-research", "product-design", "interaction-design", "design-systems"],
   cover: {
@@ -198,7 +203,7 @@ export const merlinMines: CaseStudy = {
             {
               level: "evidence",
               text:
-                "The people tested were the product's actual users, the Merlin Mines developers whose daily workflow the tool supports, not proxies recruited to stand in for them.",
+                "The people tested were the product's actual users, the Merlinmines developers whose daily workflow the tool supports, not proxies recruited to stand in for them.",
               source: "My own record of the engagement, Jun to Aug 2025",
             },
             {
@@ -211,7 +216,7 @@ export const merlinMines: CaseStudy = {
         {
           type: "prose",
           text: [
-            "One thing shaped more than it looks like it should: Merlin Mines has a warm brand, and the instinct is to carry that voice everywhere. I kept it on the marketing surface and out of status labels, where a developer is making an operational decision and needs the literal word.",
+            "One thing shaped more than it looks like it should: Merlinmines has a warm brand, and the instinct is to carry that voice everywhere. I kept it on the marketing surface and out of status labels, where a developer is making an operational decision and needs the literal word.",
           ],
         },
       ],
@@ -353,11 +358,6 @@ export const merlinMines: CaseStudy = {
               level: "hypothesis",
               text:
                 "That grouping destinations by intent lets a developer predict where a task belongs without reading the full navigation. Watching someone hesitate before a correct click is how you tell, and that is what the iterations were for.",
-            },
-            {
-              level: "hypothesis",
-              text:
-                "That restricting an action to the state where it is genuinely an exception keeps it legible as an escape hatch rather than a way to dismiss a reminder.",
             },
             {
               level: "concept",

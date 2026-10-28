@@ -105,7 +105,12 @@ export default async function CaseStudyPage({
                 label: "Disciplines",
                 value: study.disciplines.map((d) => DISCIPLINE_LABEL[d]).join(", "),
               },
-              { label: "Tools", value: study.tools.join(", ") },
+              // Omitted entirely when empty. A "Tools" row with nothing after
+              // it reads as a page that lost its data, not as a project whose
+              // toolset has not been confirmed.
+              ...(study.tools.length
+                ? [{ label: "Tools", value: study.tools.join(", ") }]
+                : []),
             ]}
           />
 

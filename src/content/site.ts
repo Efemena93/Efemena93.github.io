@@ -214,7 +214,7 @@ export const profile = {
     {
       when: "Oct 2023",
       what:
-        "IoT Venture GmbH in Darmstadt, as the company's only designer. Two years across a connected-bike app, a partner dashboard and the white-label apps built on the same platform, ending with the 3.0 release.",
+        "IoT Venture GmbH in Darmstadt, as the company's only designer. Two years across a connected-bike app, a partner dashboard and the white-label apps built on the same platform. Mobility 3.0 shipped in October to November 2024, and I stayed until August 2025 taking the state model, the permission patterns and the design system further into the product.",
     },
     {
       when: "Aug 2024",

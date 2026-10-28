@@ -305,10 +305,23 @@ export interface CaseStudy {
    * Optional: only the featured projects carry one.
    */
   card?: {
-    /** One sentence. What the work achieved, not what the product is. */
+    /** One sentence. The actual contribution, not the product category. */
     description: string;
     /** Editorial territory line, e.g. "Service Design / UX/UI / Design Systems". */
     category: string;
+    /**
+     * Ownership, in as few words as are true: "Sole designer", "One of three
+     * designers". Shown at rest, not on hover, because it is the first thing
+     * a hiring reviewer looks for and the last thing that should need a mouse.
+     */
+    ownership: string;
+    /**
+     * How far the work actually got, in plain words rather than the
+     * `ProjectStatus` enum. "Complete" does not distinguish a product that
+     * shipped to users from a prototype that was tested once, and that
+     * distinction is exactly what a reviewer is scanning for.
+     */
+    reached: string;
   };
   order: number;
   status: ProjectStatus;

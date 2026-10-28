@@ -127,6 +127,11 @@ export function StudioArtifact({
           title={title ?? study.title}
           subtitle={cardDescription}
           discipline={cardCategory}
+          facts={
+            study.card
+              ? { ownership: study.card.ownership, reached: study.card.reached }
+              : undefined
+          }
           symbol={symbol}
         />
 

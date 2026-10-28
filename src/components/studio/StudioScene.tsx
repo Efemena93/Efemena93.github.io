@@ -80,8 +80,8 @@ export function StudioScene({ artifacts }: { artifacts: StudioArtifacts }) {
         }}
       />
 
-      <Container className="relative pb-16 pt-16 sm:pt-20 lg:pb-24 lg:pt-24">
-        <div className="mb-12 flex flex-wrap items-baseline justify-between gap-x-8 gap-y-3 lg:mb-16">
+      <Container className="relative pb-16 pt-10 sm:pt-12 lg:pb-24 lg:pt-14">
+        <div className="mb-8 flex flex-wrap items-baseline justify-between gap-x-8 gap-y-3 lg:mb-10">
           <div>
             {/* The heading stays even though the blurb under it has gone: the
                 section is labelled by this id, and removing it would leave the

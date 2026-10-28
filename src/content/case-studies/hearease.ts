@@ -56,7 +56,9 @@ export const hearEase: CaseStudy = {
   featured: true,
   card: {
     description:
-      "Exploring more inclusive conversations through adaptive speech-to-text glasses and a companion experience designed around communication needs.",
+      "One of three designers on assistive smart glasses. Usability testing found the setup was where people struggled, not the conversation features, and we rebuilt the flow around that.",
+    ownership: "One of three designers",
+    reached: "Prototype, tested",
     category: "Accessibility / UX Research / Interaction Design / Concept",
   },
   order: 4,
