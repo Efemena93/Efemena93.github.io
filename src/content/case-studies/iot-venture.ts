@@ -8,13 +8,17 @@ import type { CaseStudy } from "../types";
  * product-level material is cleared for public disclosure. The slug is
  * unchanged so the existing URL keeps working.
  *
- * NEEDS EFEMENA'S CONFIRMATION — the 3.3 date.
- * The refinement brief of 2026-10-27 states that version 3.3 "was scheduled
- * for release in October 2026 when I left". Her tenure on this page, and on
- * the résumé, is Oct 2023 to Aug 2025, which puts that date fourteen months
- * after she left. Both can be true (a roadmap slot a year out), so the page
- * says what she said and claims nothing more. If the date is wrong, the
- * sentence in the "outcome" section is the only place it appears.
+ * RELEASE SEQUENCE, settled by Efemena 2026-10-28: 3.0 in Oct to Nov 2024,
+ * 3.1 a bug-fix release, 3.2 in Mar 2025, and the 3.3 design finished before
+ * she left in Aug 2025. This supersedes an earlier note that had 3.3
+ * "scheduled for release in October 2026", which sat fourteen months after
+ * her departure and was flagged as unresolved. It is resolved: 3.3 is
+ * completed design, not a shipped release, and the page says exactly that.
+ *
+ * NOT PUBLISHED: her reason for leaving. She told me on 2026-10-28 that she
+ * stopped work for a maternity break. That is hers to disclose or not, and a
+ * portfolio does not need a reason for a date. The page gives the date and
+ * stops. Do not add it.
  *
  * WHAT IS DELIBERATELY WITHHELD, and must stay withheld unless she says
  * otherwise — the source pack flags each of these as needing permission:
@@ -150,7 +154,7 @@ export const iotVenture: CaseStudy = {
           text: [
             "I was the only designer at IoT Venture for two years, and 3.0 was the centre of it: a redesign of It's My Bike that had to land on the flagship app and on every partner-branded app built from the same platform.",
             "User retention rose 20% after the release. That figure is my own, taken from what we tracked at the time rather than from an independent audit, and it is the only number of its kind on this page.",
-            "After 3.0 the work continued as evolution rather than a second redesign. Version 3.3 was on the roadmap, scheduled for October 2026, when I left. I designed toward it and did not ship it.",
+            "After 3.0 the work continued as evolution rather than a second redesign. 3.1 was a bug-fix release, 3.2 shipped in March 2025, and I had finished the 3.3 design by the time I left. 3.3 is design I completed, not a release I shipped, and nothing on this page shows a released 3.3.",
           ],
         },
       ],
