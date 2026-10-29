@@ -176,13 +176,23 @@ export function StudioArtifact({
         </div>
       </Link>
 
-      {/* Text equivalent for the illustration. Outside the link on purpose:
-          inside it, this paragraph became part of the link's accessible name
-          and every card announced a paragraph of scene description before the
-          reader reached the action. Here it is still in the accessibility
-          tree, read in document order, and attributed to the artifact rather
-          than to the link. */}
-      <p className="sr-only">{sceneDescription}</p>
+      {/* Text equivalent for the ILLUSTRATION, and only when the
+          illustration is what is on screen.
+
+          This used to render unconditionally. Six of the seven cards now
+          show a real approved screenshot instead of their SVG scene, and
+          every one of them was still carrying "This is an illustrative
+          reconstruction, not a real project screen" in the accessibility
+          tree. A screen-reader user was being told that genuine product
+          screenshots were reconstructions, which is worse than saying
+          nothing: it is the one claim on this page that has to be exactly
+          right, and it was inverted. Where a real image is shown, its own
+          alt text describes it and this sentence would contradict it.
+
+          Outside the link on purpose: inside it, this paragraph became part
+          of the link's accessible name, so every card announced a paragraph
+          of scene description before the reader reached the action. */}
+      {image ? null : <p className="sr-only">{sceneDescription}</p>}
     </article>
   );
 }

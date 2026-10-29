@@ -142,7 +142,7 @@ export const profile = {
       title: "Craft & systems",
       items: [
         "Design language systems and component libraries",
-        "Accessible colour, type and interaction design (WCAG 2.2 AA)",
+        "Accessible colour, type and interaction design, checked against WCAG 2.2 AA",
         "Responsive and adaptive layout",
         "Developer handoff and design to engineering collaboration",
       ],

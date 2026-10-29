@@ -19,6 +19,18 @@ import type { Resume } from "./types";
  */
 
 export const resume: Resume = {
+  /**
+   * THE PERCENTAGES. Every figure on this resume is a number Efemena
+   * recorded at the time, not an independently audited one, and none of the
+   * source material gives a baseline, a comparison period or a method. They
+   * are therefore written as what was observed after the work ("rose 15%
+   * afterwards") rather than as what the work caused ("increased engagement
+   * by 15%"). The difference is small on the page and large in an interview,
+   * where the follow-up question is always "measured how?".
+   *
+   * If she can supply baseline, period and method for any of them, that one
+   * can be stated more strongly. Until then they stay as observations.
+   */
   roles: [
     {
       organisation: "IoT Venture GmbH",
@@ -41,7 +53,7 @@ export const resume: Resume = {
       end: "Aug 2025",
       location: "Remote, US",
       bullets: [
-        "Sole designer on the team: owned end-to-end UX and UI for an internal workflow web app used by the company's in-house software engineers.",
+        "Sole designer on SpellCarver, Merlinmines' CI/CD and security automation product, owning end-to-end UX and UI for the interface its in-house engineers use.",
         "Translated engineers' daily workflows into a clear, streamlined interface. From information architecture and user flows through wireframes and high-fidelity UI.",
         "Established the product's core UI patterns and components as its first dedicated design resource.",
       ],
@@ -55,7 +67,7 @@ export const resume: Resume = {
       bullets: [
         "Led the design process from research and concept through service blueprinting and pilot launch, shipping several features for Zalando Plus.",
         "Created a comprehensive design blueprint for the Zalando Plus team to ensure cohesive, consistent design across the platform.",
-        "Revamped outdated UI/UX templates with developers, PMs and stakeholders. 15% increase in user engagement.",
+        "Revamped outdated UI/UX templates with developers, PMs and stakeholders. User engagement rose 15% afterwards.",
         "Contributed to design rituals, workshops and critiques, and to the design system.",
       ],
     },
@@ -66,10 +78,10 @@ export const resume: Resume = {
       end: "May 2022",
       location: "Germany",
       bullets: [
-        "Led the design and architecture for converting web templates into iOS and Android mobile templates. Seamless cross-device experience and a 25% increase in app downloads.",
-        "Designed UX and UI for the company website and mobile app with a consistent system across touchpoints. 15% increase in website conversion.",
-        "Handed off CSS starter templates to frontend developers via Figma. Cut design-to-production timelines by 30%.",
-        "Built user journeys from personas to sharpen the experience. 25% increase in user engagement.",
+        "Led the design and architecture for converting web templates into iOS and Android mobile templates, for a consistent experience across devices. App downloads rose 25% afterwards.",
+        "Designed UX and UI for the company website and mobile app with a consistent system across touchpoints. Website conversion rose 15% afterwards.",
+        "Handed off CSS starter templates to frontend developers via Figma. Design-to-production timelines shortened by about 30% afterwards.",
+        "Built user journeys from personas to sharpen the experience. User engagement rose 25% afterwards.",
       ],
     },
   ],
@@ -114,7 +126,7 @@ export const resume: Resume = {
         "Design systems and component libraries",
         "Responsive and mobile-first design",
         "Interaction and motion specification",
-        "Accessible design to WCAG 2.2 AA",
+        "Accessible design: colour contrast, keyboard paths, visible focus, state in text as well as colour, checked against WCAG 2.2 AA",
         "Developer handoff",
       ],
     },
