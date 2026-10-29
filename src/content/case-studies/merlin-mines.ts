@@ -41,6 +41,22 @@ import type { CaseStudy } from "../types";
  *   · Participant count for the usability testing. She said "the developers",
  *     not how many.
  *
+ * MORE SCREENS, added 2026-10-29. Efemena supplied the product dashboard and
+ * three sections of the marketing site. The marketing screens matter more than
+ * their number suggests: this page's first design argument is that the public
+ * site and the product were designed as one journey, and until now that was
+ * asserted with only the product half visible. Both halves are now on the page
+ * and a reader can check the claim rather than take it.
+ *
+ * The device mockups are cropped to the interface. A hiring reviewer is here
+ * for UI craft, not a laptop bezel.
+ *
+ * CAUTION on marketing-impact.webp: its six figures (300%, 65%, 99.9%, 40%,
+ * 85%, 2.5x) are SpellCarver's marketing claims about the product. They are
+ * not measurements of Efemena's design work. The caption says so outright,
+ * and it must keep saying so: this site spends real effort hedging her own
+ * numbers, and an unlabelled screen of vendor percentages would undo that.
+ *
  * SCREENS, added 2026-10-27. Efemena supplied three SpellCarver screenshots
  * directly, against a brief that asks for them by name: the Pipeline Builder
  * with the Active Pipeline list, the documentation search modal, and the
@@ -68,7 +84,7 @@ export const merlinMines: CaseStudy = {
   shortRole: "Sole designer",
   projectType: "In-house product design · Merlinmines",
   boundary:
-    "Three screens appear here with permission, with the run ID and repository name painted out. The rest of the interface stays unpublished, and so do the numbers on these screens: they are interface content, not product performance.",
+    "The screens here appear with permission, with the run ID and repository name painted out of the security report. The numbers on them are interface content and marketing copy, not measurements of my work: no outcome metric was recorded for this project, and the figures on the marketing section are the product's own claims.",
   headline:
     "Established the product's first UI patterns and components as its only dedicated design resource, across three design iterations tested with the in-house developers who use the tool. Implemented before I left.",
   summary:
@@ -232,10 +248,10 @@ export const merlinMines: CaseStudy = {
           type: "figure",
           width: "wide",
           image: {
-            src: "/work/merlin-mines/user-flows-1065.webp",
+            src: "/work/merlin-mines/user-flows-1600.webp",
             alt: "Three user-flow diagrams, each with a ranked list of friction points beside it: new user onboarding, pipeline management, and vulnerability resolution",
-            width: 1065,
-            height: 1042,
+            width: 1600,
+            height: 1567,
             caption:
               "The flow mapping. A ranked list is a design brief; an unranked one is a complaint.",
           },
@@ -252,10 +268,10 @@ export const merlinMines: CaseStudy = {
           type: "figure",
           width: "wide",
           image: {
-            src: "/work/merlin-mines/site-map-1065.webp",
+            src: "/work/merlin-mines/site-map-1600.webp",
             alt: "Site map of SpellCarver: a dashboard branching into Spellcarver, Settings, Spellbook, Account and Documents, each with its own destinations beneath it",
-            width: 1065,
-            height: 914,
+            width: 1600,
+            height: 1374,
             caption:
               "The site map that answered it. Five areas, each matching a different reason for opening the product.",
           },
@@ -327,6 +343,56 @@ export const merlinMines: CaseStudy = {
           level: "interpretation",
           text:
             "The public page and the first product screen were being drafted as separate artefacts with separate vocabularies. Designing them against shared terminology makes the path from a call to action to a first real task a continuation rather than a translation.",
+        },
+        {
+          type: "figure",
+          width: "wide",
+          image: {
+            src: "/work/merlin-mines/marketing-hero.webp",
+            alt: "The SpellCarver marketing page: a Secure, Compliant, Automated headline over a product summary, three figures for deployment speed, security score and teams, two calls to action, and a panel showing a pipeline running with its security scan and compliance check timed",
+            width: 1438,
+            height: 857,
+            caption:
+              "The public page. The panel on the right is a pipeline mid-run, with the same vocabulary the product uses, so the thing being promised is the thing you meet after signing in.",
+          },
+        },
+        {
+          type: "figure",
+          width: "wide",
+          image: {
+            src: "/work/merlin-mines/product-dashboard.webp",
+            alt: "The SpellCarver dashboard: four summary tiles for total pipelines, successful pipelines, average duration and deployments today, an insights chart, and a pipeline detail list showing a running build with its latest log line and progress",
+            width: 1630,
+            height: 961,
+            caption:
+              "The first screen after signing in. Summary values across the top, live pipeline activity beneath them, and detail one level further down. Compare it with the page above: same words, same order of attention, no translation step at the door.",
+          },
+          description:
+            "The four tiles answer how much and how fast: total pipelines, successful pipelines, average duration, deployments today, each with its week-on-week change. The pipeline list underneath answers what is happening now, with the repository, the branch, elapsed time, a status in words, the latest log line and a progress bar on each run.",
+        },
+        {
+          type: "figure",
+          width: "wide",
+          image: {
+            src: "/work/merlin-mines/marketing-why.webp",
+            alt: "A marketing section headed Why SpellCarver CI, with Zero-Config Security and Built-in Compliance each explained in a short paragraph and a four-item checklist beside a screenshot",
+            width: 1438,
+            height: 857,
+            caption:
+              "Further down the same page. Each claim is paired with the specific checks behind it rather than left as an adjective, which is the same discipline the status labels inside the product follow.",
+          },
+        },
+        {
+          type: "figure",
+          width: "wide",
+          image: {
+            src: "/work/merlin-mines/marketing-impact.webp",
+            alt: "A marketing section headed Measurable Business Impact, with six tiles each pairing a figure with a short explanation",
+            width: 1438,
+            height: 857,
+            caption:
+              "The impact section, included for the layout rather than the numbers. Every figure on this screen is SpellCarver's own marketing claim about the product. None of them is a measurement of my design work, and none should be read as one.",
+          },
         },
       ],
     },
