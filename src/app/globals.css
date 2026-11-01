@@ -772,3 +772,184 @@ html:not([data-motion="full"]) :focus-visible {
 .scroll-cue-line {
   animation: scroll-cue 2.8s var(--ease-in-out-soft) infinite;
 }
+
+/* ==========================================================================
+   Homepage project gallery — the stacking panels
+   Brief of 2026-11-01, referencing oterhi.me's project presentation.
+
+   Three rules govern everything below:
+
+   1. The stack is sticky positioning, not script. No observer, no scroll
+      listener, no library. A browser that supports none of the enhancement
+      still gets correct, readable, fully navigable panels.
+   2. The stack exists only from `md` up. On a phone these are plain stacked
+      cards — no sticky, no scale, no dim, no blur — because a 70svh panel
+      pinned under a header leaves nothing to read with.
+   3. Motion is an enhancement behind both `@supports` and a motion query.
+      Under `prefers-reduced-motion` the gallery is a static list of cards.
+   -------------------------------------------------------------------------- */
+
+.gallery-stack {
+  /* One source of truth for the two numbers the stack is built from.
+     `--panel-h` is also the card's own height from `md` up, so the panel
+     box and the card inside it can never drift apart. */
+  --panel-h: clamp(560px, 78svh, 840px);
+  --panel-travel: 88svh;
+
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* The wash behind each cover, drawn from the asset's own dominant tone. Kept
+   very low in saturation: it is there so a `contain` screenshot is not
+   floating on a hard panel edge, not to colour the work. */
+.gallery-wash-sage {
+  background-image: linear-gradient(
+    168deg,
+    color-mix(in srgb, var(--color-sage) 13%, transparent) 0%,
+    transparent 72%
+  );
+}
+
+.gallery-wash-blue {
+  background-image: linear-gradient(
+    168deg,
+    color-mix(in srgb, var(--color-blue-deep) 12%, transparent) 0%,
+    transparent 72%
+  );
+}
+
+.gallery-wash-clay {
+  background-image: linear-gradient(
+    168deg,
+    color-mix(in srgb, var(--color-clay) 13%, transparent) 0%,
+    transparent 72%
+  );
+}
+
+/* Per-cover focal points, set in the content file and read here, so the same
+   component can crop a wide dashboard tightly on a phone and generously on a
+   desktop without a second image or a media query per project. */
+.gallery-cover.object-cover {
+  object-position: var(--cover-pos-mobile, 50% 50%);
+}
+
+@media (min-width: 768px) {
+  .gallery-cover.object-cover {
+    object-position: var(--cover-pos, 50% 50%);
+  }
+
+  .gallery-stack {
+    /* No gap from `md` up: the travel below each panel does that work, and a
+       flex gap would be added to it and read as a jump between panels. */
+    gap: 0;
+  }
+
+  /* The travel.
+     A sticky element is bounded by its containing block's CONTENT box, so a
+     panel's card stays pinned only for as long as its `li` has content-box
+     room left below it.
+
+     That distinction cost an hour, so it is written down: giving the `li`
+     `padding-bottom` buys no travel at all. Padding sits outside the
+     content box, the card unpins the instant its own bottom edge is
+     reached, and what looks like a gentle recede is really the panel
+     leaving the screen. Extra `height` works; extra padding does not.
+     Verified against a five-case reduction — block and flex parents sized
+     by `height` pin for their full extra extent, the same parents sized by
+     `padding-bottom` pin for nothing.
+
+     So the room is `min-height`: the card's own height plus the travel.
+     88svh is a little under one screen, so a pinned panel holds while the
+     next climbs the height of the window to meet it.
+
+     That would otherwise open a screen-high gap between panels, so each
+     panel after the first is pulled back up by the same amount, less the
+     1.5rem that keeps a visible seam between two stacked cards. */
+  .gallery-panel {
+    min-height: calc(var(--panel-h) + var(--panel-travel));
+    view-timeline-name: --gallery-panel;
+    view-timeline-axis: block;
+  }
+
+  .gallery-panel + .gallery-panel {
+    margin-top: calc(-1 * var(--panel-travel) + 1.5rem);
+  }
+
+  .gallery-panel:last-child {
+    min-height: 0;
+  }
+
+  /* The card's height, from the same variable as the panel box above it. */
+  .gallery-card-inner {
+    height: var(--panel-h);
+  }
+
+  /* Each panel settles a little lower than the one before it, so a covered
+     panel keeps a visible edge above the one covering it and the stack reads
+     as a stack rather than as a single changing card.
+
+     The 5.25rem base clears the sticky site header, whose bottom edge sits
+     at 77px: at 4.5rem the first panel stuck 5px under the header and its
+     tag chips were sliced along the top. The step is measured from the
+     cleared position, not from zero. */
+  .gallery-card {
+    position: sticky;
+    top: calc(5.25rem + var(--panel-index, 0) * 0.7rem);
+  }
+}
+
+/* The recede. The timeline is declared on the panel (which scrolls normally)
+   and consumed by the card inside it (which is stuck), because a stuck
+   element's own view progress freezes the moment it sticks.
+
+   `cover 52%` to `cover 100%`: nothing happens until the panel is past
+   halfway through its pass, by which point it has been fully in view and
+   read, and the dim then deepens as the next panel climbs over it. */
+@keyframes gallery-recede {
+  to {
+    transform: scale(0.955) translateZ(0);
+    opacity: 0.58;
+  }
+}
+
+@supports (animation-timeline: view()) {
+  @media (min-width: 768px) and (prefers-reduced-motion: no-preference) {
+    .gallery-panel:not(:last-child) .gallery-card {
+      animation: gallery-recede linear both;
+      animation-timeline: --gallery-panel;
+      animation-range: cover 52% cover 100%;
+      transform-origin: 50% 0%;
+    }
+  }
+}
+
+/* Asked for a static gallery: no stacking, no recede, no travel. The cards
+   become an ordinary vertical list, which is also what a browser without
+   sticky support shows. */
+@media (prefers-reduced-motion: reduce) {
+  html:not([data-motion="full"]) .gallery-panel {
+    min-height: 0;
+    margin-top: 0;
+    view-timeline-name: none;
+  }
+
+  html:not([data-motion="full"]) .gallery-card-inner {
+    height: auto;
+  }
+
+  html:not([data-motion="full"]) .gallery-stack {
+    gap: 1.5rem;
+  }
+
+  html:not([data-motion="full"]) .gallery-card {
+    position: static;
+    animation: none;
+    transform: none;
+    opacity: 1;
+  }
+}

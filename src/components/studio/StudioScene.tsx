@@ -5,10 +5,7 @@ import { Container, Eyebrow } from "@/components/primitives";
 import { projectImages } from "@/content/project-images";
 import type { CaseStudy } from "@/content/types";
 
-import { HearEaseArtifact } from "./HearEaseArtifact";
-import { IotVentureArtifact } from "./IotVentureArtifact";
-import { MerlinMonitorArtifact } from "./MerlinMonitorArtifact";
-import { ZalandoBlueprintArtifact } from "./ZalandoBlueprintArtifact";
+import { ProjectGallery } from "./ProjectGallery";
 
 /**
  * StudioScene — section 02, the desk the work sits on.
@@ -31,15 +28,23 @@ import { ZalandoBlueprintArtifact } from "./ZalandoBlueprintArtifact";
  * four at full size and three in a row does the ranking for them, which is
  * the job of a portfolio rather than of its reader.
  *
- * IoT Venture takes the first row largely to itself, the widest column and
- * the only one given a full row, because it is the flagship shipped product.
+ * ── The gallery, revised 2026-11-01 ──────────────────────────────────────
+ * The featured four were a staggered asymmetric grid of bespoke artifact
+ * illustrations. They are now four large stacking panels of real project
+ * imagery, in the order IoT, HearEase, SpellCarver, Zalando, per the brief
+ * of 2026-11-01 referencing oterhi.me's project presentation.
  *
- * The other three are deliberately not a rhythm. They were a 5/6 pair and a
- * centred 6, which is a grid being even-handed rather than a page making a
- * judgement. Now the widths differ (5, 4, 7), the starts differ (1, 9, 4) and
- * the drops differ, each set by what the project actually has to show:
- * SpellCarver has screens, Zalando has a wordmark, HearEase has a prototype.
- * A column should be the size of its material.
+ * What a panel shows lives in `src/content/home-gallery.ts`; the stack is
+ * CSS in `globals.css`. Nothing in either is new copy — every string comes
+ * from the case study the panel links to, so a correction made once reaches
+ * both places.
+ *
+ * The artifact components (IotVentureArtifact, MerlinMonitorArtifact,
+ * ZalandoBlueprintArtifact, HearEaseArtifact) are no longer rendered here.
+ * They are left in the tree rather than deleted: they are the only drawn
+ * representation of Zalando's service blueprint and HearEase's prototype
+ * that this repository has, and the gallery may yet want one where a project
+ * has no screen. Nothing imports them now.
  *
  * DOM order is visual order at every breakpoint, so what a keyboard or
  * screen-reader user meets matches what a sighted user reads. No `order-*`
@@ -95,40 +100,18 @@ export function StudioScene({ artifacts }: { artifacts: StudioArtifacts }) {
           </Link>
         </div>
 
-        {/* ── 1. IoT Venture, the flagship, given its own row ── */}
-        <div className="grid lg:grid-cols-12">
-          <IotVentureArtifact
-            study={iotVenture}
-            index={1}
-            className="lg:col-span-9 lg:col-start-1 lg:h-auto"
-          />
-        </div>
-
-        {/* ── 2 and 3. SpellCarver and Zalando ── */}
-        <div className="mt-20 grid gap-y-16 border-t border-line pt-14 md:grid-cols-2 md:gap-x-8 lg:mt-24 lg:grid-cols-12 lg:items-start lg:gap-x-8 lg:gap-y-0 lg:pt-16">
-          <MerlinMonitorArtifact
-            study={merlinMines}
-            index={2}
-            className="lg:col-span-5 lg:col-start-1 lg:h-auto"
-          />
-          {/* Narrow and dropped. Zalando's only approved asset is a wordmark,
-              so giving it a screenshot-sized column was the layout insisting
-              on a rhythm the material could not fill. */}
-          <ZalandoBlueprintArtifact
-            study={zalando}
-            index={3}
-            className="lg:col-span-4 lg:col-start-9 lg:mt-28 lg:h-auto"
-          />
-        </div>
-
-        {/* ── 4. HearEase, closing the featured four ── */}
-        <div className="mt-20 grid border-t border-line pt-14 lg:mt-24 lg:grid-cols-12 lg:pt-16">
-          <HearEaseArtifact
-            study={hearEase}
-            index={4}
-            className="lg:col-span-7 lg:col-start-4 lg:h-auto"
-          />
-        </div>
+        {/* ── The four featured projects, as stacking panels ──
+            One project per panel, in the order the brief set: IoT, HearEase,
+            SpellCarver, Zalando. What each panel shows is declared in
+            `src/content/home-gallery.ts`; the stack itself is CSS. */}
+        <ProjectGallery
+          studies={{
+            "iot-venture": iotVenture,
+            hearease: hearEase,
+            "merlin-mines": merlinMines,
+            zalando,
+          }}
+        />
 
         {/* ── More explorations ──
             Deliberately a different shape from everything above: a row, not a
@@ -184,14 +167,19 @@ function ExplorationCard({ study, index }: { study: CaseStudy; index: number }) 
         <p className="label-type text-charcoal-muted">{String(index).padStart(2, "0")}</p>
 
         {showImage ? (
-          <div className="mt-3 overflow-hidden rounded-md ring-1 ring-line">
+          /* `contain`, not `cover`. These are presentation mockups of whole
+             devices, and cropping one to a 160px band from the top shows
+             three phone notches. The frame is a little taller than it was
+             and carries a faint wash, so the two covers that keep their
+             transparency sit on something rather than on nothing. */
+          <div className="mt-3 overflow-hidden rounded-md bg-ivory ring-1 ring-line">
             <Image
               src={image.src}
               alt={image.alt}
               width={image.width}
               height={image.height}
               sizes="(min-width: 1024px) 22rem, (min-width: 640px) 45vw, 90vw"
-              className="h-40 w-full object-cover object-top opacity-90 transition-opacity duration-500 ease-[var(--ease-out-soft)] group-hover/exp:opacity-100 group-focus-visible/exp:opacity-100"
+              className="h-48 w-full object-contain p-3 opacity-90 transition-opacity duration-500 ease-[var(--ease-out-soft)] group-hover/exp:opacity-100 group-focus-visible/exp:opacity-100"
             />
           </div>
         ) : (

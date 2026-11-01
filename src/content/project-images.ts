@@ -51,22 +51,30 @@ export const projectImages: Record<string, ProjectImage> = {
     1400,
     919,
   ),
+  /* The three explorations below moved to Efemena's own presentation
+     mockups on 2026-11-01. Each previously showed whichever single screen
+     happened to exist — a before-and-after pair, a preference test — which
+     made the row read as research scraps next to four featured projects
+     with real covers. These are the same projects' finished screens as she
+     presented them. Prepared by
+     `scripts/prepare-exploration-covers.py`; two keep their transparency so
+     the devices sit on the card surface in both themes. */
   "olive-ilive": image(
-    "/work/olive-ilive/splash-preference-test.png",
-    "The two Olive-Ilive splash screens tested against each other, beside a bar showing 12 of 17 people chose the first design",
-    1028,
-    700,
+    "/work/olive-ilive/mockups.webp",
+    "Two Olive-Ilive phone screens: a registration form with live password rules and consent checkboxes for terms and for processing health data, and a returning-user sign-in screen",
+    1400,
+    1747,
   ),
   vochub: image(
-    "/work/vochub/splash-before-after.png",
-    "The VocHub splash screen before and after the preference test",
-    996,
-    781,
+    "/work/vochub/mockups.webp",
+    "The VocHub sign-up page on a laptop, with an illustration beside a Join Us form, over phone screens showing the branded splash and log-in",
+    1080,
+    1080,
   ),
   virtualbuddy: image(
-    "/work/virtualbuddy/dashboard.webp",
-    "The VirtualBuddy desktop dashboard: a recent-activity panel with a reading-progress ring, a study planner calendar, a to-do list and counts of audios, videos and books",
-    1200,
-    1010,
+    "/work/virtualbuddy/mockups.webp",
+    "Three VirtualBuddy phone screens: the landing page, the study library filtered by audio, books and videos, and the dashboard with a reading-progress ring and buddy, library and study-plan counts",
+    1400,
+    1455,
   ),
 };

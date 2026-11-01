@@ -31,11 +31,15 @@ export function StudioHomepage({ artifacts }: { artifacts: StudioArtifacts }) {
   const { iotVenture, merlinMines, zalando, hearEase, oliveIlive, vocHub, virtualBuddy } =
     artifacts;
 
+  /* Order matches the gallery's visual order exactly — IoT, HearEase,
+     SpellCarver, Zalando — because this list exists so that someone who
+     cannot see the stack meets the work in the same sequence as someone
+     who can. If `home-gallery.ts` is reordered, reorder this with it. */
   const featured = [
     { study: iotVenture, name: "IoT Venture GmbH, It's My Bike", what: "connected-bike app and partner dashboards" },
+    { study: hearEase, name: hearEase.title, what: "assistive smart glasses and companion app" },
     { study: merlinMines, name: merlinMines.title, what: "CI/CD automation product for in-house developers" },
     { study: zalando, name: "Zalando Plus", what: "service design and design-system contributions" },
-    { study: hearEase, name: hearEase.title, what: "assistive smart glasses and companion app" },
   ];
 
   const explorations = [
