@@ -166,6 +166,14 @@ export default async function CaseStudyPage({
                     `kind` stays on the data: it is still useful for ordering
                     and for tooling, it just does not need printing. */}
                 <header className="mb-10">
+                  {/* The method label, where one is set. This is not the
+                      `kind` eyebrow described above returning under another
+                      name: it is per-section, written by hand, and present
+                      on only the few sections where naming the method adds
+                      something the heading does not. */}
+                  {section.method ? (
+                    <p className="label-type mb-3 text-charcoal-muted">{section.method}</p>
+                  ) : null}
                   <h2
                     id={`${section.id}-heading`}
                     className="font-display text-h2 text-charcoal"

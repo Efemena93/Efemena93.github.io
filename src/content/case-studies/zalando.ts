@@ -35,7 +35,7 @@ export const zalando: CaseStudy = {
   shortRole: "Product designer",
   projectType: "In-house product design · Jun 2022 to Dec 2022",
   headline:
-    "Led design end to end for a set of Zalando Plus features, from research through service blueprinting to a pilot launch, and produced the design blueprint the team worked from afterwards. Engagement rose 15%, a figure of my own rather than an independent audit.",
+    "Led design end to end for a set of Zalando Plus features, from research through service blueprinting to a pilot launch, and produced the design blueprint the team worked from afterwards. The product owner reported engagement up 15%.",
   summary:
     "Led design from research through service blueprinting and pilot launch, shipping features for Zalando Plus and producing a design blueprint used across the team.",
   featured: true,
@@ -64,7 +64,7 @@ export const zalando: CaseStudy = {
     approach:
       "Created a comprehensive design blueprint for the Zalando Plus team; revamped outdated UI/UX templates alongside developers, PMs and stakeholders; contributed to design rituals, workshops, critiques and the design system.",
     outcome:
-      "User engagement rose 15%. That figure is my own rather than an independent audit, and no further metrics, screens or interface detail are published here.",
+      "The product owner reported engagement up 15%; I never saw the baseline or the method. No further metrics, screens or interface detail are published here.",
   },
 
   sections: [
@@ -80,7 +80,7 @@ export const zalando: CaseStudy = {
           type: "prose",
           text: [
             "My work on Zalando Plus sat inside a larger product ecosystem, where consistency, collaboration and service experiences intersect. I led the design process end to end for a set of features, from research and concept through service blueprinting to a pilot launch, and produced a design blueprint meant to keep the team's output cohesive afterwards, not only for the features I shipped myself.",
-            "Engagement rose 15% after the work. That figure is my own rather than an independent audit, and it is the only number published here.",
+            "Engagement rose 15% after the work. The product owner reported that figure to me; I never saw the baseline, the comparison period or the method behind it, and it is the only number published here.",
           ],
         },
       ],

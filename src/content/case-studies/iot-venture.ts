@@ -8,6 +8,38 @@ import type { CaseStudy } from "../types";
  * product-level material is cleared for public disclosure. The slug is
  * unchanged so the existing URL keeps working.
  *
+ * ── STRUCTURE, rewritten 2026-11-01 ───────────────────────────────────────
+ * The storytelling brief of 2026-11-01 asked for an outcome-first narrative
+ * whose headings carry the story: a reader scanning only the headings should
+ * get the argument. This page was previously organised as Minto over a
+ * double diamond, with sections headed "Discover", "Define", "Develop",
+ * "Deliver". Those are method names, and four of them in a row tell a reader
+ * what process was followed rather than what was found.
+ *
+ * So the method names moved to the small `method` label and the headings now
+ * state the finding. The order is: what shipped, who I was on it, the problem
+ * worth solving, three pivotal decisions each run as
+ * evidence → interpretation → decision → change → result, the experience
+ * through two real tasks, then results separated from limitations, then the
+ * reflection.
+ *
+ * No claim, figure, source or evidence level was dropped in the move. The
+ * blocks were re-ordered and their connective prose rewritten; every
+ * levelled claim kept its level and its `source` string verbatim.
+ *
+ * ── THE 20% RETENTION FIGURE, resolved 2026-10-29 ─────────────────────────
+ * Efemena asked on 2026-10-27 that this be attributed rather than left as a
+ * bare "self-reported", and on 2026-10-29 she named the source: the backend
+ * team reported it to her. It was NOT a figure she measured, which is what
+ * this page said before ("a figure of my own, taken from what we tracked at
+ * the time") — that attribution was wrong and is now corrected.
+ *
+ * She has no baseline, comparison period or method for it, and the page says
+ * so. It stays out of the body as a levelled claim, because a number
+ * relayed in conversation is not evidence in the sense this site's evidence
+ * levels mean; it appears in `headline`, `atAGlance.outcome` and the results
+ * section, attributed every time.
+ *
  * RELEASE SEQUENCE, settled by Efemena 2026-10-28: 3.0 in Oct to Nov 2024,
  * 3.1 a bug-fix release, 3.2 in Mar 2025, and the 3.3 design finished before
  * she left in Aug 2025. This supersedes an earlier note that had 3.3
@@ -48,14 +80,6 @@ import type { CaseStudy } from "../types";
  * changes that came out of it. Those are `evidence` with the study named.
  * The design reasoning layered on top is `interpretation`; the propositions
  * nobody tested are `hypothesis` or `concept`.
- *
- * THE 20% RETENTION FIGURE: Efemena asked for this to be attributed to a
- * source rather than left as a bare "self-reported". She has not yet told me
- * what the source is, and I will not invent one. Until she does it stays out
- * of the body as a levelled claim and appears only in `headline` and
- * `atAGlance.outcome` with the hedge attached, exactly as the résumé has it.
- * When she names the source, it becomes an `evidence` claim in the outcome
- * section and the hedge comes off.
  */
 
 export const iotVenture: CaseStudy = {
@@ -72,7 +96,7 @@ export const iotVenture: CaseStudy = {
   shortRole: "Sole UI/UX designer",
   projectType: "Full-time, in-house role · Oct 2023 to Aug 2025",
   headline:
-    "Led the 3.0 redesign across the flagship app and the white-label partner apps it had to stay compatible with, and shaped the state model behind predictive inspection. User retention rose 20% after the release.",
+    "Led the 3.0 redesign across the flagship app and the white-label partner apps it had to stay compatible with, and shaped the state model behind predictive inspection. The backend team reported retention up 20% after the release.",
   summary:
     "As the company's only designer, owned UX and UI across a connected-bike product: the flagship app, a partner dashboard and white-label partner apps. The through-line is conditional behaviour: inspection states, permission outcomes and stale device data are all cases where the interface has to be honest about what it does and does not know.",
   featured: true,
@@ -113,7 +137,7 @@ export const iotVenture: CaseStudy = {
     approach:
       "Double diamond. Research and a 15-participant beta test before the build was fixed, then the inspection state model, the responsive dealer portal, the permission sequences and the stale-data indicator, delivered on one design system.",
     outcome:
-      "3.0 shipped October to November 2024 across the flagship and white-label apps on one design system. Retention rose 20% after release, a figure of my own rather than an independent audit.",
+      "3.0 shipped October to November 2024 across the flagship and white-label apps on one design system. The backend team reported retention up 20% after release; I never saw the baseline or the method behind it.",
   },
 
   ethics: {
@@ -124,7 +148,7 @@ export const iotVenture: CaseStudy = {
     isNot: [
       "Not a disclosure of the vendor integrations, their technical field definitions, exact interface copy or timing thresholds. Those remain confidential.",
       "Not a claim that every workstream belonged to one release. These ran across two years and are gathered under one theme for the telling.",
-      "Not a measured impact report. One retention figure exists and it is self-reported.",
+      "Not a measured impact report. One retention figure exists, and it was reported to me rather than measured by me.",
     ],
     unvalidated: [
       "Why three inspection states is the right number. The states were built; the argument was never tested against users.",
@@ -138,70 +162,119 @@ export const iotVenture: CaseStudy = {
   },
 
   sections: [
-    /* ── TOP OF THE PYRAMID: the answer ──────────────────────────────────
-       Minto's rule, and the reason this section exists at all: the result
-       goes first, before the role, the problem or the process. A hiring
-       designer who reads only this box should already know what happened. */
+    /* ── 1. THE PROJECT IN BRIEF ──────────────────────────────────────────
+       Outcome first, then what the product is and who it serves, then the
+       strongest final-design image on the page. The brief asked for a real
+       final design early rather than after three screens of process. */
     {
       id: "outcome",
       kind: "synthesis",
-      title: "What shipped",
+      title: "3.0 shipped to the flagship app and every partner app at once",
       standfirst:
-        "Mobility 3.0, October to November 2024, across the flagship app and the white-label apps built on the same platform.",
+        "Mobility 3.0, October to November 2024, across It's My Bike and the white-label apps built on the same platform.",
       blocks: [
         {
           type: "prose",
           text: [
-            "I was the only designer at IoT Venture for two years, and 3.0 was the centre of it: a redesign of It's My Bike that had to land on the flagship app and on every partner-branded app built from the same platform.",
-            "User retention rose 20% after the release. That figure is my own, taken from what we tracked at the time rather than from an independent audit, and it is the only number of its kind on this page.",
-            "After 3.0 the work continued as evolution rather than a second redesign. 3.1 was a bug-fix release, 3.2 shipped in March 2025, and I had finished the 3.3 design by the time I left. 3.3 is design I completed, not a release I shipped, and nothing on this page shows a released 3.3.",
+            "It's My Bike is a tracking and service product for connected bicycles. A rider sees where the bike is, whether it has moved when it should not have, and when it is due for inspection. Bike shops use a separate portal to order trackers, assign them to branches and hand them over. Both run on the same platform, and several partners ship the same product under their own brand.",
+            "I was the only designer for two years, and 3.0 was the centre of it: a redesign that had to land on the flagship app and on every partner-branded app simultaneously, without any of them being redrawn by hand.",
           ],
+        },
+        {
+          type: "figure",
+          width: "wide",
+          image: {
+            src: "/work/iot-venture/home-state-matrix.png",
+            alt: "Three versions of the app home screen side by side, each with a different pair of alert conditions active and a status sentence rewritten to match, with the inactive condition's icon greyed out",
+            width: 1523,
+            height: 1166,
+            caption:
+              "The 3.0 home screen in three of its four alert combinations. Notice that the sentence under the bike changes with the conditions rather than staying fixed — that is the whole design decision, visible. Sample data throughout, placeholder tracker and owner names.",
+          },
+          description:
+            "With distance alone, the card says an alert will come if the bike moves 100 m away. With movement alone, if it moves or shakes while parked. With both, either. The inactive condition's icon greys out, so the sentence and the icon row always agree.",
+        },
+        {
+          type: "claim",
+          level: "interpretation",
+          text:
+            "Composing the sentence from the live conditions is what keeps it honest as conditions are added. A fixed set of labels goes stale the moment a third condition exists.",
         },
       ],
     },
 
-    /* ── MIDDLE OF THE PYRAMID: the arguments ────────────────────────────
-       Three decisions, each stated once and each carrying the result above.
-       The evidence for them is the double diamond below, in that order. */
+    /* ── 2. MY ROLE AND THE CONTEXT ──────────────────────────────────── */
     {
-      id: "decisions",
-      kind: "synthesis",
-      title: "Three decisions that got it there",
+      id: "role",
+      kind: "context",
+      method: "Role and context",
+      title: "One designer, three surfaces, and a platform that could not fork",
       blocks: [
         {
+          type: "prose",
+          text: [
+            "I was IoT Venture's only designer from October 2023 to August 2025, in Darmstadt. There was no design team to divide work with, so research, interaction design, UI, the design system and usability testing were all mine. I worked day to day with the engineers building the apps and with product management, and took requirements for the dealer and fleet surfaces from the people who sold and supported them.",
+            "The constraint that shaped most decisions was structural rather than visual: the flagship app and the partner-branded apps are the same product configured differently. Anything I designed for one had to be expressible as configuration rather than as a variant, or it would mean maintaining four codebases of screens by hand — with one designer, that is the same as not shipping it.",
+          ],
+        },
+        {
           type: "claimGroup",
+          title: "What was mine, and what was not",
           claims: [
             {
               level: "interpretation",
               text:
-                "Test before the build is fixed, not after. The 3.0 research ran through an iOS beta while findings could still change what was being built, which is the difference between research and a report.",
+                "Mine: the 3.0 redesign across all surfaces, the usability study I ran and analysed, the inspection state model, the dealer portal, the permission sequences, the stale-data indicator, and the design system the whole thing sits on.",
             },
             {
               level: "interpretation",
               text:
-                "Treat conditional behaviour as the product. Inspection states, permission outcomes and stale device data are all moments where the system knows less than the interface implies, and they are where a connected product earns trust or loses it.",
-            },
-            {
-              level: "interpretation",
-              text:
-                "Build one system, not several skins. With one designer and a flagship app plus white-label partner apps, a shared system was the only thing that made the surface area tractable.",
+                "Not mine: the prediction itself. When a bike is due for inspection was an engineering and vendor-data question. My work began where that estimate had to be said out loud.",
             },
           ],
         },
       ],
     },
 
-    /* ── BOTTOM OF THE PYRAMID: the evidence, as the double diamond ───── */
+    /* ── 3. THE PROBLEM WORTH SOLVING ─────────────────────────────────── */
     {
-      id: "discover",
-      kind: "research",
-      title: "Discover",
-      standfirst: "Fifteen riders, in a beta, ten months before release.",
+      id: "problem",
+      kind: "synthesis",
+      title: "The hardest screens are the ones nobody goes looking for",
       blocks: [
         {
           type: "prose",
           text: [
-            "Fifteen people took part; fourteen returned a complete set of scores, plus open feedback. The scores were high, which is the least interesting thing about them. The twenty-seven written comments were the useful part.",
+            "A maintenance window opening. A tracker that has stopped reporting. A permission declined six months ago that a feature now needs. None of these is a screen anyone navigates to. All of them arrive unasked, usually when the rider is doing something else, and each one has to be legible enough to act on without the rider having learned how the system works.",
+            "The consequence of getting them wrong is not confusion, it is quiet distrust. A tracking product that shows a six-hour-old position the same way it shows a live one has not confused anyone — it has told them something false in a tone of complete confidence, and a rider only has to discover that once.",
+          ],
+        },
+        {
+          type: "claim",
+          level: "interpretation",
+          text:
+            "Permissions, stale data and unexplained technical values are one design problem wearing three costumes. Each is a moment where the system knows less than the interface implies, and the honest move is to show the gap rather than smooth it over.",
+        },
+      ],
+    },
+
+    /* ── 4. PIVOTAL DECISIONS ─────────────────────────────────────────────
+       Three, each as evidence → interpretation → decision → change →
+       result. The first is the only one with research behind it, and the
+       page is explicit about that rather than letting the shape imply
+       otherwise. */
+    {
+      id: "decision-testing",
+      kind: "research",
+      method: "Usability testing · 15 participants, December 2023",
+      title: "I tested while the build could still change, and the findings were about order, not clarity",
+      standfirst: "Fifteen riders, in an iOS beta, ten months before release.",
+      blocks: [
+        {
+          type: "prose",
+          text: [
+            "Research that arrives after a build is fixed is a report. I ran the study through an iOS beta while findings could still change what was being made. Fifteen people took part; fourteen returned a complete set of scores, plus open feedback.",
+            "The scores were high, which is the least interesting thing about them. The twenty-seven written comments were the useful part.",
           ],
         },
         {
@@ -224,15 +297,15 @@ export const iotVenture: CaseStudy = {
               source: "Usability test results board, December 2023, 15 participants, 14 complete responses, 5-point scale",
             },
             {
+              level: "interpretation",
+              text:
+                "Almost none of the accepted changes were about making something clearer. They were about ordering and reach: what sits above what, and how few steps away a thing is. That reframed the redesign from a legibility problem to a hierarchy problem.",
+            },
+            {
               level: "evidence",
               text:
                 "Three changes followed directly: the report-theft call to action was simplified, all linked trackers were surfaced on the home screen map, and tracker status was promoted above trip history.",
               source: "Usability test recommendations, December 2023, marked Done in the design file",
-            },
-            {
-              level: "interpretation",
-              text:
-                "Almost none of the accepted changes were about making something clearer. They were about ordering and reach: what sits above what, and how few steps away a thing is.",
             },
           ],
         },
@@ -245,7 +318,7 @@ export const iotVenture: CaseStudy = {
             width: 1400,
             height: 724,
             caption:
-              "The results board from my own file. Participants are anonymised; the blank row is the incomplete response, which is why the means are computed over fourteen.",
+              "The results board from my own file. Participants are anonymised; the blank row is the incomplete response, which is why the means are computed over fourteen rather than fifteen.",
           },
         },
         {
@@ -263,43 +336,21 @@ export const iotVenture: CaseStudy = {
         {
           type: "prose",
           text: [
-            "The twenty-seven items are tagged done, to-do, not a priority, or not yet possible. Those tags are a snapshot of December 2023, not verdicts: by the time 3.0 shipped, every item on the list had been designed for.",
+            "The tags — done, to-do, not a priority, not yet possible — are a snapshot of December 2023, not verdicts. By the time 3.0 shipped, every item on the list had been designed for.",
           ],
         },
       ],
     },
 
     {
-      id: "define",
-      kind: "synthesis",
-      title: "Define",
-      standfirst: "The hard screens were never the ones a rider asks for.",
-      blocks: [
-        {
-          type: "prose",
-          text: [
-            "A maintenance window opening. A tracker that has stopped reporting. A permission declined six months ago that a feature now needs. None is a screen anyone navigates to, and all are where the product either explains itself or becomes something you tolerate.",
-          ],
-        },
-        {
-          type: "claim",
-          level: "interpretation",
-          text:
-            "Permissions, stale data and unexplained technical values are one design problem wearing three costumes. Each is a moment where the system knows less than the interface implies, and the honest move is to show the gap rather than smooth it over.",
-        },
-      ],
-    },
-
-    {
-      id: "develop",
+      id: "decision-states",
       kind: "craft",
-      title: "Develop",
-      standfirst: "Three places that argument had to survive contact with a screen.",
+      title: "Three inspection states, because they ask the rider for three different things",
       blocks: [
         {
           type: "prose",
           text: [
-            "The bike predicts when it needs inspecting, which turns a continuous estimate into something the interface has to say out loud. The model settled on three states, and each asks the rider for something categorically different, so the component changes shape rather than only colour.",
+            "The bike predicts when it needs inspecting, which turns a continuous engineering estimate into something the interface has to say out loud. The obvious design is one component whose colour changes with severity. I built three states that change shape instead.",
           ],
         },
         {
@@ -321,68 +372,26 @@ export const iotVenture: CaseStudy = {
             "These are not three severities of one message. \"Nothing to do\", \"plan something\" and \"act now\" are different speech acts, and rendering them as one component with a changing colour flattens that distinction back out.",
         },
         {
-          type: "prose",
-          text: [
-            "The same reasoning runs through the dealer portal, where bike shops order hardware, assign it and get back to work. One responsive system across phone, tablet and desktop: checking a delivery on an iPad behind the counter is the same task as doing it on a laptop out back. Own design file, sample data.",
-          ],
-        },
-        {
-          type: "figure",
-          width: "wide",
-          image: {
-            src: "/work/iot-venture/dealer-assign-tracker.png",
-            alt: "Desktop view of Assign Tracker, with a paginated list of tracker serial numbers on the left, a list of company branches on the right, and a single Assign Tracker action",
-            width: 1100,
-            height: 715,
-            caption: "Assigning hardware to a branch. Sample serials and store names; the partner hotline has been removed.",
-          },
-          description:
-            "Two columns: which trackers, and which branch. The counter beneath reads 06 of 30, so a shop working through a batch can see how far in they are without counting checkboxes.",
-        },
-        {
-          type: "claim",
-          level: "interpretation",
+          type: "callout",
+          title: "This one was never tested",
+          tone: "caution",
           text:
-            "Pairing a paginated serial list against a branch list, with a running count, treats assignment as a batch task someone is partway through rather than a form they fill in once.",
-        },
-        {
-          type: "prose",
-          text: [
-            "And on the home screen, where two alert conditions can each be on or off independently, the status card composes a sentence from whichever are live rather than storing a label per combination.",
-          ],
-        },
-        {
-          type: "figure",
-          width: "wide",
-          image: {
-            src: "/work/iot-venture/home-state-matrix.png",
-            alt: "Three versions of the app home screen side by side, each with a different pair of alert conditions active and a status sentence rewritten to match, with the inactive condition's icon greyed out",
-            width: 1523,
-            height: 1166,
-            caption: "Three of the four combinations. Sample data throughout, placeholder tracker and owner names.",
-          },
-          description:
-            "With distance alone, the card says an alert will come if the bike moves 100 m away. With movement alone, if it moves or shakes while parked. With both, either. The inactive condition's icon greys out, so the sentence and the icon row always agree.",
-        },
-        {
-          type: "claim",
-          level: "interpretation",
-          text:
-            "Composing the sentence from the live conditions is what keeps it honest as conditions are added. A fixed set of labels goes stale the moment a third condition exists.",
+            "The state model was built from requirements, platform constraints and design review. Unlike the hierarchy changes above, no study backs the choice of three states or the wording of any of them. It is reasoning, and it is offered as reasoning.",
         },
       ],
     },
 
     {
-      id: "deliver",
+      id: "decision-system",
       kind: "craft",
-      title: "Deliver",
-      standfirst: "One system, several brands, one designer.",
+      title: "One system, configured per brand, rather than four apps to keep in step",
+      standfirst: "The only structure under which one designer could ship to four apps at once.",
       blocks: [
         {
           type: "prose",
           text: [
             "3.0 went out across the flagship and the white-label apps together. The design system is what made that possible: partner brands were configured rather than redrawn, so a change to a shared pattern did not become a week of reconciling four apps by hand.",
+            "Three pieces of conditional behaviour had to survive that constraint — each one a place where the system knows less than the interface implies, and each one built once and configured rather than designed per app.",
           ],
         },
         {
@@ -408,11 +417,62 @@ export const iotVenture: CaseStudy = {
       ],
     },
 
+    /* ── 5. SHOW THE EXPERIENCE ───────────────────────────────────────────
+       One task, followed end to end, rather than a gallery of screens. */
     {
-      id: "limits",
-      kind: "reflection",
-      title: "What this does not prove",
+      id: "experience",
+      kind: "craft",
+      method: "The dealer portal",
+      title: "Assigning a batch of trackers, on whatever device is on the counter",
       blocks: [
+        {
+          type: "prose",
+          text: [
+            "A bike shop has taken delivery of thirty trackers and needs them assigned to the right branch before they can be fitted. The person doing it is behind a counter, is interrupted, and will come back to the task three times before it is finished.",
+            "So the screen is built around being partway through rather than around filling in a form. Trackers on one side, branches on the other, and a running count of how far into the batch you are. It is one responsive system across phone, tablet and desktop: checking a delivery on an iPad behind the counter is the same task as doing it on a laptop out back, so it is the same interface rather than a cut-down one.",
+          ],
+        },
+        {
+          type: "figure",
+          width: "wide",
+          image: {
+            src: "/work/iot-venture/dealer-assign-tracker.png",
+            alt: "Desktop view of Assign Tracker, with a paginated list of tracker serial numbers on the left, a list of company branches on the right, and a single Assign Tracker action",
+            width: 1100,
+            height: 715,
+            caption:
+              "Assigning hardware to a branch. The counter beneath the list reads 06 of 30 — that is the number that makes the screen resumable. Sample serials and store names; the partner hotline has been removed.",
+          },
+          description:
+            "Two columns: which trackers, and which branch. The counter beneath reads 06 of 30, so a shop working through a batch can see how far in they are without counting checkboxes.",
+        },
+        {
+          type: "claim",
+          level: "interpretation",
+          text:
+            "Pairing a paginated serial list against a branch list, with a running count, treats assignment as a batch task someone is partway through rather than a form they fill in once.",
+        },
+      ],
+    },
+
+    /* ── 6. RESULTS AND LIMITATIONS ───────────────────────────────────────
+       The brief asked that measured outcomes, observations and reported
+       figures be told apart rather than listed together. They are three
+       different kinds of thing here and the section says which is which. */
+    {
+      id: "results",
+      kind: "synthesis",
+      title: "What is known, what was observed, and what was only reported to me",
+      blocks: [
+        {
+          type: "prose",
+          text: [
+            "3.0 shipped in October to November 2024 across the flagship app and the white-label apps, on one design system. That is the outcome I can show: the release happened, on every surface, and the screens on this page are from it.",
+            "The backend team told me retention rose 20% after the release. I am repeating that rather than reporting it: I never saw the baseline, the comparison period or the method, and I did not measure it myself. It is the only number of its kind attached to this project, and it should be read as something I was told.",
+            "From the study, what is genuinely observed is narrower and more useful: six rated questions averaging 4.4 to 4.9 across fourteen complete responses, and twenty-seven written recommendations, of which three became named changes before release.",
+            "After 3.0 the work continued as evolution rather than a second redesign. 3.1 was a bug-fix release, 3.2 shipped in March 2025, and I had finished the 3.3 design by the time I left. 3.3 is design I completed, not a release I shipped, and nothing on this page shows a released 3.3.",
+          ],
+        },
         {
           type: "callout",
           title: "Where the testing stopped",
@@ -420,10 +480,20 @@ export const iotVenture: CaseStudy = {
           text:
             "The beta ran with riders. The dealer workflow was never put in front of a dealer, and the inspection state model was never tested as a model: both were built from requirements, platform constraints and design review. Research on one part of a product should not lend credibility to the rest.",
         },
+      ],
+    },
+
+    /* ── 7. REFLECTION ────────────────────────────────────────────────── */
+    {
+      id: "reflection",
+      kind: "reflection",
+      title: "The ideal state is the screen you design once and never look at again",
+      blocks: [
         {
           type: "prose",
           text: [
-            "The lesson is narrower than \"design for the user\": connected products are mostly conditional behaviour. The ideal state is the screen you design once and rarely look at again. Everything that makes a product feel trustworthy or shabby lives in the other states, and those get specified last.",
+            "The lesson is narrower than \"design for the user\": connected products are mostly conditional behaviour. Everything that makes one feel trustworthy or shabby lives in the states nobody asks for, and those get specified last, when the deadline is closest and the appetite for a new component is lowest.",
+            "The tradeoff I never resolved is the inspection model itself. Three states was a judgement, and judgement is what you have when the thing you would want to test — whether riders read \"almost due\" as a prompt or as noise — needs a study nobody was going to fund for a component that already worked. If I had the time back, that is the study I would run, and I would run it before building the component rather than after.",
           ],
         },
       ],

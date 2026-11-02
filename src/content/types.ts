@@ -234,6 +234,18 @@ export interface CaseSection {
   id: string;
   kind: SectionKind;
   title: string;
+  /**
+   * A small supporting label above the heading, naming the method or the
+   * part of the story: "Usability testing", "Role and context".
+   *
+   * Deliberately optional and deliberately not `kind`. Every section used
+   * to be stamped with its `kind` — SYNTHESIS / RESEARCH / CRAFT — twelve
+   * to twenty-two times a page, which reads as a taxonomy being applied
+   * rather than a story being told. This is set only where naming the
+   * method tells a reader something the heading does not, so on most
+   * sections it is absent and no label prints.
+   */
+  method?: string;
   standfirst?: string;
   blocks: Block[];
 }
