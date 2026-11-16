@@ -2,7 +2,6 @@ import { Container } from "@/components/primitives";
 
 import { FloatingSymbols } from "./FloatingSymbols";
 import { StudioHour } from "./StudioHour";
-import { StudioObjectRow } from "./StudioObjectRow";
 
 /**
  * StudioHero, section 01: the studio itself, as a room you are looking into.
@@ -144,9 +143,19 @@ export function StudioHero() {
               </a>
             </p>
 
-            {/* The same four projects as the drifting objects, for phones,
-                where nothing drifts. */}
-            <StudioObjectRow />
+            {/* The phone chip row is deliberately gone.
+                It existed when the work below the hero was a sparse room of
+                drifting objects and a phone saw none of it, so the four
+                projects needed announcing. Since 2026-11-01 the first thing
+                under the hero is a full-width project panel, and a recruiter
+                review on 2026-11-16 flagged this row as a redundant list of
+                the four projects standing between the introduction and the
+                first real piece of visual proof. It was. On a phone the
+                gallery is now one scroll away and shows the work itself.
+
+                `StudioObjectRow` is kept in the tree, unused, because the
+                hero's shape is still being worked on and it is the only
+                phone-sized rendering of the room's four objects. */}
           </div>
         </div>
 

@@ -22,9 +22,21 @@ export interface ProjectObject {
   label: string;
 }
 
+/*
+ * ORDER MATTERS, and it must match `src/content/home-gallery.ts`.
+ *
+ * A recruiter review on 2026-11-16 caught these two lists disagreeing: the
+ * room objects ran IoT, SpellCarver, Zalando, HearEase while the gallery
+ * panels below them ran IoT, HearEase, SpellCarver, Zalando. The gallery was
+ * reordered by the brief of 2026-11-01 and this list was not, so the page
+ * announced its projects in one order and then showed them in another.
+ *
+ * If one is reordered, reorder the other, and the screen-reader list in
+ * `StudioHomepage.tsx` with them — three places, one sequence.
+ */
 export const PROJECT_OBJECTS: ProjectObject[] = [
   { name: "bicycle", href: "/work/iot-venture", label: "IoT Venture, It's My Bike" },
+  { name: "glasses", href: "/work/hearease", label: "HearEase" },
   { name: "wand", href: "/work/merlin-mines", label: "SpellCarver" },
   { name: "garment", href: "/work/zalando", label: "Zalando Plus" },
-  { name: "glasses", href: "/work/hearease", label: "HearEase" },
 ];
